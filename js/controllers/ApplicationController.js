@@ -7,9 +7,9 @@
      * @author Adam Timberlake
      * @module Moa
      */
-    $moa.controller('ApplicationController', ['$rootScope', '$scope','$http' ,
+    $moa.controller('ApplicationController', ['$rootScope', '$scope' , '$location' ,
 
-    function applicationController($rootScope, $scope , $http) {
+    function applicationController($rootScope, $scope , $location) {
 
 
         //view filter elements
@@ -50,12 +50,28 @@
                 $scope.modalClass = "open";
                 $scope.sidebar_footer_class = "open-modal-footer";
                 $scope.closeFooter = "close-footer";
+                $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
             }
+        };
+
+        $scope.goHome = function(path){
+            if($scope.isModalOpen){
+                $scope.isModalOpen = false;
+                $scope.bodyOpenModalClass = "";
+                $scope.sidebar_footer_class = "close-modal-footer";
+                $scope.contentClass = "close-main-container";
+                $scope.modalClass="close-modal";
+                $scope.closeFooter = "";
+            } else {
+                console.log("Application Controller message \n 'modal is already open' \n SystemDev Message delete in production");
+            }
+            $location.path(path);
         };
 
         $scope.closeModal = function () {
             if($scope.isModalOpen){
                 $scope.isModalOpen = false;
+                $scope.bodyOpenModalClass = "";
                 $scope.sidebar_footer_class = "close-modal-footer";
                 $scope.contentClass = "close-main-container";
                 $scope.modalClass="close-modal";

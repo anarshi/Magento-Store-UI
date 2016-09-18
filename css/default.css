@@ -17,27 +17,22 @@ body, html {
     background-color: rgb(243,243,243) !important;
 }
 
-header {
-    background-color: #fff;
-    height: 40px;
-    width: 100%;
-    text-align: center;
-    border-bottom:1px solid rgb(222,223,224);
-    position: fixed;
-    -webkit-transform: translateZ(0);
-    position: fixed;
+.cart-open .overlay, .menu-open .overlay {
+    visibility: visible;
+    opacity: 1;
+    transition: all .5s cubic-bezier(.645,.045,.355,1);
 }
 
 header h1 {
     color: white;
     margin: 0;
     font-family: "AvenirNext LT Pro", sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     height: 50px;
-    letter-spacing: 4px;
+    letter-spacing: 9px;
     line-height: 50px;
     font-weight: bold;
-    color:black;
+    color: black;
 }
 
 .menu-icon{
@@ -47,8 +42,209 @@ header h1 {
     font-family: "AvenirNext LT Pro", sans-serif;
     text-align: left;
     float: left;
-    padding-top: 8px;
+    padding-top: 13px;
     padding-left: 35px !important;
+}
+
+body #navBar.top, body .transform-container {
+    height:100%;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(.645,.045,.355,1);
+}
+
+nav#navBar.ready {
+    left: 0;
+    right: 0;
+    height: 52px;
+    z-index: 98;
+    background: #FFF;
+    border-color: #DEDFE0;
+}
+
+nav#navBar.top-hide {
+    top: 0;
+    bottom: auto;
+}
+
+
+nav#navBar.fixed {
+    bottom: auto;
+    top: 0;
+    visibility: visible!important;
+    opacity: 1!important;
+    position: fixed;
+}
+
+nav#navBar {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    right: 0;
+    height: 0;
+    background: #f3f3f5;
+    overflow: hidden;
+    z-index: 98;
+    border-bottom: 1px solid rgba(255,255,255,0);
+}
+
+.fixed {
+    width: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+nav#navBar.ready .menu {
+    top: 50%!important;
+    opacity: 1;
+}
+
+nav#navBar .menu {
+    width: 72px;
+    height: 52px;
+    background-size: 18px 14px !important;
+    transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
+    background-image: url('../images/svg/menu.svg') !important;
+    opacity: 1;
+}
+
+.overlay {
+    display: block;
+    position: fixed;
+    width: 100%;
+    min-height: 1000vw;
+    z-index: 99;
+    background: rgba(29,29,31,.6);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s cubic-bezier(.645,.045,.355,1);
+}
+
+a {
+    color: #008CBA;
+    text-decoration: none;
+    line-height: inherit;
+}
+
+.catalog-product a {
+    display: block;
+    position: absolute;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    left: 5%;
+    top: 11%;
+    width: 90%;
+    height: 76%;
+    z-index: 2;
+    background: rgba(200,255,255,0);
+}
+
+figure {
+    margin: 1em 40px;
+}
+
+.lock-scroll, .no-scroll {
+    overflow: hidden;
+    -ms-touch-action: pan-x;
+    touch-action: pan-x;
+}
+
+nav#navBar .menu {
+    display: block;
+    position: absolute;
+    text-decoration: none;
+    background: center center no-repeat rgba(255,255,255,0);
+    padding: 0;
+    outline: 0;
+    text-indent: -9999px;
+    cursor: pointer;
+    top: 50%;
+    left: 0;
+    margin: -26px 0;
+}
+
+.menu:hover{
+    cursor: pointer;
+}
+
+nav#navBar .cartcount.show {
+    opacity: 1;
+}
+
+nav#navBar .cartcount {
+    opacity: 0;
+    visibility: visible;
+    display: block!important;
+    position: fixed;
+    overflow: visible;
+    transition-delay: .4s;
+}
+
+.cartcount.show {
+    right: 26px;
+}
+
+.cartcount {
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0px;
+    border-radius: 12px;
+    right: -50px;
+    top: 14px;
+    margin: 0;
+    padding: 0;
+    background: #f3f3f5;
+    color: #000;
+    font-size: 12px;
+    text-align: center;
+    line-height: 23px;
+    cursor: pointer;
+    border: 1px solid #FFF;
+    z-index: 100;
+}
+
+.button:focus, .button:hover, button:focus, button:hover {
+    background-color: #007095;
+    color: #FFF;
+}
+
+nav#navBar.ready>span {
+    color: black;
+    display: block;
+    position: absolute;
+    width: 82px;
+    height: 17px;
+    letter-spacing: 6px;
+    font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
+    font-weight: bold;
+    font-size: 20px;
+    /* background-size: 82px 17px; */
+    opacity: 1;
+    /* background-position: center center; */
+    /* background-repeat: no-repeat; */
+    left: 50%;
+    top: 50%;
+    padding: 0 0 0 15px;
+    margin: -15px -36px;
+    /* text-indent: -9999px; */
+    transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
+}
+
+nav#navBar>span {
+    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    /*opacity: 0;*/
+    cursor: pointer;
+    /*background-image: url(svg/intro/logoblack.svg);*/
 }
 
 .move-right-content{

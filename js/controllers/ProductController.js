@@ -7,129 +7,90 @@
      * @author Adam Timberlake
      * @module Moa
      */
-    $moa.controller('ProductController', ['$scope', 'http', 'basket',
+    $moa.controller('ProductController', ['$scope', '$http','$routeParams','$location',
 
-    function ProductController($scope, http, basket) {
+    function ProductController($scope,$http,$routeParams,$location) {
 
-        /**
-         * @property product
-         * @type {Object}
-         */
-        $scope.product = {};
+        $scope.allImages = [];
+        var searchCriteria = $routeParams.product_id;
+        $http.get('http://45.79.162.17:8888/product/' + searchCriteria).then(function successCallback(response) {
+            $scope.product = response.data;
+            $scope.product.price = '$ '  + $scope.product.price;
+            $scope.slides = [];
+            for(var i = 0 ; i < $scope.product.allImages.length ; i++){
+                $scope.slides.push({
+                    image: $scope.product.allImages[i],
+                    description: "pulled image"
+                });
+            }
+            console.log($scope.product);
+        }, function errorCallback(response) {
+            console.log("ERROR: " + response);
+        });
 
-        /**
-         * @property selectedProductId
-         * @type {Number}
-         */
-        $scope.selectedProductId = null;
-
-        /**
-         * @property quantity
-         * @type {Number}
-         */
-        $scope.quantity = 1;
-
-        /**
-         * @constant ERRORS
-         * @type {Object}
-         */
-        $scope.ERRORS = {
-            stock: 'Unfortunately the product is currently out of stock.',
-            choose: 'Please choose an option from the product dropdown.',
-            unknown: 'Sorry, but an unknown error occurred.'
+        $scope.goHome = function(path){
+            $location.path(path);
         };
 
-        /**
-         * @property errorMessage
-         * @type {String}
-         */
-        $scope.errorMessage = '';
 
-        /**
-         * @property selectedProduct
-         * @type {Object}
-         */
-        $scope.selectedProduct = {};
 
-        /**
-         * @property basketAdding
-         * @type {Boolean}
-         * @default false
-         */
-        $scope.basketAdding = false;
+        $scope.direction = 'left';
+        $scope.currentIndex = 0;
 
-        /**
-         * @method addBasket
-         * @param id {Number}
-         * @param quantity {Number}
-         * @return {void}
-         */
-        $scope.addBasket = function addBasket(id, quantity) {
+        $scope.setCurrentSlideIndex = function (index) {
+            $scope.direction = (index > $scope.currentIndex) ? 'left' : 'right';
+            $scope.currentIndex = index;
+        };
 
-            if (!id) {
+        $scope.isCurrentSlideIndex = function (index) {
+            return $scope.currentIndex === index;
+        };
 
-                // User hasn't selected a simple product from the configurable.
-                $scope.errorMessage = $scope.ERRORS['choose'];
-                return;
+        $scope.prevSlide = function () {
+            $scope.direction = 'left';
+            $scope.currentIndex = ($scope.currentIndex < $scope.slides.length - 1) ? ++$scope.currentIndex : 0;
+        };
 
-            }
+        $scope.nextSlide = function () {
+            $scope.direction = 'right';
+            $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.slides.length - 1;
+        };
 
-            $scope.basketAdding = true;
 
-            // Add the item to the basket with the selected quantity.
-            http.addBasket(id, quantity).then(function then(response) {
+    }]).animation('.slide-animation', function () {
+        return {
+            beforeAddClass: function (element, className, done) {
+                var scope = element.scope();
 
-                if (response.data.error) {
-
-                    // We encountered an error!
-                    $scope.errorMessage = $scope.ERRORS[response.data.error];
-                    $scope.basketAdding = false;
-                    return;
-
+                if (className == 'ng-hide') {
+                    var finishPoint = element.parent().width();
+                    if(scope.direction !== 'right') {
+                        finishPoint = -finishPoint;
+                    }
+                    TweenMax.to(element, 0.5, {left: finishPoint, onComplete: done });
                 }
+                else {
+                    done();
+                }
+            },
+            removeClass: function (element, className, done) {
+                var scope = element.scope();
 
-                $scope.errorMessage = '';
-                $scope.basketAdding = false;
+                if (className == 'ng-hide') {
+                    element.removeClass('ng-hide');
 
-                // Update the user's basket!
-                basket.setBasket(response.data.models);
+                    var startPoint = element.parent().width();
+                    if(scope.direction === 'right') {
+                        startPoint = -startPoint;
+                    }
 
-            });
-
-        };
-
-        /**
-         * @method changeProduct
-         * @return {void}
-         */
-        $scope.changeProduct = function changeProduct() {
-            $scope.setProduct($scope.selectedProduct);
-        };
-
-        /**
-         * @method setProduct
-         * @param product {Object}
-         * @return {void}
-         */
-        $scope.setProduct = function setProduct(product) {
-
-            if (!product) {
-
-                // User decided to de-select their product selection.
-                $scope.selectedProductId = null;
-                return;
-
+                    TweenMax.fromTo(element, 0.5, { left: startPoint }, {left: 0, onComplete: done });
+                }
+                else {
+                    done();
+                }
             }
-
-            if (product.type !== 'configurable') {
-
-                // Setup the product ID if the product being added isn't a configurable.
-                $scope.selectedProductId = product.id;
-
-            }
-
-        }
-
-    }]);
+        };
+    });
 
 })(window.moaApp);

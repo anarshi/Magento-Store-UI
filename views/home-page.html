@@ -1,0 +1,36 @@
+<div class="home-page container main-container" id="mainId" ng-click="closeModal">
+    <section ng-controller="ProductsController" >
+        <section ng-click="closeModal(); closeFilters()" class="products" ng-class="{'filters-open': filtersOpen, 'modal-open': modalOpen}">
+            <div data-sidebar class="right">
+                <!--<section class="currencies" ng-controller="CurrenciesController" ng-hide="currencies.length <= 1">-->
+                    <!--<h3>Currencies</h3>-->
+                    <!--<ul>-->
+                        <!--<li ng-repeat="model in currencies | orderBy: 'code'" ng-class="{active: currency == model}">-->
+                            <!--<span class="symbol">{{model.symbol}}</span>-->
+                            <!--<a ng-click="setCurrency(model)">{{model.code}}</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</section>-->
+            </div>
+            <div id="catalog" class="row thumbs">
+                <div class = "catalog-product" ng-class="productGridType" ng-repeat="product in products" ng-click="openProduct(product.id, $event)">
+                    <a data-path="#product/{{product.id}}" href="#product/{{product.id}}">
+                    </a>
+                    <img ng-src="{{product.allImages[0]}}" alt="{{product.name}}'s image" />
+                </div>
+            </div>
+        </section>
+        <footer id="collection-footer" class="footer-bar" ng-class="closeFooter">
+            <ul>
+                <li><button data-rows="large" class="items row1 up" ng-click="oneRowGrid()"><span>1</span><span class="hover">1</span></button></li>
+                <li><button data-rows="medium" class="items row2  down active" ng-click="twoRowGrid()"><span>2</span><span class="hover">2</span></button></li>
+                <li class="hide-for-small"><button data-rows="small" class="items row4" ng-click="threeRowGrid()"><span>4</span><span class="hover">4</span></button></li>
+            </ul>
+
+            <nav class="footerbuttons show">
+                <button id="filterBtn" class=""><span>Filter <strong class="filtercount"></strong></span><span class="hover">Filter <strong class="filtercount"></strong></span></button>
+            </nav>
+        </footer>
+    </section>
+
+</div>
