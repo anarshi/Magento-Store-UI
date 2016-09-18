@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Moa</title>
+    <link rel="stylesheet" href="css/default.css" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" />
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/hammerjs/hammer.js"></script>
+    <script src="bower_components/socket.io-client/dist/socket.io.js"></script>
+    <script src="js/Application.js"></script>
+    <script src="js/controllers/ApplicationController.js"></script>
+    <script src="js/controllers/ProductsController.js"></script>
+    <script src="js/controllers/ProductController.js"></script>
+    <script src="js/controllers/BasketController.js"></script>
+    <script src="js/controllers/CurrenciesController.js"></script>
+    <script src="js/controllers/AccountController.js"></script>
+    <script src="js/controllers/FiltersController.js"></script>
+    <script src="js/controllers/ModalController.js"></script>
+    <script src="js/filters/Convert.js"></script>
+    <script src="js/directives/Sidebar.js"></script>
+    <script src="js/directives/Filter.js"></script>
+    <script src="js/directives/Panel.js"></script>
+    <script src="js/services/Gateway.js"></script>
+    <script src="js/services/Basket.js"></script>
+    <script src="js/services/Currency.js"></script>
+    <script src="js/services/Config.js"></script>
+    <script src="js/services/Http.js"></script>
+    <script src="js/services/Socket.js"></script>
+</head>
+<body ng-app="moaApp" ng-controller="ApplicationController" ng-keyup="keyUp($event)">
+
+    <section data-sidebar class="filters" ng-class="modalClass" ng-controller="FiltersController">
+        <div class="view left-sidebar-menu-container" ng-include="'views/sidebarMenu.html'"></div>
+    </section>
+
+    <footer id="collection-footer" class="footer-bar" ng-class="closeFooter">
+        <ul>
+            <li><button data-rows="large" class="items row1 up" ng-click="oneRowGrid()"><span>1</span><span class="hover">1</span></button></li>
+            <li><button data-rows="medium" class="items row2  down active" ng-click="twoRowGrid()"><span>2</span><span class="hover">2</span></button></li>
+            <li class="hide-for-small"><button data-rows="small" class="items row4" ng-click="threeRowGrid()"><span>4</span><span class="hover">4</span></button></li>
+        </ul>
+
+        <nav class="footerbuttons show">
+            <button id="filterBtn" class=""><span>Filter <strong class="filtercount"></strong></span><span class="hover">Filter <strong class="filtercount"></strong></span></button>
+        </nav>
+    </footer>
+
+    <div class="home-page container main-container" id="mainId" ng-class="contentClass" ng-click="closeModal">
+        <div class="transform-container">
+            <header class="navbar-fixed-top">
+                <div class="row">
+                    <div class="col-md-2 col-xs-2 menu-icon">
+                        <a href="#" ng-click="openModal()"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                    </div>
+                    <div class ="col-md-8 col-xs-8 shop-name-title-container">
+                        <h1 class="shop-name-title">ETQ.</h1>
+                    </div>
+                    <div class="col-md-2 col-xs-2"></div>
+                </div>
+            </header>
+            <section ng-controller="ProductsController" >
+                <section ng-click="closeModal(); closeFilters()" class="products" ng-class="{'filters-open': filtersOpen, 'modal-open': modalOpen}">
+                    <div data-sidebar class="right">
+                        <div class="models" title="Current amount of products currently being shown on the page.">
+                            {{statistics.models.current}}/{{statistics.models.total}} in {{statistics.responseTime}}ms
+                        </div>
+                        <section class="currencies" ng-controller="CurrenciesController" ng-hide="currencies.length <= 1">
+                            <h3>Currencies</h3>
+                            <ul>
+                                <li ng-repeat="model in currencies | orderBy: 'code'" ng-class="{active: currency == model}">
+                                    <span class="symbol">{{model.symbol}}</span>
+                                    <a ng-click="setCurrency(model)">{{model.code}}</a>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                    <!--<section class="pagination" ng-include="'views/pagination.html'"></section>-->
+                    <div id="catalog" class="row thumbs">
+                        <div class = "catalog-product" ng-class="productGridType" ng-repeat="product in products" ng-click="openProduct(product.id, $event)">
+                            <img ng-src="{{product.allImages[0]}}" alt="{{product.name}}'s image" />
+                        </div>
+                        <!--<ul class="collection">-->
+                        <!--<li ng-repeat="product in products" ng-click="openProduct(product.id, $event)">-->
+
+                        <!--&lt;!&ndash;<h2><a>{{product.name}}</a></h2>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="price">&ndash;&gt;-->
+                        <!--&lt;!&ndash;{{currency.symbol}}&ndash;&gt;-->
+                        <!--&lt;!&ndash;{{product.price | convert: currency | number: 2}}&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--</li>-->
+                        <!--<li class="loading" ng-show="!loaded">-->
+                        <!--<img src="images/loading.gif" alt="Loading" />-->
+                        <!--<label>We're loading the products...&hellip;</label>-->
+                        <!--</li>-->
+                        <!--<li class="all-gone" ng-show="loaded && products.length == 0">-->
+                        <!--<label>Bravo! You've filtered all of the products.</label>-->
+                        <!--</li>-->
+                        <!--</ul>-->
+                    </div>
+                </section>
+
+                <section data-sidebar class="modal-window" >
+                    <div class="view" ng-include="'views/sidebarMenu.html'"></div>
+                </section>
+
+            </section>
+        </div>
+    </div>
+</body>
+
+
+</html>

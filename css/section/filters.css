@@ -1,0 +1,240 @@
+@import 'filters/tabs.css';
+@import 'filters/colours.css';
+@import 'filters/prices.css';
+@import 'filters/brands.css';
+@import 'filters/account.css';
+@import 'filters/quick-links.css';
+
+section.filters {
+    top: 0px !important;
+    left:0px;
+    height: 100%;
+    float: left;
+    z-index: 2;
+    position: fixed;
+    color: white;
+    background-color: rgb(29,29,31);
+    box-sizing: border-box;
+    /* box-shadow: 0 -20px 60px rgba(0, 0, 0, .35); */
+    border-right: 1px solid;
+    width: 281px;
+    transition: margin-left .35s ease-in-out, width .35s ease-in-out;
+    -o-transition: margin-left .35s ease-in-out, width .35s ease-in-out;
+    -ms-transition: margin-left .35s ease-in-out, width .35s ease-in-out;
+    -moz-transition: margin-left .35s ease-in-out, width .35s ease-in-out;
+    -webkit-transition: margin-left .35s ease-in-out, width .35s ease-in-out;
+    /* -webkit-transform: translate3d(-281px,0,0); */
+    transform: translate3d(-281px,0,0);
+}
+
+.close-modal{
+    transition: all .5s cubic-bezier(.645,.045,.355,1) !important;
+     -webkit-transform: translate3d(-281px,0,0) !important;
+    transform: translate3d(-281px,0,0) !important;
+}
+
+.view >div{
+    margin: -218px 0;
+    position: absolute;
+    width: 281px;
+    /* min-height: 500px; */
+    transition: all .5s cubic-bezier(.645,.045,.355,1);
+    top: 50%;
+}
+
+.view >div > h3{
+    font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    color: #FFF;
+    letter-spacing: .5rem;
+    margin: 0 0 37px 40px;
+    padding: 0;
+}
+
+.view > div > ul {
+    font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: rgb(156,156,156);
+    margin: 0 0 36px 40px;
+    padding: 2px 0 7px;
+    font-size: 10px;
+    letter-spacing: 0.3rem;
+    list-style: none;
+
+
+}
+
+.view > div > ul li{
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 0 5px;
+    padding: 0;
+    transition: all 500ms cubic-bezier(.39,.575,.565,1);
+    color: #9c9c9c
+}
+
+.view > div > ul li:hover{
+    color:white;
+    cursor: pointer;
+    transform: translate3d(5px,0,0) !important;
+}
+
+.active-modal-link{
+    color:white !important;
+}
+
+.view > footer{
+    bottom: 0;
+    transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
+    display: block;
+    position: absolute;
+    width: 280px;
+    height: 52px;
+    border-top: 1px solid #333335;
+    bottom: -52px;
+}
+
+.view >  footer button span {
+    text-align: center;
+}
+
+.view > footer  button:hover {
+    background-color: #000;
+    color: #FFF;
+}
+
+.view > footer button {
+    display: block;
+    position: relative;
+    transition: all 300ms cubic-bezier(.25,.46,.45,.94);
+    outline: 0;
+    background: 0 0;
+    color: #BCBCBC;
+    height: 52px;
+    margin: 0;
+    padding: 0;
+    line-height: 52px;
+    border: none;
+    border-right: 1px solid #333;
+    width: 93px;
+    text-align: center;
+    float: left;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+.view > footer button.twitter {
+    border-right: none;
+}
+
+.view >  footer button span {
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    top: 0;
+    left: 0;
+    font-size: 16px;
+}
+
+.open-modal-footer {
+    bottom: 0 !important;
+    transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms !important;
+}
+
+.close-modal-footer{
+    bottom: -52px !important;
+    transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms !important;
+}
+
+.left-sidebar-menu li{
+    margin-bottom:10px;
+}
+
+.left-sidebar-menu-container{
+    height: 100%;
+}
+
+section.filters.open {
+    transition: all .5s cubic-bezier(.645,.045,.355,1);
+     -webkit-transform: translate3d(0,0,0);
+     transform: translate3d(0,0,0);
+}
+
+section.filters.open section.quick-links {
+    opacity: 0;
+    position: absolute;
+}
+
+section.filters div.filter {
+    font-family: "Source Sans Pro", sans-serif;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    max-height: 500px;
+    transition: all .55s ease-in-out;
+    -o-transition: all .55s ease-in-out;
+    -ms-transition: all .55s ease-in-out;
+    -moz-transition: all .55s ease-in-out;
+    -webkit-transition: all .55s ease-in-out;
+}
+
+section.filters div.filter h2 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 14px;
+    width: 100%;
+    font-weight: 400;
+    line-height: 20px;
+    cursor: pointer;
+    margin: 0;
+    padding: 5px 10px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+section.filters div.filter ul.more-links {
+    overflow: hidden;
+    position: absolute;
+    margin: 6px 8px 0 0;
+    top: 0;
+    right: 0;
+}
+
+section.filters div.filter ul.more-links li {
+    float: left;
+    overflow: hidden;
+    padding: 0 8px;
+}
+
+section.filters div.filter ul.more-links a {
+    font-size: 11px;
+    cursor: pointer;
+
+}
+
+section.filters div.filter img.icon {
+    float: left;
+    margin: 2px 8px 0 0;
+    opacity: .2;
+}
+
+section.filters div.filter p.description {
+    padding: 10px 10px 5px 10px;
+    font-size: 12px;
+}
+
+section.filters div.filter p.description label {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+section.filters div.filter div.inner:not(.without-padding) {
+    padding: 0 10px;
+}
