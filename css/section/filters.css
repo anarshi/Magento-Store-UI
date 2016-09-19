@@ -154,11 +154,23 @@ section.filters {
     transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms !important;
 }
 
+
+
+
+div > ul {
+
+
+}
+div:hover > ul {
+
+}
+
 .left-sidebar-menu li{
     margin-bottom:10px;
 }
 
 .left-sidebar-menu-container{
+    z-index: 9999;
     height: 100%;
 }
 

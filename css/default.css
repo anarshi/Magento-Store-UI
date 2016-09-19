@@ -283,10 +283,7 @@ nav#navBar>span {
     padding-bottom: 108px!important
 }
 
-.close-footer {
-    -webkit-transform: translateY(100%) !important;
-    transform: translateY(100%) !important;
-}
+
 
 .close-main-container{
     width:100% !important;
@@ -329,8 +326,8 @@ body {
 .footer-bar {
     display: block;
     position: fixed;
-    transition: opacity 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-webkit-transform 550ms cubic-bezier(.455,.03,.515,.955);
-    transition: opacity 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),transform 550ms cubic-bezier(.455,.03,.515,.955);
+    transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-webkit-transform 550ms cubic-bezier(.455,.03,.515,.955);
+    transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),transform 550ms cubic-bezier(.455,.03,.515,.955);
     bottom: 0;
     left: 0;
     right: 0;
@@ -341,6 +338,82 @@ body {
     z-index: 20;
     -webkit-transform: translateY(0);
     transform: translateY(0);
+    transition: visibility 0s, opacity 0.01s linear;
+}
+
+
+#legalfooter .inner {
+    margin-top: 75px;
+    background: #1B1B1F;
+    padding: 75px 0;
+}
+
+#legalfooter p {
+    color: #fff;
+    text-align: center;
+    font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    letter-spacing: 1px;
+    text-transform: none;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0 0 20px;
+}
+
+#legalfooter .inner ul {
+    display: block;
+    position: relative;
+    width: 302px;
+    height: 55px;
+    margin: 30px auto 0;
+    list-style-type: none;
+    padding: 0;
+}
+
+#legalfooter .inner ul li {
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    position: relative;
+    width: 55px;
+    height: 55px;
+    border: 1px solid #32323A;
+    margin: 0 20px;
+    padding: 0;
+}
+
+#legalfooter .inner ul li button {
+    overflow: hidden;
+    width: 55px;
+    height: 55px;
+    background: 0 0;
+    padding: 0;
+    margin: 0;
+    color: #BBB;
+}
+
+#legalfooter .inner ul li button>span {
+    padding-top: 17px;
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    top: 0;
+    left: 0;
+}
+
+
+#legalfooter p.header {
+    letter-spacing: .3rem;
+}
+
+.close-footer {
+    position: relative;
+    visibility: hidden !important;
+    opacity: 0 !important;
 }
 
 #collection-footer {
