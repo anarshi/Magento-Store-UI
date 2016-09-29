@@ -7,9 +7,39 @@
      * @author Adam Timberlake
      * @module Moa
      */
-    $moa.controller('ProductController', ['$scope', '$http','$routeParams','$location',
+    $moa.controller('ProductController', ['$scope', '$http','$routeParams','$location','basket' , 
 
-    function ProductController($scope,$http,$routeParams,$location) {
+    function ProductController($scope,$http,$routeParams,$location , basket) {
+
+
+        //http cuntiosn 
+
+        $scope.addToCart = function(){
+            var productId = $routeParams.product_id;
+            if(localStorage.cartId != null && !isNaN(localStorage.cartId)){
+                     basket.addToCart.async(localStorage.cartId,productId).then(function(response){
+                        console.log("1: " + response);
+                        localStorage.cartId = response;
+                        basket.cartData.async(localStorage.cartId).then(function(data){
+                            $scope.cartProducts = data.cartProducts;
+                            $scope.cartCount = data.cartCount;
+                            $scope.totalPrice = data.totalPrice;
+                        });
+                    });
+            } else {
+                 basket.initialize.async(productId).then(function(response){
+                    console.log(response);
+                    localStorage.cartId = response;
+                    basket.cartData.async(localStorage.cartId).then(function(data){
+                        $scope.cartProducts = data.cartProducts;
+                        $scope.cartCount = data.cartCount;
+                        $scope.totalPrice = data.totalPrice;
+                    });
+                });
+            }
+
+           
+        };
 
         $scope.allImages = [];
         var searchCriteria = $routeParams.product_id;
@@ -31,8 +61,6 @@
         $scope.goHome = function(path){
             $location.path(path);
         };
-
-
 
         $scope.direction = 'left';
         $scope.currentIndex = 0;

@@ -16,6 +16,8 @@
             })
             .when("/product/:product_id", {
                 templateUrl : "views/product.html"
+            }).when('/checkout/:cartId',{
+                templateUrl : "views/checkout.html"
             });
     });
 

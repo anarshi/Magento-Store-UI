@@ -7,10 +7,52 @@
      * @author Adam Timberlake
      * @module Moa
      */
-    $moa.controller('ApplicationController', ['$rootScope', '$scope' , '$location' ,
+    $moa.controller('ApplicationController', ['$rootScope', '$scope' , '$location' , '$http' ,'$timeout', 'basket',
 
-    function applicationController($rootScope, $scope , $location) {
+    function applicationController($rootScope, $scope , $location , $http , $timeout , basket) {
 
+        $scope.cartCount = 0;
+
+        //possible delete or reargangement
+        // basket.initialize.async().then(function(data){
+        //     $scope.cartId = data;
+        //     console.log($scope.cartId);
+        //     basket.addToCart.async($scope.cartId,4).then(function(data){
+        //         $scope.cartId = data;
+        //         console.log($scope.cartId);
+                
+        //     }); 
+        // });
+
+
+
+        
+
+        basket.cartData.async(localStorage.cartId).then(function(data){
+            $scope.cartProducts = data.cartProducts;
+            $scope.cartCount = data.cartCount;
+            $scope.totalPrice = data.totalPrice;
+        });
+        
+
+        $scope.removeFromCart = function(el){
+            basket.removeFromCart.async(localStorage.cartId,el.id).then(function(data){
+                localStorage.cartId = data;
+                console.log("ret data: " +data);
+            });
+            var index = $scope.cartProducts.indexOf(el);
+            $scope.cartProducts.splice(index, 1);
+            $scope.cartCount = $scope.cartProducts.length;
+            $scope.totalPrice = 0;
+            for(var i = 0 ; i < $scope.cartProducts.length ; i++){
+                $scope.totalPrice += $scope.cartProducts[i].price;
+            }
+            
+        };
+
+
+         $scope.isCartOpen = false;
+        $scope.cartOpenClass = "";
 
         //view filter elements
         var row1 =  angular.element( document.querySelector( '#div1' ) );
@@ -76,7 +118,13 @@
                 $scope.contentClass = "close-main-container";
                 $scope.modalClass="close-modal";
                 $scope.closeFooter = "";
-            } else {
+            
+            } else if($scope.isCartOpen){
+                $scope.contentClass = "";
+                $scope.cartOpenClass = "asdasd";
+                $scope.bodyOpenModalClass = "";
+                $scope.isCartOpen = false;
+            }else {
                 console.log("Application Controller message \n 'modal is already open' \n SystemDev Message delete in production");
             }
         };
@@ -94,6 +142,26 @@
         $scope.threeRowGrid = function(){
             $scope.productGridType = 'col-md-4 col-xs-4';
             localStorage.setItem('productGridType',$scope.productGridType);
+        };
+
+
+        $scope.goToCart = function(){
+            $location.path('/checkout/' + localStorage.cartId);
+            $scope.closeModal();
+        };
+
+        $scope.openCart = function(){
+            console.log("asdasd");
+            if($scope.isCartOpen === false){
+                console.log("uso");
+                //$scope.cartId = localStorage.cartId;
+                $scope.isCartOpen = true;
+                $scope.contentClass = "move-left-content";
+                $scope.cartOpenClass = "move-cart-left ";
+                 $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
+            } else {
+                console.log("Cart is already open");
+            }
         };
 
         /**

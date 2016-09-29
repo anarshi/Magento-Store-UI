@@ -540,6 +540,60 @@ NAV
     display: none;
 }
 
+.single-footer nav.footerbuttons {
+    bottom: 0;
+    height: 52px;
+    display: inline-block!important;
+    transition: -webkit-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out;
+}
+
+.addbtn{
+        right: 0px;
+    position: absolute;
+    top: 0px;
+    height: 54px;
+    width: 150px;
+    color: white;
+    margin-bottom: 0px;
+    bottom: 0px;
+    background-color: rgb(51,51,51);
+}
+
+.addbtn:focus{
+        right: 0px;
+    position: absolute;
+    top: 0px;
+    height: 54px;
+    width: 150px;
+    color: white;
+    margin-bottom: 0px;
+    bottom: 0px;
+    background-color: rgb(51,51,51);
+}
+
+.addBtn:hover{
+      right: 0px;
+    position: absolute;
+    top: 0px;
+    height: 54px;
+    width: 150px;
+    color: white;
+    margin-bottom: 0px;
+    bottom: 0px;
+    background-color: rgb(51,51,51) !important;
+    cursor: pointer;
+}
+
+/*.button:focus, .button:hover, button:focus, button:hover {
+    background-color: rgb(51,51,51) !important;
+    color: #FFF;
+}
+*/
+.addBtn > p{
+    color:white;
+}
+
 .product-page .info h2 {
     font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
     font-weight: 400;

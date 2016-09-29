@@ -5,6 +5,7 @@
 @import "section/modal.css";
 @import "section/pagination.css";
 @import "section/currencies.css";
+@import "checkout.css";
 
 * {
     margin: 0;
@@ -213,11 +214,45 @@ nav#navBar .cartcount {
     z-index: 100;
 }
 
-.button:focus, .button:hover, button:focus, button:hover {
+
+ul.cart-products li {
+    border-bottom: 1px solid #DEDFE0;
+    display: block;
+    position: relative;
+    width: 281px;
+    height: 281px;
+    transition-property: all,height;
+    transition-duration: .35s,.25s;
+    transition-timing-function: cubic-bezier(.455,.03,.515,.955),cubic-bezier(.455,.03,.515,.955);
+    transition-delay: 0,.3s;
+    margin: 0;
+    padding: 0;
+    left: 0;
+}
+
+ul.cart-products li figure {
+    width: 281px;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+}
+
+
+/*.button:focus, .button:hover, button:focus, button:hover {
     background-color: #007095;
     color: #FFF;
 }
-
+*/
 nav#navBar.ready>span {
     color: black;
     display: block;
@@ -255,6 +290,12 @@ nav#navBar>span {
     -moz-transition: 0.35s ease-in-out;
     -o-transition: 0.35s ease-in-out;
     transition: 0.35s ease-in-out;
+}
+
+.move-left-content{
+    transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(-281px,0,0);
 }
 
 
@@ -323,6 +364,343 @@ body {
     transition-timing-function: cubic-bezier(.645,.045,.355,1);
 }
 
+/* Cart style */
+
+.cart-open #shoppingcart {
+    transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+#shoppingcart {
+    display: block;
+    position: fixed;
+    width: 281px;
+    height: 100%;
+    transition: all .5s cubic-bezier(.645,.045,.355,1);
+    background: #f3f3f5;
+    top: 0;
+    right: 0;
+    letter-spacing: .1875rem;
+    overflow: hidden!important;
+    min-height: 500px;
+    z-index: 9999;
+    margin-top: 0!important;
+    -webkit-transform: translate3d(281px,0,0);
+    transform: translate3d(281px,0,0);
+}
+
+.cartcount.active {
+    background: #000;
+    color: #f3f3f5;
+}
+
+.cartcount.show {
+    right: 26px;
+}
+
+.cartcount {
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    letter-spacing: 0;
+    border-radius: 12px;
+    right: -50px;
+    top: 14px;
+    margin: 0;
+    padding: 0;
+    background: #f3f3f5;
+    color: #000;
+    font-size: .6875rem;
+    text-align: center;
+    line-height: 23px;
+    cursor: pointer;
+    border: 1px solid #FFF;
+    z-index: 100;
+}
+
+.cartcount span.label {
+    display: block;
+    position: absolute;
+    font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    text-indent: 0;
+    font-size: .625rem;
+    text-rendering: auto;
+    -webkit-font-smoothing: initial;
+    right: 24px;
+    top: 4px;
+    height: 14px;
+    line-height: 14px;
+    padding: 0;
+    margin: 0;
+    background: 0 0;
+    opacity: 0;
+    visibility: hidden;
+    color: #1D1D1F;
+    transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+}
+
+.label {
+    font-weight: 400;
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    margin-bottom: inherit;
+    padding: .25rem .5rem;
+    font-size: .6875rem;
+    background-color: #008CBA;
+    color: #FFF;
+}
+
+#shoppingcart #cart-scroll {
+    opacity: 1 !important;
+    left: 0 !important;
+    transition: all 750ms ease .25s !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    width: 281px!important;
+}
+
+/*.ui-cart-item-remove:hover{
+    background: transparent !important;
+    color:black !important;
+}*/
+
+
+
+ul.cart-products li h3, ul.cart-products li p {
+    font-size: 8px;
+    width: 216px;
+}
+
+ul.cart-products li h3, ul.cart-products li h4 {
+    font-family: 'Avenir Next LT Pro Demi',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: 1px !important;
+}
+
+ul.cart-products li h4 {
+    float: right;
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+ul.cart-products li div button:hover {
+    width: 32px;
+    height: 32px;
+    color: #000;
+    text-indent: -9999px;
+    background: url(../images/svg/cancel.svg) left center no-repeat;
+    background-size: 8px;
+    margin: 0;
+    padding: 0;
+    top: -5px;
+}
+
+ul.cart-products li div button:focus {
+    width: 32px;
+    height: 32px;
+    color: #000;
+    text-indent: -9999px;
+    background: url(../images/svg/cancel.svg) left center no-repeat;
+    background-size: 8px;
+    margin: 0;
+    padding: 0;
+    top: -5px;
+}
+
+ul.cart-products li div button {
+    width: 32px;
+    height: 32px;
+    color: #000;
+    text-indent: -9999px;
+    background: url('../images/svg/cancel.svg') left center no-repeat;
+    background-size: 8px;
+    margin: 0;
+    padding: 0;
+    top: -5px;
+}
+
+#shoppingcart #cart-scroll {
+    display: block;
+    position: absolute;
+    overflow: visible;
+    top: 0;
+    bottom: 108px;
+    opacity: 1;
+    visibility: visible;
+}
+
+#cart-scroll > ul > li > figure > img {
+    max-height: 100%;
+    width: auto;
+}
+
+#cart-scroll > ul > li > figure{
+    text-align: center;
+}
+
+ul.cart-products li div {
+    display: block;
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    top: 170px;
+    margin: 0;
+    padding: 0 25px 0 35px;
+}
+
+ul.cart-products {
+
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 281px;
+    overflow: hidden;
+}
+
+.cart-open #shoppingcart footer {
+    bottom: 54px;
+    transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
+}
+
+#shoppingcart footer {
+    transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    bottom: 54px;
+    background: #FFF;
+    color: #000;
+    text-align: left;
+    padding: 0 32px;
+}
+
+#shoppingcart button.checkout, #shoppingcart footer {
+    width: 281px;
+    height: 54px;
+    display: block;
+    position: absolute;
+    font-family: AvenirNextLTPro-Regular,Arial,Helvetica;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: .6875rem;
+    letter-spacing: .1875rem;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    line-height: 54px;
+    text-align: center;
+}
+
+#shoppingcart footer span {
+    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    text-align: right;
+    float: right;
+    width: 50%;
+    padding-right: 35px;
+}
+
+.cart-open #shoppingcart button.checkout {
+    transition: bottom 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
+    bottom: 0;
+}
+
+#shoppingcart button.checkout:disabled {
+    background: #000;
+    opacity: 1;
+    color: rgba(255,255,255,.5);
+}
+
+#shoppingcart button.checkout {
+    transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    bottom: 0;
+    color: #FFF;
+    background: #000;
+    text-align: center;
+    overflow: hidden;
+}
+#shoppingcart button.checkout .spinner.ng-hide {
+    display: none;
+}
+
+.backoffice .button .spinner, .backoffice button .spinner, .button .spinner, button .spinner {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+}
+
+.button[disabled], button[disabled] {
+    background-color: #000!important;
+    cursor: default;
+    opacity: 1!important;
+    box-shadow: none;
+    color: rgba(255,255,255,.5)!important;
+}
+
+#shoppingcart button.checkout>span.hover {
+    top: 100%;
+}
+
+.button[disabled], button[disabled] {
+    background-color: #000!important;
+    cursor: default;
+    opacity: 1!important;
+    box-shadow: none;
+    color: rgba(255,255,255,.5)!important;
+}
+
+.button.disabled, .button[disabled], button.disabled, button[disabled] {
+    background-color: #008CBA;
+    border-color: #007095;
+    color: #FFF;
+    cursor: default;
+    opacity: .7;
+    box-shadow: none;
+}
+#shoppingcart button.checkout {
+    transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    bottom: 0;
+    color: #FFF;
+    background: #000;
+    text-align: center;
+    overflow: hidden;
+}
+
+#shoppingcart button.checkout>span {
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    top: 0;
+    left: 0;
+}
+
+/* */
+
 .footer-bar {
     display: block;
     position: fixed;
@@ -359,6 +737,7 @@ body {
     font-size: 15px;
     line-height: 1.5;
     margin: 0 0 20px;
+    background: rgb(27, 27, 31);    
 }
 
 #legalfooter .inner ul {
