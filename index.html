@@ -56,14 +56,14 @@
                         <h3>{{crProduct.name}}</h3>
                         <p>EU 44 | US 11 | UK 10 QTY: <span class="count">1</span></p>
                                 <h4>€ {{crProduct.price}}</h4>
-                        <button class="ui-cart-item-remove no-hijack" ng-click="removeFromCart(crProduct)" data-href="https://www.etq-amsterdam.com/cart/?remove_item=2f6514b07717d173c8ea48cbd7a9c501&amp;_wpnonce=d886f7f78d">x</button>
+                        <button class="ui-cart-item-remove no-hijack" ng-click="removeFromCart(crProduct)">x</button>
                     </div>
                 </li>
              </ul>
         </div>
 
         <footer>Total <span>€ {{totalPrice}}</span></footer>
-        <button data-href="https://www.etq-amsterdam.com/checkout/" ng-click="goToCart()" class="checkout" >
+        <button ng-click="goToCart()" class="checkout" >
             <span><strong>Checkout</strong></span>
             <span class="hover"><strong>Checkout</strong></span>
             <div class="spinner ng-hide"><div class="bounce1"></div><div class="bounce2"></div></div>
@@ -75,7 +75,7 @@
                 <button role="button" class="menu" ng-click="openModal()">
                     Menu<span class="label">MENU</span>
                 </button>
-                <span class="logo" data-href="https://www.etq-amsterdam.com">ETQ.</span>
+                <span class="logo" data-href="https://www.etq-amsterdam.com">ABC 123.</span>
                 <aside class="cartcount show " ng-click="openCart()">{{cartCount}}<span class="label"></span></aside>
             </nav>
             <figure id="overlay" class="overlay" ng-click="closeModal()"></figure>
