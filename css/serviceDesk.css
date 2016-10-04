@@ -1,0 +1,409 @@
+.page-aside .show {
+    display: block!important;
+    opacity: 1;
+    visibility: visible;
+    left: 0;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(.165,.84,.44,1);
+    transition-delay: 0;
+}
+
+.page-aside {
+    width: 100%;
+    height: auto;
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(.165,.84,.44,1);
+    transition-delay: 0;
+    top: 52px;
+    display: block!important;
+    position: fixed;
+    min-height: calc(100vh - 52px);
+    background: #FFF;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    visibility: visible;
+    z-index: 9;
+}
+
+.page-aside .scroll-container {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    background: #FFF;
+}
+
+.page-aside .scroll-container .title {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    /* font-size: .6875rem; */
+    letter-spacing: .1875rem;
+    padding: 0;
+    text-indent: 43px;
+    line-height: 100px;
+    background: #000;
+    color: #FFF;
+    border: none;
+    margin: 0;
+    z-index: 2;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.page-aside .scroll-container ul {
+    padding: 100px 0 0;
+    margin: 0;
+    list-style-type: none;
+    height: auto;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.page-aside .scroll-container ul li {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100px;
+    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    margin: 0;
+    padding: 0;
+    background: #FBF9F9;
+}
+
+.page-aside .scroll-container ul li a, .page-aside .scroll-container ul li span.key {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: table-cell;
+    color: #000;
+    margin: 0;
+    padding: 0 43px;
+    cursor: pointer;
+    line-height: 24px;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.page-aside .scroll-container.animate {
+    transition: all 500ms cubic-bezier(.165,.84,.44,1);
+}
+
+.page-aside .scroll-container.step {
+    left: 100vw;
+    z-index: 3;
+    overflow-x: hidden;
+}
+
+
+.page-aside .scroll-container {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    background: #FFF;
+}
+
+.page-aside .scroll-container ul li:nth-child(even) {
+    background: #FFF;
+}
+
+
+#service-desk-detail {
+    min-height: 100vh;
+}
+
+#service-desk-detail .content.ng-hide {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    display: block;
+    visibility: hidden;
+}
+
+#service-desk-detail .content {
+    display: block;
+    position: absolute;
+    transition: opacity 500ms ease;
+    opacity: 1;
+    visibility: visible;
+    padding: 0;
+    min-height: calc(100vh - 52px);
+    top: 52px;
+    width: 100%;
+    height: auto;
+    background: #f3f3f5;
+}
+
+#service-desk-detail .content h1 {
+    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    margin: 0 0 40px;
+    padding: 0;
+}
+
+#service-desk-detail .content h1, #service-desk-detail .content p {
+    font-size: 16px;
+}
+
+#service-desk-detail .content a, #service-desk-detail .content h1, #service-desk-detail .content p {
+    color: #000;
+}
+
+#service-desk-detail .content p {
+    font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    margin: 0 0 35px;
+    padding: 0;
+}
+
+#service-desk-detail .content a, #service-desk-detail .content h1, #service-desk-detail .content p {
+    color: #000;
+}
+
+#service-desk-detail .content h1, #service-desk-detail .content p {
+    font-size: 12px;
+}
+
+figure.gallery-image figure {
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+}
+
+figure.asidepage-content figure {
+    margin: 0;
+}
+
+figure {
+    margin: 1em 40px;
+}
+
+figure.asidepage-content {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 0 0 100px;
+    padding: 0;
+}
+
+.page-aside .scroll-container .title a .arrow {
+    width: 12px;
+    height: 12px;
+    display: block;
+    position: absolute;
+    transition: opacity 500ms ease,right 450ms ease;
+    background: url('../images/svg/left-arrow.svg') center left no-repeat;
+    background-size: contain;
+    top: 50%;
+    left: 43px;
+    margin: -6px 0;
+    opacity: 1;
+}
+
+
+.page-aside .scroll-container.animate {
+    transition: all 500ms cubic-bezier(.165,.84,.44,1);
+}
+
+.page-aside .scroll-container.step {
+    left: 100vw;
+    z-index: 3;
+    overflow-x: hidden;
+}
+
+.active {
+    left: 0!important;
+    visibility: visible!important;
+}
+
+.page-aside .scroll-container .title a {
+    color: #FFF;
+    display: block;
+    text-indent: 65px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+#service-desk-detail .content.ng-hide {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    display: block;
+    visibility: hidden;
+}
+
+
+#service-desk-detail .content h1 {
+    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    margin: 0 0 40px;
+    padding: 0;
+}
+
+@media only screen and (min-width: 64.063em){
+    #service-desk-detail .content {
+        padding-top: 149px;
+        padding-left: 523px;
+    }    
+}
+
+
+@media only screen and (max-width: 43.688em){
+    #service-desk-detail .content h1 {
+        width: 100%;
+        height: 80px;
+        color: #FFF;
+        line-height: 80px;
+        text-indent: 20px;
+        margin-bottom: 31px;
+        font-size: 13px;
+        background: url('../images/svg/left-arrow.svg') 25px center no-repeat #000;
+        background-size: 12px;
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: 0 25px;
+    }
+
+    .page-aside .scroll-container .title {
+        text-indent: 25px;
+        height: 80px;
+        line-height: 80px;
+    }
+
+    #service-desk-detail {
+        position: absolute;
+        width: 100vw;
+        overflow: hidden;
+        top: 0;
+        min-height: 0px;
+    }
+
+    #service-desk-detail .content.ontop {
+         z-index: 999;
+    }
+
+    #service-desk-detail .content {
+        left: 0;
+        top: 52px;
+        padding: 0 0 255px;
+        z-index: 10;
+        background: #FFF;
+        visibility: visible;
+        opacity: 1;
+        transition: all 500ms ease;
+        position: relative;
+        height: 100vh;
+        overflow: scroll;
+        min-height: 100vh;
+    }
+
+    #service-desk-detail .content h5, #service-desk-detail .content iframe, #service-desk-detail .content p, #service-desk-detail .content table, #service-desk-detail .content ul {
+        opacity: 1;
+        margin-left: 25px !important;
+        margin-right: 25px !important;
+        transition: opacity 500ms ease;
+    }
+
+    #service-desk-detail .content p {
+        font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
+        font-weight: 400;
+        text-transform: none;
+        letter-spacing: 0;
+        margin: 0 0 35px;
+        padding: 0;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 43.75em){
+	.page-aside.show {
+	    position: fixed;
+	    left: 0;
+	}
+	.page-aside {
+	    display: block;
+	    position: relative;
+	    width: 400px;
+	    height: auto;
+	    float: left;
+	    left: -400px;
+	    overflow: hidden;
+    }
+
+    .page-aside .scroll-container.step {
+	    left: 400px;
+	    overflow-y: auto;
+	    overflow-x: hidden;
+     }
+
+    #service-desk-detail .content {
+    	padding: 94px 20px 0 429px;
+	}
+
+	#service-desk-detail .content table, #service-desk-detail h1, #service-desk-detail p {
+    	width: 95%;
+    }
+
+    h1 {
+       font-size: 2.75rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+    	line-height: 1.4;
+	}
+
+	#service-desk-detail .content table, #service-desk-detail h1, #service-desk-detail p {
+    	width: 95%;
+    }
+
+    #service-desk-detail .content {
+        padding: 94px 20px 0 429px;
+    }
+}
+
+@media only screen and (min-width: 64.063em){
+	#service-desk-detail .content {
+	    padding-top: 149px;
+	    padding-left: 523px;
+	}
+
+	#service-desk-detail .content table, #service-desk-detail h1, #service-desk-detail p {
+    	width: 75%;
+    }
+
+    #service-desk-detail .content table, #service-desk-detail h1, #service-desk-detail p {
+    	width: 75%;
+    }
+}
+
+		

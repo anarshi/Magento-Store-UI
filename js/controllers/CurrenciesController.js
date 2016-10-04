@@ -7,41 +7,74 @@
      * @author Adam Timberlake
      * @module Moa
      */
-    $moa.controller('CurrenciesController', ['$scope', 'http', 'currency', function currenciesController($scope, http, currency) {
+    $moa.controller('LookBookController', ['$scope'  , '$location' , '$http' , function LookBookController($scope,$location,$http) {
 
-        /**
-         * @property currencies
-         * @type {Array}
-         */
-        $scope.currencies = [];
+        $http({
+            method: 'GET',
+            url: 'http://45.79.162.17:8888/lookbook'
+        }).then(function successCallback(response) {
+            console.log(response.data);
+            $scope.products = response.data;
 
-        /**
-         * @property baseCurrency
-         * @type {Object}
-         */
-        $scope.baseCurrency = {};
 
-        /**
-         * @method setCurrency
-         * @param currency {Object}
-         * @return {void}
-         */
-        $scope.setCurrency = currency.setCurrency;
+             $scope.elementIdUp = $scope.products[0].id;
+            $scope.elementIdDown = $scope.products[0].id;
+            $scope.counter = 0;
+              console.log($scope.counter)
 
-        // Fetch all the currencies and their associated rates.
-        http.getCurrencies().then(function then(currencies) {
+            $scope.scrollUp = function(){
+                console.log("asd");
+                $('html, body').animate({
+                    scrollTop: $("#" + $scope.elementIdUp).offset().top
+                }, 2000);
 
-            $scope.currencies = currencies;
+                  console.log($scope.counter)
+                if($scope.counter < 0){
+                    $scope.counter = 0;
+                    $scope.elementIdUp = $scope.products[$scope.counter].id;
+                    $scope.elementIdDown = $scope.products[1].id;
+                } else if($scope.counter > 0){
+                    $scope.elementIdDown = $scope.products[$scope.counter].id;
+                    $scope.elementIdUp = $scope.products[$scope.counter-1].id;
+                }
 
-            // Iterate over all of the currencies to discover the base.
-            $scope.baseCurrency = _.find(currencies, function filter(model) {
-                return !!model.base;
-            });
+                $scope.counter--; 
 
-            // Set the current currency to the base currency.
-            $scope.setCurrency($scope.baseCurrency);
+            };
 
+            $scope.scrollDown = function(){
+                $('html, body').animate({
+                    scrollTop: $("#" + $scope.elementIdDown).offset().top
+                }, 2000);
+                
+                if($scope.counter >= $scope.products.length){
+                    $scope.elementIdDown = $scope.products[$scope.counter].id;
+                    $scope.elementIdUp = $scope.products[$scope.counter-1].id;
+                }else {
+                    console.log($scope.counter);
+
+                    $scope.elementIdDown = $scope.products[$scope.counter + 1].id;
+                    $scope.elementIdUp = $scope.products[$scope.counter];
+                }
+                $scope.counter++;
+                
+
+            };
+
+
+        }, function errorCallback(response) {
+            console.log("ERROR: " + response);
         });
+
+        $scope.goToProduct = function(id){
+            $location.path('/product/' + id)
+        };
+
+        
+
+       
+
+
         
     }]);
 

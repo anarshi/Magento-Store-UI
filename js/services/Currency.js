@@ -9,25 +9,11 @@
      */
     $moa.service('currency', ['$rootScope', function currencyService($rootScope) {
 
-        var service = {};
+       this.changeActiveClasToDiv = function(id){
+       // active-modal-link
 
-        /**
-         * @property model
-         * @type {Object}
-         */
-        service.model = false;
-
-        /**
-         * @method setCurrency
-         * @param model {Object}
-         * @return {void}
-         */
-        service.setCurrency = function setCurrency(model) {
-            service.model = model;
-            $rootScope.$broadcast('currency/changed', model);
-        };
-
-        return service;
+       };
+        
 
     }]);
 

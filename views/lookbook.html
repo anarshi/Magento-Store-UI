@@ -1,0 +1,18 @@
+<div class="lookbook-page" style="opacity:1" ng-controller="LookBookController">
+	<div class="transform-container">
+		<figure ng-repeat="lookBook in products" class="lookbook-image" ng-click = "goToProduct(lookBook.id)" ng-style="{ 'background-image': 'url({{ lookBook.allImages[0] }})' }" id="{{ lookBook.id }}" ></figure>
+	</div>
+	<footer id="lookbook-footer"  class="footer-bar" ng-class="closeFooter">
+    <!-- <ul>
+        <li class="hide-for-touch">
+            <button role="button" class="items prev" ><span>-</span><span class="hover">-</span></button>
+        </li>
+        <li class="hide-for-touch">
+            <button role="button" class="items next" ><span>+</span><span class="hover">+</span></button>
+        </li>
+        <!-- <li>
+            <button role="button" id="viewBtn" data-href="https://www.etq-amsterdam.com/shop/low-4-rubberized-porto-eggshell/" class=""><span>View</span><span class="hover">View</span></button>
+        </li> -->
+<!--     </ul> --> 
+</footer>
+</div>

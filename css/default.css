@@ -6,6 +6,9 @@
 @import "section/pagination.css";
 @import "section/currencies.css";
 @import "checkout.css";
+@import "lookbook.css";
+@import "about.css";
+@import "serviceDesk.css";
 
 * {
     margin: 0;
@@ -186,35 +189,6 @@ nav#navBar .cartcount {
     transition-delay: .4s;
 }
 
-.cartcount.show {
-    right: 26px;
-}
-
-.cartcount {
-    display: block;
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 0px;
-    border-radius: 12px;
-    right: -50px;
-    top: 14px;
-    margin: 0;
-    padding: 0;
-    background: #f3f3f5;
-    color: #000;
-    font-size: 12px;
-    text-align: center;
-    line-height: 23px;
-    cursor: pointer;
-    border: 1px solid #FFF;
-    z-index: 100;
-}
-
-
 ul.cart-products li {
     border-bottom: 1px solid #DEDFE0;
     display: block;
@@ -391,8 +365,9 @@ body {
 }
 
 .cartcount.active {
-    background: #000;
-    color: #f3f3f5;
+    background: #000 !important;
+    color: #f3f3f5 !important;
+    left: inherit !important;
 }
 
 .cartcount.show {

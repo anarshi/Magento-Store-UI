@@ -1,0 +1,50 @@
+.lookbook-image {
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    transition-timing-function: cubic-bezier(.77,0,.175,1);
+    transition-duration: .7s;
+    transition-property: opacity;
+    background: center center no-repeat #f3f3f5;
+    background-size: cover !important;
+    margin: 0;
+    padding: 0;
+    overflow: hidden!important;
+}
+
+body{
+        width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility!important;
+    -webkit-font-smoothing: antialiased!important;
+    background: #f3f3f5;
+    left: 0;
+    right: 0;
+}
+
+#lookbook-footer {
+    opacity: 1;
+    height: 54px;
+    visibility: visible;
+    bottom: 0;
+    transition: opacity 450ms cubic-bezier(.455,.03,.515,.955) 500ms,visibility 450ms cubic-bezier(.455,.03,.515,.955) 500ms,bottom 550ms cubic-bezier(.455,.03,.515,.955) 500ms;
+}
+
+.footer-bar li .items span {
+    background-color: white;
+    opacity: 0.4;
+    background-size: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../images/svg/arrowIcon.svg);
+}
+
+.footer-bar li .items.next span {
+    background-image: url('../images/svg/down-arrow.svg');
+}
+
+.footer-bar li .items.prev span {
+    background-image: url('../images/svg/up-arrow.svg');
+}

@@ -7,122 +7,59 @@
      * @author Adam Timberlake
      * @module Moa
      */
-    $moa.controller('AccountController', ['$scope', 'http', 'basket',
+    $moa.controller('AccountController', ['$scope', '$location' ,
 
-    function accountController($scope, http, basket) {
+    function accountController($scope, $location) {
 
-        /**
-         * @property account
-         * @type {Object|null}
-         * @default null
-         */
-        $scope.account = null;
+        if($location.path() === '/'){
+            $scope.side1 = 'active-modal-link';
+            $scope.side2 = '';
+            $scope.side3 = '';
+            $scope.side4 = '';
+        }
 
-        /**
-         * @property loading
-         * @type {Boolean}
-         * @default null
-         */
-        $scope.loading = false;
+        $scope.$on('$locationChangeSuccess', function(/* EDIT: remove params for jshint */) {
+            var path = $location.path();
 
-        /**
-         * @property error
-         * @type {String}
-         */
-        $scope.error = '';
+            //EDIT: cope with other path
+            if(path === '/lookbook'){
+                $scope.lookbook = 'active-modal-link';
+                $scope.collection = '';
+                $scope.about = '';
+                $scope.service = '';
+            } 
 
-        /**
-         * @constant ERRORS
-         * @type {Object}
-         */
-        $scope.ERRORS = {
-            email: 'You must specify your email address.',
-            exists: 'User already exists in the database.',
-            credentials: 'Invalid email and/or password.',
-            unknown: 'An unknown error occurred.'
-        };
+            console.log(path);
 
-        /**
-         * @property registerAccount
-         * @type {Object}
-         */
-        $scope.registerAccount = { firstName: '', lastName: '', email: '', password: '' };
+            if(path === '/'){
+                 $scope.collection = 'active-modal-link';
+                $scope.lookbook = '';
+                $scope.about = '';
+                $scope.service = '';
 
-        /**
-         * @property loginAccount
-         * @type {Object}
-         */
-        $scope.loginAccount = { email: $localStorage.getItem('email'), password: '' };
-
-        /**
-         * @method _processResponse
-         * @param response {Object}
-         * @private
-         */
-        var _processResponse = function _processResponse(response) {
-
-            $scope.loading = false;
-
-            if (response.success) {
-
-                // Lovely! No errors whatsoever.
-                $scope.error = '';
-
-                if (response.model) {
-                    // Update the account model if we have one.
-                    $scope.account = response.model;
-
-                    if (response.model.email) {
-                        $localStorage.setItem('email', response.model.email);
-                    }
-                }
-
-                return;
             }
 
-            // Otherwise we have an error, so let's make the customer aware of it.
-            $scope.error = $scope.ERRORS[response.error];
+            if(path == '/about'){
+                $scope.collection = '';
+                $scope.lookbook = '';
+                $scope.about = 'active-modal-link';
+                $scope.service = '';
+            }
 
+            if(path == '/service'){
+                $scope.collection = '';
+                $scope.lookbook = '';
+                $scope.about = '';
+                $scope.service = 'active-modal-link';
+            }
+
+           // $scope.templateUrl = (path==='/' || path==='/') ? 'template/header4signin.html' : 'template/header4normal.html' ;
+        });
+
+        $scope.goHome = function(path){
+            $location.path(path);
+            console.log("Home");
         };
-
-        /**
-         * @method login
-         * @param model {Object}
-         * @return {void}
-         */
-        $scope.login = function login(model) {
-
-            $scope.loading = true;
-            http.login(model).then(function then(response) {
-                $scope.loginAccount.password = '';
-                _processResponse(response);
-                basket.updateBasket();
-            });
-
-        };
-
-        /**
-         * @method register
-         * @param model {Object}
-         * @return {void}
-         */
-        $scope.register = function register(model) {
-            $scope.loading = true;
-            http.register(model).then(_processResponse);
-        };
-
-        /**
-         * @method logout
-         * @return {void}
-         */
-        $scope.logout = function logout() {
-            $scope.loading = true;
-            http.logout().then(_processResponse);
-        };
-
-        // Fetch the user if they're already signed into their account.
-        http.getAccount().then(_processResponse);
-
     }]);
 
 })(window.moaApp, window.localStorage);

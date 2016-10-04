@@ -18,6 +18,12 @@
                 templateUrl : "views/product.html"
             }).when('/checkout/:cartId',{
                 templateUrl : "views/checkout.html"
+            }).when('/lookbook',{
+                templateUrl : "views/lookbook.html"
+            }).when('/about' , {
+                templateUrl : "views/about.html"
+            }).when('/service' , {
+                templateUrl : "views/serviceDesk.html"
             });
     });
 

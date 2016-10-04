@@ -1,0 +1,332 @@
+body {
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility!important;
+    -webkit-font-smoothing: antialiased!important;
+    background: #f3f3f5;
+    left: 0;
+    right: 0;
+    color: #222;
+    padding: 0;
+    margin: 0;
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+    position: relative;
+    cursor: auto;
+}
+
+#about {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#aboutintro {
+    margin-top: 0;
+    top: 0;
+    color: #FFF;
+    background: #000;
+}
+
+.about-template {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    left: 0;
+    background: 0 0;
+    overflow: hidden;
+}
+
+#aboutintro .start {
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    margin: -75px -100px;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+}
+
+#aboutintro .start h1 {
+    font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    color: #FFF;
+    font-size: 12px;
+    line-height: 1.4375rem;
+}
+
+#aboutintro .start span {
+    display: block;
+    position: absolute;
+    width: 10px;    
+    height: 209px;
+    background: url('../images/svg/about-arrow.svg') center center no-repeat;
+    background-size: 56px 54px;
+    text-align: center;
+    text-indent: -9999px;
+    margin: 0 -5px;
+    left: 50%;
+    bottom: -40px;
+}
+
+.about-template-1 figure {
+    right: 0;
+    width: 60vw;
+}
+
+.about-template figure {
+    opacity: 1;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    transition: opacity 1s ease-out;
+    z-index: 2;
+}
+
+
+.about-template aside, .about-template figure {
+    display: block;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
+.about-template .vertical-center {
+    display: block;
+    position: absolute;
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    top: 50%;
+}
+
+.about-template h2 {
+    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 700 !important;
+    letter-spacing: .1875rem !important;
+    /* padding: 0; */
+    font-size: 9px !important;
+    margin-bottom: 25px !important;
+    line-height: .6875rem !important;
+}
+
+.about-template h2, .about-template p {
+    font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    color: #000;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.about-template-1 aside p.large {
+    width: 42vw;
+}
+
+.about-template p.large {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 75px;
+}
+
+.about-template-1 aside p {
+    width: 30vw;
+}
+
+.about-template p {
+    letter-spacing: 0 !important;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: none !important;
+}
+
+
+.about-template h2, .about-template p {
+    font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    color: #000 !important;
+    text-align: left !important;
+    padding: 0;
+    margin: 0 ;
+}
+
+.about-template figure img {
+    display: none;
+}
+
+.about-template-1 aside {
+    width: 40vw;
+    left: 0;
+    background: #FFF;
+    padding: 0 100px;
+    z-index: 3;
+}
+
+.about-template aside, .about-template figure {
+    display: block;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.about-template-2 figure {
+    left: 0;
+    width: 40vw;
+    background-color: #FFF;
+}
+
+.about-template-2 aside {
+    width: 60vw;
+    right: 0;
+    background: #f3f3f5;
+    padding: 0 0 0 100px;
+}
+
+.about-template-2 aside p {
+    display: inline-block;
+    vertical-align: text-top;
+    margin-right: 70px;
+    width: 19vw;
+}
+
+
+@media only screen and (orientation: portrait){
+	#aboutintro {
+	    width: 100vw;
+	    height: 50vh !important;
+	    top: auto !important;
+	    margin-top: 0;
+	    padding-top: 52px;
+	    min-height: 50vh !important;
+	}
+
+}
+
+@media only screen and (max-width: 1108px) and (min-width: 720px) {
+    .about-template-1 aside, .about-template-1 figure {
+            width: 50vw;
+            padding: 0 60px;
+    }
+
+        .about-template-1 aside, .about-template-1 figure {
+        width: 50vw;
+        padding: 0 60px;
+    }
+
+
+        p.large, .about-template-1 figure p.large {
+    width: 50vw;
+}
+
+.about-template-1 aside, .about-template-1 figure {
+    width: 50vw;
+    padding: 0 60px;
+}
+
+.about-template-2 aside {
+    padding: 0 10px 0 50px;
+}
+
+.about-template-2 aside p.large {
+    width: 50vw;
+}
+
+}
+
+
+@media only screen and (max-width: 43.688em){
+	.about-template figure {
+	    display: block;
+	    position: relative;
+	    width: 100vw !important;
+	    height: 240px;
+	    top: 0;
+	    margin-bottom: 0;
+	}
+
+    .about-template figure {
+        display: block;
+        position: relative;
+        width: 100vw!important;
+        height: 240px;
+        top: 0;
+        margin-bottom: 0;
+    }
+
+	.about-template aside, .about-template figure {
+	    display: block;
+	    position: relative;
+	    margin: 0px;
+	    top: auto;
+	    bottom: 0;
+	}
+
+    .about-template {
+        display: block;
+        position: relative;
+        width: 100vw;
+        height: inherit !important;
+        min-height: 100vh !important;
+        top: auto!important;
+        padding-left:0px !important;
+    }
+
+	.about-template .vertical-center {
+	    display: block;
+	    position: relative;
+	    -webkit-transform: translate(0,0) !important;
+	    transform: translate(0,0) !important;
+	    top: auto;
+	}
+
+
+    .about-template-1 aside p.large {
+    		margin-bottom: 60px;
+	}
+
+	.about-template-1 aside p {
+    		width: 100% !important;
+	}
+	.about-template h2 {
+       font-size: 12px !important;
+       line-height: 12px !important;
+   }
+
+   .about-template-2 aside p+p {
+      margin-right: 0;
+   }
+
+   .about-template-2 aside p {
+       width: 100%!important;
+   }
+
+	.about-template aside {
+	    display: block;
+	    position: relative;
+	    margin: 0;
+	    padding: 50px 25px!important;
+	    width: 100vw!important;
+	    height: auto;
+	}
+}

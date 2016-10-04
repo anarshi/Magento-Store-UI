@@ -28,6 +28,7 @@
     <script src="js/controllers/CurrenciesController.js"></script>
     <script src="js/controllers/AccountController.js"></script>
     <script src="js/controllers/FiltersController.js"></script>
+    <script src="js/controllers/ServiceDeskController.js"></script>
     <script src="js/controllers/ModalController.js"></script>
     <script src="js/filters/Convert.js"></script>
     <script src="js/directives/Sidebar.js"></script>
@@ -45,7 +46,7 @@
         <div class="view left-sidebar-menu-container" ng-include="'views/sidebarMenu.html'"></div>
     </section>
     <aside id="shoppingcart" class="shoppingcart" ng-class="cartOpenClass" data-quantity="0">
-        <aside class="cartcount active">{{cartCount}}<span class="label">CLOSE</span></aside>
+        <aside class="cartcount show active">{{cartCount}}<span class="label">CLOSE</span></aside>
         <div id="cart-scroll">
             <ul class="cart-products">
                 <li product-id="{{crProduct.id}}" ng-repeat="crProduct in cartProducts">

@@ -7,26 +7,32 @@
      * @author Adam Timberlake
      * @module Moa
      */
-    $moa.controller('ApplicationController', ['$rootScope', '$scope' , '$location' , '$http' ,'$timeout', 'basket',
+    $moa.controller('ApplicationController', ['$rootScope', '$scope'  ,'$location' , '$http' ,'$timeout', 'basket',
 
     function applicationController($rootScope, $scope , $location , $http , $timeout , basket) {
 
+         $scope.$on('$locationChangeSuccess', function(/* EDIT: remove params for jshint */) {
+              if($scope.isModalOpen){
+                $scope.isModalOpen = false;
+                $scope.bodyOpenModalClass = "";
+                $scope.sidebar_footer_class = "close-modal-footer";
+                $scope.contentClass = "close-main-container";
+                $scope.modalClass="close-modal";
+                $scope.closeFooter = "";
+            
+            } else if($scope.isCartOpen){
+                $scope.contentClass = "";
+                $scope.cartOpenClass = "asdasd";
+                $scope.bodyOpenModalClass = "";
+                $scope.isCartOpen = false;
+            }else {
+                console.log("Application Controller message \n 'modal is already open' \n SystemDev Message delete in production");
+            }
+
+         });
+
+
         $scope.cartCount = 0;
-
-        //possible delete or reargangement
-        // basket.initialize.async().then(function(data){
-        //     $scope.cartId = data;
-        //     console.log($scope.cartId);
-        //     basket.addToCart.async($scope.cartId,4).then(function(data){
-        //         $scope.cartId = data;
-        //         console.log($scope.cartId);
-                
-        //     }); 
-        // });
-
-
-
-        
 
         basket.cartData.async(localStorage.cartId).then(function(data){
             $scope.cartProducts = data.cartProducts;
@@ -159,6 +165,7 @@
                 $scope.contentClass = "move-left-content";
                 $scope.cartOpenClass = "move-cart-left ";
                  $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
+
             } else {
                 console.log("Cart is already open");
             }
