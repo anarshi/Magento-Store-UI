@@ -102,9 +102,9 @@
                 $scope.closeFooter = "close-footer";
                 $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
                 $scope.sidemenuFooterOpen = "sidemenu-footer-open";
-                // document.ontouchmove = function (e) {
-                //   e.preventDefault();
-                // }
+                document.ontouchmove = function (e) {
+                  e.preventDefault();
+                }
             }
         };
 
@@ -132,6 +132,9 @@
                 $scope.closeFooter = "";
                 $scope.openSidemenu = "";
                 $scope.sidemenuFooterOpen = ""
+                document.ontouchmove = function (e) {
+                  return true;
+                }
             
             } else if($scope.isCartOpen){
                 $scope.contentClass = "";
