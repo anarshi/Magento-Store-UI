@@ -21,6 +21,7 @@ body, html {
     background-color: rgb(243,243,243) !important;
 }
 
+
 .cart-open .overlay, .menu-open .overlay {
     visibility: visible;
     opacity: 1;
