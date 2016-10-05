@@ -26,6 +26,10 @@ body, html {
     visibility: visible;
     opacity: 1;
     transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -o-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -ms-transition: all .5s cubic-bezier(.645,.045,.355,1);
 }
 
 .ui-cart-item-remove:focus{
@@ -117,6 +121,10 @@ nav#navBar .menu {
     height: 52px;
     background-size: 18px 14px !important;
     transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
+    -o-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
+    -moz-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
+    -webkit-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
+    -ms-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
     background-image: url('../images/svg/menu.svg') !important;
     opacity: 1;
 }
@@ -125,12 +133,16 @@ nav#navBar .menu {
     display: block;
     position: fixed;
     width: 100%;
-    min-height: 1000vw;
+    min-height: 2000px;
     z-index: 99;
     background: rgba(29,29,31,.6);
     visibility: hidden;
     opacity: 0;
     transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -o-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -ms-transition: all .5s cubic-bezier(.645,.045,.355,1);
 }
 
 a {
@@ -192,6 +204,11 @@ nav#navBar .cartcount {
     position: fixed;
     overflow: visible;
     transition-delay: .4s;
+    -o-transition-delay: .4s;
+    -moz-transition-delay: .4s;
+    -webkit-transition-delay: .4s;
+    -ms-transition-delay: .4s;
+
 }
 
 ul.cart-products li {
@@ -204,6 +221,28 @@ ul.cart-products li {
     transition-duration: .35s,.25s;
     transition-timing-function: cubic-bezier(.455,.03,.515,.955),cubic-bezier(.455,.03,.515,.955);
     transition-delay: 0,.3s;
+
+    -o-transition-property: all,height;
+    -o-transition-duration: .35s,.25s;
+    -o-transition-timing-function: cubic-bezier(.455,.03,.515,.955),cubic-bezier(.455,.03,.515,.955);
+    -o-transition-delay: 0,.3s;
+
+    -moz-transition-property: all,height;
+    -moz-transition-duration: .35s,.25s;
+    -moz-transition-timing-function: cubic-bezier(.455,.03,.515,.955),cubic-bezier(.455,.03,.515,.955);
+    -moz-transition-delay: 0,.3s;
+
+    -ms-transition-property: all,height;
+    -ms-transition-duration: .35s,.25s;
+    -ms-transition-timing-function: cubic-bezier(.455,.03,.515,.955),cubic-bezier(.455,.03,.515,.955);
+    -ms-transition-delay: 0,.3s;
+
+    -webkit-transition-property: all,height;
+    -webkit-transition-duration: .35s,.25s;
+    -webkit-transition-timing-function: cubic-bezier(.455,.03,.515,.955),cubic-bezier(.455,.03,.515,.955);
+    -webkit-transition-delay: 0,.3s;
+
+
     margin: 0;
     padding: 0;
     left: 0;
@@ -252,6 +291,10 @@ nav#navBar.ready>span {
     margin: -15px -36px;
     /* text-indent: -9999px; */
     transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
+    -o-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
+    -moz-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
+    -webkit-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
+    -ms-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
 }
 
 nav#navBar>span {
@@ -262,9 +305,12 @@ nav#navBar>span {
 }
 
 .move-right-content{
-    -ms-transform: translate(280px,0px); /* IE 9 */
+    -ms-transform: translate(280px,0px); /* IE 9+ */
     -webkit-transform: translate(280px,0px); /* Safari */
     transform: translate(280px,0px); /* Standard syntax */
+    -o-transform: translate(280px,0px); /* opera */
+    -moz-transform: translate(280px,0px); /* mozzila */
+
     -webkit-transition: 0.35s ease-in-out;
     -moz-transition: 0.35s ease-in-out;
     -o-transition: 0.35s ease-in-out;
@@ -273,8 +319,16 @@ nav#navBar>span {
 
 .move-left-content{
     transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -webkit-transform: translate3d(0,0,0);
+    -o-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
+
+
+    -webkit-transform: translate3d(-281px,0,0);
     transform: translate3d(-281px,0,0);
+    -o-transform: translate3d(-281px,0,0);
+    -moz-transform: translate3d(-281px,0,0);
+    -ms-transform: translate3d(-281px,0,0);
 }
 
 
@@ -287,6 +341,21 @@ nav#navBar>span {
     transition-property: transform;
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(.645,.045,.355,1);
+
+    transition-property: -o-transform;
+    transition-property: transform;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(.645,.045,.355,1);
+
+    transition-property: -moz-transform;
+    transition-property: transform;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(.645,.045,.355,1);
+
+    transition-property: -ms-transform;
+    transition-property: transform;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(.645,.045,.355,1);
 }
 
 
@@ -296,6 +365,10 @@ nav#navBar>span {
     width: 100%;
     height: auto;
     transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
+    -o-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
+    -moz-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
+    -wekit-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
+    -ms-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
     background: #f3f3f5;
     float: left;
     top: 72px;
@@ -310,6 +383,11 @@ nav#navBar>span {
     margin:0px !important;
     padding:0px !important;
     transition-property: -webkit-transform;
+    transition-property: -o-transform;
+    transition-property: -moz-transform;
+    transition-property: -ms-transform;
+    transition-property: -transform;
+
     transition-property: transform;
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(.645,.045,.355,1);
@@ -339,15 +417,28 @@ nav#navBar>span {
 body {
     overflow-x: hidden;
     transition-property: transform;
+    transition-property: -o-transform;
+    transition-property: -moz-transform;
+    transition-property: -ms-transform;
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(.645,.045,.355,1);
+
+
 }
 
 /* Cart style */
 
 .cart-open #shoppingcart {
     transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -o-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -ms-transition: all .5s cubic-bezier(.645,.045,.355,1);
+
     -webkit-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
 }
 
@@ -357,6 +448,10 @@ body {
     width: 281px;
     height: 100%;
     transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -o-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -ms-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
     background: #f3f3f5;
     top: 0;
     right: 0;
@@ -366,6 +461,9 @@ body {
     z-index: 9999;
     margin-top: 0!important;
     -webkit-transform: translate3d(281px,0,0);
+    -moz-transform: translate3d(281px,0,0);
+    -o-transform: translate3d(281px,0,0);
+    -ms-transform: translate3d(281px,0,0);
     transform: translate3d(281px,0,0);
 }
 
@@ -426,6 +524,10 @@ body {
     visibility: hidden;
     color: #1D1D1F;
     transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -moz-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -ms-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -o-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -webkit-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
 }
 
 .label {
@@ -448,6 +550,10 @@ body {
     opacity: 1 !important;
     left: 0 !important;
     transition: all 750ms ease .25s !important;
+    -moz-transition: all 750ms ease .25s !important;
+    -webkit-transition: all 750ms ease .25s !important;
+    -ms-transition: all 750ms ease .25s !important;
+    -o-transition: all 750ms ease .25s !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
     width: 281px!important;
@@ -558,10 +664,18 @@ ul.cart-products {
 .cart-open #shoppingcart footer {
     bottom: 54px;
     transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
+    -o-transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
+    -moz-transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
+    -webkit-transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
+    -ms-transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
 }
 
 #shoppingcart footer {
     transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -o-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -moz-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -webkit-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -ms-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
     bottom: 54px;
     background: #FFF;
     color: #000;
@@ -599,6 +713,10 @@ ul.cart-products {
 
 .cart-open #shoppingcart button.checkout {
     transition: bottom 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
+    -o-transition: bottom 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
+    -moz-transition: bottom 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
+    -webkit-transition: bottom 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
+    -ms-transition: bottom 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
     bottom: 0;
 }
 
@@ -610,6 +728,10 @@ ul.cart-products {
 
 #shoppingcart button.checkout {
     transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -moz-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -ms-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -o-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -webkit-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
     bottom: 0;
     color: #FFF;
     background: #000;
@@ -661,6 +783,10 @@ ul.cart-products {
 }
 #shoppingcart button.checkout {
     transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -o-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -moz-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -webkit-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -ms-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
     bottom: 0;
     color: #FFF;
     background: #000;
@@ -675,6 +801,10 @@ ul.cart-products {
     width: 100%;
     height: 100%;
     transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -o-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -moz-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -webkit-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -ms-transition: top .35s cubic-bezier(.455,.03,.515,.955);
     top: 0;
     left: 0;
 }
@@ -686,6 +816,8 @@ ul.cart-products {
     position: fixed;
     transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-webkit-transform 550ms cubic-bezier(.455,.03,.515,.955);
     transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),transform 550ms cubic-bezier(.455,.03,.515,.955);
+    transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-o-transform 550ms cubic-bezier(.455,.03,.515,.955);
+    transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-moz-transform 550ms cubic-bezier(.455,.03,.515,.955);
     bottom: 0;
     left: 0;
     right: 0;
@@ -694,9 +826,18 @@ ul.cart-products {
     visibility: visible;
     overflow: hidden;
     z-index: 20;
+
     -webkit-transform: translateY(0);
     transform: translateY(0);
+    -o-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+
     transition: visibility 0s, opacity 0.01s linear;
+    -o-transition: visibility 0s, opacity 0.01s linear;
+    -moz-transition: visibility 0s, opacity 0.01s linear;
+    -webkit-transition: visibility 0s, opacity 0.01s linear;
+    -ms-transition: visibility 0s, opacity 0.01s linear;
 }
 
 
@@ -760,6 +901,10 @@ ul.cart-products {
     width: 100%;
     height: 100%;
     transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -o-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -moz-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -webkit-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -ms-transition: top .35s cubic-bezier(.455,.03,.515,.955);
     top: 0;
     left: 0;
 }
@@ -790,6 +935,10 @@ ul.cart-products {
     position: relative;
     width: auto;
     transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
     background: rgba(243,243,245,.56);
     float: left;
     height: inherit;
@@ -810,6 +959,10 @@ ul.cart-products {
     width: 60px;
     height: 54px;
     transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
+    -moz-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
+    -o-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
+    -webkit-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
+    -ms-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
     text-decoration: none;
     text-indent: -9999px;
     outline: 0;
@@ -840,6 +993,10 @@ ul.cart-products {
     border-color: #007095;
     color: #FFF;
     transition: background-color 300ms ease-out;
+    -moz-transition: background-color 300ms ease-out;
+    -webkit-transition: background-color 300ms ease-out;
+    -o-transition: background-color 300ms ease-out;
+    -ms-transition: background-color 300ms ease-out;
 }
 
 .footer-bar li .items.row4 span {
@@ -866,6 +1023,10 @@ ul.cart-products {
     width: 100%;
     height: 100%;
     transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -o-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -moz-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -webkit-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -ms-transition: top .35s cubic-bezier(.455,.03,.515,.955);
     top: 0;
     left: 0;
 }
@@ -895,6 +1056,10 @@ ul.cart-products {
     width: 100%;
     height: 100%;
     transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -o-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -moz-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -webkit-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -ms-transition: top .35s cubic-bezier(.455,.03,.515,.955);
     top: 0;
     left: 0;
 }
@@ -903,6 +1068,10 @@ nav.footerbuttons {
     display: block;
     position: absolute;
     transition: opacity .5s cubic-bezier(.25,.46,.45,.94),visibility .5s cubic-bezier(.25,.46,.45,.94);
+    -o-transition: opacity .5s cubic-bezier(.25,.46,.45,.94),visibility .5s cubic-bezier(.25,.46,.45,.94);
+    -moz-transition: opacity .5s cubic-bezier(.25,.46,.45,.94),visibility .5s cubic-bezier(.25,.46,.45,.94);
+    -webkit-transition: opacity .5s cubic-bezier(.25,.46,.45,.94),visibility .5s cubic-bezier(.25,.46,.45,.94);
+    -ms-transition: opacity .5s cubic-bezier(.25,.46,.45,.94),visibility .5s cubic-bezier(.25,.46,.45,.94);
     overflow: hidden;
     opacity: 0;
     right: -400px;

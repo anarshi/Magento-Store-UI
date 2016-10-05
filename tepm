@@ -1,0 +1,278 @@
+<div className="col-md-12 col-xs-12 col-lg-12 no-padding chat-element-container">
+          <ul className="chat-list-container">
+              <li class="chat-list-element">
+                  <div className="col-md-12 col-xs-12 col-lg-12 no-padding chat-element">
+                      <div className="col-md-2 col-xs-2 col-lg-2 chat-image">
+                          <Img src="/assets/avatar.png"  width="60" height="60" className="img-circle"/>
+                      </div>
+                      <div className="col-md-10 col-xs-10 col-lg-10 title-and-time">
+                          <div className="col-md-12 col-xs-12 col-lg-12 no-padding">
+                              <div className="col-md-6 col-md-6 col-lg-6 chat-title no-padding">
+                                  WordPress Website
+                              </div>
+                              <div className="col-md-6 col-xs-6 col-lg-6 time no-padding">
+                                  5 minutes ago
+                              </div>
+                              <div className="col-md-12 col-xs-12 col-lg-12 message-content no-padding">
+                                  This is a project communication link for <strong>WordPress Website</strong> project
+                                  for <strong>XERO Limited</strong>. Keep the communication alive at all times.
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="chat-list-element">
+                  <div className="col-md-12 col-xs-12 col-lg-12 no-padding chat-element">
+                      <div className="col-md-2 col-xs-2 col-lg-2 chat-image">
+                          <Img src="/assets/avatar.png"  width="60" height="60" className="img-circle"/>
+                      </div>
+                      <div className="col-md-10 col-xs-10 col-lg-10 title-and-time">
+                          <div className="col-md-12 col-xs-12 col-lg-12 no-padding">
+                              <div className="col-md-6 col-md-6 col-lg-6 chat-title no-padding">
+                                  WordPress Website
+                              </div>
+                              <div className="col-md-6 col-xs-6 col-lg-6 time no-padding">
+                                  5 minutes ago
+                              </div>
+                              <div className="col-md-12 col-xs-12 col-lg-12 message-content no-padding">
+                                  This is a project communication link for <strong>WordPress Website</strong> project
+                                  for <strong>XERO Limited</strong>. Keep the communication alive at all times.
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="chat-list-element">
+                  <div className="col-md-12 col-xs-12 col-lg-12 no-padding chat-element">
+                      <div className="col-md-2 col-xs-2 col-lg-2 chat-image">
+                          <Img src="/assets/avatar.png"  width="60" height="60" className="img-circle"/>
+                      </div>
+                      <div className="col-md-10 col-xs-10 col-lg-10 title-and-time">
+                          <div className="col-md-12 col-xs-12 col-lg-12 no-padding">
+                              <div className="col-md-6 col-md-6 col-lg-6 chat-title no-padding">
+                                  WordPress Website
+                              </div>
+                              <div className="col-md-6 col-xs-6 col-lg-6 time no-padding">
+                                  5 minutes ago
+                              </div>
+                              <div className="col-md-12 col-xs-12 col-lg-12 message-content no-padding">
+                                  This is a project communication link for <strong>WordPress Website</strong> project
+                                  for <strong>XERO Limited</strong>. Keep the communication alive at all times.
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="chat-list-element">
+                  <div className="col-md-12 col-xs-12 col-lg-12 no-padding chat-element">
+                      <div className="col-md-2 col-xs-2 col-lg-2 chat-image">
+                          <Img src="/assets/avatar.png"  width="60" height="60" className="img-circle"/>
+                      </div>
+                      <div className="col-md-10 col-xs-10 col-lg-10 title-and-time">
+                          <div className="col-md-12 col-xs-12 col-lg-12 no-padding">
+                              <div className="col-md-6 col-md-6 col-lg-6 chat-title no-padding">
+                                  WordPress Website
+                              </div>
+                              <div className="col-md-6 col-xs-6 col-lg-6 time no-padding">
+                                  5 minutes ago
+                              </div>
+                              <div className="col-md-12 col-xs-12 col-lg-12 message-content no-padding">
+                                  This is a project communication link for <strong>WordPress Website</strong> project
+                                  for <strong>XERO Limited</strong>. Keep the communication alive at all times.
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="chat-list-element">
+                  <div className="col-md-12 col-xs-12 col-lg-12 no-padding chat-element">
+                      <div className="col-md-2 col-xs-2 col-lg-2 chat-image">
+                          <Img src="/assets/avatar.png"  width="60" height="60" className="img-circle"/>
+                      </div>
+                      <div className="col-md-10 col-xs-10 col-lg-10 title-and-time">
+                          <div className="col-md-12 col-xs-12 col-lg-12 no-padding">
+                              <div className="col-md-6 col-md-6 col-lg-6 chat-title no-padding">
+                                  WordPress Website
+                              </div>
+                              <div className="col-md-6 col-xs-6 col-lg-6 time no-padding">
+                                  5 minutes ago
+                              </div>
+                              <div className="col-md-12 col-xs-12 col-lg-12 message-content no-padding">
+                                  This is a project communication link for <strong>WordPress Website</strong> project
+                                  for <strong>XERO Limited</strong>. Keep the communication alive at all times.
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="chat-list-element">
+                  <div className="col-md-12 col-xs-12 col-lg-12 no-padding chat-element">
+                      <div className="col-md-2 col-xs-2 col-lg-2 chat-image">
+                          <Img src="/assets/avatar.png"  width="60" height="60" className="img-circle"/>
+                      </div>
+                      <div className="col-md-10 col-xs-10 col-lg-10 title-and-time">
+                          <div className="col-md-12 col-xs-12 col-lg-12 no-padding">
+                              <div className="col-md-6 col-md-6 col-lg-6 chat-title no-padding">
+                                  WordPress Website
+                              </div>
+                              <div className="col-md-6 col-xs-6 col-lg-6 time no-padding">
+                                  5 minutes ago
+                              </div>
+                              <div className="col-md-12 col-xs-12 col-lg-12 message-content no-padding">
+                                  This is a project communication link for <strong>WordPress Website</strong> project
+                                  for <strong>XERO Limited</strong>. Keep the communication alive at all times.
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="chat-list-element">
+                  <div className="col-md-12 col-xs-12 col-lg-12 no-padding chat-element">
+                      <div className="col-md-2 col-xs-2 col-lg-2 chat-image">
+                          <Img src="/assets/avatar.png"  width="60" height="60" className="img-circle"/>
+                      </div>
+                      <div className="col-md-10 col-xs-10 col-lg-10 title-and-time">
+                          <div className="col-md-12 col-xs-12 col-lg-12 no-padding">
+                              <div className="col-md-6 col-md-6 col-lg-6 chat-title no-padding">
+                                  WordPress Website
+                              </div>
+                              <div className="col-md-6 col-xs-6 col-lg-6 time no-padding">
+                                  5 minutes ago
+                              </div>
+                              <div className="col-md-12 col-xs-12 col-lg-12 message-content no-padding">
+                                  This is a project communication link for <strong>WordPress Website</strong> project
+                                  for <strong>XERO Limited</strong>. Keep the communication alive at all times.
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="chat-list-element">
+                  <div className="col-md-12 col-xs-12 col-lg-12 no-padding chat-element">
+                      <div className="col-md-2 col-xs-2 col-lg-2 chat-image">
+                          <Img src="/assets/avatar.png"  width="60" height="60" className="img-circle"/>
+                      </div>
+                      <div className="col-md-10 col-xs-10 col-lg-10 title-and-time">
+                          <div className="col-md-12 col-xs-12 col-lg-12 no-padding">
+                              <div className="col-md-6 col-md-6 col-lg-6 chat-title no-padding">
+                                  WordPress Website
+                              </div>
+                              <div className="col-md-6 col-xs-6 col-lg-6 time no-padding">
+                                  5 minutes ago
+                              </div>
+                              <div className="col-md-12 col-xs-12 col-lg-12 message-content no-padding">
+                                  This is a project communication link for <strong>WordPress Website</strong> project
+                                  for <strong>XERO Limited</strong>. Keep the communication alive at all times.
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="chat-list-element">
+                  <div className="col-md-12 col-xs-12 col-lg-12 no-padding chat-element">
+                      <div className="col-md-2 col-xs-2 col-lg-2 chat-image">
+                          <Img src="/assets/avatar.png"  width="60" height="60" className="img-circle"/>
+                      </div>
+                      <div className="col-md-10 col-xs-10 col-lg-10 title-and-time">
+                          <div className="col-md-12 col-xs-12 col-lg-12 no-padding">
+                              <div className="col-md-6 col-md-6 col-lg-6 chat-title no-padding">
+                                  WordPress Website
+                              </div>
+                              <div className="col-md-6 col-xs-6 col-lg-6 time no-padding">
+                                  5 minutes ago
+                              </div>
+                              <div className="col-md-12 col-xs-12 col-lg-12 message-content no-padding">
+                                  This is a project communication link for <strong>WordPress Website</strong> project
+                                  for <strong>XERO Limited</strong>. Keep the communication alive at all times.
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="chat-list-element">
+                  <div className="col-md-12 col-xs-12 col-lg-12 no-padding chat-element">
+                      <div className="col-md-2 col-xs-2 col-lg-2 chat-image">
+                          <Img src="/assets/avatar.png"  width="60" height="60" className="img-circle"/>
+                      </div>
+                      <div className="col-md-10 col-xs-10 col-lg-10 title-and-time">
+                          <div className="col-md-12 col-xs-12 col-lg-12 no-padding">
+                              <div className="col-md-6 col-md-6 col-lg-6 chat-title no-padding">
+                                  WordPress Website
+                              </div>
+                              <div className="col-md-6 col-xs-6 col-lg-6 time no-padding">
+                                  5 minutes ago
+                              </div>
+                              <div className="col-md-12 col-xs-12 col-lg-12 message-content no-padding">
+                                  This is a project communication link for <strong>WordPress Website</strong> project
+                                  for <strong>XERO Limited</strong>. Keep the communication alive at all times.
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="chat-list-element">
+                  <div className="col-md-12 col-xs-12 col-lg-12 no-padding chat-element">
+                      <div className="col-md-2 col-xs-2 col-lg-2 chat-image">
+                          <Img src="/assets/avatar.png"  width="60" height="60" className="img-circle"/>
+                      </div>
+                      <div className="col-md-10 col-xs-10 col-lg-10 title-and-time">
+                          <div className="col-md-12 col-xs-12 col-lg-12 no-padding">
+                              <div className="col-md-6 col-md-6 col-lg-6 chat-title no-padding">
+                                  WordPress Website
+                              </div>
+                              <div className="col-md-6 col-xs-6 col-lg-6 time no-padding">
+                                  5 minutes ago
+                              </div>
+                              <div className="col-md-12 col-xs-12 col-lg-12 message-content no-padding">
+                                  This is a project communication link for <strong>WordPress Website</strong> project
+                                  for <strong>XERO Limited</strong>. Keep the communication alive at all times.
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li><li class="chat-list-element">
+              <div className="col-md-12 col-xs-12 col-lg-12 no-padding chat-element">
+                  <div className="col-md-2 col-xs-2 col-lg-2 chat-image">
+                      <Img src="/assets/avatar.png"  width="60" height="60" className="img-circle"/>
+                  </div>
+                  <div className="col-md-10 col-xs-10 col-lg-10 title-and-time">
+                      <div className="col-md-12 col-xs-12 col-lg-12 no-padding">
+                          <div className="col-md-6 col-md-6 col-lg-6 chat-title no-padding">
+                              WordPress Website
+                          </div>
+                          <div className="col-md-6 col-xs-6 col-lg-6 time no-padding">
+                              5 minutes ago
+                          </div>
+                          <div className="col-md-12 col-xs-12 col-lg-12 message-content no-padding">
+                              This is a project communication link for <strong>WordPress Website</strong> project
+                              for <strong>XERO Limited</strong>. Keep the communication alive at all times.
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </li><li class="chat-list-element">
+              <div className="col-md-12 col-xs-12 col-lg-12 no-padding chat-element">
+                  <div className="col-md-2 col-xs-2 col-lg-2 chat-image">
+                      <Img src="/assets/avatar.png"  width="60" height="60" className="img-circle"/>
+                  </div>
+                  <div className="col-md-10 col-xs-10 col-lg-10 title-and-time">
+                      <div className="col-md-12 col-xs-12 col-lg-12 no-padding">
+                          <div className="col-md-6 col-md-6 col-lg-6 chat-title no-padding">
+                              WordPress Website
+                          </div>
+                          <div className="col-md-6 col-xs-6 col-lg-6 time no-padding">
+                              5 minutes ago
+                          </div>
+                          <div className="col-md-12 col-xs-12 col-lg-12 message-content no-padding">
+                              This is a project communication link for <strong>WordPress Website</strong> project
+                              for <strong>XERO Limited</strong>. Keep the communication alive at all times.
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </li>
+
+
+
+          </ul>
+</div>

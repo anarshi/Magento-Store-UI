@@ -30,6 +30,10 @@ body{
     visibility: visible;
     bottom: 0;
     transition: opacity 450ms cubic-bezier(.455,.03,.515,.955) 500ms,visibility 450ms cubic-bezier(.455,.03,.515,.955) 500ms,bottom 550ms cubic-bezier(.455,.03,.515,.955) 500ms;
+    -o-transition: opacity 450ms cubic-bezier(.455,.03,.515,.955) 500ms,visibility 450ms cubic-bezier(.455,.03,.515,.955) 500ms,bottom 550ms cubic-bezier(.455,.03,.515,.955) 500ms;
+    -moz-transition: opacity 450ms cubic-bezier(.455,.03,.515,.955) 500ms,visibility 450ms cubic-bezier(.455,.03,.515,.955) 500ms,bottom 550ms cubic-bezier(.455,.03,.515,.955) 500ms;
+    -webkit-transition: opacity 450ms cubic-bezier(.455,.03,.515,.955) 500ms,visibility 450ms cubic-bezier(.455,.03,.515,.955) 500ms,bottom 550ms cubic-bezier(.455,.03,.515,.955) 500ms;
+    -ms-transition: opacity 450ms cubic-bezier(.455,.03,.515,.955) 500ms,visibility 450ms cubic-bezier(.455,.03,.515,.955) 500ms,bottom 550ms cubic-bezier(.455,.03,.515,.955) 500ms;
 }
 
 .footer-bar li .items span {
