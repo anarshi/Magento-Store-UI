@@ -102,9 +102,9 @@
                 $scope.closeFooter = "close-footer";
                 $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
                 $scope.sidemenuFooterOpen = "sidemenu-footer-open";
-                document.ontouchmove = function (e) {
-                  e.preventDefault();
-                }
+                // document.ontouchmove = function (e) {
+                //   e.preventDefault();
+                // }
             }
         };
 
