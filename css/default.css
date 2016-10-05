@@ -136,57 +136,7 @@ nav#navBar .menu {
     transition: all 650ms ease 150ms;
 }
 
-#sidemenu h3 {
-    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: .8125rem;
-    color: #FFF;
-    letter-spacing: .3rem;
-    margin: 0 0 37px 40px;
-    padding: 0;
-}
 
-#sidemenu div {
-    position: absolute;
-    height: 372px;
-    top: 50%;
-    left: -100px;
-    opacity: 0;
-    display: block;
-    margin: -218px 0;
-    transition: all 750ms ease .25s;
-}
-
-#sidemenu ul {
-    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
-    text-transform: uppercase;
-    font-weight: 400;
-    color: #FFF;
-    margin: 0 0 36px 40px;
-    padding: 2px 0 7px;
-    font-size: .625rem;
-    letter-spacing: .2rem;
-    list-style: none;
-}
-
-#sidemenu {
-    display: block;
-    position: fixed;
-    width: 281px;
-    height: auto;
-    transition: all .5s cubic-bezier(.645,.045,.355,1);
-    background: #1D1D1F;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    letter-spacing: .1875rem;
-    overflow: hidden;
-    min-height: 500px;
-    z-index: 99;
-    margin-top: 0!important;
-    
-}
 
 .overlay {
     display: block;

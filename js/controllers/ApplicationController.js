@@ -101,6 +101,7 @@
                 $scope.sidebar_footer_class = "open-modal-footer";
                 $scope.closeFooter = "close-footer";
                 $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
+                $scope.sidemenuFooterOpen = "sidemenu-footer-open";
                 document.ontouchmove = function (e) {
                   e.preventDefault();
                 }
@@ -130,6 +131,7 @@
                 $scope.modalClass="close-modal";
                 $scope.closeFooter = "";
                 $scope.openSidemenu = "";
+                $scope.sidemenuFooterOpen = ""
             
             } else if($scope.isCartOpen){
                 $scope.contentClass = "";
