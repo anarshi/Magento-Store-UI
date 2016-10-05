@@ -129,6 +129,18 @@ section.filters {
     -webkit-transform: translate3d(5px,0,0) !important;
 }
 
+#sidemenu footer button:hover{
+    background-color: black !important;
+}
+
+#sidemenu footer button span{
+    font-size: 20px;
+}
+
+.twwiter{
+    border-right: none !important;
+}
+
 
 .view >div > h3{
     font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
