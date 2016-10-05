@@ -97,6 +97,7 @@
                 $scope.isModalOpen = true;
                 $scope.contentClass = "move-right-content";
                 $scope.modalClass = "open";
+                $scope.openSidemenu = "open-sidemenu";
                 $scope.sidebar_footer_class = "open-modal-footer";
                 $scope.closeFooter = "close-footer";
                 $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
@@ -128,6 +129,7 @@
                 $scope.contentClass = "close-main-container";
                 $scope.modalClass="close-modal";
                 $scope.closeFooter = "";
+                $scope.openSidemenu = "";
             
             } else if($scope.isCartOpen){
                 $scope.contentClass = "";

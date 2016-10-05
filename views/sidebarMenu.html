@@ -1,6 +1,6 @@
-<div ng-controller="AccountController" class="sidebarmenu">
+<div  class="sidebarmenu" ng-class="openSidemenu">
     <h3>MENU</h3>
-    <ul class="left-sidebar-menu">
+    <ul class="left-sidebar-menu" ng-controller="AccountController">
 
         <li ng-class="collection" id="side1" ng-click="goHome('/')">Collection</li>
         <li ng-class="lookbook" ng-click="goHome('/lookbook')" id="side2">Lookbook</li>

@@ -30,6 +30,11 @@ section.filters {
     transform: translate3d(-281px,0,0) !important;
 }
 
+.open-sidemenu{
+    -webkit-transform: translate3d(0px,0,0) !important;
+    transform: translate3d(0px,0,0) !important;
+}
+
 .sidebarmenu{
     margin: -218px 0;
     position: absolute;
@@ -39,6 +44,8 @@ section.filters {
     -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
     -o-transition: all .5s cubic-bezier(.645,.045,.355,1);
     -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -webkit-transform: translate3d(-281px,0,0);
+    transform: translate3d(-281px,0,0);
     top: 50%;
 }
 
