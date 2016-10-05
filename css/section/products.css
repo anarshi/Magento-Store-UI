@@ -790,7 +790,7 @@ filterList ul li.key, .filterList ul li.key:hover {
     vertical-align: top;
 }
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 43.688em){
     .slider{
         display: block;
     }
