@@ -11,9 +11,6 @@
 
     function ProductController($scope,$http,$routeParams,$location , basket) {
 
-
-        //http cuntiosn 
-
         $scope.addToCart = function(){
             var productId = $routeParams.product_id;
             if(localStorage.cartId != null && !isNaN(localStorage.cartId)){
@@ -37,8 +34,6 @@
                     });
                 });
             }
-
-           
         };
 
         $scope.allImages = [];
@@ -84,6 +79,24 @@
             $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.slides.length - 1;
         };
 
+        var productSizes = $('#product-sizes');
+        $scope.isSizeChoosen = true;
+
+        //should take size as parameter in fuction this is just a test case
+        $scope.showSizes = function(){
+            if(productSizes.hasClass('hide'))
+                productSizes.removeClass('hide');
+            else   
+                productSizes.addClass('hide');
+        };
+
+        $scope.chooseSize = function(id){
+            $scope.isSizeChoosen = false;
+            $scope.choosenSize = id;
+            $('.sizeBtn > span > strong').text(id);
+            $scope.showSizes();
+        }
+
 
     }]).animation('.slide-animation', function () {
         return {
@@ -119,6 +132,8 @@
                 }
             }
         };
+
+
     });
 
 })(window.moaApp);

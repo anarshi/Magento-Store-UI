@@ -1,25 +1,23 @@
 <div class="page product-page container main-container"  id="mainId" ng-click="closeModal" style="opacity: 1;" ng-controller="ProductController">
     <div class="page page--product" style="opacity: 1;">
         <section class="product-container">
-
             <div class="container slider">
                 <img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage"
-                     ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-                     ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
-
+                ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+                ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
                 <a class="arrow prev"  ng-click="nextSlide()"></a>
                 <a class="arrow next"  ng-click="prevSlide()"></a>
-                <nav class="nav">
+                <!-- <nav class="nav">
                     <div class="wrapper">
                         <ul class="dots">
                             <li class="dot" ng-repeat="slide in slides">
                                 <a  ng-class="{'active':isCurrentSlideIndex($index)}"
-                                   ng-click="setCurrentSlideIndex($index);">{{slide.description}}
+                                    ng-click="setCurrentSlideIndex($index);">{{slide.description}}
                                 </a>
                             </li>
                         </ul>
                     </div>
-                </nav>
+                </nav> -->
             </div>
             <div class="content">
                 <div class="transform-container">
@@ -30,55 +28,100 @@
                         </figure>
                     </div>
                 </div>
-
                 <aside class="info fixed ready" id="info">
                     <div class="info-inner">
                         <h2>{{product.name}}<br>
-                            <small>{{product.name}}</small>
+                        <small>{{product.name}}</small>
                         </h2>
-
                         <span class="price">
                             {{product.price}}
                         </span>
-
                         <p>{{product.longDescription}}</p>
                     </div>
                 </aside>
-
-            <div class="transform-container ">
-                <div class="js-margin" style="z-index: 0; transform: matrix(1, 0, 0, 1, 0, 0);">
-                    <div id="fitImages">
+                <div class="transform-container ">
+                    <div class="js-margin" style="z-index: 0; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        <div id="fitImages">
+                        </div>
                     </div>
                 </div>
-            </div>
-
                 <div class="transform-container info-outer">
                     <footer class="info columns col-md-6 medium-centered col-md-12 ready ">
                         <h2>{{product.name}}
-                            <small>{{product.name}}</small>
+                        <small>{{product.name}}</small>
                         </h2>
-
                         <span class="price">
-                                                        {{product.price}}
+                            {{product.price}}
                         </span>
-
                         <p>{{product.longDescription}}</p>
                     </footer>
                 </div>
-        </section>
+            </section>
+        </div>
+        <div class="single-overlay"></div>
+        <aside id="product-sizes" class="product-page-sizes hide">
+            <div class="scrollpane">
+                <div class="filterList">
+                    <ul>
+                        <li class="key">EU | US | UK</li>
+                        
+                        <li data-id="2709" ng-click = "chooseSize('36 | 03 | 02')">
+                            36 | 03 | 02
+                        </li>
+                        
+                        <li data-id="2708" ng-click = "chooseSize('37 | 04 | 03')">
+                            37 | 04 | 03
+                        </li>
+                        
+                        <li data-id="2707" ng-click = "chooseSize('38 | 05 | 04')">
+                            38 | 05 | 04
+                        </li>
+                        
+                        <li data-id="2706" ng-click = "chooseSize('39 | 06 | 05')">
+                            39 | 06 | 05
+                        </li>
+                        
+                        <li data-id="2705" ng-click = "chooseSize('40 | 07 | 06')">
+                            40 | 07 | 06
+                        </li>
+                        
+                        <li data-id="2704" ng-click = "chooseSize('41 | 08 | 07')">
+                            41 | 08 | 07
+                        </li>
+                        
+                        <li data-id="2703" ng-click = "chooseSize('42 | 09 | 08')">
+                            42 | 09 | 08
+                        </li>
+                        
+                        <li data-id="2702" ng-click = "chooseSize('43 | 10 | 09')">
+                            43 | 10 | 09
+                        </li>
+                        
+                        <li data-id="2701" ng-click = "chooseSize('44 | 11 | 10')">
+                            44 | 11 | 10
+                        </li>
+                        
+                        <li data-id="2700" ng-click = "chooseSize('45 | 12 | 11')">
+                            45 | 12 | 11
+                        </li>
+                        
+                        <li data-id="2699" ng-click = "chooseSize('46 | 13 | 12')">
+                            46 | 13 | 12
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        
+        <footer class="footer-bar single-footer show" ng-class="closeFooter">
+            <ul class="hide-for-small">
+                <li>
+                    <button role="button" data-href="https://www.etq-amsterdam.com" class="items back" ng-click = "goHome('/')"><span>x</span><span class="hover">x</span></button>
+                </li>
+            </ul>
+            <nav class="footerbuttons show">
+                <button class="sizeBtn" ng-click="showSizes()"><span><strong>Size</strong></span>  </button>
+                <button class="addBtn btnAdd" id="addBtn" ng-click="addToCart()" ng-disabled="isSizeChoosen"><span><strong>Add to bag</strong></span></button>
+            </nav>
+        </footer>
     </div>
-
-    <div class="single-overlay"></div>
-
-    <footer class="footer-bar single-footer show" ng-class="closeFooter">
-        <ul class="hide-for-small">
-            <li><button data-rows="large" class="items back" ng-click="goHome('/')"><span>X</span><span class="hover">X</span></button></li>
-            
-
-        </ul>
-        <button data-href="" class="inverse addbtn"  ng-click="addToCart()" >
-            <span><strong>Add to bag</strong></span>
-            <div class="spinner ng-hide"><div class="bounce1"></div><div class="bounce2"></div></div>
-        </button>
-    </footer>
-</div>

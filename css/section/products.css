@@ -381,6 +381,23 @@ section.products div.right {
     background-color: white;
 }
 
+.footer-bar {
+    display: block;
+    position: fixed;
+    transition: opacity 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-webkit-transform 550ms cubic-bezier(.455,.03,.515,.955);
+    transition: opacity 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),transform 550ms cubic-bezier(.455,.03,.515,.955);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 54px;
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+    z-index: 20;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
 p {
     font-family: inherit;
     font-weight: 400;
@@ -548,21 +565,19 @@ NAV
     transition: transform .3s ease-in-out;
 }
 
-.addbtn{
-        right: 0px;
-    position: absolute;
-    top: 0px;
-    height: 54px;
-    width: 150px;
-    color: white;
-    margin-bottom: 0px;
-    bottom: 0px;
-    background-color: rgb(51,51,51);
+.btnAdd{
+    position: relative;
+    height: 54px ;
+    width: 190px ;
+    color: white ;
+    margin-bottom: 0px ;
+    bottom: 0px ;
+    background-color: black ;
 }
 
 .addbtn:focus{
         right: 0px;
-    position: absolute;
+   
     top: 0px;
     height: 54px;
     width: 150px;
@@ -574,7 +589,7 @@ NAV
 
 .addBtn:hover{
       right: 0px;
-    position: absolute;
+    position: relative;
     top: 0px;
     height: 54px;
     width: 150px;
@@ -605,6 +620,176 @@ NAV
     margin: 0 0 20px;
 }
 
+.sizeBtn {
+    height: 100%;
+    color: rgb(51,51,51);
+    position: relative;
+    background: url('../../images/svg/up-arrow.svg') 165px center no-repeat #FFF;
+    background-size: 9px;
+    text-align: left;
+    padding-top: 1.15rem;
+    right: -4px;
+}
+
+
+.sizeBtn:focus {
+    outline: none !important;
+    border: none !important;
+}
+.single-footer nav.footerbuttons button, .single-footer nav.footerbuttons button * {
+    font-style: normal!important;
+}
+
+.single-footer nav.footerbuttons button {
+    width: 190px;
+}
+
+.sizeBtn span {
+    padding-left: 2rem;
+}
+
+nav.footerbuttons.show {
+    right: -4px;
+    opacity: 1;
+}
+
+.single-footer.show {
+    bottom: 0;
+}
+
+nav.footerbuttons {
+    display: block;
+    position: absolute;
+    transition: opacity .5s cubic-bezier(.25,.46,.45,.94),visibility .5s cubic-bezier(.25,.46,.45,.94);
+    overflow: hidden;
+    opacity: 0;
+    right: -400px;
+    bottom: -20px;
+}
+
+.product-page-sizes.hide {
+    height: 0;
+    display: block!important;
+    visibility: visible;
+}
+
+.product-page-sizes {
+    display: block;
+    position: fixed;
+    transition: all .6s cubic-bezier(.215,.61,.355,1);
+    width: 380px;
+    height: 100%;
+    background: #151517;
+    z-index: 19;
+    right: -4px;
+    bottom: 0;
+    opacity: 1;
+}
+
+.hide {
+    display: none!important;
+    visibility: hidden;
+}
+
+.product-page-sizes.hide .scrollpane {
+    opacity: 0;
+    transition: opacity .4s ease-out;
+}
+
+.product-page-sizes .scrollpane {
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 70%;
+    margin: 26px auto 0;
+    padding: 0;
+    left: -5px;
+    top: 10%;
+    overflow: hidden;
+    transition: opacity .4s ease-out .3s;
+    opacity: 1;
+}
+
+.product-page-sizes .filterList {
+    width: 100%!important;
+    height: initial!important;
+    display: block;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    max-height: 100%;
+    border-bottom: none;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+}
+
+.product-page-sizes .filterList ul {
+    display: block;
+    position: relative;
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    visibility: visible;
+    text-align: center;
+    border: none;
+}
+
+.product-page-sizes .filterList ul li.key {
+    color: #FFF!important;
+}
+
+.product-page-sizes .filterList ul li {
+    font-size: 12px;
+}
+
+filterList ul li.key, .filterList ul li.key:hover {
+    cursor: default!important;
+    list-style-type: none!important;
+    text-indent: 0!important;
+    color: #9C9C9C!important;
+}
+
+.filterList ul li:hover {
+    color: white;
+}
+
+.filterList ul li {
+    display: block;
+    position: relative;
+    width: 100%;
+    transition: text-indent 300ms ease;
+    height: 33px;
+    line-height: 33px;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+    color: #9C9C9C;
+    letter-spacing: 3px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filterList ul {
+    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: .1875rem;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: .625rem;
+    list-style: none;
+}
+
+.filterList {
+    margin: 0 0 0 -4px;
+    display: inline-block;
+    vertical-align: top;
+}
+
 @media only screen and (max-width: 700px){
     .slider{
         display: block;
@@ -620,6 +805,47 @@ NAV
     
     .info-outer{
         display: block;
+    }
+
+    .single-footer nav.footerbuttons .sizeBtn {
+        background: #FFF!important;
+    }
+
+    .single-footer nav.footerbuttons button {
+        width: 50vw;
+    }
+
+    .filterList {
+        display: inline-block!important;
+        width: 20%;
+        height: 100%;
+    }
+
+    nav.footerbuttons.show {
+        right: -4px;
+        opacity: 1;
+    }
+
+    .btnAdd{
+        right: 4px;
+    }
+
+    .product-page-size{
+        right: 0px;
+    }
+
+    .sizeBtn{
+        right: 4px;
+        left: 0px;
+    }
+
+    footer{
+        z-index: 9999 !important;
+    }
+
+    .product-page-sizes {
+        z-index: 9999;
+        width: 100vw;
     }
 }
 

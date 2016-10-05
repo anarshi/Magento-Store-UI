@@ -25,6 +25,7 @@
                 $scope.cartOpenClass = "asdasd";
                 $scope.bodyOpenModalClass = "";
                 $scope.isCartOpen = false;
+                 $scope.closeFooter = "close-footer";
             }else {
                 console.log("Application Controller message \n 'modal is already open' \n SystemDev Message delete in production");
             }
@@ -129,6 +130,7 @@
                 $scope.contentClass = "";
                 $scope.cartOpenClass = "asdasd";
                 $scope.bodyOpenModalClass = "";
+                 $scope.closeFooter = "";
                 $scope.isCartOpen = false;
             }else {
                 console.log("Application Controller message \n 'modal is already open' \n SystemDev Message delete in production");
@@ -165,33 +167,14 @@
                 $scope.contentClass = "move-left-content";
                 $scope.cartOpenClass = "move-cart-left ";
                  $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
+                  $scope.closeFooter = "close-footer";
 
             } else {
                 console.log("Cart is already open");
             }
         };
 
-        /**
-         * @method keyUp
-         * @param event {Object}
-         * @return {void}
-         */
-        $scope.keyUp = function keyUp(event) {
-
-            if (event.keyCode === 27) {
-                $scope.$broadcast('modal/close');
-            }
-
-        };
-
-        /**
-         * @method broadcast
-         * @param event {String}
-         * @return {void}
-         */
-        $scope.broadcast = function broadcast(event) {
-            $rootScope.$broadcast(event);
-        }
+        
         
     }]);
 
