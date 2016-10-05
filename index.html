@@ -45,31 +45,31 @@
 
         <div  ng-include="'views/sidebarMenu.html'"></div>
 
-        <aside id="sidemenu"  ng-class="modalClass" class="sidemenu view left-sidebar-menu-container">
-            <div>
-                <h3>Menu</h3>
-                <nav role="navigation" ng-controller="FiltersController">
-                    <ul ng-controller="AccountController">
-                        <li ng-class="collection" id="side1" ng-click="goHome('/')" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-190">Collection</li>
-                        <li ng-class="lookbook" ng-click="goHome('/lookbook')" id="side2" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188">Lookbook</li>
-                        <li  ng-class="about" id="side4" ng-click="goHome('/about')" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-189">About</li>
-                        <li ng-class="service" id="side5" ng-click="goHome('/service')" id="menu-item-191" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-191">Customer Care</a></li>
+        <aside id="shoppingcart" class="shoppingcart shoping" ng-class="modalClass" data-quantity="0">
+        <aside class="cartcount show active">{{cartCount}}<span class="label">CLOSE</span></aside>
+        <div id="cart-scroll">
+            <ul class="cart-products">
+                <li product-id="{{crProduct.id}}" ng-repeat="crProduct in cartProducts">
+                   <figure>
+                        <img width="300" height="300" ng-src="{{crProduct.imageUrl  }}" />
+                   </figure> 
+                   <div data-count="1">
+                        <h3>{{crProduct.name}}</h3>
+                        <p>EU 44 | US 11 | UK 10 QTY: <span class="count">1</span></p>
+                                <h4>€ {{crProduct.price}}</h4>
+                        <button class="ui-cart-item-remove no-hijack" ng-click="removeFromCart(crProduct)">x</button>
+                    </div>
+                </li>
+             </ul>
+        </div>
 
-                    </ul>
-                </nav>
-            </div>
-            <footer ng-class="sidemenuFooterOpen">
-                <a href="https://www.facebook.com/etqams" target="_blanc">
-                    <button class="facebook"><span><i class="fa fa-facebook"></i></span></button>
-                </a>
-                <a href="https://www.instagram.com/etqamsterdam" target="_blanc">
-                    <button class="instagram"><span><i class="fa fa-instagram"></i></span></button>
-                </a>
-                <a href="https://twitter.com/ETQAmsterdam" target="_blanc">
-                    <button class="twitter"><span><i class="fa fa-twitter"></i></span></button>
-                </a>
-            </footer>
-        </aside>
+        <footer>Total <span>€ {{totalPrice}}</span></footer>
+        <button ng-click="goToCart()" class="checkout" >
+            <span><strong>Checkout</strong></span>
+            <span class="hover"><strong>Checkout</strong></span>
+            <div class="spinner ng-hide"><div class="bounce1"></div><div class="bounce2"></div></div>
+        </button>
+    </aside>
 
        
 
