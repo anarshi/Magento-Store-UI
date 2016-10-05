@@ -42,9 +42,31 @@
     <script src="js/services/Socket.js"></script>
 </head>
 <body ng-app="moaApp" ng-controller="ApplicationController" ng-keyup="keyUp($event)" class="" ng-class="bodyOpenModalClass">
-    <section data-sidebar class="filters" ng-class="modalClass" >
-        <div class="view left-sidebar-menu-container" ng-include="'views/sidebarMenu.html'"></div>
-    </section>
+    <aside id="sidemenu" class="sidemenu">
+    <div>
+        <h3>Menu</h3>
+        <nav role="navigation" ng-controller="FiltersController">
+            <ul ng-controller="AccountController">
+                <li ng-class="collection" id="side1" ng-click="goHome('/')" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-190">Collection</li>
+                <li ng-class="lookbook" ng-click="goHome('/lookbook')" id="side2" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188">Lookbook</li>
+                <li  ng-class="about" id="side4" ng-click="goHome('/about')" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-189">About</li>
+                <li ng-class="service" id="side5" ng-click="goHome('/service')" id="menu-item-191" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-191">Customer Care</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    <footer ng-class="sidemenuFooterOpen">
+        <a href="https://www.facebook.com/etqams" target="_blanc">
+            <button class="facebook"><span><i class="fa fa-facebook"></i></span></button>
+        </a>
+        <a href="https://www.instagram.com/etqamsterdam" target="_blanc">
+            <button class="instagram"><span><i class="fa fa-instagram"></i></span></button>
+        </a>
+        <a href="https://twitter.com/ETQAmsterdam" target="_blanc">
+            <button class="twitter"><span><i class="fa fa-twitter"></i></span></button>
+        </a>
+    </footer>
+</aside>
     <aside id="shoppingcart" class="shoppingcart" ng-class="cartOpenClass" data-quantity="0">
         <aside class="cartcount show active">{{cartCount}}<span class="label">CLOSE</span></aside>
         <div id="cart-scroll">
