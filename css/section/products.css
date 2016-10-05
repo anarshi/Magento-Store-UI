@@ -812,7 +812,7 @@ filterList ul li.key, .filterList ul li.key:hover {
     }
 
     .single-footer nav.footerbuttons button {
-        width: 50%;
+        width: 50vw;
         z-index: 9999999999;
     }
 
