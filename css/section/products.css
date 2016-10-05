@@ -648,9 +648,9 @@ NAV
     padding-left: 2rem;
 }
 
-nav.footerbuttons.show {
-    right: -4px;
-    opacity: 1;
+nav.footerbuttons {
+    right: -4px !important;
+    opacity: 1 !important;
 }
 
 .single-footer.show {
@@ -822,7 +822,7 @@ filterList ul li.key, .filterList ul li.key:hover {
         height: 100%;
     }
 
-    nav.footerbuttons.show {
+    nav.footerbuttons {
         right: -4px;
         opacity: 1;
     }
