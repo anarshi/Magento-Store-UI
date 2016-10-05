@@ -299,3 +299,25 @@ section.filters div.filter div.inner:not(.without-padding) {
     -moz-transform: translate3d(0,0,0) !important;
     transform: translate3d(0,0,0) !important;
 }
+
+
+/*--- Main CSS here ---*/
+
+/*------------------------------------*\
+    $IPHONE
+\*------------------------------------*/
+@media screen and (max-device-width: 480px){
+    .sidebarmenu{
+        margin: 150px 0;
+        position: absolute;
+        width: 281px;
+        min-height: 500px;
+        transition: all .5s cubic-bezier(.645,.045,.355,1);
+        -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
+        -o-transition: all .5s cubic-bezier(.645,.045,.355,1);
+        -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
+        -webkit-transform: translate3d(-281px,0,0);
+        transform: translate3d(-281px,0,0);
+        top: 0px;
+    }
+}
