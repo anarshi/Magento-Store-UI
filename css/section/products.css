@@ -620,19 +620,19 @@ NAV
     margin: 0 0 20px;
 }
 
-.sizeBtn {
+.single-footer nav.footerbuttons .sizeBtn {
     height: 100%;
     color: rgb(51,51,51);
     position: relative;
-    background: url('../../images/svg/up-arrow.svg') 165px center no-repeat #FFF;
-    background-size: 9px;
+    background: url('../../images/svg/up-arrow.svg') 165px center no-repeat #FFF !important;
+    background-size: 9px !important;
     text-align: left;
     padding-top: 1.15rem;
     right: -4px;
 }
 
 
-.sizeBtn:focus {
+.single-footer nav.footerbuttons .sizeBtn:focus {
     outline: none !important;
     border: none !important;
 }
@@ -644,11 +644,11 @@ NAV
     width: 190px;
 }
 
-.sizeBtn span {
+.single-footer nav.footerbuttons .sizeBtn span {
     padding-left: 2rem;
 }
 
-nav.footerbuttons {
+.footerbuttons {
     right: -4px !important;
     opacity: 1 !important;
 }
@@ -681,7 +681,6 @@ nav.footerbuttons {
     height: 100%;
     background: #151517;
     z-index: 19;
-    right: -4px;
     bottom: 0;
     opacity: 1;
 }
