@@ -188,6 +188,10 @@
                  $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
                   $scope.closeFooter = "close-footer";
 
+                  document.ontouchmove = function (e) {
+                  e.preventDefault();
+                }
+
             } else {
                 console.log("Cart is already open");
             }
