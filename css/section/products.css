@@ -604,8 +604,14 @@ NAV
     display: none;
 }
 
+.sizeBtn-container{
+    height: 52px;
+}
+
 .single-footer nav.footerbuttons {
+    text-align: right;
     bottom: 0;
+    right: 0px !important;
     height: 52px;
     display: inline-block!important;
     transition: -webkit-transform .3s ease-in-out;
@@ -738,6 +744,7 @@ nav.footerbuttons {
     z-index: 19;
     bottom: 0;
     opacity: 1;
+    right: 0px;
 }
 
 .hide {
@@ -860,7 +867,21 @@ filterList ul li.key, .filterList ul li.key:hover {
     vertical-align: top;
 }
 
+
+.show-when-small{
+    display: none;
+}
+
 @media all and (orientation:portrait) {
+
+    .hide-when-small{
+        display: none;
+    }
+
+    .show-when-small{
+        display: block;
+    }
+
   .slider{
         display: block;
     }
@@ -893,12 +914,12 @@ filterList ul li.key, .filterList ul li.key:hover {
     }
 
     nav.footerbuttons {
-        right: -4px;
+        right: 0px;
         opacity: 1;
     }
 
     .btnAdd{
-        right: 4px;
+        right: 0px;
     }
 
     .product-page-size{

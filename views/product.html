@@ -119,9 +119,18 @@
                     <button role="button" data-href="https://www.etq-amsterdam.com" class="items back" ng-click = "goHome('/')"><span>x</span><span class="hover">x</span></button>
                 </li>
             </ul>
-            <nav class="footerbuttons">
-                <button class="sizeBtn" ng-click="showSizes()"><span><strong>Size</strong></span>  </button>
-                <button class="addBtn btnAdd" id="addBtn" ng-click="addToCart()" ng-disabled="isSizeChoosen"><span><strong>Add to bag</strong></span></button>
+            <nav class="footerbuttons col-md-12 col-xs-12 col-lg-12 no-padding">
+                <button class="sizeBtn hide-when-small" ng-click="showSizes()"><span><strong>Size</strong></span>  </button>
+                <button class="addBtn btnAdd hide-when-small" id="addBtn" ng-click="addToCart()" ng-disabled="isSizeChoosen"><span><strong>Add to bag</strong></span></button>
+
+              
+                <div class="col-md-6 col-xs-6 col-lg-6 no-padding show-when-small  sizeBtn-container">
+                     <button class="sizeBtn " ng-click="showSizes()"><span><strong>Size</strong></span>  </button>
+                </div>
+                <div class="col-md-6 col-lg-6 col-lg-6 no-padding show-when-small">
+                     <button class="addBtn btnAdd " id="addBtn" ng-click="addToCart()" ng-disabled="isSizeChoosen"><span><strong>Add to bag</strong></span></button>
+                </div>
+
             </nav>
         </footer>
     </div>
