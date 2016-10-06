@@ -47,6 +47,32 @@
 
 </head>
 <body ng-app="moaApp" ng-controller="ApplicationController" ng-keyup="keyUp($event)"  ng-class="bodyOpenModalClass">
+
+    <!-- <aside id="#sidemenu " class=" left-side " ng-class="cartOpenClass" data-quantity="0">
+        <aside class="cartcount show active">{{cartCount}}<span class="label">CLOSE</span></aside>
+        <div id="cart-scroll">
+            <ul class="cart-products">
+                <li product-id="{{crProduct.id}}" ng-repeat="crProduct in cartProducts">
+                   <figure>
+                        <img width="300" height="300" ng-src="{{crProduct.imageUrl  }}" />
+                   </figure> 
+                   <div data-count="1">
+                        <h3>{{crProduct.name}}</h3>
+                        <p>EU 44 | US 11 | UK 10 QTY: <span class="count">1</span></p>
+                                <h4>€ {{crProduct.price}}</h4>
+                        <button class="ui-cart-item-remove no-hijack" ng-click="removeFromCart(crProduct)">x</button>
+                    </div>
+                </li>
+             </ul>
+        </div>
+
+        <footer>Total <span>€ {{totalPrice}}</span></footer>
+        <button ng-click="goToCart()" class="checkout" >
+            <span><strong>Checkout</strong></span>
+            <span class="hover"><strong>Checkout</strong></span>
+            <div class="spinner ng-hide"><div class="bounce1"></div><div class="bounce2"></div></div>
+        </button>
+    </aside> -->
             
     <aside id="sidemenu" class="sidemenu">
         <div>
