@@ -11,7 +11,7 @@
 
     function applicationController($rootScope, $scope , $location , $http , $timeout , basket) {
 
-<<<<<<< HEAD
+
 
         
 
@@ -219,7 +219,7 @@
                 $scope.isCartOpen = true;
                 $scope.contentClass = "move-left-content";
                 $scope.cartOpenClass = "move-cart-left ";
-                 $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
+                 $scope.bodyOpenModalClass = "no-scroll lock-scroll cart-open";
                   $scope.closeFooter = "close-footer";
 
                   document.ontouchmove = function (e) {
