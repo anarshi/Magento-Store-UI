@@ -11,6 +11,8 @@
 
     function applicationController($rootScope, $scope , $location , $http , $timeout , basket) {
 
+        console.log(window.screen.height);
+        
         document.addEventListener('touchmove', function(event){
             event.stopPropagation();
         });
