@@ -11,6 +11,7 @@
 
     function applicationController($rootScope, $scope , $location , $http , $timeout , basket) {
 
+<<<<<<< HEAD
 
         
 
