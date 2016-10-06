@@ -1,3 +1,24 @@
+<script>
+        // Allow toggling of iNoBounce with the toggle button
+        window.addEventListener('load', function() {
+            var enabled = true;
+            var toggle = document.getElementById('mainId');
+            toggle.addEventListener('click', function() {
+                if (enabled) {
+                    iNoBounce.disable();
+                    toggle.classList.add('default');
+                    toggle.innerHTML = 'Enable';
+                }
+                else {
+                    iNoBounce.enable();
+                    toggle.classList.remove('default');
+                    toggle.innerHTML = 'Disable';
+                }
+                enabled = !enabled;
+            }, false);
+        }, false);
+    </script>
+
 <div class="home-page container main-container" id="mainId" ng-click="closeModal">
     <section ng-controller="ProductsController" >
         <section ng-click="closeModal(); closeFilters()" class="products" ng-class="{'filters-open': filtersOpen, 'modal-open': modalOpen}">
@@ -12,7 +33,7 @@
                     <!--</ul>-->
                 <!--</section>-->
             </div>
-            <div id="catalog" class="row thumbs">
+            <div id="catalog" class="container thumbs">
                 <div class = "catalog-product" ng-class="productGridType" ng-repeat="product in products" ng-click="openProduct(product.id, $event)">
                     <a data-path="#product/{{product.id}}" href="#product/{{product.id}}">
                     </a>
