@@ -11,8 +11,29 @@
 
     function applicationController($rootScope, $scope , $location , $http , $timeout , basket) {
 
-        console.log(window.screen.height);
-        
+        // console.log(window.screen.height);
+
+        $scope.isiOS = false;
+
+        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        $scope.isiOS = iOS;
+
+        function iOSversion() {
+
+          if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+            if (!!window.indexedDB) { return 'iOS 8 and up'; }
+            if (!!window.SpeechSynthesisUtterance) { return 'iOS 7'; }
+            if (!!window.webkitAudioContext) { return 'iOS 6'; }
+            if (!!window.matchMedia) { return 'iOS 5'; }
+            if (!!window.history && 'pushState' in window.history) { return 'iOS 4'; }
+            return 'iOS 3 or earlier';
+          }
+
+          return 'Not an iOS device';
+        }
+
+>>>>>>> 7a4be5318667dd1b8a324433c55245bc2f6ab0dc
         document.addEventListener('touchmove', function(event){
             event.stopPropagation();
         });
