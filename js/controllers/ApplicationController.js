@@ -134,6 +134,7 @@
                 $scope.sidemenuFooterOpen = ""
                 document.ontouchmove = function (e) {
                   return true;
+                  
                 }
             
             } else if($scope.isCartOpen){

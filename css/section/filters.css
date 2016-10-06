@@ -460,4 +460,21 @@ section.filters div.filter div.inner:not(.without-padding) {
         transform: translate3d(-281px,0,0);
         top: 0px;
     }
+
+    /* #sidemenu{
+        display: block;
+        position: fixed;
+        width: 281px;
+        height: 557px;
+        transition: all .5s cubic-bezier(.645,.045,.355,1);
+        background: #1D1D1F;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        letter-spacing: .1875rem;
+        overflow: hidden;
+        min-height: 100px;
+        z-index: 99;
+        margin-top: 0!important;
+    } */
 }
