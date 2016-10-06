@@ -33,7 +33,6 @@
           return 'Not an iOS device';
         }
 
->>>>>>> 7a4be5318667dd1b8a324433c55245bc2f6ab0dc
         document.addEventListener('touchmove', function(event){
             event.stopPropagation();
         });
