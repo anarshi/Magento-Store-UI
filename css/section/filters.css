@@ -34,29 +34,29 @@ section.filters {
     transform: translate3d(0px,0,0) !important;
 }
 
-.sidebarmenu{
-    margin: -218px 0;
-    position: absolute;
-    width: 281px;
-    min-height: 500px;
-    transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -o-transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -webkit-transform: translate3d(-281px,0,0);
-    transform: translate3d(-281px,0,0);
-    top: 50%;
+.menu-open #sidemenu footer {
+    bottom: 0;
+    transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
 }
 
-#sidemenu h3 {
-    font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 12px;
-    color: #FFF;
-    letter-spacing: .5rem;
-    margin: 0 0 37px 40px;
-    padding: 0;
+#sidemenu {
+    display: block;
+    position: fixed;
+    width: 281px;
+    height: auto;
+    transition: all .5s cubic-bezier(.645,.045,.355,1);
+    background: #1D1D1F;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999999 !important;
+    letter-spacing: .1875rem;
+    overflow: hidden;
+    min-height: 500px;
+    z-index: 99;
+    margin-top: 0!important;
+    -webkit-transform: translate3d(-281px,0,0);
+    transform: translate3d(-281px,0,0);
 }
 
 #sidemenu div {
@@ -68,6 +68,27 @@ section.filters {
     display: block;
     margin: -218px 0;
     transition: all 750ms ease .25s;
+}
+
+#sidemenu footer {
+    display: block;
+    position: absolute;
+    width: 281px;
+    height: 52px;
+    border-top: 1px solid #333335;
+    bottom: -52px;
+    transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+}
+
+#sidemenu h3 {
+     font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    color: #FFF;
+    letter-spacing: .5rem;
+    margin: 0 0 37px 40px;
+    padding: 0;
 }
 
 #sidemenu ul {
@@ -82,24 +103,10 @@ section.filters {
     list-style: none;
 }
 
-#sidemenu {
-    display: block;
-    position: fixed;
-    width: 281px;
-    height: auto;
+.cart-open .overlay, .menu-open .overlay {
+    visibility: visible;
+    opacity: 1;
     transition: all .5s cubic-bezier(.645,.045,.355,1);
-    background: #1D1D1F;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    letter-spacing: .1875rem;
-    overflow: hidden;
-    min-height: 500px;
-    z-index: 99;
-    margin-top: 0!important;
-    
-
-
 }
 
 #sidemenu ul li {
@@ -110,14 +117,7 @@ section.filters {
     line-height: 40px;
     margin: 0 0 5px;
     padding: 0;
-    transition: all 500ms cubic-bezier(.39,.575,.565,1);
-    -o-transition: all 500ms cubic-bezier(.39,.575,.565,1);
-    -moz-transition: all 500ms cubic-bezier(.39,.575,.565,1);
-    -webkit-transition: all 500ms cubic-bezier(.39,.575,.565,1);
-
-    color: #9c9c9c
 }
-
 
 #sidemenu ul li:hover {
     color:white;
@@ -126,6 +126,12 @@ section.filters {
     -o-transform: translate3d(5px,0,0) !important;
     -moz-transform: translate3d(5px,0,0) !important;
     -webkit-transform: translate3d(5px,0,0) !important;
+}
+
+.menu-open #sidemenu {
+    transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
 
 #sidemenu footer button:hover{
@@ -141,7 +147,7 @@ section.filters {
 }
 
 
-.view >div > h3{
+/* .view >div > h3{
     font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
     text-transform: uppercase;
     font-weight: 700;
@@ -189,13 +195,13 @@ section.filters {
     -o-transform: translate3d(5px,0,0) !important;
     -moz-transform: translate3d(5px,0,0) !important;
     -webkit-transform: translate3d(5px,0,0) !important;
-}
+} */
 
 .active-modal-link{
     color:white !important;
 }
 
-.view > footer{
+/* .view > footer{
     bottom: 0;
     transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
     -o-transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
@@ -207,9 +213,9 @@ section.filters {
     height: 52px;
     border-top: 1px solid #333335;
     bottom: -52px;
-}
+} */
 
-.view >  footer button span {
+/* .view >  footer button span {
     text-align: center;
 }
 
@@ -258,7 +264,7 @@ section.filters {
     top: 0;
     left: 0;
     font-size: 16px;
-}
+} */
 
 .open-modal-footer {
     bottom: 0 !important;
@@ -566,12 +572,28 @@ section.filters div.filter div.inner:not(.without-padding) {
 }
 
 
-/*--- Main CSS here ---*/
+@media only screen and (max-width: 43.688em){
+    #sidemenu {
+        width: 281px;
+        -webkit-transform: translate3d(-281px,0,0);
+        transform: translate3d(-281px,0,0);
+    }
 
-/*------------------------------------*\
-    $IPHONE
-\*------------------------------------*/
-@media screen and (max-device-width: 480px){
+    #sidemenu footer {
+        width: 281px;
+        height: 44px;
+        bottom: -44px;
+    }
 
-   
+    #sidemenu h3 {
+        margin-bottom: 32px;
+    }
+
+    #sidemenu ul {
+        margin-bottom: 38px;
+    }
+
+    #sidemenu ul li {
+        margin-bottom: 10px;
+    }
 }
