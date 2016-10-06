@@ -400,7 +400,7 @@ section.filters div.filter div.inner:not(.without-padding) {
 #sidemenu footer {
     width: 281px;
     height: 44px;
-   /*  bottom: -44px; */
+    bottom: -44px;
 }
 
 #sidemenu footer {
@@ -409,7 +409,7 @@ section.filters div.filter div.inner:not(.without-padding) {
     width: 281px;
     height: 52px;
     border-top: 1px solid #333335;
-    /* bottom: -52px; */
+    bottom: -52px;
     transition: all 350ms cubic-bezier(.25,.46,.45,.94);
 }
 
@@ -461,20 +461,32 @@ section.filters div.filter div.inner:not(.without-padding) {
         top: 0px;
     }
 
-    /* #sidemenu{
-        display: block;
-        position: fixed;
+     #sidemenu{
+        margin-top: -90px;
+        position: relative;
         width: 281px;
-        height: 557px;
+        height: 100%;
         transition: all .5s cubic-bezier(.645,.045,.355,1);
         background: #1D1D1F;
         left: 0;
         top: 0;
         bottom: 0;
         letter-spacing: .1875rem;
-        overflow: hidden;
-        min-height: 100px;
         z-index: 99;
-        margin-top: 0!important;
-    } */
+        
+        overflow: hidden;
+    } 
+
+    #sidemenu div {
+        margin-top: -120px;
+        top: 50%;
+        /* height: 200px; */
+        /* height: 372px; */
+        /* left: 0px; */
+        opacity: 0;
+        display: block;
+        transition: all 750ms ease .25s;
+        position: absolute;
+        /* margin: -218px 0; */
+    }
 }
