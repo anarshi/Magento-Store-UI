@@ -154,12 +154,6 @@ nav#navBar .menu {
     -ms-transition: all .5s cubic-bezier(.645,.045,.355,1);
 }
 
-.shoping{
-    left: 0px !important;
-    right: inherit !important;
-    width: 281px !important;
-}
-
 a {
     color: #008CBA;
     text-decoration: none;
