@@ -5,8 +5,7 @@ section.filters {
     left:0px;
     height: 100%;
     float: left;
-    z-index: 2;
-    position: fixed;
+    z-index: 9999;    position: fixed;
     color: white;
     background-color: rgb(29,29,31);
     box-sizing: border-box;

@@ -142,7 +142,7 @@ nav#navBar .menu {
     display: block;
     position: fixed;
     width: 100%;
-    min-height: 2000px;
+    min-height: 100%;
     z-index: 99;
     background: rgba(29,29,31,.6);
     visibility: hidden;

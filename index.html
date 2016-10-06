@@ -75,6 +75,7 @@
             <div class="spinner ng-hide"><div class="bounce1"></div><div class="bounce2"></div></div>
         </button>
     </aside>
+     <figure id="overlay" class="overlay" ng-click="closeModal()"></figure>
     <div class="transform-container" ng-class="contentClass">
         <header class="navbar-fixed-top">
             <nav id="navBar" class="navBar fixed ready top-hide top" style="">
@@ -84,7 +85,7 @@
                 <span class="logo" ng-click="goHome('/')">ABC</span>
                 <aside class="cartcount show " ng-click="openCart()">{{cartCount}}<span class="label"></span></aside>
             </nav>
-            <figure id="overlay" class="overlay" ng-click="closeModal()"></figure>
+           
         </header>
         <div ng-view id="iNoBounceToggle"></div>
     </div>
