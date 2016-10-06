@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/default.css" />
     <meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="css/fonts.css" />
@@ -40,6 +41,29 @@
     <script src="js/services/Config.js"></script>
     <script src="js/services/Http.js"></script>
     <script src="js/services/Socket.js"></script>
+
+    <script src="js/ioBounce.js"></script>
+
+    <script>
+        // Allow toggling of iNoBounce with the toggle button
+        window.addEventListener('load', function() {
+            var enabled = true;
+            var toggle = document.getElementById('iNoBounceToggle');
+            toggle.addEventListener('click', function() {
+                if (enabled) {
+                    iNoBounce.disable();
+                    toggle.classList.add('default');
+                    toggle.innerHTML = 'Enable';
+                }
+                else {
+                    iNoBounce.enable();
+                    toggle.classList.remove('default');
+                    toggle.innerHTML = 'Disable';
+                }
+                enabled = !enabled;
+            }, false);
+        }, false);
+    </script>
 </head>
 <body ng-app="moaApp" ng-controller="ApplicationController" ng-keyup="keyUp($event)"  ng-class="bodyOpenModalClass">
     <section data-sidebar class="filters" ng-class="modalClass" >
@@ -81,7 +105,7 @@
             </nav>
             <figure id="overlay" class="overlay" ng-click="closeModal()"></figure>
         </header>
-        <div ng-view></div>
+        <div ng-view id="iNoBounceToggle"></div>
     </div>
 </body>
 
