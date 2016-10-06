@@ -11,6 +11,10 @@
 
     function applicationController($rootScope, $scope , $location , $http , $timeout , basket) {
 
+        document.addEventListener('touchmove', function(event){
+            event.stopPropagation();
+        });
+
          $scope.$on('$locationChangeSuccess', function(/* EDIT: remove params for jshint */) {
               if($scope.isModalOpen){
                 $scope.isModalOpen = false;
