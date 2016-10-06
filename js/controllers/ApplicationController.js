@@ -12,13 +12,23 @@
     function applicationController($rootScope, $scope , $location , $http , $timeout , basket) {
 
 
-        // console.log(window.screen.height);
+        
 
         $scope.isiOS = false;
 
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
         $scope.isiOS = iOS;
+
+        setTimeout(function(){
+            console.log("uso");
+            if($scope.isiOS){
+                var innerHeight =  window.innerHeight;
+                var sidemenu = document.getElementById("sidemenu-ios");
+                sidemenu.style.height = innerHeight + "px"; 
+            }
+        },500);
+        
 
         function iOSversion() {
 
