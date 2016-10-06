@@ -445,8 +445,8 @@ section.filters div.filter div.inner:not(.without-padding) {
     }
 
     #sidemenu-ios {
-        /* top: 25%; */
-        margin-top: -90px;
+       top: 0px;
+        /* margin-top: -90px; */
         position: absolute;
         width: 281px;
         height: 559px;
@@ -525,6 +525,21 @@ section.filters div.filter div.inner:not(.without-padding) {
     letter-spacing: 0.3rem;
     list-style: none;
 }
+
+    #sidemenu-ios div {
+        margin-top: 150px;
+        position: absolute;
+        left: -240px;
+        transition: all 750ms ease .25s;
+    }
+
+.menu-open #sidemenu-ios div {
+    opacity: 1;
+    left: 0;
+    transition: all 650ms ease 150ms;
+}
+
+    
 
 #sidemenu-ios ul li {
     display: block;
