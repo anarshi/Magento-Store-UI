@@ -4,8 +4,7 @@
     <title>Moa</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/default.css" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, minimal-ui">
+    <meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
@@ -18,11 +17,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.30/angular-animate.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.30/angular-touch.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-        <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
-
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/hammerjs/hammer.js"></script>
@@ -53,49 +47,9 @@
 
 </head>
 <body ng-app="moaApp" ng-controller="ApplicationController" ng-keyup="keyUp($event)"  ng-class="bodyOpenModalClass">
-
-    <!-- <aside id="sidemenu" class="sidemenu">
-        <div>
-            <h3>Menu</h3>
-            <nav role="navigation">
-                <ul ng-controller="AccountController">
-                    <li ng-class="collection" id="side1" ng-click="goHome('/')" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-190">Collection</li>
-                    <li ng-class="lookbook" ng-click="goHome('/lookbook')" id="side2" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188">Lookbook</li>
-                    <li  ng-class="about" id="side4" ng-click="goHome('/about')" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-189">About</li>
-                    <li ng-class="service" id="side5" ng-click="goHome('/service')" id="menu-item-191" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-191">Customer Care</a></li>
-                </ul>
-            </nav>
-        </div>
-        <footer>
-            <a href="https://www.facebook.com/etqams" target="_blanc">
-                <button class="facebook"><span><i class="fa fa-facebook"></i></span></button>
-            </a>
-            <a href="https://www.instagram.com/etqamsterdam" target="_blanc">
-                <button class="instagram"><span><i class="fa fa-instagram"></i></span></button>
-            </a>
-            <a href="https://twitter.com/ETQAmsterdam" target="_blanc">
-                <button class="twitter"><span><i class="fa fa-twitter"></i></span></button>
-            </a>
-        </footer>
-    </aside> -->
-
-   <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
-  <a class="navmenu-brand" href="#">Brand</a>
-  <ul class="nav navmenu-nav">
-    <li class="active"><a href="#">Home</a></li>
-    <li><a href="#">Link</a></li>
-    <li><a href="#">Link</a></li>
-  </ul>
-</nav>
-<div class="navbar navbar-default navbar-fixed-top">
-  <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </button>
-</div>
-
-   <!--      
+    <section data-sidebar class="filters" ng-class="modalClass" >
+        <div class="view left-sidebar-menu-container" ng-include="'views/sidebarMenu.html'"></div>
+    </section>
     <aside id="shoppingcart" class="shoppingcart" ng-class="cartOpenClass" data-quantity="0">
         <aside class="cartcount show active">{{cartCount}}<span class="label">CLOSE</span></aside>
         <div id="cart-scroll">
@@ -120,21 +74,19 @@
             <span class="hover"><strong>Checkout</strong></span>
             <div class="spinner ng-hide"><div class="bounce1"></div><div class="bounce2"></div></div>
         </button>
-    </aside> -->
-
-    <!-- <figure id="overlay" class="overlay" ng-click="closeModal()"></figure> -->
-
+    </aside>
+     <figure id="overlay" class="overlay" ng-click="closeModal()"></figure>
     <div class="transform-container" ng-class="contentClass">
-           <!--  <header class="navbar-fixed-top">
-                <nav id="navBar" class="navBar fixed ready top-hide top" style="">
-                    <button role="button" class="menu" ng-click="openModal()">
-                        Menu<span class="label">MENU</span>
-                    </button>
-                    <span class="logo" ng-click="goHome('/')">ABC</span>
-                    <aside class="cartcount show " ng-click="openCart()">{{cartCount}}<span class="label"></span></aside>
-                </nav>
-               
-            </header> -->
+        <header class="navbar-fixed-top">
+            <nav id="navBar" class="navBar fixed ready top-hide top" style="">
+                <button role="button" class="menu" ng-click="openModal()">
+                    Menu<span class="label">MENU</span>
+                </button>
+                <span class="logo" ng-click="goHome('/')">ABC</span>
+                <aside class="cartcount show " ng-click="openCart()">{{cartCount}}<span class="label"></span></aside>
+            </nav>
+           
+        </header>
         <div ng-view id="iNoBounceToggle"></div>
     </div>
 </body>

@@ -11,7 +11,6 @@
 
     function applicationController($rootScope, $scope , $location , $http , $timeout , basket) {
 
-        $scope.isiOS = false;
 
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
