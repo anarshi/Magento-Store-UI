@@ -313,6 +313,19 @@ nav#navBar>span {
     /*background-image: url(svg/intro/logoblack.svg);*/
 }
 
+.move-right-content-no-fixed{
+    -ms-transform: translate(280px,0px); /* IE 9+ */
+    -webkit-transform: translate(280px,0px); /* Safari */
+    transform: translate(280px,0px); /* Standard syntax */
+    -o-transform: translate(280px,0px); /* opera */
+    -moz-transform: translate(280px,0px); /* mozzila */
+
+    -webkit-transition: 0.35s ease-in-out;
+    -moz-transition: 0.35s ease-in-out;
+    -o-transition: 0.35s ease-in-out;
+    transition: 0.35s ease-in-out;
+}
+
 .move-right-content{
 
     position: fixed;
@@ -327,6 +340,20 @@ nav#navBar>span {
     -moz-transition: 0.35s ease-in-out;
     -o-transition: 0.35s ease-in-out;
     transition: 0.35s ease-in-out;
+}
+
+.move-left-content-no-fixed{
+    transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -o-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
+    -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
+
+
+    -webkit-transform: translate3d(-281px,0,0);
+    transform: translate3d(-281px,0,0);
+    -o-transform: translate3d(-281px,0,0);
+    -moz-transform: translate3d(-281px,0,0);
+    -ms-transform: translate3d(-281px,0,0);
 }
 
 .move-left-content{
