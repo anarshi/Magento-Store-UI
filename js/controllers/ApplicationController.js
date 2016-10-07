@@ -143,7 +143,7 @@
                        
                     }
                 }else {
-                   $scope.contentClass = "move-left-content"; 
+                   $scope.contentClass = "move-right-content"; 
                 }
                 $scope.isModalOpen = true;
                 
