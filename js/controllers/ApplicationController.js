@@ -184,6 +184,10 @@
                 $scope.bodyOpenModalClass = "";
                  $scope.closeFooter = "";
                 $scope.isCartOpen = false;
+                document.ontouchmove = function (e) {
+                  return true;
+
+                }
             }else {
                 console.log("Application Controller message \n 'modal is already open' \n SystemDev Message delete in production");
             }
@@ -222,8 +226,8 @@
                   $scope.closeFooter = "close-footer";
 
                   document.ontouchmove = function (e) {
-                  e.preventDefault();
-                }
+                    e.preventDefault();
+                 }
 
             } else {
                 console.log("Cart is already open");
