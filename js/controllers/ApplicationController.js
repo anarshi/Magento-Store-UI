@@ -217,7 +217,7 @@
                 console.log("uso");
                 //$scope.cartId = localStorage.cartId;
                 $scope.isCartOpen = true;
-                $scope.contentClass = "move-left-content";
+                $scope.contentClass = "move-right-content";
                 $scope.cartOpenClass = "move-cart-left ";
                  $scope.bodyOpenModalClass = "no-scroll lock-scroll cart-open";
                   $scope.closeFooter = "close-footer";
