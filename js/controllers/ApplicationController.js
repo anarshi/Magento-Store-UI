@@ -12,7 +12,6 @@
     function applicationController($rootScope, $scope , $location , $http , $timeout , basket) {
 
 
-
         
 
         $scope.isiOS = false;
