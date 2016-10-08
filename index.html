@@ -27,22 +27,11 @@
     <script src="js/controllers/ProductsController.js"></script>
     <script src="js/controllers/ProductController.js"></script>
     <script src="js/controllers/BasketController.js"></script>
-    <script src="js/controllers/CurrenciesController.js"></script>
-    <script src="js/controllers/AccountController.js"></script>
-    <script src="js/controllers/FiltersController.js"></script>
+    <script src="js/controllers/LookBookController.js"></script>
+    <script src="js/controllers/SidemenuController.js"></script>
     <script src="js/controllers/ServiceDeskController.js"></script>
-    <script src="js/controllers/ModalController.js"></script>
-    <script src="js/filters/Convert.js"></script>
-    <script src="js/directives/Sidebar.js"></script>
-    <script src="js/directives/Filter.js"></script>
-    <script src="js/directives/Panel.js"></script>
-    <script src="js/services/Gateway.js"></script>
     <script src="js/services/Basket.js"></script>
-    <script src="js/services/Currency.js"></script>
-    <script src="js/services/Config.js"></script>
-    <script src="js/services/Http.js"></script>
-    <script src="js/services/Socket.js"></script>
-
+    <script src="js/services/cartProducts.js"></script>
     <script src="js/ioBounce.js"></script>
 
 </head>
@@ -51,10 +40,10 @@
         <div class="view left-sidebar-menu-container" ng-include="'views/sidebarMenu.html'"></div>
     </section>
     <aside id="shoppingcart" class="shoppingcart" ng-class="cartOpenClass" data-quantity="0">
-        <aside class="cartcount show active">{{cartCount}}<span class="label">CLOSE</span></aside>
+        <aside class="cartcount show active">{{cartProducts.cartCount}}<span class="label">CLOSE</span></aside>
         <div id="cart-scroll">
             <ul class="cart-products">
-                <li product-id="{{crProduct.id}}" ng-repeat="crProduct in cartProducts">
+                <li product-id="{{crProduct.id}}" ng-repeat="crProduct in cartProducts.productsInCart">
                    <figure>
                         <img width="300" height="300" ng-src="{{crProduct.imageUrl  }}" />
                    </figure> 
@@ -68,7 +57,7 @@
              </ul>
         </div>
 
-        <footer>Total <span>€ {{totalPrice}}</span></footer>
+        <footer>Total <span>€ {{cartProducts.cartTotalPrice}}</span></footer>
         <button ng-click="goToCart()" class="checkout" >
             <span><strong>Checkout</strong></span>
             <span class="hover"><strong>Checkout</strong></span>
@@ -83,7 +72,7 @@
                     Menu<span class="label">MENU</span>
                 </button>
                 <span class="logo" ng-click="goHome('/')">ABC</span>
-                <aside class="cartcount show " ng-click="openCart()">{{cartCount}}<span class="label"></span></aside>
+                <aside class="cartcount show " ng-click="openCart()">{{cartProducts.cartCount}}<span class="label"></span></aside>
             </nav>
            
         </header>

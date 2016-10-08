@@ -2,14 +2,9 @@
 
     "use strict";
 
-    /**
-     * @controller ApplicationController
-     * @author Adam Timberlake
-     * @module Moa
-     */
-    $moa.controller('ApplicationController', ['$rootScope', '$scope'  ,'$location' , '$http' ,'$timeout', 'basket',
+    $moa.controller('ApplicationController', ['$rootScope', '$scope'  ,'$location' , '$http' ,'$timeout', 'basket', 'cartProducts',
 
-    function applicationController($rootScope, $scope , $location , $http , $timeout , basket) {
+    function applicationController($rootScope, $scope , $location , $http , $timeout , basket ,cartProducts) {
 
 
         
@@ -21,7 +16,6 @@
         $scope.isiOS = iOS;
 
         setTimeout(function(){
-            console.log("uso");
             if($scope.isiOS){
                 var innerHeight =  window.innerHeight;
                 var sidemenu = document.getElementById("sidemenu-ios");
@@ -31,7 +25,7 @@
         
 
         function iOSversion() {
-
+v
           if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
             if (!!window.indexedDB) { return 'iOS 8 and up'; }
             if (!!window.SpeechSynthesisUtterance) { return 'iOS 7'; }
@@ -68,7 +62,7 @@
                 $scope.isCartOpen = false;
                  $scope.closeFooter = "close-footer";
             }else {
-                console.log("Application Controller message \n 'modal is already open' \n SystemDev Message delete in production");
+                //Empty
             }
 
          });
@@ -76,25 +70,36 @@
 
         $scope.cartCount = 0;
 
+        $scope.cartProducts = cartProducts;
+
         basket.cartData.async(localStorage.cartId).then(function(data){
-            $scope.cartProducts = data.cartProducts;
-            $scope.cartCount = data.cartCount;
-            $scope.totalPrice = data.totalPrice;
+            $scope.cartProducts.productsInCart = data.cartProducts;
+            $scope.cartProducts.cartCount = data.cartCount;
+            $scope.cartProducts.cartTotalPrice = data.totalPrice;
         });
         
 
         $scope.removeFromCart = function(el){
             basket.removeFromCart.async(localStorage.cartId,el.id).then(function(data){
                 localStorage.cartId = data;
-                console.log("ret data: " +data);
+
+                basket.cartData.async(localStorage.cartId).then(function(data){
+                    $scope.cartProducts.productsInCart = data.cartProducts;
+                    $scope.cartProducts.cartCount = data.cartCount;
+                    $scope.cartProducts.cartTotalPrice = data.totalPrice;
+                });
+
+               
             });
-            var index = $scope.cartProducts.indexOf(el);
-            $scope.cartProducts.splice(index, 1);
-            $scope.cartCount = $scope.cartProducts.length;
+            
+            var index = $scope.cartProducts.productsInCart.indexOf(el);
+            $scope.cartProducts.productsInCart.splice(index, 1);
+            $scope.cartCount = $scope.cartProducts.productsInCart.length;
             $scope.totalPrice = 0;
-            for(var i = 0 ; i < $scope.cartProducts.length ; i++){
-                $scope.totalPrice += $scope.cartProducts[i].price;
+            for(var i = 0 ; i < $scope.cartProducts.productsInCart.length ; i++){
+                $scope.totalPrice += $scope.cartProducts.productsInCart[i].price;
             }
+
             
         };
 
@@ -180,12 +185,6 @@
         $scope.closeModal = function () {
             if($scope.isModalOpen){
 
-                // if($location.path() === "/about" || $location.path() === "/service"){
-                //     $scope.contentClass = "move-right-content-no-fixed";
-                // }else {
-                //    $scope.contentClass = "move-right-content"; 
-                // }
-
                 $scope.isModalOpen = false;
                 $scope.bodyOpenModalClass = "";
                 $scope.sidebar_footer_class = "close-modal-footer";
@@ -210,7 +209,7 @@
 
                 }
             }else {
-                console.log("Application Controller message \n 'modal is already open' \n SystemDev Message delete in production");
+                //Empty
             }
         };
 
@@ -236,7 +235,6 @@
         };
 
         $scope.openCart = function(){
-            console.log("asdasd");
             if($scope.isCartOpen === false){
                 
                 if($location.path() === "/about" || $location.path() === "/service"){
@@ -264,11 +262,9 @@
                  }
 
             } else {
-                console.log("Cart is already open");
+                //Empty
             }
         };
-
-        
         
     }]);
 

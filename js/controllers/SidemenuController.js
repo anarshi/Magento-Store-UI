@@ -2,12 +2,7 @@
 
     "use strict";
 
-    /**
-     * @controller AccountController
-     * @author Adam Timberlake
-     * @module Moa
-     */
-    $moa.controller('AccountController', ['$scope', '$location' ,
+    $moa.controller('SidemenuController', ['$scope', '$location' ,
 
     function accountController($scope, $location) {
 
@@ -18,10 +13,10 @@
             $scope.side4 = '';
         }
 
-        $scope.$on('$locationChangeSuccess', function(/* EDIT: remove params for jshint */) {
+        $scope.$on('$locationChangeSuccess', function() {
             var path = $location.path();
 
-            //EDIT: cope with other path
+           
             if(path === '/lookbook'){
                 $scope.lookbook = 'active-modal-link';
                 $scope.collection = '';
@@ -29,7 +24,6 @@
                 $scope.service = '';
             } 
 
-            console.log(path);
 
             if(path === '/'){
                  $scope.collection = 'active-modal-link';
@@ -53,7 +47,6 @@
                 $scope.service = 'active-modal-link';
             }
 
-           // $scope.templateUrl = (path==='/' || path==='/') ? 'template/header4signin.html' : 'template/header4normal.html' ;
         });
 
         $scope.goHome = function(path){
