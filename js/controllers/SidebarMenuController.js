@@ -3,9 +3,9 @@
     "use strict";
 
 
-    $moa.controller('SidebarMenuController', ['$scope', 'http',
+    $moa.controller('SidebarMenuController', ['$scope',
 
-        function sidebarMenuController($scope, http) {
+        function sidebarMenuController($scope) {
 
             console.log("asdasd");
 

@@ -2,35 +2,30 @@
 
     "use strict";
 
-    /**
-     * @controller ProductController
-     * @author Adam Timberlake
-     * @module Moa
-     */
-    $moa.controller('ProductController', ['$scope', '$http','$routeParams','$location','basket' , 
+    $moa.controller('ProductController', ['$scope', '$http','$routeParams','$location','basket' , 'cartProducts',
 
-    function ProductController($scope,$http,$routeParams,$location , basket) {
+    function ProductController($scope,$http,$routeParams,$location , basket , cartProducts) {
+
+        $scope.cartProducts = cartProducts;
 
         $scope.addToCart = function(){
             var productId = $routeParams.product_id;
             if(localStorage.cartId != null && !isNaN(localStorage.cartId)){
                      basket.addToCart.async(localStorage.cartId,productId).then(function(response){
-                        console.log("1: " + response);
                         localStorage.cartId = response;
-                        basket.cartData.async(localStorage.cartId).then(function(data){
-                            $scope.cartProducts = data.cartProducts;
-                            $scope.cartCount = data.cartCount;
-                            $scope.totalPrice = data.totalPrice;
+                         basket.cartData.async(localStorage.cartId).then(function(data){
+                            $scope.cartProducts.productsInCart = data.cartProducts;
+                            $scope.cartProducts.cartCount = data.cartCount;
+                            $scope.cartProducts.cartTotalPrice = data.totalPrice;
                         });
                     });
             } else {
                  basket.initialize.async(productId).then(function(response){
-                    console.log(response);
                     localStorage.cartId = response;
-                    basket.cartData.async(localStorage.cartId).then(function(data){
-                        $scope.cartProducts = data.cartProducts;
-                        $scope.cartCount = data.cartCount;
-                        $scope.totalPrice = data.totalPrice;
+                     basket.cartData.async(localStorage.cartId).then(function(data){
+                        $scope.cartProducts.productsInCart = data.cartProducts;
+                        $scope.cartProducts.cartCount = data.cartCount;
+                        $scope.cartProducts.cartTotalPrice = data.totalPrice;
                     });
                 });
             }
@@ -48,7 +43,6 @@
                     description: "pulled image"
                 });
             }
-            console.log($scope.product);
         }, function errorCallback(response) {
             console.log("ERROR: " + response);
         });

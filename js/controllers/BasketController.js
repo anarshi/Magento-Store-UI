@@ -2,13 +2,8 @@
 
     "use strict";
 
-    /**
-     * @controller BasketController
-     * @author Adam Timberlake
-     * @module Moa
-     */
-    $moa.controller('BasketController', ['$scope', '$routeParams' , '$location'  , 'http', 'basket', function BasketController($scope,
-     $routeParams ,$location , http, basket) {
+    $moa.controller('BasketController', ['$scope', '$routeParams' , '$location' , 'basket', function BasketController($scope,
+     $routeParams ,$location , basket) {
 
       
 
@@ -48,16 +43,11 @@
             };
             console.log(requuestData);
             basket.checkout.async(requuestData).then(function(response){
-              console.log("response : " + response);
                 if(response === "1"){
-                  console.log("dobro chech out");
                     basket.deleteCart.async(localStorage.cartId).then(function(response){
-                      console.log("uso u brisanje");
                        if(response === "1"){
-                          console.log("response: " + response);
                           localStorage.cartId = null;
                           var buttonHref = document.getElementById();
-                          // $window.location.href = buttonHref.getAttribute('data-href')
                           $location.path("/");
                        } else {
                           console.log(response);
@@ -66,15 +56,8 @@
                     
                 } else {
                   basket.deleteCart.async(localStorage.cartId).then(function(response){
-                      console.log("uso u brisanje");
-                       
-                        console.log("response: " + response);
                         localStorage.cartId = null;
-                            //var buttonHref = document.getElementById();
-                          
-                      
                     });
-                  //console.log("lose checkout");
                   $location.path("/")
                 }
             });

@@ -2,11 +2,7 @@
 
     "use strict";
 
-    /**
-     * @service Basket
-     * @author Adam Timberlake
-     * @module Moa
-     */
+    
     $moa.service('basket', ['$rootScope'  , '$http' , '$timeout', function basketService($rootScope, $http , $timeout) {
 
         var service = {};
@@ -59,8 +55,6 @@
                         for(var i = 0 ; i < cartData.cartProducts.length ; i++){
                             cartData.totalPrice += cartData.cartProducts[i].price;
                         }
-                        console.log(cartId);
-                           console.log(response.data);
                         return cartData;
                      
                     }, function errorCallback(response) {
@@ -100,7 +94,6 @@
                                             "Content-Type": "application/json"
                                         }
                                     }).then(function successCallback(response, status, headers, config) {
-                                        console.log(response.data);
                                        return response.data;
                                     }, function errorCallback(response) {
                                         console.log("ERROR: " + response);
@@ -115,7 +108,6 @@
                                 method: 'GET',
                                 url: 'http://45.79.162.17:8888/deleteCart/' + cartId 
                             }).then(function successCallback(response) {
-                                console.log('delete cart');
                                return response.data;
                             }, function errorCallback(response) {
                                 console.log("ERROR: " + response);
