@@ -7,6 +7,8 @@
     function applicationController($rootScope, $scope , $location , $http , $timeout , basket ,cartProducts) {
 
 
+        $scope.isiOS = false;
+
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
         $scope.isiOS = iOS;
@@ -21,7 +23,7 @@
         
 
         function iOSversion() {
-v
+
           if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
             if (!!window.indexedDB) { return 'iOS 8 and up'; }
             if (!!window.SpeechSynthesisUtterance) { return 'iOS 7'; }
@@ -100,7 +102,7 @@ v
         };
 
 
-         $scope.isCartOpen = false;
+        $scope.isCartOpen = false;
         $scope.cartOpenClass = "";
 
         //view filter elements
