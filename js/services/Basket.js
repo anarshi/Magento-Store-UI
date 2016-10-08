@@ -53,7 +53,7 @@
                         cartData.cartCount = cartData.cartProducts.length;
                         cartData.totalPrice = 0;
                         for(var i = 0 ; i < cartData.cartProducts.length ; i++){
-                            cartData.totalPrice += cartData.cartProducts[i].price;
+                            cartData.totalPrice += cartData.cartProducts[i].price * cartData.cartProducts[i].cartQty;
                         }
                         return cartData;
                      

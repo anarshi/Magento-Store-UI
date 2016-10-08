@@ -73,7 +73,9 @@ v
         basket.cartData.async(localStorage.cartId).then(function(data){
             $scope.cartProducts.productsInCart = data.cartProducts;
             $scope.cartProducts.cartCount = data.cartCount;
+            // for(var i = 0 ; i < dara.cartProducts)
             $scope.cartProducts.cartTotalPrice = data.totalPrice;
+            $scope.cartProducts.cartQty = data.cartQty;
         });
         
 
@@ -85,6 +87,7 @@ v
                     $scope.cartProducts.productsInCart = data.cartProducts;
                     $scope.cartProducts.cartCount = data.cartCount;
                     $scope.cartProducts.cartTotalPrice = data.totalPrice;
+                    $scope.cartProducts.cartQty = data.cartQty;
                 });
 
                

@@ -13,7 +13,9 @@
             if(localStorage.cartId != null && !isNaN(localStorage.cartId)){
                      basket.addToCart.async(localStorage.cartId,productId).then(function(response){
                         localStorage.cartId = response;
+                        console.log(localStorage.cartId);
                          basket.cartData.async(localStorage.cartId).then(function(data){
+                            console.log(data);
                             $scope.cartProducts.productsInCart = data.cartProducts;
                             $scope.cartProducts.cartCount = data.cartCount;
                             $scope.cartProducts.cartTotalPrice = data.totalPrice;
@@ -22,6 +24,7 @@
             } else {
                  basket.initialize.async(productId).then(function(response){
                     localStorage.cartId = response;
+                    console.log("else :" + localStorage.cartId);
                      basket.cartData.async(localStorage.cartId).then(function(data){
                         $scope.cartProducts.productsInCart = data.cartProducts;
                         $scope.cartProducts.cartCount = data.cartCount;
