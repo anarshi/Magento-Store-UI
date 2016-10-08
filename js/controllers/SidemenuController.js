@@ -2,18 +2,11 @@
 
     "use strict";
 
-    $moa.controller('SidemenuController', ['$scope', '$location' ,
+    $moa.controller('SidemenuController', ['$scope', '$location' , 'locationService' ,
 
-    function accountController($scope, $location) {
+    function accountController($scope, $location ,locationService) {
 
-        if($location.path() === '/'){
-            $scope.side1 = 'active-modal-link';
-            $scope.side2 = '';
-            $scope.side3 = '';
-            $scope.side4 = '';
-        }
-
-        $scope.$on('$locationChangeSuccess', function() {
+        function changeOnLocation(){
             var path = $location.path();
 
            
@@ -46,7 +39,12 @@
                 $scope.about = '';
                 $scope.service = 'active-modal-link';
             }
+        };
 
+        changeOnLocation();
+
+        $scope.$on('$locationChangeSuccess', function() {
+            changeOnLocation();
         });
 
         $scope.goHome = function(path){
