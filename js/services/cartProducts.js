@@ -8,7 +8,8 @@
        return {
             productsInCart: [],
             cartCount: 0,
-            cartTotalPrice: 0
+            cartTotalPrice: 0,
+            cartQty: 0
        };
     }]);
 

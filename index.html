@@ -49,7 +49,7 @@
                    </figure> 
                    <div data-count="1">
                         <h3>{{crProduct.name}}</h3>
-                        <p>EU 44 | US 11 | UK 10 QTY: <span class="count">1</span></p>
+                        <p>EU 44 | US 11 | UK 10 QTY: <span class="count">{{crProduct.cartQty}}</span></p>
                                 <h4>€ {{crProduct.price}}</h4>
                         <button class="ui-cart-item-remove no-hijack" ng-click="removeFromCart(crProduct)">x</button>
                     </div>
