@@ -2,9 +2,9 @@
 
     "use strict";
 
-    $moa.controller('SidemenuController', ['$scope', '$location' , 'locationService' ,
+    $moa.controller('SidemenuController', ['$scope', '$location'  ,
 
-    function accountController($scope, $location ,locationService) {
+    function accountController($scope, $location ) {
 
         function changeOnLocation(){
             var path = $location.path();
