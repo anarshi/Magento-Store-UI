@@ -7,7 +7,6 @@
 
         function sidebarMenuController($scope) {
 
-            console.log("asdasd");
 
         }]);
 

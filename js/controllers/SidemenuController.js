@@ -50,7 +50,6 @@
 
         $scope.goHome = function(path){
             $location.path(path);
-            console.log("Home");
         };
     }]);
 

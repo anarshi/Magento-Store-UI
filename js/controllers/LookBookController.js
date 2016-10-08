@@ -13,22 +13,18 @@
             method: 'GET',
             url: 'http://45.79.162.17:8888/lookbook'
         }).then(function successCallback(response) {
-            console.log(response.data);
             $scope.products = response.data;
 
 
              $scope.elementIdUp = $scope.products[0].id;
             $scope.elementIdDown = $scope.products[0].id;
             $scope.counter = 0;
-              console.log($scope.counter)
 
             $scope.scrollUp = function(){
-                console.log("asd");
+
                 $('html, body').animate({
                     scrollTop: $("#" + $scope.elementIdUp).offset().top
                 }, 2000);
-
-                  console.log($scope.counter)
                 if($scope.counter < 0){
                     $scope.counter = 0;
                     $scope.elementIdUp = $scope.products[$scope.counter].id;

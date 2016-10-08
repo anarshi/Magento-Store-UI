@@ -139,7 +139,6 @@
 
         $scope.openModal = function() {
             if ($scope.isModalOpen) {
-                console.log("Opnened");
             } else {
 
                 if($location.path() === "/about" || $location.path() === "/service"){
@@ -178,7 +177,7 @@
                 $scope.modalClass="close-modal";
                 $scope.closeFooter = "";
             } else {
-                console.log("Application Controller message \n 'modal is already open' \n SystemDev Message delete in production");
+                //empty
             }
             $location.path(path);
         };
