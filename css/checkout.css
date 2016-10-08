@@ -20,6 +20,10 @@
     padding: 26px;
 }
 
+.biling-info-container{
+    padding-left: 30px!important;
+}
+
 h2 {
     font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
     text-transform: uppercase;
