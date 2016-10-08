@@ -1,3 +1,9 @@
+.main-checkout-container{
+    width: 80% !important;
+    float: none !important;
+    margin: 0 auto;
+}
+
 .header h1 {
     font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
     text-transform: uppercase;
@@ -321,6 +327,13 @@ p.sum span.value {
 }
 
 @media screen and (max-width: 990px){
+
+    .main-checkout-container{
+        float: left;
+        margin: inherit;
+        width: 100% !important;
+    }
+
     .checkout-product p {
         line-height: inherit;
         margin-top:5px;
@@ -346,7 +359,7 @@ p.sum span.value {
     .header {
         display: block;
         position: relative;
-        height: 100%;
+        
         background: #000;
         margin: 0 0 90px;
         padding: 20px;
@@ -364,7 +377,7 @@ p.sum span.value {
         text-align: center;
         font-size: 20px;
         color: #FFF;
-        padding-top: 56px;
+        padding-top: 65px;
     }
 
 }
