@@ -40,6 +40,7 @@
                 $scope.service = 'active-modal-link';
             }
         };
+        
 
         changeOnLocation();
 
