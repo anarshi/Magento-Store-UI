@@ -1,11 +1,9 @@
-@import "section/products.css";
-@import "section/filters.css";
-@import "checkout.css";
-@import "lookbook.css";
-@import "about.css";
-@import "serviceDesk.css";
-
-
+@import "products-ios.css";
+@import "filters-ios.css";
+@import "checkout-ios.css";
+@import "lookbook-ios.css";
+@import "about-ios.css";
+@import "serviceDesk-ios.css";
 
 * {
     margin: 0;
@@ -58,10 +56,10 @@ header h1 {
 
 body #navBar.top, body .transform-container {
     height:100%;
-    transition-property: -webkit-transform;
-    transition-property: transform;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(.645,.045,.355,1);
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-property: transform;
+    -webkit-transition-duration: .5s;
+    -webkit-transition-timing-function: cubic-bezier(.645,.045,.355,1);
 }
 
 nav#navBar.ready {
@@ -311,62 +309,26 @@ nav#navBar>span {
 }
 
 .move-right-content-no-fixed{
-    -ms-transform: translate(280px,0px); /* IE 9+ */
     -webkit-transform: translate(280px,0px); /* Safari */
-    transform: translate(280px,0px); /* Standard syntax */
-    -o-transform: translate(280px,0px); /* opera */
-    -moz-transform: translate(280px,0px); /* mozzila */
-
     -webkit-transition: 0.35s ease-in-out;
-    -moz-transition: 0.35s ease-in-out;
-    -o-transition: 0.35s ease-in-out;
-    transition: 0.35s ease-in-out;
 }
 
 .move-right-content{
 
-    position: fixed;
-
-    -ms-transform: translate(280px,0px); /* IE 9+ */
+    position: relative;
     -webkit-transform: translate(280px,0px); /* Safari */
-    transform: translate(280px,0px); /* Standard syntax */
-    -o-transform: translate(280px,0px); /* opera */
-    -moz-transform: translate(280px,0px); /* mozzila */
-
     -webkit-transition: 0.35s ease-in-out;
-    -moz-transition: 0.35s ease-in-out;
-    -o-transition: 0.35s ease-in-out;
-    transition: 0.35s ease-in-out;
 }
 
 .move-left-content-no-fixed{
-    transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -o-transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
     -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
-
-
     -webkit-transform: translate3d(-281px,0,0);
-    transform: translate3d(-281px,0,0);
-    -o-transform: translate3d(-281px,0,0);
-    -moz-transform: translate3d(-281px,0,0);
-    -ms-transform: translate3d(-281px,0,0);
 }
 
 .move-left-content{
     position: fixed;
-
-    transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -o-transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
     -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
-
-
     -webkit-transform: translate3d(-281px,0,0);
-    transform: translate3d(-281px,0,0);
-    -o-transform: translate3d(-281px,0,0);
-    -moz-transform: translate3d(-281px,0,0);
-    -ms-transform: translate3d(-281px,0,0);
 }
 
 
@@ -375,25 +337,10 @@ nav#navBar>span {
     width:100% !important;
     margin:0px !important;
     padding:0px !important;
-    transition-property: -webkit-transform;
-    transition-property: transform;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(.645,.045,.355,1);
-
-    transition-property: -o-transform;
-    transition-property: transform;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(.645,.045,.355,1);
-
-    transition-property: -moz-transform;
-    transition-property: transform;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(.645,.045,.355,1);
-
-    transition-property: -ms-transform;
-    transition-property: transform;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(.645,.045,.355,1);
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-property: transform;
+    -webkit-transition-duration: .5s;
+    -webkit-transition-timing-function: cubic-bezier(.645,.045,.355,1);
 }
 
 
@@ -402,15 +349,11 @@ nav#navBar>span {
     position: relative;
     width: 100%;
     height: auto;
-    transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
-    -o-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
-    -moz-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
     -wekit-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
-    -ms-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
     background: #f3f3f5;
     float: left;
     top: 72px;
-    min-height: 100vh;
+    min-height: 100%;
     padding-bottom: 108px!important
 }
 
@@ -420,15 +363,9 @@ nav#navBar>span {
     width:100% !important;
     margin:0px !important;
     padding:0px !important;
-    transition-property: -webkit-transform;
-    transition-property: -o-transform;
-    transition-property: -moz-transform;
-    transition-property: -ms-transform;
-    transition-property: -transform;
-
-    transition-property: transform;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(.645,.045,.355,1);
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: .5s;
+    -webkit-transition-timing-function: cubic-bezier(.645,.045,.355,1);
 }
 
 .menu-title-container{
@@ -454,12 +391,9 @@ nav#navBar>span {
 
 body {
     overflow-x: hidden;
-    transition-property: transform;
-    transition-property: -o-transform;
-    transition-property: -moz-transform;
-    transition-property: -ms-transform;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(.645,.045,.355,1);
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: .5s;
+    -webkit-transition-timing-function: cubic-bezier(.645,.045,.355,1);
 
 
 }
@@ -467,17 +401,8 @@ body {
 /* Cart style */
 
 .cart-open #shoppingcart {
-    transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -o-transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
     -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -ms-transition: all .5s cubic-bezier(.645,.045,.355,1);
-
     -webkit-transform: translate3d(0,0,0);
-    -o-transform: translate3d(0,0,0);
-    -ms-transform: translate3d(0,0,0);
-    -moz-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
 }
 
 #shoppingcart {
@@ -485,10 +410,6 @@ body {
     position: fixed;
     width: 281px;
     height: 100%;
-    transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -o-transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -ms-transition: all .5s cubic-bezier(.645,.045,.355,1);
     -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
     background: #f3f3f5;
     top: 0;
@@ -499,10 +420,6 @@ body {
     z-index: 9999;
     margin-top: 0!important;
     -webkit-transform: translate3d(281px,0,0);
-    -moz-transform: translate3d(281px,0,0);
-    -o-transform: translate3d(281px,0,0);
-    -ms-transform: translate3d(281px,0,0);
-    transform: translate3d(281px,0,0);
 }
 
 .cartcount.active {
@@ -520,7 +437,7 @@ body {
     position: absolute;
     width: 24px;
     height: 24px;
-    font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
+    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: .1875rem;
@@ -543,7 +460,7 @@ body {
 .cartcount span.label {
     display: block;
     position: absolute;
-    font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
+    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: .1875rem;
@@ -561,10 +478,6 @@ body {
     opacity: 0;
     visibility: hidden;
     color: #1D1D1F;
-    transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -moz-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -ms-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -o-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
     -webkit-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
 }
 
@@ -587,21 +500,11 @@ body {
 #shoppingcart #cart-scroll {
     opacity: 1 !important;
     left: 0 !important;
-    transition: all 750ms ease .25s !important;
-    -moz-transition: all 750ms ease .25s !important;
     -webkit-transition: all 750ms ease .25s !important;
-    -ms-transition: all 750ms ease .25s !important;
-    -o-transition: all 750ms ease .25s !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
     width: 281px!important;
 }
-
-/*.ui-cart-item-remove:hover{
-    background: transparent !important;
-    color:black !important;
-}*/
-
 
 
 ul.cart-products li h3, ul.cart-products li p {
@@ -628,7 +531,7 @@ ul.cart-products li div button:hover {
     height: 32px;
     color: #000;
     text-indent: -9999px;
-    background: url('../../images/svg/cancel.svg') left center no-repeat;
+    background: url(../../images/svg/cancel.svg) left center no-repeat;
     background-size: 8px;
     margin: 0;
     padding: 0;
@@ -640,7 +543,7 @@ ul.cart-products li div button:focus {
     height: 32px;
     color: #000;
     text-indent: -9999px;
-    background: url('../../images/svg/cancel.svg') left center no-repeat;
+    background: url(../../images/svg/cancel.svg) left center no-repeat;
     background-size: 8px;
     margin: 0;
     padding: 0;
@@ -689,7 +592,6 @@ ul.cart-products li div {
 }
 
 ul.cart-products {
-
     display: block;
     position: relative;
     padding: 0;
@@ -701,19 +603,11 @@ ul.cart-products {
 
 .cart-open #shoppingcart footer {
     bottom: 54px;
-    transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
-    -o-transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
-    -moz-transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
     -webkit-transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
-    -ms-transition: all 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
 }
 
 #shoppingcart footer {
-    transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -o-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -moz-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
     -webkit-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -ms-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
     bottom: 54px;
     background: #FFF;
     color: #000;
@@ -726,7 +620,7 @@ ul.cart-products {
     height: 54px;
     display: block;
     position: absolute;
-    font-family: AvenirNextLTPro-Regular,Arial,Helvetica;
+    font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
     font-weight: 400;
     text-transform: uppercase;
     font-size: .6875rem;
@@ -750,11 +644,7 @@ ul.cart-products {
 }
 
 .cart-open #shoppingcart button.checkout {
-    transition: bottom 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
-    -o-transition: bottom 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
-    -moz-transition: bottom 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
     -webkit-transition: bottom 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
-    -ms-transition: bottom 350ms cubic-bezier(.25,.46,.45,.94) 350ms;
     bottom: 0;
 }
 
@@ -765,10 +655,6 @@ ul.cart-products {
 }
 
 #shoppingcart button.checkout {
-    transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -moz-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -ms-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -o-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
     -webkit-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
     bottom: 0;
     color: #FFF;
@@ -820,11 +706,7 @@ ul.cart-products {
     box-shadow: none;
 }
 #shoppingcart button.checkout {
-    transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -o-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -moz-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
     -webkit-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -ms-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
     bottom: 0;
     color: #FFF;
     background: #000;
@@ -838,11 +720,7 @@ ul.cart-products {
     position: absolute;
     width: 100%;
     height: 100%;
-    transition: top .35s cubic-bezier(.455,.03,.515,.955);
-    -o-transition: top .35s cubic-bezier(.455,.03,.515,.955);
-    -moz-transition: top .35s cubic-bezier(.455,.03,.515,.955);
     -webkit-transition: top .35s cubic-bezier(.455,.03,.515,.955);
-    -ms-transition: top .35s cubic-bezier(.455,.03,.515,.955);
     top: 0;
     left: 0;
 }
@@ -852,10 +730,7 @@ ul.cart-products {
 .footer-bar {
     display: block;
     position: fixed;
-    transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-webkit-transform 550ms cubic-bezier(.455,.03,.515,.955);
-    transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),transform 550ms cubic-bezier(.455,.03,.515,.955);
-    transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-o-transform 550ms cubic-bezier(.455,.03,.515,.955);
-    transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-moz-transform 550ms cubic-bezier(.455,.03,.515,.955);
+    -webkit-transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-webkit-transform 550ms cubic-bezier(.455,.03,.515,.955);
     bottom: 0;
     left: 0;
     right: 0;
@@ -866,16 +741,7 @@ ul.cart-products {
     z-index: 20;
 
     -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -o-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-
-    transition: visibility 0s, opacity 0.01s linear;
-    -o-transition: visibility 0s, opacity 0.01s linear;
-    -moz-transition: visibility 0s, opacity 0.01s linear;
     -webkit-transition: visibility 0s, opacity 0.01s linear;
-    -ms-transition: visibility 0s, opacity 0.01s linear;
 }
 
 
@@ -938,11 +804,7 @@ ul.cart-products {
     position: absolute;
     width: 100%;
     height: 100%;
-    transition: top .35s cubic-bezier(.455,.03,.515,.955);
-    -o-transition: top .35s cubic-bezier(.455,.03,.515,.955);
-    -moz-transition: top .35s cubic-bezier(.455,.03,.515,.955);
     -webkit-transition: top .35s cubic-bezier(.455,.03,.515,.955);
-    -ms-transition: top .35s cubic-bezier(.455,.03,.515,.955);
     top: 0;
     left: 0;
 }
@@ -959,7 +821,7 @@ ul.cart-products {
 }
 
 #collection-footer {
-    top: calc(100vh - 54px);
+    top: calc(100% - 54px);
 }
 
 .footer-bar li, .footer-bar ul {
@@ -972,11 +834,7 @@ ul.cart-products {
     display: block;
     position: relative;
     width: auto;
-    transition: all 500ms ease;
-    -o-transition: all 500ms ease;
-    -moz-transition: all 500ms ease;
     -webkit-transition: all 500ms ease;
-    -ms-transition: all 500ms ease;
     background: rgba(243,243,245,.56);
     float: left;
     height: inherit;
@@ -996,11 +854,7 @@ ul.cart-products {
     position: relative;
     width: 60px;
     height: 54px;
-    transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
-    -moz-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
-    -o-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
     -webkit-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
-    -ms-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
     text-decoration: none;
     text-indent: -9999px;
     outline: 0;
@@ -1030,11 +884,7 @@ ul.cart-products {
     background-color: #008CBA;
     border-color: #007095;
     color: #FFF;
-    transition: background-color 300ms ease-out;
-    -moz-transition: background-color 300ms ease-out;
     -webkit-transition: background-color 300ms ease-out;
-    -o-transition: background-color 300ms ease-out;
-    -ms-transition: background-color 300ms ease-out;
 }
 
 .footer-bar li .items.row4 span {
@@ -1060,11 +910,7 @@ ul.cart-products {
     position: absolute;
     width: 100%;
     height: 100%;
-    transition: top .35s cubic-bezier(.455,.03,.515,.955);
-    -o-transition: top .35s cubic-bezier(.455,.03,.515,.955);
-    -moz-transition: top .35s cubic-bezier(.455,.03,.515,.955);
     -webkit-transition: top .35s cubic-bezier(.455,.03,.515,.955);
-    -ms-transition: top .35s cubic-bezier(.455,.03,.515,.955);
     top: 0;
     left: 0;
 }
@@ -1093,11 +939,7 @@ ul.cart-products {
     position: absolute;
     width: 100%;
     height: 100%;
-    transition: top .35s cubic-bezier(.455,.03,.515,.955);
-    -o-transition: top .35s cubic-bezier(.455,.03,.515,.955);
-    -moz-transition: top .35s cubic-bezier(.455,.03,.515,.955);
     -webkit-transition: top .35s cubic-bezier(.455,.03,.515,.955);
-    -ms-transition: top .35s cubic-bezier(.455,.03,.515,.955);
     top: 0;
     left: 0;
 }
@@ -1105,11 +947,7 @@ ul.cart-products {
 nav.footerbuttons {
     display: block;
     position: absolute;
-    transition: opacity .5s cubic-bezier(.25,.46,.45,.94),visibility .5s cubic-bezier(.25,.46,.45,.94);
-    -o-transition: opacity .5s cubic-bezier(.25,.46,.45,.94),visibility .5s cubic-bezier(.25,.46,.45,.94);
-    -moz-transition: opacity .5s cubic-bezier(.25,.46,.45,.94),visibility .5s cubic-bezier(.25,.46,.45,.94);
     -webkit-transition: opacity .5s cubic-bezier(.25,.46,.45,.94),visibility .5s cubic-bezier(.25,.46,.45,.94);
-    -ms-transition: opacity .5s cubic-bezier(.25,.46,.45,.94),visibility .5s cubic-bezier(.25,.46,.45,.94);
     overflow: hidden;
     opacity: 0;
     right: -400px;
@@ -1122,7 +960,7 @@ header h1 span {
 }
 
 div.loading-apple {
-    background: transparent url('../../images/apple-loading.gif') 0 8px no-repeat;
+    background: transparent url('../images/apple-loading.gif') 0 8px no-repeat;
     height: 50px;
     display: block;
     font-family: "Source Sans Pro", sans-serif;
@@ -1154,10 +992,6 @@ div.action-button {
     line-height: 50px;
     cursor: pointer;
     text-align: center;
-    transition: all .35s;
-    -o-transition: all .35s;
-    -ms-transition: all .35s;
-    -moz-transition: all .35s;
     -webkit-transition: all .35s;
 }
 

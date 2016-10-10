@@ -8,18 +8,27 @@
 
 
         $scope.isiOS = false;
+        $scope.stylesheets = [];
 
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
         $scope.isiOS = iOS;
 
-        setTimeout(function(){
-            if($scope.isiOS){
+        if($scope.isiOS){
                 var innerHeight =  window.innerHeight;
                 var sidemenu = document.getElementById("sidemenu-ios");
-                sidemenu.style.height = innerHeight + "px"; 
+                sidemenu.style.height = innerHeight + "px";
+
+                $scope.stylesheets = [
+                  {href: 'css/iosStyle/default-ios.css', type:'text/css'},
+                ];
+            } else {
+                $scope.stylesheets = [
+                  {href: 'css/default.css', type:'text/css'},
+                ];                
             }
-        },500);
+
+        
         
 
         function iOSversion() {
@@ -169,6 +178,7 @@
         };
 
         $scope.goHome = function(path){
+            console.log('Home')
             if($scope.isModalOpen){
                 $scope.isModalOpen = false;
                 $scope.bodyOpenModalClass = "";

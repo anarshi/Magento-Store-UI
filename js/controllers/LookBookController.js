@@ -47,7 +47,6 @@
                     $scope.elementIdDown = $scope.products[$scope.counter].id;
                     $scope.elementIdUp = $scope.products[$scope.counter-1].id;
                 }else {
-                    console.log($scope.counter);
 
                     $scope.elementIdDown = $scope.products[$scope.counter + 1].id;
                     $scope.elementIdUp = $scope.products[$scope.counter];

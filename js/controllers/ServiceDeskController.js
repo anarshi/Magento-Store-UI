@@ -179,7 +179,6 @@
                         case 'customer-care':
                            
                             $scope.showCustomCare = false;
-                            console.log("happend");
                              $timeout(function(){
                                 $scope.showWholesaleShowroom = true;
                                 $scope.showPressAndMarketing = true;
@@ -245,7 +244,6 @@
                             },500);
                             break;
                         case 'privacy-statement':
-                            console.log("show me");
                             $scope.showPrivacyStatement = false;
                             $timeout(function(){
                                 $scope.showTermsAndConditionsEl = true;

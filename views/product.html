@@ -1,10 +1,11 @@
-<div class="page product-page container main-container"  id="mainId" ng-click="closeModal" style="opacity: 1;" ng-controller="ProductController">
-    <div class="page page--product" style="opacity: 1;">
+<div class="page product-page main-container" onscrollDirective  id="mainId" ng-click="closeModal" style="opacity: 1;" ng-controller="ProductController">
+    <div class="page product-page" style="opacity: 1;">
         <section class="product-container">
             <div class="container slider">
                 <img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage"
                 ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
                 ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
+
                 <a class="arrow prev"  ng-click="nextSlide()"></a>
                 <a class="arrow next"  ng-click="prevSlide()"></a>
                 <!-- <nav class="nav">
@@ -23,7 +24,7 @@
                 <div class="transform-container">
                     <div class="image-container" data-images="{{imageNumber}}" style="margin-bottom: -90%;">
                         <figure class="ready onscreen" ng-repeat="slide in slides"  ngStyle="{background-image: url(slide.image;}">
-                            <img src="{{slide.image}}" data-small="{{slide}}">
+                            <img src="{{slide.image}}" data-small="{{slide.image}}">
                             <div class="hover"></div>
                         </figure>
                     </div>
@@ -56,8 +57,22 @@
                         <p>{{product.longDescription}}</p>
                     </footer>
                 </div>
-            </section>
-        </div>
+                <div class="transform-container">
+                    <footer class="upsells js-margin show" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+                        <div class="bar show"><span>You may also like</span></div>
+                        <div class="scroll-container">
+                            <ul>
+                                <li class="onscreen" style="background-image: url(https://www.etq-amsterdam.com/app/uploads/2016/08/ETQ-Amsterdam-Low-5-Black-Denim-Side-800x0-c-default.jpg);"><a href="https://www.etq-amsterdam.com/shop/low-5-black-denim/"></a></li>
+                                <li class="onscreen" style="background-image: url(https://www.etq-amsterdam.com/app/uploads/2016/08/etq-amsterdam-low-4-white-side-800x0-c-default.jpg);"><a href="https://www.etq-amsterdam.com/shop/low-4-white/"></a></li>
+                                <li class="onscreen" style="background-image: url(https://www.etq-amsterdam.com/app/uploads/2016/09/ETQ-Amsterdam-Low-4-Wool-Cement-Side-800x0-c-default.jpeg);"><a href="https://www.etq-amsterdam.com/shop/low-4-wool-cement/"></a></li>
+                                <li class="onscreen" style="background-image: url(https://www.etq-amsterdam.com/app/uploads/2016/08/ETQ-Amsterdam-Low-5-Rubberized-Black-Light-Grey-Side-800x0-c-default.jpg);"><a href="https://www.etq-amsterdam.com/shop/low-5-rubberized-black-microchip/"></a></li>
+                            </ul>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+
+        </section>
         <div class="single-overlay"></div>
         <aside id="product-sizes" class="product-page-sizes hide">
             <div class="scrollpane">
