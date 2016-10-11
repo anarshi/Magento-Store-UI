@@ -1043,6 +1043,11 @@ html.no-touchevents .product-page .upsells .scroll-container ul li:nth-child(1) 
          {
         padding-top: 91%;
     }
+
+    #catalog .col-xs-6 .hover
+         {
+        padding-top: 82%;
+    }
 }
 
 #catalog .col-xs-6 .hover {
@@ -1155,7 +1160,11 @@ html.no-touchevents .product-page .upsells .scroll-container ul li:nth-child(1) 
 
 }
 
-@
+@media only  screen  and(max-width: 900px){
+    #catalog .col-xs-6 .hover {
+        padding-top: 85%;
+    }
+}
 
 
 

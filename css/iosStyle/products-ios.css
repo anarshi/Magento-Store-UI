@@ -7,6 +7,8 @@ section.products {
     -webkit-transition: all 1.25s;
 }
 
+
+
 .single-footer nav.footerbuttons.scrollout {
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
@@ -1018,7 +1020,11 @@ html.no-touchevents .product-page .upsells .scroll-container ul li:nth-child(1) 
     }
 }
 
-
+@media only  screen  and(max-width: 900px){
+    #catalog .col-xs-6 .hover {
+        padding-top: 85%;
+    }
+}
 
 @media only screen and (min-width: 63.813em){
     .product-page aside.info .info-inner {

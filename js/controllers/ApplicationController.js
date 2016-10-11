@@ -2,9 +2,9 @@
 
     "use strict";
 
-    $moa.controller('ApplicationController', ['$rootScope', '$scope'  ,'$location' , '$http' ,'$timeout', 'basket', 'cartProducts',
+    $moa.controller('ApplicationController', ['$rootScope', '$scope'  ,'$location' , '$http' ,'$timeout', '$window' ,'basket', 'cartProducts',
 
-    function applicationController($rootScope, $scope , $location , $http , $timeout , basket ,cartProducts) {
+    function applicationController($rootScope, $scope , $location , $http , $timeout , $window ,basket ,cartProducts) {
 
 
         $scope.isLoaded = false;
@@ -259,6 +259,19 @@
             $scope.twoRowActive = "";
             $scope.threeRowActive = "active";
         };
+
+
+        var w = angular.element($window);
+        w.bind('resize', function () {
+            if($window.innerWidth < 990 && $scope.productGridType !== 'col-md-12 col-xs-12'){
+                console.log("uso");
+               $scope.productGridType = 'col-md-6 col-xs-6';
+                localStorage.setItem('productGridType',$scope.productGridType);
+                $scope.oneRowActive = "";
+                $scope.twoRowActive = "active";
+                $scope.threeRowActive = ""; 
+            }
+        });
 
         switch($scope.productGridType) {
             case 'col-md-4 col-xs-6':
