@@ -1145,6 +1145,22 @@ div.btn:active {
     background: -webkit-linear-gradient(top, #efefef 0%, #e0e0e0 100%);
 }
 
+#legalfooter .inner ul li button:hover{
+    background-color: black;
+}
+
+.instagram:hover{
+    background-color: black;
+}
+
+.facebook:hover{
+    background-color: black;
+}
+
+.twitter{
+    background-color: black;
+}
+
 
 div.action-button {
     margin: 0 auto;
