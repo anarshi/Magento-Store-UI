@@ -900,12 +900,12 @@ html.no-touchevents .product-page .upsells .scroll-container ul li:nth-child(1) 
 @media only screen and (min-width: 64.063em){
     #catalog .col-md-4 .hover
          {
-        padding-top: 88%;
+        padding-top: 91%;
     }
 }
 
 #catalog .col-xs-6 .hover {
-    padding-top: 88%;
+    padding-top: 91%;
 }
 
 #catalog .col-md-12 .hover {
