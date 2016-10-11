@@ -1004,6 +1004,53 @@ html.no-touchevents .product-page .upsells .scroll-container ul li:nth-child(1) 
     transform: translate3d(0,45px,0);
 }
 
+
+/* new style */
+
+.touchevents .product .hover {
+    display: none!important;
+}
+
+#catalog .product  .hover {
+    display: block;
+    position: absolute;
+    font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    transition: opacity .45s cubic-bezier(.25,.46,.45,.94),margin-top .45s cubic-bezier(.25,.46,.45,.94);
+    pointer-events: none;
+    opacity: 0;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    font-size: 10px;
+    line-height: 16px;
+    margin: 10px 0 0;
+    padding: 87% 0 0;
+    left: 0;
+    top: -30%;
+}
+
+@media only screen and (min-width: 64.063em){
+    #catalog .col-md-4 .hover
+         {
+        padding-top: 88%;
+    }
+}
+
+#catalog .col-xs-6 .hover {
+    padding-top: 88%;
+}
+
+#catalog .col-md-12 .hover {
+    padding-top: 91%;
+}
+
+/* end of new style */
+
+
 @media all and (orientation:portrait) {
 
     .product-page footer.info{

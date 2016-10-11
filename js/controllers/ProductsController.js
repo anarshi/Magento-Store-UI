@@ -22,6 +22,20 @@
             console.log("ERROR: " + response);
         });
 
+        $scope.showSubText = function(id){
+            var containerEl = document.getElementById(id + '');
+            var showEl = containerEl.getElementsByClassName("hover")[0];
+            TweenLite.to(showEl, 0, {css:{opacity:1}});
+            TweenLite.to(showEl, 0, {css:{margin:0}});       
+        }
+
+        $scope.hideSubText = function(id){
+            var containerEl = document.getElementById(id + '');
+            var showEl = containerEl.getElementsByClassName("hover")[0];
+            TweenLite.to(showEl, 1, {css:{opacity:0}});
+            TweenLite.to(showEl, 0, {css:{margin:'10px 0 0'}});
+        }
+
 
     }]);
 
