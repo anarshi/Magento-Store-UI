@@ -253,7 +253,7 @@
         };
 
         $scope.threeRowGrid = function(){
-            $scope.productGridType = 'col-md-4 col-xs-4';
+            $scope.productGridType = 'col-md-4 col-xs-6';
             localStorage.setItem('productGridType',$scope.productGridType);
             $scope.oneRowActive = "";
             $scope.twoRowActive = "";
@@ -261,7 +261,7 @@
         };
 
         switch($scope.productGridType) {
-            case 'col-md-4 col-xs-4':
+            case 'col-md-4 col-xs-6':
                 $scope.oneRowActive = "";
                 $scope.twoRowActive = "";
                 $scope.threeRowActive = "active";

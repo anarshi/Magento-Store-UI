@@ -1217,6 +1217,6 @@ div.error {
 
 @media screen and (max-width: 990px){
     .footer-bar ul li:last-child{
-        visibility: hidden;
+        display: none;
     }
 }
