@@ -7,6 +7,11 @@ section.products {
     -webkit-transition: all 1.25s;
 }
 
+.single-footer nav.footerbuttons.scrollout {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
 .catalog-product{
     min-height: 40%;
     display: block;

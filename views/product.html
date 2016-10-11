@@ -57,7 +57,7 @@
                         <p>{{product.longDescription}}</p>
                     </footer>
                 </div>
-                <div class="transform-container">
+                <div class="transform-container" in-view="inView($index, $inview, $inviewpart)">
                     <footer class="upsells js-margin show" style="transform: matrix(1, 0, 0, 1, 0, 0);">
                         <div class="bar show"><span>You may also like</span></div>
                         <div class="scroll-container">
@@ -134,7 +134,7 @@
                     <button role="button" data-href="https://www.etq-amsterdam.com" class="items back" ng-click = "goHome('/')"><span>x</span><span class="hover">x</span></button>
                 </li>
             </ul>
-            <nav class="footerbuttons col-md-12 col-xs-12 col-lg-12 no-padding">
+            <nav class="footerbuttons col-md-12 col-xs-12 col-lg-12 no-padding" ng-class="footerClass">
                 <button class="sizeBtn hide-when-small" ng-click="showSizes()"><span><strong>Size</strong></span>  </button>
                 <button class="addBtn btnAdd hide-when-small" id="addBtn" ng-click="addToCart()" ng-disabled="isSizeChoosen"><span><strong>Add to bag</strong></span></button>
 

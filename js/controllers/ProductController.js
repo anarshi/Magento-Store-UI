@@ -105,6 +105,16 @@
             return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
         }
 
+        $scope.footerClass = "";
+        $scope.inView = function(index, inview, inviewpart){
+            if(inview){
+                console.log('inview');
+                $scope.footerClass = "scrollout";
+            } else {
+                $scope.footerClass = "";
+            }
+        }
+
 
     }]).animation('.slide-animation', function () {
         return {

@@ -7,6 +7,7 @@
     "url": "git://git@github.com:Wildhoney/Magento-on-Angular.git"
   },
   "dependencies": {
+    "angular-pan-zoom": "^1.0.18",
     "crossfilter": "~1.2.0",
     "grunt-contrib-cssmin": "~0.7.0",
     "grunt-contrib-jasmine": "~0.5.2",
