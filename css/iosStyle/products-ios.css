@@ -787,7 +787,7 @@ filterList ul li.key, .filterList ul li.key:hover {
     letter-spacing: .1875rem;
     font-size: 12px;
     background: #1D1D1F;
-    line-height: 50%;
+    line-height: 21;
     text-align: center;
     color: #FFF;
 }
@@ -873,6 +873,14 @@ html.no-touchevents .product-page .upsells .scroll-container ul li:nth-child(1) 
 
 @media all and (orientation:portrait) {
 
+    .product-page .upsells .scroll-container ul li{
+        width: 25%;
+    }
+
+    .addBtn{
+        width: 50%;
+    }
+
     .product-page footer.info{
         z-index: 1 !important
     }
@@ -913,6 +921,7 @@ html.no-touchevents .product-page .upsells .scroll-container ul li:nth-child(1) 
 
     .single-footer nav.footerbuttons .sizeBtn {
         background: #FFF!important;
+        width: 100%;
     }
 
     .single-footer nav.footerbuttons button {
@@ -940,6 +949,7 @@ html.no-touchevents .product-page .upsells .scroll-container ul li:nth-child(1) 
     }
 
     .sizeBtn{
+        width: 50%;
         right: 4px;
         left: 0px;
     }
