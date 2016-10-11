@@ -3,21 +3,20 @@
 <head>
     <title>Moa</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/default.css" />
+    <!-- <link rel="stylesheet" href="css/default.css" /> -->
 <!--     <link rel="stylesheet" href="css/iosStyle/default-ios.css" /> -->
     <link ng-repeat="stylesheet in stylesheets" ng-href="{{stylesheet.href}}" type="{{stylesheet.type}}" rel="stylesheet" />
-
+</div>    
     <meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" />
-
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.30/angular-route.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.30/angular-animate.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.30/angular-touch.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -36,11 +35,7 @@
     <script src="js/controllers/ServiceDeskController.js"></script>
     <script src="js/services/Basket.js"></script>
     <script src="js/services/cartProducts.js"></script>
-     <script src="js/directives/onScroll.js"></script>
-
-    
-
-    
+    <script src="js/directives/onScroll.js"></script>
     <script src="js/ioBounce.js"></script>
 
 </head>

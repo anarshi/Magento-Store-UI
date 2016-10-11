@@ -37,7 +37,7 @@ body{
 }
 
 .footer-bar li .items span {
-    background-color: white;
+   /*  background-color: white; */
     opacity: 0.4;
     background-size: 10px;
     background-position: center center;

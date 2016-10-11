@@ -18,6 +18,16 @@ body, html {
     background-color: rgb(243,243,243) !important;
 }
 
+#legalfooter{
+    position: relative;
+    z-index: 21;
+}
+
+.footer-bar li .items:not(.disabled):not(.active):hover {
+    background-color: #FFF;
+}
+
+
 
 .cart-open .overlay, .menu-open .overlay {
     visibility: visible;
@@ -1053,6 +1063,15 @@ ul.cart-products {
     background-repeat: no-repeat;
     background-image: url('../images/svg/arrowIcon.svg');
 }
+
+.footer-bar li .items.active span{
+    opacity: 1;
+}
+
+.active-footer-button{
+    opacity: 1;
+}
+
 
 .footer-bar li .items>span {
     pointer-events: none;

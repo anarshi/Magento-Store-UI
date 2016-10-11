@@ -8,7 +8,7 @@
      */
 
 
-    window.moaApp = angular.module("moaApp", ["ngRoute","ngSanitize","ngAnimate","ngTouch"]);
+    window.moaApp = angular.module("moaApp", ["ngRoute","ngSanitize","ngAnimate","ngTouch","angular-inview"]);
     window.moaApp.config(function($routeProvider) {
         $routeProvider
             .when("/", {

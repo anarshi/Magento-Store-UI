@@ -19,7 +19,7 @@
         }, false);
     </script>
 
-<div class="home-page container main-container" >
+<div class="home-page container main-container">
     <section ng-controller="ProductsController" >
         <section class="products" >
             <div data-sidebar class="right">
@@ -50,11 +50,23 @@
     </section>
 
     <section>
-        <footer id="collection-footer" class="footer-bar" ng-class="closeFooter">
+        <footer id="collection-footer" ng-hide="isFooterCollectionVisible" class="footer-bar" ng-class="closeFooter">
             <ul>
-                <li><button data-rows="large" class="items row1 up" ng-click="oneRowGrid()"><span>1</span><span class="hover">1</span></button></li>
-                <li><button data-rows="medium" class="items row2  down active" ng-click="twoRowGrid()"><span>2</span><span class="hover">2</span></button></li>
-                <li class="hide-for-small"><button data-rows="small" class="items row4" ng-click="threeRowGrid()"><span>4</span><span class="hover">4</span></button></li>
+                <li>
+                    <button data-rows="large"  ng-class="oneRowActive" class="items row1 up" ng-click="oneRowGrid()">
+                        <span ng-class="oneRowActive">1</span>
+                        <span class="hover">1</span>
+                    </button>
+                </li>
+                <li><button data-rows="medium" ng-class="twoRowActive"  class="items row2  down" ng-click="twoRowGrid()">
+                    <span >2</span>
+                    <span class="hover">2</span></button></li>
+                <li class="hide-for-small">
+                    <button data-rows="small" ng-class="threeRowActive" class="items row4" ng-click="threeRowGrid()">
+                        <span >4</span>
+                        <span class="hover">4</span>
+                    </button>
+                </li>
             </ul>
 
            <!--  <nav class="footerbuttons show">
@@ -64,7 +76,7 @@
     </section>
 
    
-        <footer id="legalfooter">
+        <footer id="legalfooter" in-view="footerInView($index, $inview, $inviewInfo)" >
             <div class="inner">
                 <p class="header">ABC</p>
 

@@ -18,6 +18,14 @@ section.products {
     box-shadow: none;
 }
 
+#legalfooter{
+    position: relative;
+    z-index: 21;
+}
+
+.footer-bar li .items:not(.disabled):not(.active):hover {
+    background-color: #FFF;
+}
 
 .catalog-product img {
     top: -6%;

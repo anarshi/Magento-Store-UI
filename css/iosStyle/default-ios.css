@@ -17,6 +17,12 @@ body, html {
 }
 
 
+#legalfooter{
+    position: relative;
+    z-index: 21;
+}
+
+
 .cart-open .overlay, .menu-open .overlay {
     visibility: visible;
     opacity: 1;
@@ -421,6 +427,14 @@ body {
     z-index: 9999;
     margin-top: 0!important;
     -webkit-transform: translate3d(281px,0,0);
+}
+
+.active-footer-button{
+    opacity: 1;
+}
+
+.footer-bar li .items.active span{
+    opacity: 1;
 }
 
 .cartcount.active {

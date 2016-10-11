@@ -34,6 +34,7 @@
                   {href: 'css/default.css', type:'text/css'}
                 ];                
             }
+
         },200);
 
         $timeout(function(){
@@ -238,17 +239,44 @@
         $scope.oneRowGrid = function(){
             $scope.productGridType = 'col-md-12 col-xs-12';
             localStorage.setItem('productGridType',$scope.productGridType);
+            $scope.oneRowActive = "active";
+            $scope.twoRowActive = "";
+            $scope.threeRowActive = "";
         };
 
         $scope.twoRowGrid = function(){
             $scope.productGridType = 'col-md-6 col-xs-6';
             localStorage.setItem('productGridType',$scope.productGridType);
+            $scope.oneRowActive = "";
+            $scope.twoRowActive = "active";
+            $scope.threeRowActive = "";
         };
 
         $scope.threeRowGrid = function(){
             $scope.productGridType = 'col-md-4 col-xs-4';
             localStorage.setItem('productGridType',$scope.productGridType);
+            $scope.oneRowActive = "";
+            $scope.twoRowActive = "";
+            $scope.threeRowActive = "active";
         };
+
+        switch($scope.productGridType) {
+            case 'col-md-4 col-xs-4':
+                $scope.oneRowActive = "";
+                $scope.twoRowActive = "";
+                $scope.threeRowActive = "active";
+                break;
+            case 'col-md-6 col-xs-6':
+                $scope.oneRowActive = "";
+                $scope.twoRowActive = "active";
+                $scope.threeRowActive = "";
+                break;
+            case 'col-md-12 col-xs-12':
+                $scope.oneRowActive = "active";
+                $scope.twoRowActive = "";
+                $scope.threeRowActive = "";
+                break;
+        }
 
 
         $scope.goToCart = function(){
@@ -285,6 +313,14 @@
 
             } else {
                 //Empty
+            }
+        };
+
+         
+        $scope.footerInView = function(index, inview, inviewInfo){
+            if(inview){
+                console.log('inview');
+                $scope.isCollectionFooterVisible = false;    
             }
         };
         
