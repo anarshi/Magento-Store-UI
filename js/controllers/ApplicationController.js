@@ -315,14 +315,6 @@
                 //Empty
             }
         };
-
-         
-        $scope.footerInView = function(index, inview, inviewInfo){
-            if(inview){
-                console.log('inview');
-                $scope.isCollectionFooterVisible = false;    
-            }
-        };
         
     }]);
 
