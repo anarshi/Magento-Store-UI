@@ -19,23 +19,29 @@
         $scope.isiOS = iOS;
         $scope.isSafari = isSafari;
 
+
         $timeout(function(){
+            if($scope.isiOS || $scope.isSafari){
+                var innerHeight =  window.innerHeight;
+                var sidemenu = document.getElementById("sidemenu");
+                sidemenu.style.height = innerHeight + "px";
+
+                $scope.stylesheets = [
+                  {href: 'css/iosStyle/default-ios.css', type:'text/css'}
+                ];
+            } else {
+                $scope.stylesheets = [
+                  {href: 'css/default.css', type:'text/css'}
+                ];                
+            }
+        },200);
+
+        $timeout(function(){
+
             $scope.isLoaded = true;
         },500);
 
-        if($scope.isiOS || $scope.isSafari){
-            var innerHeight =  window.innerHeight;
-            var sidemenu = document.getElementById("sidemenu");
-            sidemenu.style.height = innerHeight + "px";
-
-            $scope.stylesheets = [
-              {href: 'css/iosStyle/default-ios.css', type:'text/css'}
-            ];
-        } else {
-            $scope.stylesheets = [
-              {href: 'css/default.css', type:'text/css'}
-            ];                
-        }
+        
         
         function iOSversion() {
 
