@@ -1213,3 +1213,10 @@ div.error {
     font-weight: 300;
     padding: 10px 15px;
 }
+
+
+@media screen and (max-width: 990px){
+    .footer-bar ul li:last-child{
+        visibility: hidden;
+    }
+}
