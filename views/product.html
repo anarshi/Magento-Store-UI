@@ -13,7 +13,7 @@
                         <ul class="dots">
                             <li class="dot" ng-repeat="slide in slides">
                                 <a  ng-class="{'active':isCurrentSlideIndex($index)}"
-                                    ng-click="setCurrentSlideIndex($index);">{{slide.description}}
+                                         ng-click="setCurrentSlideIndex($index);">{{slide.description}}
                                 </a>
                             </li>
                         </ul>
@@ -22,8 +22,8 @@
             </div>
             <div class="content">
                 <div class="transform-container">
-                    <div class="image-container" data-images="{{imageNumber}}" style="margin-bottom: -90%;">
-                        <figure class="ready onscreen" ng-repeat="slide in slides"  ngStyle="{background-image: url(slide.image;}">
+                    <div class="image-container" data-images="{{imageNumber}}">
+                        <figure class="ready onscreen" ng-repeat="slide in slides"  ng-style="{ background: 'url({{ slide.image }})' }">
                             <img src="{{slide.image}}" data-small="{{slide.image}}">
                             <div class="hover"></div>
                         </figure>

@@ -14,32 +14,29 @@
         $scope.stylesheets = [];
 
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
         $scope.isiOS = iOS;
-
+        $scope.isSafari = isSafari;
 
         $timeout(function(){
             $scope.isLoaded = true;
         },500);
 
-        if($scope.isiOS){
-                var innerHeight =  window.innerHeight;
-                var sidemenu = document.getElementById("sidemenu-ios");
-                sidemenu.style.height = innerHeight + "px";
+        if($scope.isiOS || $scope.isSafari){
+            var innerHeight =  window.innerHeight;
+            var sidemenu = document.getElementById("sidemenu");
+            sidemenu.style.height = innerHeight + "px";
 
-                $scope.stylesheets = [
-                  {href: 'css/iosStyle/default-ios.css', type:'text/css'}
-                ];
-            } else {
-                $scope.stylesheets = [
-                  {href: 'css/default.css', type:'text/css'}
-                ];                
-            }
+            $scope.stylesheets = [
+              {href: 'css/iosStyle/default-ios.css', type:'text/css'}
+            ];
+        } else {
+            $scope.stylesheets = [
+              {href: 'css/default.css', type:'text/css'}
+            ];                
+        }
         
-
-        
-        
-
         function iOSversion() {
 
           if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
