@@ -1,9 +1,9 @@
-@import "section/products.css";
 @import "section/filters.css";
 @import "checkout.css";
-@import "lookbook.css";
-@import "about.css";
 @import "serviceDesk.css";
+@import "about.css";
+@import "lookbook.css";
+@import "section/products.css";
 
 
 
@@ -122,7 +122,7 @@ nav#navBar .menu {
     -moz-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
     -webkit-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
     -ms-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
-    background-image: url('../../images/svg/menu.svg') !important;
+    background-image: url('../images/svg/menu.svg') !important;
     opacity: 1;
 }
 
@@ -628,7 +628,7 @@ ul.cart-products li div button:hover {
     height: 32px;
     color: #000;
     text-indent: -9999px;
-    background: url('../../images/svg/cancel.svg') left center no-repeat;
+    background: url('../images/svg/cancel.svg') left center no-repeat;
     background-size: 8px;
     margin: 0;
     padding: 0;
@@ -640,7 +640,7 @@ ul.cart-products li div button:focus {
     height: 32px;
     color: #000;
     text-indent: -9999px;
-    background: url('../../images/svg/cancel.svg') left center no-repeat;
+    background: url('../images/svg/cancel.svg') left center no-repeat;
     background-size: 8px;
     margin: 0;
     padding: 0;
@@ -652,7 +652,7 @@ ul.cart-products li div button {
     height: 32px;
     color: #000;
     text-indent: -9999px;
-    background: url('../../images/svg/cancel.svg') left center no-repeat;
+    background: url('../images/svg/cancel.svg') left center no-repeat;
     background-size: 8px;
     margin: 0;
     padding: 0;
@@ -1039,11 +1039,11 @@ ul.cart-products {
 
 .footer-bar li .items.row4 span {
     background-size: 11px;
-    background-image: url('../../images/svg/arrowIcon.svg');
+    background-image: url('../images/svg/arrowIcon.svg');
 }
 
 .footer-bar li .items.row1 span {
-    background-image: url('../../images/svg/arrowIcon.svg');
+    background-image: url('../images/svg/arrowIcon.svg');
 }
 
 .footer-bar li .items span {
@@ -1051,7 +1051,7 @@ ul.cart-products {
     background-size: 10px;
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url('../../images/svg/arrowIcon.svg');
+    background-image: url('../images/svg/arrowIcon.svg');
 }
 
 .footer-bar li .items>span {
@@ -1074,17 +1074,17 @@ ul.cart-products {
     background-size: 10px;
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url('../../images/svg/arrowIcon.svg');
+    background-image: url('../images/svg/arrowIcon.svg');
 }
 
 
 .footer-bar li .items.row1 span {
-    background-image: url('../../images/svg/substract.svg');
+    background-image: url('../images/svg/substract.svg');
 }
 
 .footer-bar li .items.row4 span {
     background-size: 11px;
-    background-image: url('../../images/svg/grid.svg');
+    background-image: url('../images/svg/grid.svg');
 }
 
 .footer-bar li .items>span {

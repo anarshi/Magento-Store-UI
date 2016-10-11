@@ -7,6 +7,9 @@
     function applicationController($rootScope, $scope , $location , $http , $timeout , basket ,cartProducts) {
 
 
+        $scope.isLoaded = false;
+
+
         $scope.isiOS = false;
         $scope.stylesheets = [];
 
@@ -14,19 +17,25 @@
 
         $scope.isiOS = iOS;
 
+
+        $timeout(function(){
+            $scope.isLoaded = true;
+        },500);
+
         if($scope.isiOS){
                 var innerHeight =  window.innerHeight;
                 var sidemenu = document.getElementById("sidemenu-ios");
                 sidemenu.style.height = innerHeight + "px";
 
                 $scope.stylesheets = [
-                  {href: 'css/iosStyle/product-ios.css', type:'text/css'},
+                  {href: 'css/iosStyle/default-ios.css', type:'text/css'}
                 ];
             } else {
                 $scope.stylesheets = [
-                  {href: 'css/section/product.css', type:'text/css'},
+                  {href: 'css/default.css', type:'text/css'}
                 ];                
             }
+        
 
         
         
