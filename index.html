@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html >
+<html ng-app="moaApp" ng-controller="ApplicationController">
 <head>
     <title>Moa</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/default.css" />
     <link rel="stylesheet" href="css/iosStyle/default-ios.css" />
+    <link ng-repeat="stylesheet in stylesheets" ng-href="{{stylesheet.href}}" type="{{stylesheet.type}}" rel="stylesheet" />
 
     <meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -43,7 +44,7 @@
     <script src="js/ioBounce.js"></script>
 
 </head>
-<body on-scroll-directive ng-app="moaApp" ng-controller="ApplicationController"  id="body" ng-keyup="keyUp($event)"  ng-class="bodyOpenModalClass">
+<body on-scroll-directive   id="body" ng-keyup="keyUp($event)"  ng-class="bodyOpenModalClass">
     <section data-sidebar class="filters" ng-class="modalClass" >
         <div class="view left-sidebar-menu-container" ng-include="'views/sidebarMenu.html'"></div>
     </section>

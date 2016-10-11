@@ -1,4 +1,3 @@
-@import "products-ios.css";
 @import "filters-ios.css";
 @import "checkout-ios.css";
 @import "lookbook-ios.css";
@@ -326,7 +325,8 @@ nav#navBar>span {
 }
 
 .move-left-content{
-    position: fixed;
+    width: 100% !important;
+    position: relative;
     -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
     -webkit-transform: translate3d(-281px,0,0);
 }
