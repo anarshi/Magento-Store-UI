@@ -2,9 +2,20 @@
 
     "use strict";
 
-    $moa.controller('ProductController', ['$scope', '$http','$routeParams','$location','basket' , 'cartProducts',
+    $moa.controller('ProductController', ['$scope', '$http','$routeParams','$location', '$window' , '$timeout' , 'basket' , 'cartProducts',
 
-    function ProductController($scope,$http,$routeParams,$location , basket , cartProducts) {
+    function ProductController($scope,$http,$routeParams,$location , $window , $timeout , basket , cartProducts) {
+
+      
+      $scope.init = function(){
+         var slider = $("#slider");
+            slider.css({
+                'height':  $window.innerWidth + "px",
+                'width' : "100%"
+            });
+            
+      }
+    
 
         $scope.cartProducts = cartProducts;
 
@@ -37,10 +48,17 @@
             $scope.product = response.data;
             $scope.product.price = '$ '  + $scope.product.price;
             $scope.slides = [];
+
             for(var i = 0 ; i < $scope.product.allImages.length ; i++){
                 $scope.slides.push({
                     image: $scope.product.allImages[i],
                     description: "pulled image"
+                });
+            }
+
+            if($scope.slides.length > 1){
+                $(".image-container").css({
+                    "margin-bottom" : "-90%"
                 });
             }
         }, function errorCallback(response) {
@@ -92,28 +110,72 @@
         }
 
 
-        
+         angular.element($window).bind("resize", function() {
+            var slider = $("#slider");
+            slider.css({
+                'height':  $window.innerWidth + "px",
 
-        function isScrolledIntoView(elem)
-        {
-            var docViewTop = $(window).scrollTop();
-            var docViewBottom = docViewTop + $(window).height();
+            });
+         });
 
-            var elemTop = $(elem).offset().top;
-            var elemBottom = elemTop + $(elem).height();
-
-            return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-        }
-
+        $scope.scrollPosition = 0;
         $scope.footerClass = "";
-        $scope.inView = function(index, inview, inviewpart){
-            if(inview){
-                console.log('inview');
-                $scope.footerClass = "scrollout";
-            } else {
-                $scope.footerClass = "";
+        $scope.distance = 0;
+        var inViewpoerEl = $('#related-products');
+        $scope.isSet = false;
+        angular.element($window).bind("scroll", function() {
+            $scope.scrollPosition = $($window).scrollTop();
+            if($($window).scrollTop() === 0){
+                $('#footer-bar').css({
+                    '-webkit-transform': 'translateY(0)',
+                    'transform': 'translateY(0)'
+                });
+            } else if(inViewpoerEl.is(':in-viewport(-54)') && $($window).scrollTop() !== 0) {
+                $scope.isSet = false;
+                $("#info").css({
+                    "position" : 'absolute',
+                    "top" : ($scope.distance) + 'px'
+                });
+
+
+                $('#footer-bar').css({
+                    '-webkit-transform': 'translateY(100%)',
+                    'transform': 'translateY(100%)'
+                });
+                
+            } else if(inViewpoerEl.is(':in-viewport') === false){
+
+                if($scope.isSet === false){
+                    $scope.isSet = true;
+                    $scope.distance = $('#related-products').offset().top;
+
+                }
+                
+                
+                $("#info").css({
+                    "position" : 'fixed',
+                    "top" : '50%'
+                });
+                $('#footer-bar').css({
+                    '-webkit-transform': 'translateY(0)',
+                    'transform': 'translateY(0)'
+                });
             }
-        }
+
+            if($("#scroll-container").is(':in-viewport')){
+                $("html.no-touchevents .product-page .upsells .scroll-container ul li.onscreen").css({
+                    "-webkit-transform": "translate3d(0,0,0)",
+                    "transform": "translate3d(0,0px,0)"
+                });
+            }else {
+                 $("html.no-touchevents .product-page .upsells .scroll-container ul li.onscreen").css({
+                    "-webkit-transform": "translate3d(0,34px,0)",
+                    "transform": "translate3d(0,34px,0)"
+                });
+            }
+
+        });
+
 
 
     }]).animation('.slide-animation', function () {

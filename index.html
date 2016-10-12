@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/default.css" />
     <!--<link rel="stylesheet" href="css/iosStyle/default-ios.css" /> -->
-    <link ng-repeat="stylesheet in stylesheets" ng-href="{{stylesheet.href}}" type="{{stylesheet.type}}" rel="stylesheet" />
+    <!-- <link ng-repeat="stylesheet in stylesheets" ng-href="{{stylesheet.href}}" type="{{stylesheet.type}}" rel="stylesheet" /> -->
 </div>    
     <meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link href='http://fonts.googleapis.com/
+    css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" />
@@ -24,6 +26,8 @@
     <script src="bower_components/hammerjs/hammer.js"></script>
     <script src="bower_components/socket.io-client/dist/socket.io.js"></script>
     <script src="node_modules/angular-inview/angular-inview.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <script src="js/jquery.viewport.min.js"></script>
     <script src="js/modernizr.js"></script>
     <script src="js/Application.js"></script>
     <script src="js/controllers/ApplicationController.js"></script>
@@ -37,6 +41,7 @@
     <script src="js/services/cartProducts.js"></script>
     <script src="js/directives/onScroll.js"></script>
     <script src="js/ioBounce.js"></script>
+
 
 </head>
 <body on-scroll-directive   id="body" ng-keyup="keyUp($event)"  ng-class="bodyOpenModalClass">

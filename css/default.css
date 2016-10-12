@@ -859,7 +859,7 @@ ul.cart-products {
 
 /* */
 
-.footer-bar {
+.footer-bar-home {
     display: block;
     position: fixed;
     transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-webkit-transform 550ms cubic-bezier(.455,.03,.515,.955);
@@ -886,6 +886,7 @@ ul.cart-products {
     -moz-transition: visibility 0s, opacity 0.01s linear;
     -webkit-transition: visibility 0s, opacity 0.01s linear;
     -ms-transition: visibility 0s, opacity 0.01s linear;
+    background-color: transparent;
 }
 
 
