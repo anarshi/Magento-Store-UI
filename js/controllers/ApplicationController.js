@@ -35,12 +35,12 @@
                 ];                
             }
 
-        },500);
+        },0);
 
         $timeout(function(){
 
             $scope.isLoaded = true;
-        },1000);
+        },0);
 
         
         

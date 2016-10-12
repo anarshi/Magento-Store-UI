@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/default.css" />
     <!--<link rel="stylesheet" href="css/iosStyle/default-ios.css" /> -->
-    <!-- <link ng-repeat="stylesheet in stylesheets" ng-href="{{stylesheet.href}}" type="{{stylesheet.type}}" rel="stylesheet" /> -->
-</div>    
+      
     <meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+
     <link href='http://fonts.googleapis.com/
     css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" />
+     <link ng-repeat="stylesheet in stylesheets" ng-href="{{stylesheet.href}}" type="{{stylesheet.type}}" rel="stylesheet" />
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-animate/angular-animate.js"></script>
@@ -25,10 +26,19 @@
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/hammerjs/hammer.js"></script>
     <script src="bower_components/socket.io-client/dist/socket.io.js"></script>
+    <script src="node_modules/smooth-scroll/dist/js/smooth-scroll.js"></script>
     <script src="node_modules/angular-inview/angular-inview.js"></script>
+    <script src="node_modules/jquery.scrollto/jquery.scrollto.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ScrollToPlugin.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script src="js/jquery.viewport.min.js"></script>
-    <script src="js/modernizr.js"></script>
+    <script src="js/jquery.scrollintoview.min.js"></script>
+    <script src="js/jquery.panzoom.min.js"></script>
+    <script src="js/inViewport.js"></script>
+    <script src="js/customEase.js"></script>
+      <script src="js/modernizr.js"></script>
     <script src="js/Application.js"></script>
     <script src="js/controllers/ApplicationController.js"></script>
     <script src="js/controllers/ProductsController.js"></script>
@@ -90,5 +100,6 @@
     </div>
 </body>
 
+   <script src="js/zoom.js"></script>
 
 </html>

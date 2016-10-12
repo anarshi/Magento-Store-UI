@@ -20,12 +20,11 @@
 .header {
     display: block;
     position: relative;
-    height: 7%;
     background: #000;
-    margin: 0 0 90px;
-    padding: 26px;
+    margin: 55px 0 8px;
+    padding: 20px;
+    height: 40%;
 }
-
 .biling-info-container{
     padding-left: 30px!important;
 }
@@ -371,7 +370,7 @@ p.sum span.value {
         text-align: center;
         font-size: 20px;
         color: #FFF;
-        padding-top: 65px;
+        padding-top: 117px;
     }
 
 }
