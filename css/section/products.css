@@ -931,15 +931,15 @@ filterList ul li.key, .filterList ul li.key:hover {
     color: #FFF;
 }
 
-.scroll-container::scrollbar{
+.scroll-container-products::scrollbar{
     display: none;
 }
 
-.scroll-container::-webkit-scrollbar{
+.scroll-container-products::-webkit-scrollbar{
     display: none;
 }
 
-.scroll-container {
+.scroll-container-products {
     overflow-y: hidden;
     overflow-x: auto;
     display: block;
@@ -961,7 +961,7 @@ filterList ul li.key, .filterList ul li.key:hover {
     opacity: 1;
 }
 
-.product-page .upsells .scroll-container ul {
+.product-page .upsells .scroll-container-products ul {
     display: inline-block;
     list-style-type: none;
     margin: 0;
@@ -971,7 +971,7 @@ filterList ul li.key, .filterList ul li.key:hover {
     white-space: nowrap;
 }
 
-html.no-touchevents .product-page .upsells .scroll-container ul li.onscreen {
+html.no-touchevents .product-page .upsells .scroll-container-products ul li.onscreen {
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,34px,0);
     transition-timing-function: ease-out;
@@ -980,7 +980,7 @@ html.no-touchevents .product-page .upsells .scroll-container ul li.onscreen {
     transition-property: transform;
 }
 
-.product-page .upsells .scroll-container ul li {
+.product-page .upsells .scroll-container-products ul li {
     display: inline-block;
     position: relative;
     margin: 0;
@@ -999,7 +999,7 @@ html.no-touchevents .product-page .upsells .scroll-container ul li.onscreen {
 }
 
 
-.product-page .upsells .scroll-container ul li a {
+.product-page .upsells .scroll-container-products ul li a {
     display: block;
     position: absolute;
     width: 100%;
@@ -1027,7 +1027,7 @@ html.no-touchevents .product-page .upsells .scroll-container ul li.onscreen {
     z-index: 999999;
 }
 
-html.no-touchevents .product-page .upsells .scroll-container ul li:nth-child(1) {
+html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-child(1) {
     -webkit-transform: translate3d(0,45px,0);
     transform: translate3d(0,45px,0);
 }
@@ -1148,12 +1148,12 @@ html.no-touchevents .product-page .upsells .scroll-container ul li:nth-child(1) 
     }
 
 
-    .product-page .upsells .scroll-container {
+    .product-page .upsells .scroll-container-products {
         top: 0;
         /* margin-bottom: 40px; */
     }
 
-    .product-page .upsells .scroll-container ul {
+    .product-page .upsells .scroll-container-products ul {
         opacity: 1!important;
     }
 
