@@ -1187,7 +1187,7 @@ html.no-touchevents .product-page .upsells .scroll-container ul li:nth-child(1) 
     }
 
     footer{
-        z-index: 9999 !important;
+        z-index: 9994 !important;
     }
 
     .product-page-sizes {
