@@ -146,6 +146,7 @@ nav#navBar .menu {
 
 
 .overlay {
+    margin: 0px;
     display: block;
     position: fixed;
     width: 100%;
