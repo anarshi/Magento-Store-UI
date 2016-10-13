@@ -803,9 +803,9 @@ html.no-touchevents .product-page .upsells .scroll-container ul li:nth-child(1) 
 }
 
 .touchevents .product-page aside.info, .touchevents .product-page aside.info.fixed {
-    position: absolute!important;
+    position: absolute;
     width: 288px;
-    top: 120px !important;
+    top: 120px ;
     bottom: auto;
     margin: 0;
     right: 92px!important;
