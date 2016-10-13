@@ -238,7 +238,6 @@ section.products div.right {
     display: block;
     position: relative;
     overflow: hidden;
-    /* margin: 0 0 100px */;
 }
 
 .product-page .product-container {
@@ -1219,7 +1218,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     }
 
     footer{
-        z-index: 25.product-page aside.info !important;
+        z-index: 25 !important;
     }
 
     .product-page-sizes {
