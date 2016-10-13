@@ -4,9 +4,9 @@
 
     "use strict";
 
-    $moa.controller('ProductController', ['$scope', '$http','$stateParams','$location', '$window' , '$timeout' , 'basket' , 'cartProducts',
+    $moa.controller('ProductController', ['$scope', '$http','$stateParams','$location', '$window' , '$timeout' , 'basket' , 'cartProducts', 'openCartService' , 
 
-    function ProductController($scope,$http,$stateParams,$location , $window , $timeout , basket , cartProducts) {
+    function ProductController($scope,$http,$stateParams,$location , $window , $timeout , basket , cartProducts , openCartService) {
 
         var inViewpoerEl = $('#related-products');
 
@@ -48,6 +48,7 @@
                             $scope.cartProducts.productsInCart = data.cartProducts;
                             $scope.cartProducts.cartCount = data.cartCount;
                             $scope.cartProducts.cartTotalPrice = data.totalPrice;
+                            openCartService.setCartOpen(true);
                         });
                     });
             } else {
@@ -57,6 +58,7 @@
                         $scope.cartProducts.productsInCart = data.cartProducts;
                         $scope.cartProducts.cartCount = data.cartCount;
                         $scope.cartProducts.cartTotalPrice = data.totalPrice;
+                        openCartService.setCartOpen(true);
                     });
                 });
             }

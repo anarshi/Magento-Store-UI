@@ -2,10 +2,61 @@
 
     "use strict";
 
-    $moa.controller('ApplicationController', ['$rootScope', '$scope'  ,'$location' , '$http' ,'$timeout', '$window' ,'basket', 'cartProducts',
+    $moa.controller('ApplicationController', ['$rootScope', '$scope'  ,'$location' 
+                                                , '$http' ,'$timeout', '$window' 
+                                                ,'basket', 'cartProducts','openCartService' , 
 
-    function applicationController($rootScope, $scope , $location , $http , $timeout , $window ,basket ,cartProducts) {
+    function applicationController($rootScope, $scope , $location , $http , $timeout , $window ,basket ,cartProducts,openCartService) {
 
+
+        //watcher
+       // $scope.isCartOP = openCartService.isCartOpen;
+        $scope.$watch(
+            function(){
+                return openCartService.getCartOpen();
+            },
+
+            function(newValue , oldValue){
+                console.log( "new Value " + newValue);
+                if(newValue === true){
+                     if($location.path() === "/about" || $location.path() === "/service"){
+                        $scope.contentClass = "move-left-content-no-fixed";
+                        if($location.path() === "/service"){
+                            var myDiv = document.getElementById('step1');
+                            myDiv.scrollTop = 0;
+                        }else {
+                             var myDiv = document.getElementById('body');
+                              myDiv.scrollTop = 0;
+                           
+                        }
+                    }else {
+                       $scope.contentClass = "move-left-content"; 
+                    }
+
+
+                    //$scope.cartId = localStorage.cartId;
+                    $scope.isCartOpen = true;
+                 
+                    $scope.cartOpenClass = "move-cart-left ";
+                     $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
+                      $scope.closeFooter = "close-footer";
+
+                      document.ontouchmove = function (e) {
+                        e.preventDefault();
+                     }
+                } else {
+                    $scope.contentClass = "";
+                    $scope.cartOpenClass = "asdasd";
+                    $scope.bodyOpenModalClass = "";
+                    $scope.closeFooter = "";
+                    $scope.isCartOpen = false;
+                    document.ontouchmove = function (e) {
+                      return true;
+
+                    }
+                }
+            }
+        ,true);
 
         $scope.isLoaded = false;
 
@@ -217,16 +268,18 @@
                 $scope.closeFooter = "";
                 $scope.openSidemenu = "";
                 $scope.sidemenuFooterOpen = ""
+
                 document.ontouchmove = function (e) {
                   return true;
 
                 }
             
             } else if($scope.isCartOpen){
+                openCartService.setCartOpen(false);
                 $scope.contentClass = "";
-                $scope.cartOpenClass = "asdasd";
+                $scope.cartOpenClass = "";
                 $scope.bodyOpenModalClass = "";
-                 $scope.closeFooter = "";
+                $scope.closeFooter = "";
                 $scope.isCartOpen = false;
                 document.ontouchmove = function (e) {
                   return true;
@@ -314,6 +367,8 @@
                 }else {
                    $scope.contentClass = "move-left-content"; 
                 }
+
+
                 //$scope.cartId = localStorage.cartId;
                 $scope.isCartOpen = true;
              
