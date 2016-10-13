@@ -28,6 +28,7 @@
 
 .biling-info-container{
     padding-left: 30px!important;
+    margin-top: 50px;
 }
 
 h2 {
@@ -373,7 +374,7 @@ p.sum span.value {
         letter-spacing: .1875rem;
         margin: 0;
         padding: 0;
-        line-height: 62px;
+        line-height: 8vh;
         text-align: center;
         font-size: 20px;
         color: #FFF;
