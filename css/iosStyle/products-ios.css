@@ -364,7 +364,7 @@ p {
     background: #FFF;
     border: 1px solid transparent;
     outline: none;
-    -webkit-box-shadow: none;;
+    -webkit-box-shadow: none;
     -webkit-border-radius: 50%;
     -webkit-transition: background-color 0.25s, border-color 0.25s;
 }
@@ -932,7 +932,7 @@ html.no-touchevents .product-page .upsells .scroll-container ul li:nth-child(1) 
     }
 
     footer{
-        z-index: 25.product-page aside.info !important;
+        z-index: 25 !important;
     }
 
     .product-page-sizes {
