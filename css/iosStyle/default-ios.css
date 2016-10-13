@@ -747,6 +747,7 @@ ul.cart-products {
     display: block;
     position: fixed;
     -webkit-transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-webkit-transform 550ms cubic-bezier(.455,.03,.515,.955);
+    transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-webkit-transform 550ms cubic-bezier(.455,.03,.515,.955);
     bottom: 0;
     left: 0;
     right: 0;
@@ -758,6 +759,8 @@ ul.cart-products {
 
     -webkit-transform: translateY(0);
     -webkit-transition: visibility 0s, opacity 0.01s linear;
+    transform: translateY(0);
+    transition: visibility 0s, opacity 0.01s linear;
 }
 
 
@@ -834,6 +837,9 @@ ul.cart-products {
     position: relative;
     visibility: hidden !important;
     opacity: 0 !important;
+     -webkit-transition: all .35s cubic-bezier(.455,.03,.515,.955);
+    display: none;
+    -webkit-transform: translate(0, -400px);
 }
 
 #collection-footer {

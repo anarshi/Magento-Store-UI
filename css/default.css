@@ -920,10 +920,8 @@ ul.cart-products {
 .footer-bar-home {
     display: block;
     position: fixed;
-    transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-webkit-transform 550ms cubic-bezier(.455,.03,.515,.955);
-    transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),transform 550ms cubic-bezier(.455,.03,.515,.955);
-    transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-o-transform 550ms cubic-bezier(.455,.03,.515,.955);
-    transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),-moz-transform 550ms cubic-bezier(.455,.03,.515,.955);
+    
+    transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),transform 550ms cubic-bezier(.455,.03,.515,.955) !important;
     bottom: 0;
     left: 0;
     right: 0;
@@ -1022,9 +1020,9 @@ ul.cart-products {
 }
 
 .close-footer {
-    position: relative;
-    visibility: hidden !important;
-    opacity: 0 !important;
+    /* position: relative; */
+    transform: translate(0, 400px);
+
 }
 
 #collection-footer {
