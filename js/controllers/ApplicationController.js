@@ -181,7 +181,7 @@
                 $scope.modalClass = "open";
                 $scope.openSidemenu = "open-sidemenu";
                 $scope.sidebar_footer_class = "open-modal-footer";
-                $scope.closeFooter = "close-footer";
+                //$scope.closeFooter = "close-footer";
                 $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
                 $scope.sidemenuFooterOpen = "sidemenu-footer-open";
                 document.ontouchmove = function (e) {
