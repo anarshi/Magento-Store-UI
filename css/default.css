@@ -143,6 +143,63 @@ nav#navBar .menu {
     transition: all 650ms ease 150ms;
 }
 
+.ng-leave{
+  top: 0;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: downfromtop;
+          animation-name: downfromtop;
+}
+
+@-webkit-keyframes downfromtop {
+  0%{
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes downfromtop {
+  0%{
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+
+.ng-enter{
+  top: 0;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: upfrombottom;
+          animation-name: upfrombottom;
+}
+
+@-webkit-keyframes upfrombottom {
+  0%{
+    top: 100%;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes upfrombottom {
+  0%{
+    top: 100%;
+  }
+  100% {
+    top: 0;
+  }
+}
+
 
 
 .overlay {

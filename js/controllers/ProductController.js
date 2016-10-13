@@ -4,9 +4,9 @@
 
     "use strict";
 
-    $moa.controller('ProductController', ['$scope', '$http','$routeParams','$location', '$window' , '$timeout' , 'basket' , 'cartProducts',
+    $moa.controller('ProductController', ['$scope', '$http','$stateParams','$location', '$window' , '$timeout' , 'basket' , 'cartProducts',
 
-    function ProductController($scope,$http,$routeParams,$location , $window , $timeout , basket , cartProducts) {
+    function ProductController($scope,$http,$stateParams,$location , $window , $timeout , basket , cartProducts) {
 
         var inViewpoerEl = $('#related-products');
 
@@ -40,7 +40,7 @@
         $scope.cartProducts = cartProducts;
 
         $scope.addToCart = function(){
-            var productId = $routeParams.product_id;
+            var productId = $stateParams.product_id;
             if(localStorage.cartId != null && !isNaN(localStorage.cartId)){
                      basket.addToCart.async(localStorage.cartId,productId).then(function(response){
                         localStorage.cartId = response;
@@ -63,7 +63,7 @@
         };
 
         $scope.allImages = [];
-        var searchCriteria = $routeParams.product_id;
+        var searchCriteria = $stateParams.product_id;
         $http.get('http://45.79.162.17:8888/product/' + searchCriteria).then(function successCallback(response) {
             $scope.product = response.data;
             $scope.product.price = '$ '  + $scope.product.price;
@@ -304,19 +304,21 @@
 
                 if($window.innerWidth > 990){
                     $scope.zoomArray = []; //cleaning array
-
-                    for (var i = 0; i < $scope.allSlides.length; i++) {
-                        var globalInc = i;
-                        $("#" + $scope.allSlides[i].id ).find('.hover').inViewport(function(px){
-                            if(px){
-                                $scope.zoomArray.push({
-                                    obj:  $("#" + $scope.allSlides[globalInc].id ).find(".hover").attr('id'),
-                                    visiblePart: px
-                                });
-                            } else {
-                            }
-                        });
+                    if($scope.allSlides !== undefined){
+                         for (var i = 0; i < $scope.allSlides.length; i++) {
+                            var globalInc = i;
+                            $("#" + $scope.allSlides[i].id ).find('.hover').inViewport(function(px){
+                                if(px){
+                                    $scope.zoomArray.push({
+                                        obj:  $("#" + $scope.allSlides[globalInc].id ).find(".hover").attr('id'),
+                                        visiblePart: px
+                                    });
+                                } else {
+                                }
+                            });
+                        }
                     }
+                   
 
                     if($scope.zoomArray.length > 1){
                         if($scope.zoomArray[1].visiblePart > 150){
@@ -389,7 +391,6 @@
                 }
 
                 if($("#scroll-container").is(':in-viewport')){
-                    console.log("in view test");
                     $("html.no-touchevents .product-page .upsells .scroll-container-products ul li.onscreen").css({
                         "-webkit-transform": "translate3d(0,0px,0)",
                         "transform": "translate3d(0,0px,0)"

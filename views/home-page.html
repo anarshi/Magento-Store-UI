@@ -36,7 +36,7 @@
             <div id="catalog" class="container thumbs">
                 <div id="{{product.id}}" class = "catalog-product product"  ng-class="productGridType" ng-repeat="product in products" ng-click="openProduct(product.id)">
                     <a data-path="#product/{{product.id}}" ng-mouseenter="showSubText(product.id)" 
-                ng-mouseleave="hideSubText(product.id)" href="#product/{{product.id}}">
+                ng-mouseleave="hideSubText(product.id)" ui-sref="product({product_id: {{product.id}}})">
                     </a>
                     <img ng-src="{{product.allImages[0]}}" alt="{{product.name}}'s image" />
                     <span class="hover">

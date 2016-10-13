@@ -8,21 +8,34 @@
      */
 
 
-    window.moaApp = angular.module("moaApp", ["ngRoute","ngSanitize","ngAnimate","ngTouch","angular-inview"]);
-    window.moaApp.config(function($routeProvider) {
-        $routeProvider
-            .when("/", {
+    window.moaApp = angular.module("moaApp", ["ui.router" , "ngSanitize","ngAnimate","ngTouch","angular-inview"]);
+    window.moaApp.config(function($stateProvider,$urlRouterProvider) {
+
+        //$urlRouterProider.otherwise('/');
+
+        $stateProvider
+            .state("home", {
+                url: '/',
                 templateUrl : "views/home-page.html"
             })
-            .when("/product/:product_id", {
+            .state("product", {
+                url: '/product/:product_id',
                 templateUrl : "views/product.html"
-            }).when('/checkout/:cartId',{
+            })
+            .state('checkout',{
+                url: '/checkout/:cartId',
                 templateUrl : "views/checkout.html"
-            }).when('/lookbook',{
+            })
+            .state('lookbook',{
+                url: '/lookbook',
                 templateUrl : "views/lookbook.html"
-            }).when('/about' , {
+            })
+            .state('about' , {
+                url: '/about',
                 templateUrl : "views/about.html"
-            }).when('/service' , {
+            })
+            .state('service' , {
+                url:'/service',
                 templateUrl : "views/serviceDesk.html"
             });
     });
