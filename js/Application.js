@@ -12,7 +12,7 @@
     window.moaApp.config(['$stateProvider', '$locationProvider' ,'$urlRouterProvider', function($stateProvider,$locationProvider,$urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');
-        $locationProvider.html5Mode(true);
+        // $locationProvider.html5Mode(true);
 
         $stateProvider
             .state("home", {
