@@ -8,10 +8,10 @@
      */
 
 
-    window.moaApp = angular.module("moaApp", ["ui.router" , "ngSanitize","ngAnimate","ngTouch","angular-inview" , 'anim-in-out']);
-    window.moaApp.config(function($stateProvider,$urlRouterProvider) {
+    window.moaApp = angular.module("moaApp", ["ui.router" , "ngSanitize","ngAnimate","ngTouch","angular-inview" , 'ngRoute', 'anim-in-out']);
+    window.moaApp.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlRouterProvider) {
 
-        //$urlRouterProider.otherwise('/');
+        $urlRouterProvider.otherwise('/');
 
         $stateProvider
             .state("home", {
@@ -38,7 +38,7 @@
                 url:'/service',
                 templateUrl : "views/serviceDesk.html"
             });
-    });
+    }]);
 
 
 
