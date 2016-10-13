@@ -183,8 +183,6 @@
                 $scope.openSidemenu = "open-sidemenu";
                 $scope.sidebar_footer_class = "open-modal-footer";
                 $scope.closeFooter = "close-footer";
-                var footerHome = document.getElementsByClassName("footer-bar-home")[0];
-                TweenLite.to(footerHome,.5,{display:"none"});
                 $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
                 $scope.sidemenuFooterOpen = "sidemenu-footer-open";
                 document.ontouchmove = function (e) {
