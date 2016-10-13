@@ -116,10 +116,19 @@
 
         //should take size as parameter in fuction this is just a test case
         $scope.showSizes = function(){
-            if(productSizes.hasClass('hide'))
+            if(productSizes.hasClass('hide')){
                 productSizes.removeClass('hide');
-            else   
+                document.ontouchmove = function (e) {
+                  return true;
+                }
+            }
+            else   {
                 productSizes.addClass('hide');
+                document.ontouchmove = function (e) {
+                  e.preventDefault();
+                }    
+            }
+
         };
 
         $scope.chooseSize = function(id){
