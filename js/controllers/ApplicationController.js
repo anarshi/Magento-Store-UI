@@ -27,11 +27,11 @@
                 sidemenu.style.height = innerHeight + "px";
 
                 $scope.stylesheets = [
-                  {href: 'css/iosStyle/products-ios.css', type:'text/css'}
+                  {href: 'css/iosStyle/default-ios.css', type:'text/css'}
                 ];
             } else {
                 $scope.stylesheets = [
-                  {href: 'css/section/products.css', type:'text/css'}
+                  {href: 'css/section/default.css', type:'text/css'}
                 ];                
             }
 
