@@ -152,7 +152,11 @@
                 
 
                 var t1 = new TimelineLite();
-                t1.insert( new TweenLite(info , 0.5 , {opacity: "1" , left:"100%"} , 0));
+                 if(!$('html').hasClass('touchevents')){
+                    t1.insert( new TweenLite(info , 0.5 , {opacity: "0" , left:"100%" , ease:Power4.easeIn} , 0));
+                }else {
+                     t1.insert( new TweenLite(info , 0.5 , {opacity: "0" , transfor:"translate(0,-1000px)" , ease:Power4.easeIn} , 0));
+                }
                 t1.insert( new TweenMax(imageContainer,.5,{css:{transform: "matrix(1, 0, 0, 1, 0, 0)" , marginBottom:"0%"},ease:Power4.easeIn}), 0);
                 t1.insert( new TweenLite(window, 0.5, {scrollTo:{y:scrollValue+400, x:0}, ease:Power4.easeIn}), 0);
                 
@@ -170,7 +174,12 @@
                     scrollValue2 = $scope.scrollValueGlobal;
                 }
 
-                t1.insert( new TweenLite(info , 0.5 , {opacity: "1" , left:"70%"} , 0));
+                if(!$('html').hasClass('touchevents')){
+                    t1.insert( new TweenLite(info , 0.5 , {opacity: "1" , left:"70%" , ease:Power4.easeIn} , 0));
+                }else {
+                     t1.insert( new TweenLite(info , 0.5 , {opacity: "1" , transfor:"translate(0,0)" , ease:Power4.easeIn} , 0));
+                }
+                
                 t1.insert( new TweenLite(window, 0.5, {scrollTo:{y:scrollValue2-400, x:0}, ease:Power4.easeIn}), 0);
                 if($scope.slides.length > 1){
 
@@ -210,7 +219,12 @@
     
                 t1.insert( new TweenMax(imageContainer,.5,{css:{transform: "matrix(1, 0, 0, 1, 0, 0)" , marginBottom:"0%"},ease:Power4.easeIn}), 0);
                 t1.insert( new TweenLite(window, 0.5, {scrollTo:{y:scrollValue + 400, x:0}, ease:Power4.easeIn}), 0);
-                t1.insert( new TweenLite(info , 0.5 , {opacity: "1" , left:"100%"} , 0));
+                
+                if(!$('html').hasClass('touchevents')){
+                    t1.insert( new TweenLite(info , 0.5 , {opacity: "0" , left:"100%" , ease:Power4.easeIn} , 0));
+                }else {
+                     t1.insert( new TweenLite(info , 0.5 , {opacity: "0" , transfor:"translate(0,-1000px)" , ease:Power4.easeIn} , 0));
+                }
                  
             } else {
                 $scope.isZoomed = false;
@@ -230,7 +244,13 @@
 
                 
                 t1.insert( new TweenLite(window, 0.5, {scrollTo:{y:scrollValue2 - 400, x:0}, ease:Power4.easeIn}), 0);
-               t1.insert( new TweenLite(info , 0.5 , {opacity: "1" , left:"70%"} , 0));
+
+                if(!$('html').hasClass('touchevents')){
+                    t1.insert( new TweenLite(info , 0.5 , {opacity: "1" , left:"70%" , ease:Power4.easeIn} , 0));
+                }else {
+                     t1.insert( new TweenLite(info , 0.5 , {opacity: "1" , transfor:"translate(0,0)" , ease:Power4.easeIn} , 0));
+                }
+
                 if($scope.slides.length > 1){
 
                     t1.insert( new TweenMax(imageContainer,.5,{css:{transform: "matrix(0.65, 0, 0, 0.65, 0, 0)" , marginBottom:"-90%"},ease:Power4.easeIn}), 0);
@@ -302,10 +322,12 @@
                 } else if(inViewpoerEl.is(':in-viewport(-54)') && $($window).scrollTop() !== 0) {
 
                     $scope.isSet = false;
-                    $("#info").css({
-                        "position" : 'absolute',
-                        "top" : ($scope.distance-300) + 'px'
-                    });
+                    if(!$('html').hasClass('touchevents')){
+                        $("#info").css({
+                            "position" : 'absolute',
+                            "top" : ($scope.distance-300) + 'px'
+                        });
+                    }
 
 
                     $('#footer-bar').css({
@@ -326,10 +348,13 @@
 
                     }
                     
-                    $("#info").css({
-                        "position" : 'fixed',
-                        "top" : '50%'
-                    });
+                    if(!$('html').hasClass('touchevents')){
+                        $("#info").css({
+                            "position" : 'fixed',
+                            "top" : '50%'
+                        });
+                    }
+                    
 
                     $('#footer-bar').css({
                         '-webkit-transform': 'translateY(0)',
