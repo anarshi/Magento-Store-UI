@@ -118,15 +118,20 @@
         $scope.showSizes = function(){
             if(productSizes.hasClass('hide')){
                 productSizes.removeClass('hide');
+                $('body').addClass('no-scroll lock-scroll');
+                
+                document.ontouchmove = function (e) {
+                  e.preventDefault();
+                }  
+                
+            }
+            else   {
+                $('body').removeClass('no-scroll lock-scroll');
+                productSizes.addClass('hide');
                 document.ontouchmove = function (e) {
                   return true;
                 }
-            }
-            else   {
-                productSizes.addClass('hide');
-                document.ontouchmove = function (e) {
-                  e.preventDefault();
-                }    
+                  
             }
 
         };
