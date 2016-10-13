@@ -8,6 +8,25 @@
 
     function ProductController($scope,$http,$routeParams,$location , $window , $timeout , basket , cartProducts) {
 
+        var inViewpoerEl = $('#related-products');
+
+        $("html, body").animate({ scrollTop: 0 }, 1000);
+
+        if($("#scroll-container").is(':in-viewport')){
+            console.log("in view test");
+            $("html.no-touchevents .product-page .upsells .scroll-container-products ul li.onscreen").css({
+                "-webkit-transform": "translate3d(0,0px,0)",
+                "transform": "translate3d(0,0px,0)"
+            });
+        }else {
+             $("html.no-touchevents .product-page .upsells .scroll-container-products ul li.onscreen").css({
+                "-webkit-transform": "translate3d(0,34px,0)",
+                "transform": "translate3d(0,34px,0)"
+            });
+        }
+
+        
+
       $scope.offsetTop = 0;
       $scope.init = function(){
          var slider = $("#slider");
@@ -16,7 +35,7 @@
                 'width' : "100%"
             });
       }
-    
+        
 
         $scope.cartProducts = cartProducts;
 
@@ -276,13 +295,13 @@
         $scope.scrollPosition = 0;
         $scope.footerClass = "";
         $scope.distance = 0;
-        var inViewpoerEl = $('#related-products');
         $scope.isSet = false;
         $scope.zoomArray = [];
         $scope.zoomId = "0";
 
         
             angular.element($window).bind("scroll", function() {
+
                 if($window.innerWidth > 990){
                     $scope.zoomArray = []; //cleaning array
 
@@ -306,7 +325,9 @@
                             $scope.zoomId = $scope.zoomArray[0].obj;
                         }
                     } else {
-                         $scope.zoomId = $scope.zoomArray[0].obj;
+                        if($scope.zoomArray[0] !== undefined){
+                            $scope.zoomId = $scope.zoomArray[0].obj;
+                        }
                     }
                 }
                 
@@ -368,12 +389,13 @@
                 }
 
                 if($("#scroll-container").is(':in-viewport')){
-                    $("html.no-touchevents .product-page .upsells .scroll-container ul li.onscreen").css({
-                        "-webkit-transform": "translate3d(0,0,0)",
+                    console.log("in view test");
+                    $("html.no-touchevents .product-page .upsells .scroll-container-products ul li.onscreen").css({
+                        "-webkit-transform": "translate3d(0,0px,0)",
                         "transform": "translate3d(0,0px,0)"
                     });
                 }else {
-                     $("html.no-touchevents .product-page .upsells .scroll-container ul li.onscreen").css({
+                     $("html.no-touchevents .product-page .upsells .scroll-container-products ul li.onscreen").css({
                         "-webkit-transform": "translate3d(0,34px,0)",
                         "transform": "translate3d(0,34px,0)"
                     });
