@@ -8,7 +8,7 @@
      */
 
 
-    window.moaApp = angular.module("moaApp", ["ui.router" , "ngSanitize","ngAnimate","ngTouch","angular-inview"]);
+    window.moaApp = angular.module("moaApp", ["ui.router" , "ngSanitize","ngAnimate","ngTouch","angular-inview" , 'anim-in-out']);
     window.moaApp.config(function($stateProvider,$urlRouterProvider) {
 
         //$urlRouterProider.otherwise('/');
