@@ -23,7 +23,7 @@
         $timeout(function(){
             if($scope.isiOS || $scope.isSafari){
                 var innerHeight =  window.innerHeight;
-                var sidemenu = document.getElementById("sidemenu");
+                var sidemenu = document.getElementById("sidemenu-ios");
                 sidemenu.style.height = innerHeight + "px";
 
                 $scope.stylesheets = [
