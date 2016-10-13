@@ -31,7 +31,7 @@
                 ];
             } else {
                 $scope.stylesheets = [
-                  {href: 'css/section/default.css', type:'text/css'}
+                  {href: 'css/default.css', type:'text/css'}
                 ];                
             }
 
