@@ -23,10 +23,10 @@
                 var sidemenu = document.getElementById("sidemenu-ios");
                 sidemenu.style.height = innerHeight + "px";
                 $('#collection-footer').css({
-                    'display':"none";
+                    'display':"none"
                 });
                 $('#collection-footer-ios').css({
-                    'display':"block";
+                    'display':"block"
                 });
             },500);
             
