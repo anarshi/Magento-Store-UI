@@ -1033,10 +1033,6 @@ ul.cart-products {
 
 }
 
-#collection-footer-ios {
-    top: calc(100vh - 44px);
-}
-
 #collection-footer {
     top: calc(100vh - 54px);
 }
