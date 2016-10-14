@@ -201,10 +201,10 @@
          */
         $scope.filtersOpen = '';
 
-        *
-         * @property modalOpen
-         * @type {Boolean}
-         * @default false
+        // *
+        //  * @property modalOpen
+        //  * @type {Boolean}
+        //  * @default false
          
         $scope.modalOpen = false;
 
