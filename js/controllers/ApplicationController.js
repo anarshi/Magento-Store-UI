@@ -38,10 +38,11 @@
         } else {
 
             $('#collection-footer').css({
-                    'display':"block";
+                    'display':"block"
                 });
+            
                 $('#collection-footer-ios').css({
-                    'display':"none";
+                    'display':"none"    
                 });
 
             $scope.stylesheets = [
