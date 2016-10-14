@@ -9,12 +9,15 @@
     function ProductController($scope,$http,$stateParams,$location , $window , $timeout , basket , cartProducts , openCartService) {
 
         var inViewpoerEl = $('#related-products');
-
+        var productSizes = $('#product-sizes');
+        var singleOverlay = $('.single-overlay');
         var slider = $("#slider");
-            slider.css({
-                'height':  $window.innerWidth + "px",
-                'width' : "100%"
-            });
+        $scope.offsetTop = 0;
+        
+        slider.css({
+            'height':  $window.innerWidth + "px",
+            'width' : "100%"
+        });
 
         $("html, body").animate({ scrollTop: 0 }, 1000);
 
@@ -32,17 +35,19 @@
         }
 
         
-
-      $scope.offsetTop = 0;
       $scope.init = function(){
-        console.log('asda');
-         var slider = $("#slider");
             slider.css({
                 'height':  $window.innerWidth + "px",
                 'width' : "100%"
             });
       }
         
+
+    $scope.closeSizes = function(){
+        console.log('close sizes');
+        productSizes.addClass('hide');
+        singleOverlay.removeClass('show');
+    };
 
         $scope.cartProducts = cartProducts;
 
@@ -120,7 +125,7 @@
             $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.slides.length - 1;
         };
 
-        var productSizes = $('#product-sizes');
+        
         $scope.isSizeChoosen = true;
 
         //should take size as parameter in fuction this is just a test case
@@ -128,7 +133,9 @@
             if(productSizes.hasClass('hide')){
                 productSizes.removeClass('hide');
                 $('body').addClass('no-scroll lock-scroll');
-                
+                productSizes.removeClass('hide');
+                singleOverlay.addClass('show');
+
                 document.ontouchmove = function (e) {
                   e.preventDefault();
                 }  
@@ -137,6 +144,8 @@
             else   {
                 $('body').removeClass('no-scroll lock-scroll');
                 productSizes.addClass('hide');
+                singleOverlay.removeClass('show');
+
                 document.ontouchmove = function (e) {
                   return true;
                 }

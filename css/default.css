@@ -574,6 +574,10 @@ body {
     left: inherit !important;
 }
 
+.single-overlay.show {
+    visibility: visible;
+}
+
 .cartcount.show {
     right: 26px;
 }
@@ -1032,6 +1036,17 @@ ul.cart-products {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.single-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    width: calc(100% - 380px);
+    height: 100%;
+    background: 0 0;
+    visibility: hidden;
 }
 
 .footer-bar li {
