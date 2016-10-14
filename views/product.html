@@ -1,137 +1,127 @@
 <div class="page product-page main-container" ng-init="productsControllerInit" id="mainId" ng-click="closeModal" style="opacity: 1;" ng-controller="ProductController" ng-init="init()">
-    <div class="page product-page" style="opacity: 1;">
-        <section class="product-container">
-            <div class="content">
-                <div class="transform-container">
-                    <div class="image-container"  dir="rtl" ng-class="imageContainerZoomClass"  data-images="{{imageNumber}}"; style="
-    transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1); -webkit-transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1);" id="image-container">
-                        <figure class="ready onscreen slides" ng-repeat="slide in slides" ng-click = "zoomIn($event)" id="figure{{$index}}"  ng-style="{ background: 'url({{ slide.image }})' }">
-                            <img src="{{slide.image}}" data-small="{{slide.image}}">
-                            <div class="hover " id={{$index}}></div>
-                        </figure>
-                    </div>
-                </div>
-                <aside class="info fixed ready hide-when-small" id="info">
-                    <div class="info-inner">
-                        <h2>{{product.name}}<br>
-                        <small>{{product.name}}</small>
-                        </h2>
-                        <span class="price">
-                            {{product.price}}
-                        </span>
-                        <p>{{product.longDescription}}</p>
-                    </div>
-                </aside>
-                <div class="transform-container ">
-                    <div class="js-margin" style="z-index: 0; transform: matrix(1, 0, 0, 1, 0, 0);">
-                        <div id="fitImages">
-                        </div>
-                    </div>
-                </div>
-                <div class="transform-container info-outer">
-                    <footer class="info columns text-center  col-md-12 ready ">
-                        <h2 class="text-center">{{product.name}}
-                        <small>{{product.name}}</small>
-                        </h2>
-                        <span class="price text-center">
-                            {{product.price}}
-                        </span>
-                        <p class="text-center">{{product.longDescription}}</p>
-                    </footer>
-                </div>
-                <div class="transform-container"  in-view="inView($index, $inview, $inviewpart)">
-                    <footer class="upsells col-md-12 no-padding js-margin show"  style="transform: matrix(1, 0, 0, 1, 0, 0);">
-                        <div class="bar show col-md-12 no-padding" id="related-products"><span>You may also like</span></div>
-                        <div class="scroll-container-products" id="scroll-container">
-                            <ul>
-                                <li class="onscreen" style="background-image: url(https://www.etq-amsterdam.com/app/uploads/2016/08/ETQ-Amsterdam-Low-5-Black-Denim-Side-800x0-c-default.jpg);"><a href="https://www.etq-amsterdam.com/shop/low-5-black-denim/"></a></li>
-                                <li class="onscreen" style="background-image: url(https://www.etq-amsterdam.com/app/uploads/2016/08/etq-amsterdam-low-4-white-side-800x0-c-default.jpg);"><a href="https://www.etq-amsterdam.com/shop/low-4-white/"></a></li>
-                                <li class="onscreen" style="background-image: url(https://www.etq-amsterdam.com/app/uploads/2016/09/ETQ-Amsterdam-Low-4-Wool-Cement-Side-800x0-c-default.jpeg);"><a href="https://www.etq-amsterdam.com/shop/low-4-wool-cement/"></a></li>
-                                <li class="onscreen" style="background-image: url(https://www.etq-amsterdam.com/app/uploads/2016/08/ETQ-Amsterdam-Low-5-Rubberized-Black-Light-Grey-Side-800x0-c-default.jpg);"><a href="https://www.etq-amsterdam.com/shop/low-5-rubberized-black-microchip/"></a></li>
-                            </ul>
-                        </div>
-                    </footer>
-                </div>
+   <div class="page product-page" style="opacity: 1;">
+      <section class="product-container">
+         <div class="content">
+            <div class="transform-container">
+               <div class="image-container"  dir="rtl" ng-class="imageContainerZoomClass"  data-images="{{imageNumber}}"; style="
+                  transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1); -webkit-transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1);" id="image-container">
+                  <figure class="ready onscreen slides" ng-repeat="slide in slides" ng-click = "zoomIn($event)" id="figure{{$index}}"  ng-style="{ background: 'url({{ slide.image }})' }">
+                     <img src="{{slide.image}}" data-small="{{slide.image}}">
+                     <div class="hover " id={{$index}}></div>
+                  </figure>
+               </div>
             </div>
-
-        </section>
-        <div class="single-overlay" ng-click="closeSizes()"></div>
-        <aside id="product-sizes" class="product-page-sizes hide">
-            <div class="scrollpane">
-                <div class="filterList">
-                    <ul>
-                        <li class="key">EU | US | UK</li>
-                        
-                        <li data-id="2709" ng-click = "chooseSize('36 | 03 | 02')">
-                            36 | 03 | 02
-                        </li>
-                        
-                        <li data-id="2708" ng-click = "chooseSize('37 | 04 | 03')">
-                            37 | 04 | 03
-                        </li>
-                        
-                        <li data-id="2707" ng-click = "chooseSize('38 | 05 | 04')">
-                            38 | 05 | 04
-                        </li>
-                        
-                        <li data-id="2706" ng-click = "chooseSize('39 | 06 | 05')">
-                            39 | 06 | 05
-                        </li>
-                        
-                        <li data-id="2705" ng-click = "chooseSize('40 | 07 | 06')">
-                            40 | 07 | 06
-                        </li>
-                        
-                        <li data-id="2704" ng-click = "chooseSize('41 | 08 | 07')">
-                            41 | 08 | 07
-                        </li>
-                        
-                        <li data-id="2703" ng-click = "chooseSize('42 | 09 | 08')">
-                            42 | 09 | 08
-                        </li>
-                        
-                        <li data-id="2702" ng-click = "chooseSize('43 | 10 | 09')">
-                            43 | 10 | 09
-                        </li>
-                        
-                        <li data-id="2701" ng-click = "chooseSize('44 | 11 | 10')">
-                            44 | 11 | 10
-                        </li>
-                        
-                        <li data-id="2700" ng-click = "chooseSize('45 | 12 | 11')">
-                            45 | 12 | 11
-                        </li>
-                        
-                        <li data-id="2699" ng-click = "chooseSize('46 | 13 | 12')">
-                            46 | 13 | 12
-                        </li>
-                    </ul>
-                </div>
+            <aside class="info fixed ready hide-when-small" id="info">
+               <div class="info-inner">
+                  <h2>{{product.name}}<br>
+                     <small>{{product.name}}</small>
+                  </h2>
+                  <span class="price">
+                  {{product.price}}
+                  </span>
+                  <p>{{product.longDescription}}</p>
+               </div>
+            </aside>
+            <div class="transform-container ">
+               <div class="js-margin" style="z-index: 0; transform: matrix(1, 0, 0, 1, 0, 0);">
+                  <div id="fitImages">
+                  </div>
+               </div>
             </div>
-        </aside>
-        
-        <footer class="footer-bar single-footer"  ng-class="closeFooter">
-            <ul class="hide-for-small">
-                <li class="product-li">
-                    <button role="button" data-href="https://www.etq-amsterdam.com" class="items back" ng-click = "goHome('/')"><span>x</span><span class="hover">x</span></button>
-                </li>
-                <li class="hide-for-medium-portrait product-li" id="zoom-container">
-                    <button role="button" class="items zoom" ng-class="zoomClass" ng-click="zoomInIcon()" id="zoomBtn"><span>+</span><span class="hover">-</span></button>
-                </li>
-            </ul>
-            <nav class="footerbuttons col-md-12 col-xs-12 col-lg-12 no-padding" id="footer-bar" ng-class="footerClass">
-                <button class="sizeBtn hide-when-small" ng-click="showSizes()"><span><strong>Size</strong></span>  </button>
-                <button class="addBtn btnAdd hide-when-small" id="addBtn" ng-click="addToCart()" ng-disabled="isSizeChoosen"><span><strong>Add to bag</strong></span></button>
-
-              
-                <div class="col-md-6 col-xs-6 col-lg-6 no-padding show-when-small  sizeBtn-container">
-                     <button class="sizeBtn " ng-click="showSizes()"><span><strong>Size</strong></span>  </button>
-                </div>
-                <div class="col-md-6 col-lg-6 col-lg-6 no-padding show-when-small">
-                     <button class="addBtn btnAdd " id="addBtn" ng-click="addToCart()" ng-disabled="isSizeChoosen"><span><strong>Add to bag</strong></span></button>
-                </div>
-
-            </nav>
-        </footer>
-    </div>
-    </div>
+            <div class="transform-container info-outer">
+               <footer class="info columns text-center  col-md-12 ready ">
+                  <h2 class="text-center">{{product.name}}
+                     <small>{{product.name}}</small>
+                  </h2>
+                  <span class="price text-center">
+                  {{product.price}}
+                  </span>
+                  <p class="text-center">{{product.longDescription}}</p>
+               </footer>
+            </div>
+            <div class="transform-container">
+               <footer class="upsells col-md-12 no-padding js-margin show"  style="transform: matrix(1, 0, 0, 1, 0, 0);">
+                  <div class="bar show col-md-12 no-padding" id="related-products"><span>You may also like</span></div>
+                  <div class="scroll-container-products" id="scroll-container">
+                     <ul>
+                        <li class="onscreen" style="background-image: url(https://www.etq-amsterdam.com/app/uploads/2016/08/ETQ-Amsterdam-Low-5-Black-Denim-Side-800x0-c-default.jpg);"><a href="https://www.etq-amsterdam.com/shop/low-5-black-denim/"></a></li>
+                        <li class="onscreen" style="background-image: url(https://www.etq-amsterdam.com/app/uploads/2016/08/etq-amsterdam-low-4-white-side-800x0-c-default.jpg);"><a href="https://www.etq-amsterdam.com/shop/low-4-white/"></a></li>
+                        <li class="onscreen" style="background-image: url(https://www.etq-amsterdam.com/app/uploads/2016/09/ETQ-Amsterdam-Low-4-Wool-Cement-Side-800x0-c-default.jpeg);"><a href="https://www.etq-amsterdam.com/shop/low-4-wool-cement/"></a></li>
+                        <li class="onscreen" style="background-image: url(https://www.etq-amsterdam.com/app/uploads/2016/08/ETQ-Amsterdam-Low-5-Rubberized-Black-Light-Grey-Side-800x0-c-default.jpg);"><a href="https://www.etq-amsterdam.com/shop/low-5-rubberized-black-microchip/"></a></li>
+                     </ul>
+                  </div>
+               </footer>
+            </div>
+         </div>
+      </section>
+      <div class="single-overlay" ng-click="closeSizes()"></div>
+      <aside id="product-sizes" class="product-page-sizes hide">
+         <div class="scrollpane">
+            <div class="filterList">
+               <ul>
+                  <li class="key">EU | US | UK</li>
+                  <li data-id="2709" ng-click = "chooseSize('36 | 03 | 02')">
+                     36 | 03 | 02
+                  </li>
+                  <li data-id="2708" ng-click = "chooseSize('37 | 04 | 03')">
+                     37 | 04 | 03
+                  </li>
+                  <li data-id="2707" ng-click = "chooseSize('38 | 05 | 04')">
+                     38 | 05 | 04
+                  </li>
+                  <li data-id="2706" ng-click = "chooseSize('39 | 06 | 05')">
+                     39 | 06 | 05
+                  </li>
+                  <li data-id="2705" ng-click = "chooseSize('40 | 07 | 06')">
+                     40 | 07 | 06
+                  </li>
+                  <li data-id="2704" ng-click = "chooseSize('41 | 08 | 07')">
+                     41 | 08 | 07
+                  </li>
+                  <li data-id="2703" ng-click = "chooseSize('42 | 09 | 08')">
+                     42 | 09 | 08
+                  </li>
+                  <li data-id="2702" ng-click = "chooseSize('43 | 10 | 09')">
+                     43 | 10 | 09
+                  </li>
+                  <li data-id="2701" ng-click = "chooseSize('44 | 11 | 10')">
+                     44 | 11 | 10
+                  </li>
+                  <li data-id="2700" ng-click = "chooseSize('45 | 12 | 11')">
+                     45 | 12 | 11
+                  </li>
+                  <li data-id="2699" ng-click = "chooseSize('46 | 13 | 12')">
+                     46 | 13 | 12
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </aside>
+      <footer class="footer-bar single-footer"  ng-class="closeFooter">
+         <ul class="hide-for-small">
+            <li class="product-li">
+               <button role="button" data-href="https://www.etq-amsterdam.com" class="items back" ng-click = "goHome('/')"><span>x</span><span class="hover">x</span></button>
+            </li>
+            <li class="hide-for-medium-portrait product-li" id="zoom-container">
+               <button role="button" class="items prev" ng-class="zoomClass" ng-click="scrollToPreviousImage()" ><span>+</span><span class="hover">-</span></button>
+            </li>
+            <li class="hide-for-medium-portrait product-li" id="zoom-container">
+               <button role="button" class="items next" ng-class="zoomClass" ng-click="scrollToNextImage()" ><span>+</span><span class="hover">-</span></button>
+            </li>
+            <li class="hide-for-medium-portrait product-li" id="zoom-container">
+               <button role="button" class="items zoom" ng-class="zoomClass" ng-click="zoomInIcon()" id="zoomBtn"><span>+</span><span class="hover">-</span></button>
+            </li>
+         </ul>
+         <nav class="footerbuttons col-md-12 col-xs-12 col-lg-12 no-padding" id="footer-bar" ng-class="footerClass">
+            <button class="sizeBtn hide-when-small" ng-click="showSizes()"><span><strong>Size</strong></span>  </button>
+            <button class="addBtn btnAdd hide-when-small" id="addBtn" ng-click="addToCart()" ng-disabled="isSizeChoosen"><span><strong>Add to bag</strong></span></button>
+            <div class="col-md-6 col-xs-6 col-lg-6 no-padding show-when-small  sizeBtn-container">
+               <button class="sizeBtn " ng-click="showSizes()"><span><strong>Size</strong></span>  </button>
+            </div>
+            <div class="col-md-6 col-lg-6 col-lg-6 no-padding show-when-small">
+               <button class="addBtn btnAdd " id="addBtn" ng-click="addToCart()" ng-disabled="isSizeChoosen"><span><strong>Add to bag</strong></span></button>
+            </div>
+         </nav>
+      </footer>
+   </div>
+</div>
