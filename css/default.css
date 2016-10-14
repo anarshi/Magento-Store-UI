@@ -28,6 +28,10 @@ body, html {
     background-color: #FFF;
 }
 
+.navbar-app{
+    background-color: transparent !important;
+}
+
 
 
 .cart-open .overlay, .menu-open .overlay {
