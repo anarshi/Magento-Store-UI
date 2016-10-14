@@ -1,24 +1,3 @@
-<script>
-        // Allow toggling of iNoBounce with the toggle button
-        window.addEventListener('load', function() {
-            var enabled = true;
-            var toggle = document.getElementById('mainId');
-            toggle.addEventListener('click', function() {
-                if (enabled) {
-                    iNoBounce.disable();
-                    toggle.classList.add('default');
-                    toggle.innerHTML = 'Enable';
-                }
-                else {
-                    iNoBounce.enable();
-                    toggle.classList.remove('default');
-                    toggle.innerHTML = 'Disable';
-                }
-                enabled = !enabled;
-            }, false);
-        }, false);
-    </script>
-
 <div class="home-page container main-container">
     <section ng-controller="ProductsController" >
         <section class="products" >
@@ -50,12 +29,8 @@
     </section>
 
     <section>
-
-    <!-- <div data-role="footer" data-theme="a" data-position="fixed" class="ui-footer ui-bar-a ui-footer-fixed slideup" role="contentinfo">
-                    <h1 class="ui-title" role="heading" aria-level="1">Fixed Footer</h1>
-            </div> -->
         
-             <footer id="collection-footer" ng-hide="isIos" class="footer-bar-home footer-bar"  ng-class="closeFooter">
+             <footer id="collection-footer"  class="footer-bar-home footer-bar"  ng-class="closeFooter">
             <ul>
                 <li ng-click="oneRowGrid()">
                     <button data-rows="large"  ng-class="oneRowActive" class="items row1 up" ng-click="oneRowGrid()">
@@ -79,7 +54,7 @@
             </nav> -->
         </footer>
 
-        <footer id="collection-footer-ios" ng-show="isIos"  class="footer-bar-home footer-bar"  ng-class="closeFooter">
+        <!-- <footer id="collection-footer-ios" ng-show="isIos"  class="footer-bar-home footer-bar"  ng-class="closeFooter">
             <ul>
                 <li ng-click="oneRowGrid()">
                     <button data-rows="large"  ng-class="oneRowActive" class="items row1 up" ng-click="oneRowGrid()">
@@ -101,7 +76,7 @@
            <!--  <nav class="footerbuttons show">
                 <button id="filterBtn" class=""><span>Filter <strong class="filtercount"></strong></span><span class="hover">Filter <strong class="filtercount"></strong></span></button>
             </nav> -->
-        </footer>
+        </footer> -->
       
        
     </section>
