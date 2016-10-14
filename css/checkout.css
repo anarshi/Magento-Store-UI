@@ -358,7 +358,8 @@ p.sum span.value {
     }
 
     .header {
-        display: block;
+        display: table;
+        width: 100%;
         position: relative;
         
         background: #000;
@@ -367,7 +368,8 @@ p.sum span.value {
     }
 
     .header h1 {
-        margin-top: 36px;
+        display: table-cell;
+        vertical-align: middle;
         font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
         text-transform: uppercase;
         font-weight: 400;
@@ -375,10 +377,8 @@ p.sum span.value {
         margin: 0;
         padding: 0;
         line-height: 8vh;
-        text-align: center;
         font-size: 20px;
         color: #FFF;
-        padding-top: 117px;
     }
 
 }
