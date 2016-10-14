@@ -1017,6 +1017,8 @@ ul.cart-products {
 .close-footer {
     /* position: relative; */
     transform: translate(0, 400px);
+    -webkit-transform: translate(0, 400px);
+    -webkit-transition: all .35s cubic-bezier(.455,.03,.515,.955);
 
 }
 
