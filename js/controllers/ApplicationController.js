@@ -9,6 +9,8 @@
     function applicationController($rootScope, $scope , $location , $http , $timeout , $window ,basket ,cartProducts,openCartService) {
 
 
+        document.body.addEventListener('touchmove', function(e) { return true }, true);
+
         //watcher
        // $scope.isCartOP = openCartService.isCartOpen;
         $scope.$watch(
@@ -51,11 +53,11 @@
                     $scope.bodyOpenModalClass = "";
                     $scope.closeFooter = "";
                     $scope.isCartOpen = false;
-                    // document.ontouchmove = function (e) {
-                    //     console.log('radi');
-                    //   return true;
+                    document.ontouchmove = function (e) {
+                        console.log('radi');
+                      return true;
 
-                    // }
+                    }
                 }
             }
         ,true);
