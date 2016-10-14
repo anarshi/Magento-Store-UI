@@ -8,7 +8,7 @@
 
     function applicationController($rootScope, $scope , $location , $http , $timeout , $window ,basket ,cartProducts,openCartService) {
 
-        
+
         $scope.$watch(
             function(){
                 return openCartService.getCartOpen();
@@ -40,7 +40,7 @@
                       $scope.closeFooter = "close-footer";
 
                       document.ontouchmove = function (e) {
-                        console.log("radi");
+                       // console.log("radi");
                         e.preventDefault();
                      }
                 } else {
@@ -49,11 +49,11 @@
                     $scope.bodyOpenModalClass = "";
                     $scope.closeFooter = "";
                     $scope.isCartOpen = false;
-                    // document.ontouchmove = function (e) {
-                    //     console.log("radi");
-                    //   return true;
+                    document.ontouchmove = function (e) {
+                        console.log("radi");
+                      return true;
 
-                    // }
+                    }
                 }
             }
         ,true);
