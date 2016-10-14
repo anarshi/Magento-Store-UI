@@ -842,6 +842,9 @@ ul.cart-products {
     -webkit-transform: translate(0, -400px);
 }
 
+#collection-footer {
+    top: calc(100% - 54px);
+}
 
 .footer-bar li, .footer-bar ul {
     list-style-type: none;
