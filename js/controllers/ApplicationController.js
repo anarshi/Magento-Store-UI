@@ -8,14 +8,7 @@
 
     function applicationController($rootScope, $scope , $location , $http , $timeout , $window ,basket ,cartProducts,openCartService) {
 
-        // $(document).on("mobileinit", function(){
-        //     console.log("mobile init");
-        //     $.support.touchOverflow = true;
-        //     $.mobile.touchOverflowEnabled = true;
-        // });
-
-        //watcher
-       // $scope.isCartOP = openCartService.isCartOpen;
+        
         $scope.$watch(
             function(){
                 return openCartService.getCartOpen();
