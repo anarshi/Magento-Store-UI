@@ -909,21 +909,24 @@ ul.cart-products {
     -webkit-transition: background-color 300ms ease-out;
 }
 
-.footer-bar li .items.row4 span {
-    background-size: 11px;
-    background-image: url('../../images/svg/arrowIcon.svg');
-}
-
-.footer-bar li .items.row1 span {
-    background-image: url('../../images/svg/arrowIcon.svg');
-}
-
 .footer-bar li .items span {
     opacity: .2;
     background-size: 10px;
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url('../../images/svg/arrowIcon.svg');
+    background-image: url('../images/svg/arrowIcon.svg');
+}
+
+.footer-bar li .items.row2 span{
+    background-image: url('../images/svg/twoRows.svg');
+}
+
+.footer-bar li .items.row1 span {
+    background-image: url('../images/svg/oneRow.svg');
+}
+
+.footer-bar li .items.row4 span {
+    background-image: url('../images/svg/grid.svg');
 }
 
 .footer-bar li .items>span {

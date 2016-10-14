@@ -1105,7 +1105,7 @@ ul.cart-products {
 }
 
 .footer-bar li .items.row4 span {
-    background-size: 11px;
+    background-size: 12.8px;
     background-image: url('../images/svg/arrowIcon.svg');
 }
 
@@ -1153,13 +1153,15 @@ ul.cart-products {
     background-image: url('../images/svg/arrowIcon.svg');
 }
 
+.footer-bar li .items.row2 span{
+    background-image: url('../images/svg/twoRows.svg');
+}
 
 .footer-bar li .items.row1 span {
-    background-image: url('../images/svg/substract.svg');
+    background-image: url('../images/svg/oneRow.svg');
 }
 
 .footer-bar li .items.row4 span {
-    background-size: 11px;
     background-image: url('../images/svg/grid.svg');
 }
 
