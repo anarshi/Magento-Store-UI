@@ -30,7 +30,7 @@
 
     <section>
         
-        <footer id="collection-footer" ng-show="isIos"  class="footer-bar-home footer-bar"  ng-class="closeFooter">
+        <footer id="collection-footer" ng-hide="isIos"  class="footer-bar-home footer-bar"  ng-class="closeFooter">
             <ul>
                 <li ng-click="oneRowGrid()">
                     <button data-rows="large"  ng-class="oneRowActive" class="items row1 up" ng-click="oneRowGrid()">
@@ -54,7 +54,7 @@
             </nav> -->
         </footer>
 
-        <footer id="collection-footer-ios" ng-hide="isIos"  class="footer-bar-home footer-bar"  ng-class="closeFooter">
+        <footer id="collection-footer-ios" ng-show="isIos"  class="footer-bar-home footer-bar"  ng-class="closeFooter">
             <ul>
                 <li ng-click="oneRowGrid()">
                     <button data-rows="large"  ng-class="oneRowActive" class="items row1 up" ng-click="oneRowGrid()">
