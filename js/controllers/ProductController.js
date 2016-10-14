@@ -8,6 +8,18 @@
 
     function ProductController($scope,$http,$stateParams,$location , $window , $timeout , basket , cartProducts , openCartService) {
 
+       
+        if($window.innerWidth <= 1020){
+            $timeout(function(){
+                $('.image-container').slick({
+                    rtl: true,
+                    dots: true,
+                    arrows:false
+
+                });
+            },500);
+        } 
+        
         var inViewpoerEl = $('#related-products');
         var productSizes = $('#product-sizes');
         var singleOverlay = $('.single-overlay');
@@ -164,6 +176,21 @@
 
          angular.element($window).bind("resize", function() {
             var slider = $("#slider");
+            if($window.innerWidth < 1020){
+                 $timeout(function(){
+                    $('.image-container').slick({
+                        rtl: true,
+                        dots: true,
+                        arrows:false,
+                        
+                  });
+                },500);
+
+            }else {
+                $timeout(function(){
+                    $('.image-container').slick("unslick");
+                },500);
+            }
             slider.css({
                 'height':  $window.innerWidth + "px",
 

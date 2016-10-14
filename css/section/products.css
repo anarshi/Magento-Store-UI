@@ -1172,9 +1172,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
         bottom: 0;
     }
     
-    .image-container{
-        display: none !important;
-    }
+    
 
     .info-inner{
         display: none;
@@ -1353,5 +1351,73 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     .product-page .product-container figure {
         width: 100vw;
         height: 90vw;
+    }
+}
+
+.product-page .product-container ul.slick-dots {
+    position: absolute;
+    list-style-type: none;
+    left: 50%;
+    bottom: 15%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    margin: 0;
+}
+
+.product-page .product-container ul.slick-dots li.slick-active {
+    background: #FFF;
+}
+
+.product-page .product-container ul.slick-dots li {
+    float: left;
+    width: 7px;
+    height: 7px;
+    background: 0 0;
+    border-radius: 50%;
+    margin: 0 4px;
+    text-indent: -9999px;
+    border: 1px solid #FFF;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 63.75em){
+    .product-page .product-container .image-container {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: auto;
+        -webkit-transform: scale3d(1,1,1) !important;
+        transform: scale3d(1,1,1) !important;
+        margin-bottom: 0 !important;
+    }
+
+    .product-page .product-container figure {
+        display: block;
+        width: 100vw;
+        height: 90vw;
+    }
+
+    .product-page .product-container figure .hover {
+        cursor: pointer;
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 43.688em){
+    .product-page .product-container .image-container {
+        min-height: 400px;
+        -webkit-transform: scale3d(1,1,1) c;
+        transform: scale3d(1,1,1) !important;
+        margin-bottom: 0 !important;
+    }
+
+    .product-page .product-container figure {
+        width: 100vw;
+        height: 90vw;
+        margin-left: 0;
+        min-height: 400px;
+        background-size: contain;
     }
 }

@@ -1,28 +1,9 @@
 <div class="page product-page main-container" ng-init="productsControllerInit" id="mainId" ng-click="closeModal" style="opacity: 1;" ng-controller="ProductController" ng-init="init()">
     <div class="page product-page" style="opacity: 1;">
         <section class="product-container">
-            <div class="container slider" id="slider">
-                <img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage"
-                ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-                ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
-
-               <!--  <a class="arrow prev"  ng-click="nextSlide()"></a>
-                <a class="arrow next"  ng-click="prevSlide()"></a> -->
-                <nav class="nav">
-                    <div class="wrapper">
-                        <ul class="dots">
-                            <li class="dot" ng-repeat="slide in slides">
-                                <a  ng-class="{'active':isCurrentSlideIndex($index)}"
-                                         ng-click="setCurrentSlideIndex($index);">{{slide.description}}
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
             <div class="content">
                 <div class="transform-container">
-                    <div class="image-container" ng-class="imageContainerZoomClass"  data-images="{{imageNumber}}"; style="
+                    <div class="image-container"  dir="rtl" ng-class="imageContainerZoomClass"  data-images="{{imageNumber}}"; style="
     transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1); -webkit-transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1);" id="image-container">
                         <figure class="ready onscreen slides" ng-repeat="slide in slides" ng-click = "zoomIn($event)" id="figure{{$index}}"  ng-style="{ background: 'url({{ slide.image }})' }">
                             <img src="{{slide.image}}" data-small="{{slide.image}}">

@@ -1049,6 +1049,22 @@ ul.cart-products {
     visibility: hidden;
 }
 
+.slick-slider {
+    position: relative;
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
 .footer-bar li {
     display: block;
     position: relative;
@@ -1251,6 +1267,7 @@ div.btn:active {
 
 .twitter{
     background-color: black;
+    border-right: none !important;
 }
 
 
@@ -1287,9 +1304,15 @@ div.error {
     padding: 10px 15px;
 }
 
+.slick-initialized .slick-slide {
+    display: block;
+}
+
 
 @media screen and (max-width: 990px){
     .footer-bar ul li:last-child{
         display: none;
     }
 }
+
+

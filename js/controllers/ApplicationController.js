@@ -100,9 +100,7 @@
         ,true);
 
 
-        //?????
         document.addEventListener('touchmove', function(event){
-            console.log("propagation stopped");
             event.stopPropagation();
         });
 
