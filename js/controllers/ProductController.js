@@ -10,6 +10,12 @@
 
         var inViewpoerEl = $('#related-products');
 
+        var slider = $("#slider");
+            slider.css({
+                'height':  $window.innerWidth + "px",
+                'width' : "100%"
+            });
+
         $("html, body").animate({ scrollTop: 0 }, 1000);
 
         if($("#scroll-container").is(':in-viewport')){
@@ -29,6 +35,7 @@
 
       $scope.offsetTop = 0;
       $scope.init = function(){
+        console.log('asda');
          var slider = $("#slider");
             slider.css({
                 'height':  $window.innerWidth + "px",

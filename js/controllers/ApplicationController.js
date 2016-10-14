@@ -6,10 +6,10 @@
                                                 , '$http' ,'$timeout', '$window' 
                                                 ,'basket', 'cartProducts','openCartService' , 
 
-    function applicationController($rootScope, $scope , $location 
-                                    , $http , $timeout , $window ,basket 
-                                    ,cartProducts,openCartService) {
+    function applicationController($rootScope, $scope , $location , $http , $timeout , $window ,basket ,cartProducts,openCartService) {
 
+
+        document.body.addEventListener('touchmove', function(e) { return true }, true);
 
         //watcher
        // $scope.isCartOP = openCartService.isCartOpen;
@@ -43,9 +43,10 @@
                      $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
                       $scope.closeFooter = "close-footer";
 
-                      document.ontouchmove = function (e) {
-                        e.preventDefault();
-                     }
+                     //  document.ontouchmove = function (e) {
+                     //    console.log("radi");
+                     //    e.preventDefault();
+                     // }
                 } else {
                     $scope.contentClass = "";
                     $scope.cartOpenClass = "asdasd";
@@ -53,12 +54,16 @@
                     $scope.closeFooter = "";
                     $scope.isCartOpen = false;
                     document.ontouchmove = function (e) {
+                        console.log('radi');
                       return true;
 
                     }
                 }
             }
         ,true);
+
+                 
+
 
 
         $scope.isLoaded = false;
@@ -108,10 +113,11 @@
                 $scope.contentClass = "close-main-container";
                 $scope.modalClass="close-modal";
                 $scope.closeFooter = "";
-                document.ontouchmove = function (e) {
-                  return true;
+                // document.ontouchmove = function (e) {
+                //     console.log("radi");
+                //   return true;
                   
-                }
+                // }
             
             } else if($scope.isCartOpen){
                 $scope.contentClass = "";
@@ -119,10 +125,11 @@
                 $scope.bodyOpenModalClass = "";
                 $scope.isCartOpen = false;
                 $scope.closeFooter = "close-footer";
-                document.ontouchmove = function (e) {
-                  return true;
+                // document.ontouchmove = function (e) {
+                //     console.log("radi");
+                //   return true;
                   
-                }
+                // }
 
             }else {
                 //Empty
@@ -228,9 +235,10 @@
                 $scope.closeFooter = "close-footer";
                 $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
                 $scope.sidemenuFooterOpen = "sidemenu-footer-open";
-                document.ontouchmove = function (e) {
-                  e.preventDefault();
-                }
+                // document.ontouchmove = function (e) {
+                //     console.log("radi");
+                //   e.preventDefault();
+                // }
             }
         };
 
@@ -261,10 +269,11 @@
                 $scope.openSidemenu = "";
                 $scope.sidemenuFooterOpen = ""
 
-                document.ontouchmove = function (e) {
-                  return true;
+                // document.ontouchmove = function (e) {
+                //     console.log("radi");
+                //   return true;
 
-                }
+                // }
             
             } else if($scope.isCartOpen){
                 openCartService.setCartOpen(false);
@@ -274,6 +283,7 @@
                 $scope.closeFooter = "";
                 $scope.isCartOpen = false;
                 document.ontouchmove = function (e) {
+                    console.log("radi");
                   return true;
 
                 }
@@ -368,9 +378,10 @@
                  $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
                   $scope.closeFooter = "close-footer";
 
-                  document.ontouchmove = function (e) {
-                    e.preventDefault();
-                 }
+                 //  document.ontouchmove = function (e) {
+                 //    console.log("radi");
+                 //    e.preventDefault();
+                 // }
 
             } else {
                 //Empty
