@@ -1,14 +1,14 @@
-(function($moa) {
+  (function($moa) {
 
     "use strict";
 
-    $moa.controller('BasketController', ['$scope', '$routeParams' , '$location' , 'basket', function BasketController($scope,
-     $routeParams ,$location , basket) {
+    $moa.controller('BasketController', ['$scope', '$stateParams' , '$location' , 'basket', function BasketController($scope,
+     $stateParams ,$location , basket) {
 
       
 
-        console.log($routeParams.cartId);
-       basket.cartData.async($routeParams.cartId).then(function(data){
+        console.log($stateParams.cartId);
+       basket.cartData.async($stateParams.cartId).then(function(data){
             $scope.cartProducts = data.cartProducts;
             $scope.totalPrice = data.totalPrice;
        });
