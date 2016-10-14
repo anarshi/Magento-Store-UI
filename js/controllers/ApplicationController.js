@@ -11,10 +11,12 @@
 
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
+        $scope.isLoaded = false;
+        $scope.isiOS = false;
+        $scope.stylesheets = [];
         $scope.isiOS = iOS;
         $scope.isSafari = isSafari;
-        console.log($scope.isiOS);
+        console.log("isIOs: " + $scope.isiOS);
 
         if($scope.isiOS || $scope.isSafari){
             var innerHeight =  window.innerHeight;
@@ -40,7 +42,7 @@
             $('#collection-footer').css({
                     'display':"block"
                 });
-            
+
                 $('#collection-footer-ios').css({
                     'display':"none"    
                 });
@@ -52,10 +54,6 @@
 
         $scope.isLoaded = true;
 
-        document.body.addEventListener('touchmove', function(e) { return true }, true);
-
-        //watcher
-       // $scope.isCartOP = openCartService.isCartOpen;
         $scope.$watch(
             function(){
                 return openCartService.getCartOpen();
@@ -78,8 +76,6 @@
                        $scope.contentClass = "move-left-content"; 
                     }
 
-
-                    //$scope.cartId = localStorage.cartId;
                     $scope.isCartOpen = true;
                  
                     $scope.cartOpenClass = "move-cart-left ";
@@ -87,7 +83,6 @@
                       $scope.closeFooter = "close-footer";
 
                       document.ontouchmove = function (e) {
-                        console.log("radi");
                         e.preventDefault();
                      }
                 } else {
@@ -97,7 +92,6 @@
                     $scope.closeFooter = "";
                     $scope.isCartOpen = false;
                     document.ontouchmove = function (e) {
-                        console.log('radi');
                       return true;
 
                     }
@@ -105,24 +99,12 @@
             }
         ,true);
 
-                 
 
-
-
-        $scope.isLoaded = false;
-            
-        $scope.isiOS = false;
-        $scope.stylesheets = [];
-
-        
-        
-
-
-       
-
-        // document.addEventListener('touchmove', function(event){
-        //     event.stopPropagation();
-        // });
+        //?????
+        document.addEventListener('touchmove', function(event){
+            console.log("propagation stopped");
+            event.stopPropagation();
+        });
 
          $scope.$on('$locationChangeSuccess', function(/* EDIT: remove params for jshint */) {
               if($scope.isModalOpen){
@@ -165,7 +147,6 @@
         basket.cartData.async(localStorage.cartId).then(function(data){
             $scope.cartProducts.productsInCart = data.cartProducts;
             $scope.cartProducts.cartCount = data.cartCount;
-            // for(var i = 0 ; i < dara.cartProducts)
             $scope.cartProducts.cartTotalPrice = data.totalPrice;
             $scope.cartProducts.cartQty = data.cartQty;
         });
@@ -202,8 +183,6 @@
 
         //view filter elements
         var row1 =  angular.element( document.querySelector( '#div1' ) );
-
-        //setting  default value for productGridType
         if(localStorage.getItem("productGridType") === null){
             $scope.productGridType = "col-md-6 col-xs-6";
             $scope.activeRow2 = "active";
@@ -212,18 +191,6 @@
 
 
         }
-
-
-        /**
-         * @property filtersOpen
-         * @type {String}
-         */
-        $scope.filtersOpen = '';
-
-        // *
-        //  * @property modalOpen
-        //  * @type {Boolean}
-        //  * @default false
          
         $scope.modalOpen = false;
 
@@ -389,8 +356,6 @@
                    $scope.contentClass = "move-left-content"; 
                 }
 
-
-                //$scope.cartId = localStorage.cartId;
                 $scope.isCartOpen = true;
              
                 $scope.cartOpenClass = "move-cart-left ";
@@ -398,7 +363,6 @@
                   $scope.closeFooter = "close-footer";
 
                   document.ontouchmove = function (e) {
-                    console.log("radi");
                     e.preventDefault();
                  }
 
