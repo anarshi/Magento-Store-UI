@@ -55,7 +55,31 @@
                     <h1 class="ui-title" role="heading" aria-level="1">Fixed Footer</h1>
             </div> -->
         
-             <footer id="collection-footer" ng-hide="isFooterCollectionVisible" data-role="footer" data-theme="a" data-position="fixed" class="footer-bar-home footer-bar navbar navbar-app navbar-fixed-bottom"  ng-class="closeFooter">
+             <footer id="collection-footer" ng-show="isIos" class="footer-bar-home footer-bar"  ng-class="closeFooter">
+            <ul>
+                <li ng-click="oneRowGrid()">
+                    <button data-rows="large"  ng-class="oneRowActive" class="items row1 up" ng-click="oneRowGrid()">
+                        <span ng-class="oneRowActive">1</span>
+                        <span class="hover">1</span>
+                    </button>
+                </li>
+                <li ng-click="twoRowGrid()"><button data-rows="medium" ng-class="twoRowActive"  class="items row2  down" ng-click="twoRowGrid()">
+                    <span >2</span>
+                    <span class="hover">2</span></button></li>
+                <li class="hide-for-small" ng-click="threeRowGrid()">
+                    <button data-rows="small" ng-class="threeRowActive" class="items row4" >
+                        <span >4</span>
+                        <span class="hover">4</span>
+                    </button>
+                </li>
+            </ul>
+
+           <!--  <nav class="footerbuttons show">
+                <button id="filterBtn" class=""><span>Filter <strong class="filtercount"></strong></span><span class="hover">Filter <strong class="filtercount"></strong></span></button>
+            </nav> -->
+        </footer>
+
+        <footer id="collection-footer-ios" ng-hide="isIos"  class="footer-bar-home footer-bar"  ng-class="closeFooter">
             <ul>
                 <li ng-click="oneRowGrid()">
                     <button data-rows="large"  ng-class="oneRowActive" class="items row1 up" ng-click="oneRowGrid()">
