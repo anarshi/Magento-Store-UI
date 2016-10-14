@@ -916,6 +916,7 @@ ul.cart-products {
     display: block;
     position: fixed;
     
+    -webkit-transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),transform 550ms cubic-bezier(.455,.03,.515,.955) !important;
     transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),transform 550ms cubic-bezier(.455,.03,.515,.955) !important;
     bottom: 0;
     left: 0;
