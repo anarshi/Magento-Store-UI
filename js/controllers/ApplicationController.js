@@ -58,6 +58,9 @@
        //      }
        //  ,true);
 
+                 
+
+
 
         $scope.isLoaded = false;
             
@@ -107,6 +110,7 @@
                 $scope.modalClass="close-modal";
                 $scope.closeFooter = "";
                 document.ontouchmove = function (e) {
+                    console.log("radi");
                   return true;
                   
                 }
@@ -118,6 +122,7 @@
                 $scope.isCartOpen = false;
                 $scope.closeFooter = "close-footer";
                 document.ontouchmove = function (e) {
+                    console.log("radi");
                   return true;
                   
                 }
@@ -227,6 +232,7 @@
                 $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
                 $scope.sidemenuFooterOpen = "sidemenu-footer-open";
                 document.ontouchmove = function (e) {
+                    console.log("radi");
                   e.preventDefault();
                 }
             }
@@ -260,6 +266,7 @@
                 $scope.sidemenuFooterOpen = ""
 
                 document.ontouchmove = function (e) {
+                    console.log("radi");
                   return true;
 
                 }
@@ -272,6 +279,7 @@
                 $scope.closeFooter = "";
                 $scope.isCartOpen = false;
                 document.ontouchmove = function (e) {
+                    console.log("radi");
                   return true;
 
                 }
@@ -367,6 +375,7 @@
                   $scope.closeFooter = "close-footer";
 
                   document.ontouchmove = function (e) {
+                    console.log("radi");
                     e.preventDefault();
                  }
 
