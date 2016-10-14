@@ -371,12 +371,7 @@ nav#navBar.ready>span {
     -ms-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
 }
 
-nav#navBar>span {
-    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
-    /*opacity: 0;*/
-    cursor: pointer;
-    background-image: url(../images/svg/camicamina.svg);
-}
+
 
 .move-right-content-no-fixed{
     -ms-transform: translate(280px,0px); /* IE 9+ */

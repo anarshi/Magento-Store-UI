@@ -59,19 +59,7 @@
         ,true);
 
         $scope.isLoaded = false;
-
-
-        $scope.isiOS = false;
-        $scope.stylesheets = [];
-
-        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-        $scope.isiOS = iOS;
-        $scope.isSafari = isSafari;
-
-
-        $timeout(function(){
+        
             if($scope.isiOS || $scope.isSafari){
                 var innerHeight =  window.innerHeight;
                 console.log(innerHeight);
@@ -87,12 +75,24 @@
                 ];                
             }
 
-        },500);
+    
+        
 
-        $timeout(function(){
+        $scope.isLoaded = true;
+        
 
-            $scope.isLoaded = true;
-        },0);
+
+        $scope.isiOS = false;
+        $scope.stylesheets = [];
+
+        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+        $scope.isiOS = iOS;
+        $scope.isSafari = isSafari;
+
+
+        
 
         
         
@@ -140,6 +140,7 @@
          });
 
 
+         
         $scope.cartCount = 0;
 
         $scope.cartProducts = cartProducts;
@@ -384,6 +385,8 @@
                 //Empty
             }
         };
+
+       
         
     }]);
 

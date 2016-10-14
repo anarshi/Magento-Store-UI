@@ -1,0 +1,6 @@
+nav#navBar>span {
+    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    /*opacity: 0;*/
+    cursor: pointer;
+    background-image: url(../images/svg/camicamina.svg);
+}
