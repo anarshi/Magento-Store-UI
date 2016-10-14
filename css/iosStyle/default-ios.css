@@ -843,7 +843,7 @@ ul.cart-products {
 }
 
 #collection-footer {
-    top: calc(100% - 54px);
+    /* top: calc(100% - 54px); */
 }
 
 .footer-bar li, .footer-bar ul {
