@@ -9,6 +9,48 @@
     function applicationController($rootScope, $scope , $location , $http , $timeout , $window ,basket ,cartProducts,openCartService) {
 
 
+        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+        $scope.isiOS = iOS;
+        $scope.isSafari = isSafari;
+        console.log($scope.isiOS);
+
+        if($scope.isiOS || $scope.isSafari){
+            var innerHeight =  window.innerHeight;
+            console.log(innerHeight);
+            $timeout(function(){
+                var sidemenu = document.getElementById("sidemenu-ios");
+                sidemenu.style.height = innerHeight + "px";
+                $('#collection-footer').css({
+                    'display':"none";
+                });
+                $('#collection-footer-ios').css({
+                    'display':"block";
+                });
+            },500);
+            
+
+
+            $scope.stylesheets = [
+              {href: 'css/iosStyle/default-ios.css', type:'text/css'}
+            ];
+        } else {
+
+            $('#collection-footer').css({
+                    'display':"block";
+                });
+                $('#collection-footer-ios').css({
+                    'display':"none";
+                });
+
+            $scope.stylesheets = [
+              {href: 'css/default.css', type:'text/css'}
+            ];                
+        }
+
+        $scope.isLoaded = true;
+
         document.body.addEventListener('touchmove', function(e) { return true }, true);
 
         //watcher
@@ -71,31 +113,7 @@
         $scope.isiOS = false;
         $scope.stylesheets = [];
 
-        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-        $scope.isiOS = iOS;
-        $scope.isSafari = isSafari;
-        console.log($scope.isiOS);
-
-        if($scope.isiOS || $scope.isSafari){
-            var innerHeight =  window.innerHeight;
-            console.log(innerHeight);
-            $timeout(function(){
-                var sidemenu = document.getElementById("sidemenu-ios");
-                sidemenu.style.height = innerHeight + "px";
-            },500);
-            
-            $scope.stylesheets = [
-              {href: 'css/iosStyle/default-ios.css', type:'text/css'}
-            ];
-        } else {
-            $scope.stylesheets = [
-              {href: 'css/default.css', type:'text/css'}
-            ];                
-        }
-
-        $scope.isLoaded = true;
+        
         
 
 
