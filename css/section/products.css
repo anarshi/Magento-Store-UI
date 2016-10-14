@@ -1229,6 +1229,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
 /*new style*/
 .product-page .product-container figure.ready {
     opacity: 1;
+    outline-color: transparent;
 }
 
 .product-page .product-container figure img {
@@ -1353,6 +1354,11 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
         height: 90vw;
     }
 }
+
+.slick-slide {
+    outline: none;
+}
+
 
 .product-page .product-container ul.slick-dots {
     position: absolute;
