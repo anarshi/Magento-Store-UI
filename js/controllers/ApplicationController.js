@@ -56,11 +56,11 @@
                     $scope.bodyOpenModalClass = "";
                     $scope.closeFooter = "";
                     $scope.isCartOpen = false;
-                    document.ontouchmove = function (e) {
-                        console.log("radi");
-                      return true;
+                    // document.ontouchmove = function (e) {
+                    //     console.log("radi");
+                    //   return true;
 
-                    }
+                    // }
                 }
             }
         ,true);
