@@ -9,54 +9,56 @@
     function applicationController($rootScope, $scope , $location , $http , $timeout , $window ,basket ,cartProducts,openCartService) {
 
 
-       //  //watcher
-       // // $scope.isCartOP = openCartService.isCartOpen;
-       //  $scope.$watch(
-       //      function(){
-       //          return openCartService.getCartOpen();
-       //      },
+        //watcher
+       // $scope.isCartOP = openCartService.isCartOpen;
+        $scope.$watch(
+            function(){
+                return openCartService.getCartOpen();
+            },
 
-       //      function(newValue , oldValue){
-       //          console.log( "new Value " + newValue);
-       //          if(newValue === true){
-       //               if($location.path() === "/about" || $location.path() === "/service"){
-       //                  $scope.contentClass = "move-left-content-no-fixed";
-       //                  if($location.path() === "/service"){
-       //                      var myDiv = document.getElementById('step1');
-       //                      myDiv.scrollTop = 0;
-       //                  }else {
-       //                       var myDiv = document.getElementById('body');
-       //                        myDiv.scrollTop = 0;
+            function(newValue , oldValue){
+                console.log( "new Value " + newValue);
+                if(newValue === true){
+                     if($location.path() === "/about" || $location.path() === "/service"){
+                        $scope.contentClass = "move-left-content-no-fixed";
+                        if($location.path() === "/service"){
+                            var myDiv = document.getElementById('step1');
+                            myDiv.scrollTop = 0;
+                        }else {
+                             var myDiv = document.getElementById('body');
+                              myDiv.scrollTop = 0;
                            
-       //                  }
-       //              }else {
-       //                 $scope.contentClass = "move-left-content"; 
-       //              }
+                        }
+                    }else {
+                       $scope.contentClass = "move-left-content"; 
+                    }
 
 
-       //              //$scope.cartId = localStorage.cartId;
-       //              $scope.isCartOpen = true;
+                    //$scope.cartId = localStorage.cartId;
+                    $scope.isCartOpen = true;
                  
-       //              $scope.cartOpenClass = "move-cart-left ";
-       //               $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
-       //                $scope.closeFooter = "close-footer";
+                    $scope.cartOpenClass = "move-cart-left ";
+                     $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
+                      $scope.closeFooter = "close-footer";
 
-       //                document.ontouchmove = function (e) {
-       //                  e.preventDefault();
-       //               }
-       //          } else {
-       //              $scope.contentClass = "";
-       //              $scope.cartOpenClass = "asdasd";
-       //              $scope.bodyOpenModalClass = "";
-       //              $scope.closeFooter = "";
-       //              $scope.isCartOpen = false;
-       //              document.ontouchmove = function (e) {
-       //                return true;
+                     //  document.ontouchmove = function (e) {
+                     //    console.log("radi");
+                     //    e.preventDefault();
+                     // }
+                } else {
+                    $scope.contentClass = "";
+                    $scope.cartOpenClass = "asdasd";
+                    $scope.bodyOpenModalClass = "";
+                    $scope.closeFooter = "";
+                    $scope.isCartOpen = false;
+                    // document.ontouchmove = function (e) {
+                    //     console.log('radi');
+                    //   return true;
 
-       //              }
-       //          }
-       //      }
-       //  ,true);
+                    // }
+                }
+            }
+        ,true);
 
                  
 
@@ -109,11 +111,11 @@
                 $scope.contentClass = "close-main-container";
                 $scope.modalClass="close-modal";
                 $scope.closeFooter = "";
-                document.ontouchmove = function (e) {
-                    console.log("radi");
-                  return true;
+                // document.ontouchmove = function (e) {
+                //     console.log("radi");
+                //   return true;
                   
-                }
+                // }
             
             } else if($scope.isCartOpen){
                 $scope.contentClass = "";
@@ -121,11 +123,11 @@
                 $scope.bodyOpenModalClass = "";
                 $scope.isCartOpen = false;
                 $scope.closeFooter = "close-footer";
-                document.ontouchmove = function (e) {
-                    console.log("radi");
-                  return true;
+                // document.ontouchmove = function (e) {
+                //     console.log("radi");
+                //   return true;
                   
-                }
+                // }
 
             }else {
                 //Empty
@@ -231,10 +233,10 @@
                 $scope.closeFooter = "close-footer";
                 $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
                 $scope.sidemenuFooterOpen = "sidemenu-footer-open";
-                document.ontouchmove = function (e) {
-                    console.log("radi");
-                  e.preventDefault();
-                }
+                // document.ontouchmove = function (e) {
+                //     console.log("radi");
+                //   e.preventDefault();
+                // }
             }
         };
 
@@ -265,11 +267,11 @@
                 $scope.openSidemenu = "";
                 $scope.sidemenuFooterOpen = ""
 
-                document.ontouchmove = function (e) {
-                    console.log("radi");
-                  return true;
+                // document.ontouchmove = function (e) {
+                //     console.log("radi");
+                //   return true;
 
-                }
+                // }
             
             } else if($scope.isCartOpen){
                 openCartService.setCartOpen(false);
@@ -374,10 +376,10 @@
                  $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
                   $scope.closeFooter = "close-footer";
 
-                  document.ontouchmove = function (e) {
-                    console.log("radi");
-                    e.preventDefault();
-                 }
+                 //  document.ontouchmove = function (e) {
+                 //    console.log("radi");
+                 //    e.preventDefault();
+                 // }
 
             } else {
                 //Empty

@@ -122,17 +122,17 @@
                 productSizes.removeClass('hide');
                 $('body').addClass('no-scroll lock-scroll');
                 
-                document.ontouchmove = function (e) {
-                  e.preventDefault();
-                }  
+                // document.ontouchmove = function (e) {
+                //   e.preventDefault();
+                // }  
                 
             }
             else   {
                 $('body').removeClass('no-scroll lock-scroll');
                 productSizes.addClass('hide');
-                document.ontouchmove = function (e) {
-                  return true;
-                }
+                // document.ontouchmove = function (e) {
+                //   return true;
+                // }
                   
             }
 
