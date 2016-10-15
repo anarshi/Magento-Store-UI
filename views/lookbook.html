@@ -1,9 +1,24 @@
 <div class="lookbook-page" style="opacity:1" ng-controller="LookBookController">
 	<div class="transform-container">
-		<figure ng-repeat="lookBook in products" class="lookbook-image" ng-click = "goToProduct(lookBook.id)" ng-style="{ 'background-image': 'url({{ lookBook.allImages[0] }})' }" id="{{ lookBook.id }}" ></figure>
+		<figure ng-repeat="lookBook in products" class="lookbook-image" ng-click = "goToProduct(lookBook.id)" ng-style="{ 'background-image': 'url({{ lookBook.allImages[0] }})' }" id="{{ $index }}" ></figure>
 	</div>
+
+    <footer class="footer-bar single-footer"  ng-class="closeFooter">
+         <ul class="hide-for-small">
+            <li class="hide-for-medium-portrait product-li" id="prev">
+               <button role="button" class="items prev" ng-click="scrollToPreviousImage()" ><span>+</span><span class="hover">-</span></button>
+            </li>
+            <li class="hide-for-medium-portrait product-li" id="next">
+               <button role="button" class="items next"  ng-click="scrollToNextImage()" ><span>+</span><span class="hover">-</span></button>
+            </li>
+            <!-- <li class="hide-for-medium-portrait product-li" id="zoom-container">
+               <button role="button" class="items zoom" ng-class="zoomClass" ng-click="zoomInIcon()" id="zoomBtn"><span>+</span><span class="hover">-</span></button>
+            </li> -->
+         </ul>
+      </footer>
+<!--     
 	<footer id="lookbook-footer"  class="footer-bar" ng-class="closeFooter">
-    <!-- <ul>
+    <ul>
         <li class="hide-for-touch">
             <button role="button" class="items prev" ><span>-</span><span class="hover">-</span></button>
         </li>
@@ -12,7 +27,7 @@
         </li>
         <!-- <li>
             <button role="button" id="viewBtn" data-href="https://www.etq-amsterdam.com/shop/low-4-rubberized-porto-eggshell/" class=""><span>View</span><span class="hover">View</span></button>
-        </li> -->
+        </li>
 <!--     </ul> --> 
-</footer>
+</footer> -->
 </div>

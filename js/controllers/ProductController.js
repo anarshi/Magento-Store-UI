@@ -500,7 +500,7 @@
             $timeout(function() {
                 $scope.allSlides = [];
                 // $scope.allSlidesObj = 
-                $(".slides").each(function(i, obj) {
+                $(".lookbook-image").each(function(i, obj) {
 
                     $scope.allSlides.push(obj);
                 });
@@ -556,11 +556,9 @@
                     }), 0);
                }
                 
-                
             };
 
            
-
             $scope.scrollToPreviousImage = function(){
 
                var t1 = new TimelineLite();
@@ -578,8 +576,6 @@
 
 
             angular.element($window).bind("scroll", function() {
-
-
 
                 if ($window.innerWidth > 990) {
                     $scope.zoomArray = []; //cleaning array
@@ -772,10 +768,6 @@
                 }
 
             });
-
-            // }
-
-
 
         }
     ]).animation('.slide-animation', function() {
