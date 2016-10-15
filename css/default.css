@@ -18,6 +18,15 @@ body, html {
     background-color: rgb(243,243,243) !important;
 }
 
+.button.disabled, .button[disabled], button.disabled, button[disabled] {
+    background-color: transparent;
+    border-color: #007095;
+    color: #FFF;
+    cursor: default;
+    opacity: .7;
+    box-shadow: none;
+}
+
 #legalfooter{
     position: relative;
     z-index: 21;
@@ -1196,6 +1205,8 @@ ul.cart-products {
 }
 
 .footer-bar li .items>span {
+    background-size: 12px;
+    opacity: 1;
     pointer-events: none;
     display: block;
     position: absolute;

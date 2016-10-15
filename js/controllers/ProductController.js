@@ -32,6 +32,18 @@
                 }, 500);
             }
 
+            if($(window).scrollTop() === 0 || $scope.zoomArray[0].id === 0){
+                $(".prev").prop("disabled",true);
+                $(".prev").addClass("disabled");
+            }else {
+                if($(".prev").prop("disabled")){
+                    $(".prev").prop("disabled",false);
+                    $(".prev").removeClass("disabled");
+                }
+            }
+
+            
+
             slider.css({
                 'height': $window.innerWidth + "px",
                 'width': "100%"
@@ -42,7 +54,6 @@
             }, 1000);
 
             if ($("#scroll-container").is(':in-viewport')) {
-                console.log("in view test");
                 $("html.no-touchevents .product-page .upsells .scroll-container-products ul li.onscreen").css({
                     "-webkit-transform": "translate3d(0,0px,0)",
                     "transform": "translate3d(0,0px,0)"
@@ -64,7 +75,7 @@
 
 
             $scope.closeSizes = function() {
-                console.log('close sizes');
+
                 productSizes.addClass('hide');
                 singleOverlay.removeClass('show');
             };
@@ -467,17 +478,17 @@
                     if(parseFloat($scope.zoomArray[0].obj) !== parseFloat($scope.zoomArray[1].obj)){
 
                         index = parseFloat($scope.zoomArray[0].obj) + 1;
-                        console.log("index: " + (index));
+
                         globalCurrentScrollValue = $("#" + $scope.zoomArray[0].obj).height() * (index)  - 52;
                     } else {
                         index = parseFloat($scope.zoomArray[0].obj);
-                        console.log("index: " + (index));
+                       
                         globalCurrentScrollValue = $("#" + $scope.zoomArray[0].obj).height() * (index)  - 52;
                     }
                     
-                    console.log("index: " + (index));
+                  
                     globalCurrentScrollValue = $("#" + $scope.zoomArray[0].obj).height() * (index)  - 52;
-                    console.log("globalCurrentScrollValue: " + globalCurrentScrollValue);
+                    
                     
                     t1.insert(new TweenLite(window, 0.5, {
                         scrollTo: {
@@ -504,8 +515,6 @@
             $scope.scrollToPreviousImage = function(){
 
                var t1 = new TimelineLite();
-               console.log('global: ' + globalCurrentScrollValue);
-               console.log("index: " + $("#" + $scope.zoomArray[0].obj).attr('id'));
                prevIndex = parseFloat($("#" + $scope.zoomArray[0].obj).attr('id'));
                globalCurrentScrollValue = $("#" + $scope.zoomArray[0].obj).height() * (prevIndex-1) - 52; 
                 t1.insert(new TweenLite(window, 0.5, {
@@ -520,6 +529,9 @@
 
 
             angular.element($window).bind("scroll", function() {
+
+
+
                 if ($window.innerWidth > 990) {
                     $scope.zoomArray = []; //cleaning array
                     if ($scope.allSlides !== undefined) {
@@ -536,6 +548,28 @@
                                 
                                 }
                             });
+                        }
+                    }
+
+                    if($(window).scrollTop() === 0 || $scope.zoomArray[0].id === 0){
+                        $(".prev").prop("disabled",true);
+                        $(".prev").addClass("disabled");
+                    }else {
+                        if($(".prev").prop("disabled")){
+                            $(".prev").prop("disabled",false);
+                            $(".prev").removeClass("disabled");
+                        }
+                    }
+
+                    if($(window).scrollTop() !== 0 && parseFloat($scope.zoomArray[0].obj) === parseFloat($scope.allSlides.length - 1)){
+
+                        $(".next").prop("disabled",true);
+                        $(".next").addClass("disabled");
+                    }else {
+
+                        if($(".next").prop("disabled")){
+                            $(".next").prop("disabled",false);
+                            $(".next").removeClass("disabled");
                         }
                     }
 
@@ -563,7 +597,7 @@
                         'transform': 'translateY(0)'
                     });
 
-                    //button to up must be inactive
+                    
 
                 } else if (inViewpoerEl.is(':in-viewport(-54)') && $($window).scrollTop() !== 0) {
 
@@ -582,6 +616,16 @@
                     });
 
                     $("#zoom-container").css({
+                        '-webkit-transform': 'translateY(54px)',
+                        'transform': 'translateY(54px)'
+                    });
+
+                    $("#prev").css({
+                        '-webkit-transform': 'translateY(54px)',
+                        'transform': 'translateY(54px)'
+                    });
+
+                    $("#next").css({
                         '-webkit-transform': 'translateY(54px)',
                         'transform': 'translateY(54px)'
                     });
@@ -611,6 +655,18 @@
                         '-webkit-transform': 'translateY(0)',
                         'transform': 'translateY(0)'
                     });
+
+                    $("#prev").css({
+                        '-webkit-transform': 'translateY(0)',
+                        'transform': 'translateY(0)'
+                    });
+
+                    $("#next").css({
+                        '-webkit-transform': 'translateY(0)',
+                        'transform': 'translateY(0)'
+                    });
+
+
                 }
 
                 if ($("#scroll-container").is(':in-viewport')) {
