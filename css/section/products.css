@@ -728,7 +728,7 @@ NAV
     height: 100%;
     color: rgb(51,51,51);
     position: relative;
-    background: url('../../images/svg/up-arrow.svg') 165px center no-repeat #FFF !important;
+    background: url('../../images/svg/down-arr.svg') 165px center no-repeat #FFF !important;
     background-size: 9px !important;
     text-align: left;
     padding-top: 1.15rem;
