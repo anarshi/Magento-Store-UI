@@ -32,16 +32,29 @@
                 }, 500);
             }
 
-            if($(window).scrollTop() === 0 || $scope.zoomArray[0].id === 0){
-                $(".prev").prop("disabled",true);
-                $(".prev").addClass("disabled");
-            }else {
-                if($(".prev").prop("disabled")){
-                    $(".prev").prop("disabled",false);
-                    $(".prev").removeClass("disabled");
+            if($scope.zoomArray.length > 0){
+                if($(window).scrollTop() === 0 || parseFloat($scope.zoomArray[0].obj) === 0){
+                    $(".prev").prop("disabled",true);
+                    $(".prev").addClass("disabled");
+                }else {
+                    if($(".prev").prop("disabled")){
+                        $(".prev").prop("disabled",false);
+                        $(".prev").removeClass("disabled");
+                    }
+                }
+
+            } else {
+                if($(window).scrollTop() === 0){
+                    $(".prev").prop("disabled",true);
+                    $(".prev").addClass("disabled");
+                }else {
+                    if($(".prev").prop("disabled")){
+                        $(".prev").prop("disabled",false);
+                        $(".prev").removeClass("disabled");
+                    }
                 }
             }
-
+            
             
 
             slider.css({
