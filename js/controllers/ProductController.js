@@ -500,7 +500,7 @@
             $timeout(function() {
                 $scope.allSlides = [];
                 // $scope.allSlidesObj = 
-                $(".lookbook-image").each(function(i, obj) {
+                $(".slides").each(function(i, obj) {
 
                     $scope.allSlides.push(obj);
                 });
