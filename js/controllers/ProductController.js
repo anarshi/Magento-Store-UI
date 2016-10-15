@@ -32,7 +32,29 @@
                 }, 500);
             }
 
-            if($scope.zoomArray.length > 0){
+
+            $scope.allImages = [];
+            var searchCriteria = $stateParams.product_id;
+            $http.get('http://45.79.162.17:8888/product/' + searchCriteria).then(function successCallback(response) {
+                $scope.product = response.data;
+                $scope.product.price = '$ ' + $scope.product.price;
+                $scope.slides = [];
+
+                for (var i = 0; i < $scope.product.allImages.length; i++) {
+                    $scope.slides.push({
+                        image: $scope.product.allImages[i],
+                        description: "pulled image"
+                    });
+                }
+
+                if ($scope.slides.length > 1) {
+                    $(".image-container").css({
+                        "margin-bottom": "-90%"
+                    });
+                }
+
+
+            if($scope.zoomArray.length > 0 ){
                 if($(window).scrollTop() === 0 || parseFloat($scope.zoomArray[0].obj) === 0){
                     $(".prev").prop("disabled",true);
                     $(".prev").addClass("disabled");
@@ -43,17 +65,53 @@
                     }
                 }
 
-            } else {
-                if($(window).scrollTop() === 0){
-                    $(".prev").prop("disabled",true);
-                    $(".prev").addClass("disabled");
-                }else {
-                    if($(".prev").prop("disabled")){
-                        $(".prev").prop("disabled",false);
-                        $(".prev").removeClass("disabled");
+                if($(window).scrollTop() !== 0 && parseFloat($scope.zoomArray[0].obj) === parseFloat($scope.allSlides.length - 1)){
+
+                        $(".next").prop("disabled",true);
+                        $(".next").addClass("disabled");
+                    }else {
+
+                        if($(".next").prop("disabled")){
+                            $(".next").prop("disabled",false);
+                            $(".next").removeClass("disabled");
+                        }
+                    }
+
+                } else {
+                    if($(window).scrollTop() === 0 || $scope.slides.length === 1){
+                        $(".prev").prop("disabled",true);
+                        $(".prev").addClass("disabled");
+                    }else {
+                        if($(".prev").prop("disabled")){
+                            $(".prev").prop("disabled",false);
+                            $(".prev").removeClass("disabled");
+                        }
+                    }
+
+                    if($(window).scrollTop() !== 0){
+
+                        $(".next").prop("disabled",true);
+                        $(".next").addClass("disabled");
+                    }else {
+
+                        if($scope.slides.length === 1){
+                            $(".next").prop("disabled",true);
+                            $(".next").addClass("disabled");
+                        } else{
+                            console.log($scope.slides.length);
+                            if($(".next").prop("disabled")){
+                                $(".next").prop("disabled",false);
+                                $(".next").removeClass("disabled");
+                            }
+                        }
+
+                        
                     }
                 }
-            }
+            }, function errorCallback(response) {
+                console.log("ERROR: " + response);
+            });
+
             
             
 
@@ -120,28 +178,6 @@
                 }
             };
 
-            $scope.allImages = [];
-            var searchCriteria = $stateParams.product_id;
-            $http.get('http://45.79.162.17:8888/product/' + searchCriteria).then(function successCallback(response) {
-                $scope.product = response.data;
-                $scope.product.price = '$ ' + $scope.product.price;
-                $scope.slides = [];
-
-                for (var i = 0; i < $scope.product.allImages.length; i++) {
-                    $scope.slides.push({
-                        image: $scope.product.allImages[i],
-                        description: "pulled image"
-                    });
-                }
-
-                if ($scope.slides.length > 1) {
-                    $(".image-container").css({
-                        "margin-bottom": "-90%"
-                    });
-                }
-            }, function errorCallback(response) {
-                console.log("ERROR: " + response);
-            });
 
             $scope.goHome = function(path) {
                 $location.path(path);
@@ -563,28 +599,69 @@
                             });
                         }
                     }
+                        if($scope.zoomArray.length > 0){
+                            if($(window).scrollTop() === 0 || parseFloat($scope.zoomArray[0].obj) === 0){
+                                $(".prev").prop("disabled",true);
+                                $(".prev").addClass("disabled");
+                            }else {
+                                if($(".prev").prop("disabled")){
+                                    $(".prev").prop("disabled",false);
+                                    $(".prev").removeClass("disabled");
+                                }
+                            }
 
-                    if($(window).scrollTop() === 0 || parseFloat($scope.zoomArray[0].obj) === 0){
-                        $(".prev").prop("disabled",true);
-                        $(".prev").addClass("disabled");
-                    }else {
-                        if($(".prev").prop("disabled")){
-                            $(".prev").prop("disabled",false);
-                            $(".prev").removeClass("disabled");
+                            if($(window).scrollTop() !== 0 && parseFloat($scope.zoomArray[0].obj) === parseFloat($scope.allSlides.length - 1)){
+
+                                $(".next").prop("disabled",true);
+                                $(".next").addClass("disabled");
+                            }else if($(window).scrollTop() === 0 && $scope.slides.length === 1){
+
+                                if($(".next").prop("disabled") === false){
+                                    $(".next").prop("disabled",true);
+                                    $(".next").addClass("disabled");
+                                }
+
+                                
+                            } else {
+                                console.log('asdads');
+                                if($(".next").prop("disabled")){
+                                    $(".next").prop("disabled",false);
+                                    $(".next").removeClass("disabled");
+                                }
+                            }
+
+                        } else {
+                            if($(window).scrollTop() === 0){
+                                $(".prev").prop("disabled",true);
+                                $(".prev").addClass("disabled");
+                            }else {
+                                if($(".prev").prop("disabled")){
+                                    $(".prev").prop("disabled",false);
+                                    $(".prev").removeClass("disabled");
+                                }
+                            }
+
+                            if($(window).scrollTop() !== 0){
+
+                                $(".next").prop("disabled",true);
+                                $(".next").addClass("disabled");
+                            }else if($(window).scrollTop() !== 0 && $scope.slides.length === 1){
+
+                                if($(".next").prop("disabled") === false){
+                                    $(".next").prop("disabled",true);
+                                    $(".next").addClass("disabled");
+                                }
+
+                                
+                            } else {
+                                if($(".next").prop("disabled")){
+                                    $(".next").prop("disabled",false);
+                                    $(".next").removeClass("disabled");
+                                }
+                            }   
                         }
-                    }
 
-                    if($(window).scrollTop() !== 0 && parseFloat($scope.zoomArray[0].obj) === parseFloat($scope.allSlides.length - 1)){
-
-                        $(".next").prop("disabled",true);
-                        $(".next").addClass("disabled");
-                    }else {
-
-                        if($(".next").prop("disabled")){
-                            $(".next").prop("disabled",false);
-                            $(".next").removeClass("disabled");
-                        }
-                    }
+                    
 
 
                     if ($scope.zoomArray.length > 1) {
