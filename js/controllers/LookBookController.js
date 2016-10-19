@@ -2,23 +2,34 @@
 
     "use strict";
 
-    /**
-     * @controller CurrenciesController
-     * @author Adam Timberlake
-     * @module Moa
-     */
     $moa.controller('LookBookController', ['$scope', '$location', '$window', '$http' , '$timeout' , function LookBookController($scope, $location, $window, $http ,$timeout) {
 
-            $scope.zoomArray = [];
-            $scope.slides = [];
-            $scope.allSlidesPosition = [];
+        $scope.isLoading = true;
+        $scope.slideArray = [];
+        $scope.slides = [];
+        $scope.allSlidesPosition = [];
+        var currentIndex = 0;
+        var prevIndex = 0;
+        var nextIndex = 0;
+        var globalCurrentScrollValue = 0;
 
+        //initial setup
+        if($(window).scrollTop() === 0){
+            $('.prev').prop("dislabled",true);
+            $(".prev").addClass("disabled");
+        } else {
+             if($(".prev").prop("disabled")){
+                $(".prev").prop("disabled",false);
+                $(".prev").removeClass("disabled");
+            }
+        }
+
+        //loading all slides
         $http({
             method: 'GET',
             url: 'http://45.79.162.17:8888/lookbook'
         }).then(function successCallback(response) {
             $scope.products = response.data;
-            console.log(response.data);
 
             for (var i = 0; i < $scope.products.length; i++) {
                     $scope.slides.push({
@@ -26,6 +37,7 @@
                         description: "pulled image"
                     });
                 }
+            $scope.isLoading = true;
 
         }, function errorCallback(response) {
             console.log("ERROR: " + response);
@@ -37,7 +49,6 @@
 
         $timeout(function() {
             $scope.allSlides = [];
-            // $scope.allSlidesObj = 
             $(".lookbook-image").each(function(i, obj) {
 
                 $scope.allSlides.push(obj);
@@ -50,30 +61,30 @@
         }, 500);
 
 
-        var index = 0;
-        var prevIndex = 0;
-
-        var globalCurrentScrollValue = 0;
-
+       
         $scope.scrollToNextImage = function() {
+           
             var t1 = new TimelineLite();
 
-            if ($scope.zoomArray.length > 0) {
-                if (parseFloat($scope.zoomArray[0].obj) !== parseFloat($scope.zoomArray[1].obj)) {
+            if ($scope.slideId !== undefined) {
 
-                    index = parseFloat($scope.zoomArray[0].obj) + 1;
-                    console.log("index: " + $scope.zoomArray[0].obj);
+                prevIndex = $scope.slideId;
 
-                    globalCurrentScrollValue = $("#" + $scope.zoomArray[0].obj).height() * (index) - 52;
+                if( parseFloat($scope.slideId) !== $scope.allSlides.length - 1){
+                    currentIndex = parseFloat($scope.slideId) + 1;
+                    if(parseFloat($scope.slideId) + 2 <= $scope.allSlides.length){
+                        nextIndex = parseFloat($scope.slideId) + 2;
+                    } else {
+                        nextIndex = currentIndex;
+                    }
+                    
                 } else {
-                    index = parseFloat($scope.zoomArray[0].obj);
-                        console.log($scope.zoomArray[0].obj);
-                    globalCurrentScrollValue = $("#" + $scope.zoomArray[0].obj).height() * (index) - 52;
+                    prevIndex = parseFloat($scope.slideId) - 1;
+                    currentIndex = parseFloat($scope.slideId);
+                    nextIndex = parseFloat($scope.slideId); 
                 }
-
-
-                globalCurrentScrollValue = $("#" + $scope.zoomArray[0].obj).height() * (index) - 52;
-
+                
+                globalCurrentScrollValue = $("#" + $scope.slideId).height() * (currentIndex) - 52;
 
                 t1.insert(new TweenLite(window, 0.5, {
                     scrollTo: {
@@ -82,8 +93,8 @@
                     },
                     ease: Power4.easeIn
                 }), 0);
-            } else {
 
+            } else {
                 t1.insert(new TweenLite(window, 0.5, {
                     scrollTo: {
                         y: $scope.allSlidesPosition[1] - 52,
@@ -91,6 +102,11 @@
                     },
                     ease: Power4.easeIn
                 }), 0);
+
+                $scope.slideId = 1;
+                prevIndex = $scope.slideId - 1;
+                currentIndex = $scope.slideId;
+                nextIndex = $scope.slideId + 1;
             }
 
         };
@@ -98,8 +114,9 @@
         $scope.scrollToPreviousImage = function() {
 
             var t1 = new TimelineLite();
-            prevIndex = parseFloat($("#" + $scope.zoomArray[0].obj).attr('id'));
-            globalCurrentScrollValue = $("#" + $scope.zoomArray[0].obj).height() * (prevIndex - 1) - 52;
+            prevIndex = parseFloat($("#" + $scope.slideArray[0].obj).attr('id'));
+            // if(prevIndex === $scope.allSlides.length - 1)
+            globalCurrentScrollValue = $("#" + $scope.slideArray[0].obj).height() * (prevIndex) - 52;
             t1.insert(new TweenLite(window, 0.5, {
                 scrollTo: {
                     y: globalCurrentScrollValue,
@@ -107,13 +124,12 @@
                 },
                 ease: Power4.easeIn
             }), 0);
-
         };
 
         angular.element($window).bind("scroll", function() {
 
             if ($window.innerWidth > 990) {
-                $scope.zoomArray = []; //cleaning array
+                $scope.slideArray = []; //cleaning array
                 if ($scope.allSlides !== undefined) {
                     for (var i = 0; i < $scope.allSlides.length; i++) {
                         var globalInc = i;
@@ -121,104 +137,70 @@
 
                             if (px) {
                                 
-                                $scope.zoomArray.push({
+                                $scope.slideArray.push({
                                     obj: $("#" + $scope.allSlides[globalInc].id).attr('id'),
                                     visiblePart: px
                                 });
+
                             } else {
 
                             }
                         });
                     }
+
+                    $("#" + $scope.allSlides[$scope.allSlides.length - 1].id).inViewport(function(px){
+                        var visiblePartCondition = $(this).height() * 40 / 100;
+                        if(px >= visiblePartCondition){
+                            $('.next').prop("dislabled",true);
+                            $(".next").addClass("disabled");
+                        } else {
+                            $(".next").prop("disabled",false);
+                            $(".next").removeClass("disabled");
+                        }
+                    });
                 }
 
-                if ($scope.zoomArray.length > 1) {
-                    if ($scope.zoomArray[1].visiblePart > 150) {
-                        console.log($scope.zoomArray[1]);
-                        $scope.zoomId = $scope.zoomArray[1].obj;
+                if ($scope.slideArray.length > 1) {
+                    var visiblePartConditionLocal = $("#" + $scope.slideArray[1].obj).height() * 45 / 100;
+                    if ($scope.slideArray[1].visiblePart >= visiblePartConditionLocal) {
+                        $(".prev").prop("disabled",false);
+                        $(".prev").removeClass("disabled");
+                        $scope.slideId = $scope.slideArray[1].obj;
                     } else {
-                        $scope.zoomId = $scope.zoomArray[0].obj;
+                        $('.prev').prop("dislabled",true);
+                        $(".prev").addClass("disabled");
+                        $scope.slideId = $scope.slideArray[0].obj;
                     }
                 } else {
-                    console.log($scope.zoomArray[1]);
-                    console.log($scope.zoomArray[0]);
-                    if ($scope.zoomArray[0] !== undefined) {
-                        $scope.zoomId = $scope.zoomArray[0].obj;
+                    if ($scope.slideArray[0] !== undefined) {
+                        $scope.slideId = $scope.slideArray[0].obj;
                     }
                 }
 
-                //adjust disabling strategy
-                // if ($scope.zoomArray.length > 0) {
-                //     if ($(window).scrollTop() === 0 || parseFloat($scope.zoomArray[0].obj) === 0) {
-                //         $(".prev").prop("disabled", true);
-                //         $(".prev").addClass("disabled");
-                //     } else {
-                //         if ($(".prev").prop("disabled")) {
-                //             $(".prev").prop("disabled", false);
-                //             $(".prev").removeClass("disabled");
-                //         }
-                //     }
-
-                //     if ($(window).scrollTop() !== 0 && parseFloat($scope.zoomArray[0].obj) === parseFloat($scope.slides.length - 1)) {
-
-                //         // $(".next").prop("disabled", true);
-                //         // $(".next").addClass("disabled");
-                //     } else if ($(window).scrollTop() === 0 && $scope.slides.length === 1) {
-
-                //         // if ($(".next").prop("disabled") === false) {
-                //         //     $(".next").prop("disabled", true);
-                //         //     $(".next").addClass("disabled");
-                //         // }
-
-
-                //     } else {
-                //         // if ($(".next").prop("disabled")) {
-                //         //     $(".next").prop("disabled", false);
-                //         //     $(".next").removeClass("disabled");
-                //         // }
-                //     }
-
-                // } else {
-                //     if ($(window).scrollTop() === 0) {
-                //         $(".prev").prop("disabled", true);
-                //         $(".prev").addClass("disabled");
-                //     } else {
-                //         if ($(".prev").prop("disabled")) {
-                //             $(".prev").prop("disabled", false);
-                //             $(".prev").removeClass("disabled");
-                //         }
-                //     }
-
-                //     if ($(window).scrollTop() !== 0) {
-
-                //         $(".next").prop("disabled", true);
-                //         $(".next").addClass("disabled");
-                //     } else if ($(window).scrollTop() !== 0 && $scope.slides.length === 1) {
-
-                //         if ($(".next").prop("disabled") === false) {
-                //             $(".next").prop("disabled", true);
-                //             $(".next").addClass("disabled");
-                //         }
-
-
-                //     } else {
-                //         if ($(".next").prop("disabled")) {
-                //             $(".next").prop("disabled", false);
-                //             $(".next").removeClass("disabled");
-                //         }
-                //     }
-                // }
-
+                if($(window).scrollTop() === 0){
+                    console.log("uso na vrh");
+                    $('.prev').prop("dislabled",true);
+                    $(".prev").addClass("disabled");
+                } else {
+                    $(".prev").prop("disabled",false);
+                    $(".prev").removeClass("disabled");
+                }
             }
-
-
 
             $scope.scrollPosition = $($window).scrollTop();
 
         });
 
+        $scope.viewProduct = function(){
+            var productId = "";
+            if($scope.slideId !== undefined){
+                productId = $("#" + $scope.slideId).attr("prId");
+            } else {
+                productId = $("#" + $scope.allSlides[0].id).attr("prId");
+            }
 
-
+            $location.path('/product/' + productId);
+        }
 
     }]);
 

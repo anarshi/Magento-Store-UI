@@ -36,6 +36,28 @@ body{
     -ms-transition: opacity 450ms cubic-bezier(.455,.03,.515,.955) 500ms,visibility 450ms cubic-bezier(.455,.03,.515,.955) 500ms,bottom 550ms cubic-bezier(.455,.03,.515,.955) 500ms;
 }
 
+#lookFooter #viewBtn {
+    display: block;
+    position: relative;
+    font-family: AvenirNextLTPro-Regular,Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    width: 100px;
+    height: 54px;
+    background: rgba(243,243,245,.56);
+    opacity: 1;
+    padding: 0;
+    line-height: 54px;
+    outline: 0;
+    text-indent: 5px;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    font-size: .6875rem!important;
+    overflow: hidden;
+}   
+
 .footer-bar li .items span {
    /*  background-color: white; */
     opacity: 0.4;
