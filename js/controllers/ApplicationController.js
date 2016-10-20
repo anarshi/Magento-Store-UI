@@ -360,14 +360,14 @@
                  $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
                   $scope.closeFooter = "close-footer";
 
-                  document.ontouchmove = function (e) {
-                    e.preventDefault();
-                 };
+                 //  document.ontouchmove = function (e) {
+                 //    e.preventDefault();
+                 // };
 
-                 var shoppingCart = document.getElementById("shoppingcart");
-                 shoppingcart.ontouchmove = function(e){
-                    return true;
-                 };
+                 // var shoppingCart = document.getElementById("shoppingcart");
+                 // shoppingcart.ontouchmove = function(e){
+                 //    return true;
+                 // };
 
             } else {
                 //Empty
