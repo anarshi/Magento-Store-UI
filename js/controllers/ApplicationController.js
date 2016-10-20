@@ -82,19 +82,19 @@
                      $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
                       $scope.closeFooter = "close-footer";
 
-                      document.ontouchmove = function (e) {
-                        e.preventDefault();
-                     }
+                     //  document.ontouchmove = function (e) {
+                     //    e.preventDefault();
+                     // }
                 } else {
                     $scope.contentClass = "";
                     $scope.cartOpenClass = "asdasd";
                     $scope.bodyOpenModalClass = "";
                     $scope.closeFooter = "";
                     $scope.isCartOpen = false;
-                    document.ontouchmove = function (e) {
-                      return true;
+                    // document.ontouchmove = function (e) {
+                    //   return true;
 
-                    }
+                    // }
                 }
             }
         ,true);
