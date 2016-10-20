@@ -22,7 +22,99 @@ section.products {
     box-shadow: none;
 }
 
+.product-page .info ul.info-buttons {
+    position: relative;
+    display: inline-block;
+    width: inherit;
+    margin: 25px 0 0;
+    padding-left: 0;
+}
 
+.product-page .info ul.info-buttons li:not(:last-of-type) {
+    margin-right: 20px;
+}
+
+.product-page .info ul.info-buttons li {
+    display: block;
+    position: relative;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    float: left;
+}
+
+.product-page .info ul.info-buttons li.fit button {
+    border-right: 0;
+}
+
+.product-page .info ul.info-buttons li button.active {
+    font-weight: 600;
+}
+
+.product-page .info ul.info-buttons li button.active, .product-page .info ul.info-buttons li button:hover {
+    color: #000;
+}
+
+.product-page .info ul.info-buttons li button {
+    background: 0 0;
+    outline: 0;
+    padding: 0;
+    width: 100%;
+    color: #848484;
+    text-align: center;
+    font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    letter-spacing: .25rem;
+    font-size: 9px;
+    margin-bottom: 10px!important;
+    transition: color .45s cubic-bezier(.455,.03,.515,.955);
+    -webkit-transition: color .45s cubic-bezier(.455,.03,.515,.955);
+}
+
+.product-page .info p.infotext.hide {
+    transition-delay: 0;
+    transition-duration: .35s,.35s;
+    -webkit-transition-delay: 0;
+    -webkit-transition-duration: .35s,.35s;
+    display: block!important;
+    visibility: hidden;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.product-page .info p.infotext {
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 99%;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    transition-property: opacity,visibility;
+    transition-timing-function: cubic-bezier(.455,.03,.515,.955);
+    transition-duration: .35s,.35s;
+    transition-delay: 0s;
+    -webkit-transform: translate(-50%,0);
+    -webkit-transition-property: opacity,visibility;
+    -webkit-transition-timing-function: cubic-bezier(.455,.03,.515,.955);
+    -webkit-transition-duration: .35s,.35s;
+    -webkit-transition-delay: 0s;
+}
+
+.product-page .info p {
+    font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #000;
+    font-size: 10px;
+    line-height: 1.5rem;
+    margin: 0 0 20px;
+}
 
 .button.prev.disabled, .button[disabled], button.disabled, button[disabled] {
     background-color: transparent;
@@ -1451,5 +1543,30 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
         margin-left: 0;
         min-height: 400px;
         background-size: contain;
+    }
+
+    .product-page footer.info ul.info-buttons {
+        width: 94%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .product-page footer.info h2, .product-page footer.info p, .product-page footer.info>span {
+        margin-left: 10px;
+    }
+
+    .product-page footer.info h2, .product-page footer.info p, .product-page footer.info>span {
+        margin-left: 10px;
+    }
+
+    .product-page footer.info p.infotext {
+        width: 100%;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .product-page footer.info {
+        z-index: 1 !important;
+        margin-bottom: 150px;
     }
 }

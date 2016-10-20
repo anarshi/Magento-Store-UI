@@ -20,6 +20,23 @@
                   {{product.price}}
                   </span>
                   <p>{{product.longDescription}}</p>
+                  <ul class="info-buttons">
+                      <li class="fit">
+                          <button class="" ng-class="fitActive" ng-click="showTabContent(1)">Fit<i></i></button>
+                      </li>
+                      <li class="delivery">
+                          <button class="" ng-class="deliveryActive" ng-click="showTabContent(2)">Delivery<i></i></button>
+                      </li>
+                      <li class="material">
+                          <button class=""  ng-class="materialActive" ng-click="showTabContent(3)">Material<i></i></button>
+                      </li>
+                  </ul>
+                  <p class="infotext fit " ng-class="showFit">
+                     Fits true to size. Go up to the nearest whole size if you take a half size. 
+                     <u class="sizeguideBtn">Size guide</u>
+                  </p>
+                  <p class="infotext delivery" ng-class="showDelivery">We offer free worldwide shipping on all orders over €100,-</p>
+                  <p class="infotext material hide" ng-class="showMaterial"></p>
                </div>
             </aside>
             <div class="transform-container ">
@@ -29,14 +46,31 @@
                </div>
             </div>
             <div class="transform-container info-outer">
-               <footer class="info columns text-center  col-md-12 ready ">
-                  <h2 class="text-center">{{product.name}}
+               <footer class="info columns  col-md-12 ready ">
+                  <h2 class="">{{product.name}}
                      <small>{{product.name}}</small>
                   </h2>
-                  <span class="price text-center">
+                  <span class="price">
                   {{product.price}}
                   </span>
-                  <p class="text-center">{{product.longDescription}}</p>
+                  <p class="">{{product.longDescription}}</p>
+                  <ul class="info-buttons">
+                      <li class="fit">
+                          <button class="" ng-class="fitActive" ng-click="showTabContent(1)">Fit<i></i></button>
+                      </li>
+                      <li class="delivery">
+                          <button class="" ng-class="deliveryActive" ng-click="showTabContent(2)">Delivery<i></i></button>
+                      </li>
+                      <li class="material">
+                          <button class=""  ng-class="materialActive" ng-click="showTabContent(3)">Material<i></i></button>
+                      </li>
+                  </ul>
+                  <p class="infotext fit " ng-class="showFit">
+                     Fits true to size. Go up to the nearest whole size if you take a half size. 
+                     <u class="sizeguideBtn">Size guide</u>
+                  </p>
+                  <p class="infotext delivery" ng-class="showDelivery">We offer free worldwide shipping on all orders over €100,-</p>
+                  <p class="infotext material hide" ng-class="showMaterial"></p>
                </footer>
             </div>
             <div class="transform-container">

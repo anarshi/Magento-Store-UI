@@ -136,8 +136,6 @@
 
          });
 
-
-         
         $scope.cartCount = 0;
 
         $scope.cartProducts = cartProducts;

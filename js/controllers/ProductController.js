@@ -769,7 +769,48 @@
 
             });
 
+            $scope.fitActive = "active";
+            $scope.showFit = "";
+            $scope.showDelivery = "hide";
+            $scope.showMaterial = "hide";
+
+            $scope.showTabContent = function(contentId){
+                console.log(contentId);
+
+                switch(contentId) {
+                    case 1:
+                        $scope.fitActive = "active";
+                        $scope.materialActive = "";
+                        $scope.deliveryActive = "";
+                        $scope.showFit = "";
+                        $scope.showDelivery = "hide";
+                        $scope.showMaterial = "hide";
+
+                        break;
+                    case 2:
+                        $scope.fitActive = "";
+                        $scope.materialActive = "";
+                        $scope.deliveryActive = "active";
+
+                        $scope.showFit = "hide";
+                        $scope.showDelivery = "";
+                        $scope.showMaterial = "hide";
+                        break;
+                    case 3:
+                        $scope.fitActive = "";
+                        $scope.materialActive = "active";
+                        $scope.deliveryActive = "";
+                        console.log("uso");
+
+                        $scope.showFit = "hide";
+                        $scope.showDelivery = "hide";
+                        $scope.showMaterial = "";
+                        break;
+                }
+            };
+
         }
+        
     ]).animation('.slide-animation', function() {
         return {
             beforeAddClass: function(element, className, done) {
