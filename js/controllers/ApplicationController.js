@@ -362,7 +362,12 @@
 
                   document.ontouchmove = function (e) {
                     e.preventDefault();
-                 }
+                 };
+
+                 var shoppingCart = document.getElementById("shoppingcart");
+                 shoppingcart.ontouchmove = function(e){
+                    return true;
+                 };
 
             } else {
                 //Empty
