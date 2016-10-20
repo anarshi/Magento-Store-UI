@@ -51,6 +51,11 @@
         $scope.goHome = function(path){
             $location.path(path);
         };
+
+        $scope.loadNewPage = function(){
+            console.log("load new page");
+            window.location.href = "http://45.79.162.17/store/#/service";
+        }
     }]);
 
 })(window.moaApp, window.localStorage);
