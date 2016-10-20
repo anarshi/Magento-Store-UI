@@ -6,9 +6,9 @@
 
     function serviceDeskController($scope, $timeout) {
 
-        document.addEventListener('touchmove', function(event){
-            event.stopPropagation();
-        });
+        // document.addEventListener('touchmove', function(event){
+        //     event.stopPropagation();
+        // });
 
         //to Hide
         $scope.showContactUs = true;
