@@ -4,10 +4,10 @@
             <h3>Menu</h3>
             <nav role="navigation">
                 <ul ng-controller="SidemenuController">
-                    <li ng-class="collection" id="side1" ng-click="goHome('/')" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-190">Collection</li>
+                    <li ng-class="collection" id="side1" ui-sref="home" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-190">Collection</li>
                     <li ng-class="lookbook" ng-click="goHome('/lookbook')" id="side2" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188">Lookbook</li>
-                    <li  ng-class="about" id="side4" ng-click="goHome('/about')" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-189">About</li>
-                    <li ng-class="service" id="side5" ng-click="goHome('/service')" id="menu-item-191" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-191">Customer Care</a></li>
+                    <li  ng-class="about" id="side4" ui-sref="about" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-189">About</li>
+                    <li ng-class="service" id="side5" ui-sref="service" id="menu-item-191" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-191">Customer Care</a></li>
 
                 </ul>
             </nav>

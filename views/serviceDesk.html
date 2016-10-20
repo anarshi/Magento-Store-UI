@@ -6,7 +6,7 @@
    </div>
    <div class="transform-container">
       <aside class="page-aside show">
-         <div class="scroll-container" id="step1">
+         <div class="scroll-container active" id="step1">
             <nav>
                <header class="title">How can we help you?</header>
                <ul>
@@ -42,7 +42,7 @@
                </ul>
             </nav>
             <nav class="sub-content " ng-hide="showTermsAndConditions" data-id="general-terms-conditions">
-               <header class="title"><a class="service-list"><span class="arrow" ng-click="slideOutElement('general-terms-conditions')"></span>General terms &amp; conditions</a></header>
+               <header class="title"><a class="service-list" ng-click="slideOutElement('general-terms-conditions')"><span class="arrow" ></span>General terms &amp; conditions</a></header>
                <ul>
                   <li>
                      <a class="service-detail-selector" data-id="terms-conditions" ng-click="slideElementSection('general-terms-conditions','terms-conditions')">Terms &amp; conditions<span class="arrow"></span></a>
@@ -56,7 +56,7 @@
                </ul>
             </nav>
             <nav class="sub-content " ng-hide="showReturnExchange" data-id="returns-exchanges" >
-               <header class="title"><a class="service-list"><span class="arrow" ng-click="slideOutElement('returns-exchanges')"></span>Returns &amp; Exchanges</a></header>
+               <header class="title"><a class="service-list" ng-click="slideOutElement('returns-exchanges')"><span class="arrow" ></span>Returns &amp; Exchanges</a></header>
                <ul>
                   <li>
                      <a class="service-detail-selector" data-id="returns-policy" ng-click="slideElementSection('returns-exchanges','returns-policy')">Returns policy<span class="arrow"></span></a>
@@ -70,7 +70,7 @@
                </ul>
             </nav>
             <nav class="sub-content" ng-hide="showShippingInformation" data-id="shipping-information" >
-               <header class="title"><a class="service-list"><span class="arrow" ng-click="slideOutElement('shipping-information')"></span>Shipping information</a></header>
+               <header class="title"><a class="service-list" ng-click="slideOutElement('shipping-information')"><span class="arrow" ></span>Shipping information</a></header>
                <ul>
                   <li>
                      <a class="service-detail-selector" data-id="shipping" ng-click="slideElementSection('shipping-information','shipping')">Shipping<span class="arrow"></span></a>
@@ -131,7 +131,7 @@
                </ul>
             </nav>
             <nav class="sub-content" ng-hide="showSiziingInformation" data-id="sizing-information">
-               <header class="title"><a class="service-list"><span class="arrow" ng-click="slideOutElement('sizing-information')"></span>Sizing information</a></header>
+               <header class="title"><a class="service-list" ng-click="slideOutElement('sizing-information')"><span class="arrow" ></span>Sizing information</a></header>
                <ul>
                   <li>
                      <a class="service-detail-selector" data-id="footwear" ng-click="slideElementSection('shopping-at-etq','sizing-information')">Footwear<span class="arrow"></span></a>
