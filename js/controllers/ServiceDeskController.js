@@ -7,7 +7,7 @@
     function serviceDeskController($scope, $timeout) {
 
         document.addEventListener('touchmove', function(event){
-            return true;
+            event.stopPropagation();
         });
 
         //to Hide
