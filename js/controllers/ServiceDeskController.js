@@ -6,6 +6,10 @@
 
     function serviceDeskController($scope, $timeout) {
 
+        document.addEventListener('touchmove', function(event){
+            return true;
+        });
+
         //to Hide
         $scope.showContactUs = true;
         $scope.showTermsAndConditions = true;
