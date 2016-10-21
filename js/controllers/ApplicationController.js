@@ -395,6 +395,24 @@
             }
         };
 
+        $('.menu').hover(
+            function () {
+               $(this).find("span").addClass("show-menu-text");
+            },
+            function () {
+               $(this).find("span").removeClass("show-menu-text");
+            }
+        );
+
+        $('.cartcount').hover(
+            function () {
+               $(this).find("span").addClass("show-bag-text");
+            },
+            function () {
+               $(this).find("span").removeClass("show-bag-text");
+            }
+        );
+
        
         
     }]);
