@@ -275,24 +275,44 @@
         };
 
         $scope.oneRowGrid = function(){
-            $scope.productGridType = 'col-md-12 col-xs-12';
-            localStorage.setItem('productGridType',$scope.productGridType);
+            if(!$(".catalog-product").hasClass('col-md-12 col-xs-12')){
+                 $scope.productGridType = localStorage.productGridType +  ' opacity-0';
+                $timeout(function(){
+                    $scope.productGridType = 'col-md-12 col-xs-12';
+                    localStorage.setItem('productGridType',$scope.productGridType);
+                },1000);
+            }
+           
+            //localStorage.setItem('productGridType',$scope.productGridType);
             $scope.oneRowActive = "active";
             $scope.twoRowActive = "";
             $scope.threeRowActive = "";
         };
 
         $scope.twoRowGrid = function(){
-            $scope.productGridType = 'col-md-6 col-xs-6';
-            localStorage.setItem('productGridType',$scope.productGridType);
+            if(!$(".catalog-product").hasClass('col-md-6 col-xs-6')){
+                $scope.productGridType = localStorage.productGridType +' opacity-0';
+                $timeout(function(){
+                    $scope.productGridType = 'col-md-6 col-xs-6';
+                    localStorage.setItem('productGridType',$scope.productGridType);
+                },1000);
+            }
+        
+            
             $scope.oneRowActive = "";
             $scope.twoRowActive = "active";
             $scope.threeRowActive = "";
         };
 
         $scope.threeRowGrid = function(){
-            $scope.productGridType = 'col-md-4 col-xs-6';
-            localStorage.setItem('productGridType',$scope.productGridType);
+            if(!$(".catalog-product").hasClass('col-md-4 col-xs-6')){
+                $scope.productGridType = localStorage.productGridType +' opacity-0';
+                $timeout(function(){
+                    $scope.productGridType = 'col-md-4 col-xs-6';
+                    localStorage.setItem('productGridType',$scope.productGridType);
+                },1000);
+            }
+            //localStorage.setItem('productGridType',$scope.productGridType);
             $scope.oneRowActive = "";
             $scope.twoRowActive = "";
             $scope.threeRowActive = "active";
@@ -303,8 +323,11 @@
         w.bind('resize', function () {
             if($window.innerWidth < 990 && $scope.productGridType !== 'col-md-12 col-xs-12'){
                 console.log("uso");
-               $scope.productGridType = 'col-md-6 col-xs-6';
-                localStorage.setItem('productGridType',$scope.productGridType);
+               $scope.productGridType = localStorage.productGridType +' opacity-0';
+                $timeout(function(){
+                    $scope.productGridType = 'col-md-6 col-xs-6';
+                    localStorage.setItem('productGridType',$scope.productGridType);
+                },1000);
                 $scope.oneRowActive = "";
                 $scope.twoRowActive = "active";
                 $scope.threeRowActive = ""; 
