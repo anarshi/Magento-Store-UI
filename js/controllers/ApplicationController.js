@@ -403,6 +403,7 @@
                $(this).find("span").removeClass("show-menu-text");
             }
         );
+        
 
         $('.cartcount').hover(
             function () {
