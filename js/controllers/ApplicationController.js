@@ -2,11 +2,22 @@
 
     "use strict";
 
-    $moa.controller('ApplicationController', ['$rootScope', '$scope'  ,'$location' 
+    $moa.controller('ApplicationController', ['$rootScope', '$scope'  ,  '$route','$location' 
                                                 , '$http' ,'$timeout', '$window' 
-                                                ,'basket', 'cartProducts','openCartService' , 
+                                                ,'basket', 'cartProducts','openCartService' , '$state',
 
-    function applicationController($rootScope, $scope , $location , $http , $timeout , $window ,basket ,cartProducts,openCartService) {
+    function applicationController($rootScope, $scope , $route  ,  $location , $http , $timeout
+                                     , $window ,basket ,cartProducts,openCartService , $state) {
+
+        window.onbeforeunload = function () {
+            var url = window.location.href;
+            if(window.location.href.split("/")[5] === "" || url.indexOf("welcome") !== -1 || url.indexOf("home") !== -1){
+                window.location.reload();
+                $state.go("welcome");
+                 
+              
+            }
+        };
 
 
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
@@ -16,11 +27,9 @@
         $scope.stylesheets = [];
         $scope.isiOS = iOS;
         $scope.isSafari = isSafari;
-        console.log("isIOs: " + $scope.isiOS);
 
         if($scope.isiOS || $scope.isSafari){
             var innerHeight =  window.innerHeight;
-            console.log(innerHeight);
             $timeout(function(){
                 var sidemenu = document.getElementById("sidemenu-ios");
                 sidemenu.style.height = innerHeight + "px";
@@ -32,8 +41,6 @@
                 });
             },500);
             
-
-
             $scope.stylesheets = [
               {href: 'css/iosStyle/default-ios.css', type:'text/css'}
             ];
@@ -60,7 +67,6 @@
             },
 
             function(newValue , oldValue){
-                console.log( "new Value " + newValue);
                 if(newValue === true){
                      if($location.path() === "/about" || $location.path() === "/service"){
                         $scope.contentClass = "move-left-content-no-fixed";
@@ -77,24 +83,15 @@
                     }
 
                     $scope.isCartOpen = true;
-                 
                     $scope.cartOpenClass = "move-cart-left ";
-                     $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
-                      $scope.closeFooter = "close-footer";
-
-                     //  document.ontouchmove = function (e) {
-                     //    e.preventDefault();
-                     // }
+                    $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
+                    $scope.closeFooter = "close-footer";
                 } else {
                     $scope.contentClass = "";
                     $scope.cartOpenClass = "asdasd";
                     $scope.bodyOpenModalClass = "";
                     $scope.closeFooter = "";
                     $scope.isCartOpen = false;
-                    // document.ontouchmove = function (e) {
-                    //   return true;
-
-                    // }
                 }
             }
         ,true);
@@ -104,7 +101,28 @@
             event.stopPropagation();
         });
 
-         $scope.$on('$locationChangeSuccess', function(/* EDIT: remove params for jshint */) {
+         $scope.$on('$locationChangeSuccess', function() {
+
+                var url = window.location.href;
+              if(window.location.href.split("/").length <= 6  && window.location.href.split("/")[5] === "" 
+                                                || url.indexOf("welcome") !== -1){
+                $(".menu").css({
+                   visibility:"hidden"
+                
+                });
+                $(".cartcount").css({
+                    visibility: "hidden"
+                });
+                    
+              } else {
+                $(".menu").css({
+                   visibility:"visible"
+                });
+                $(".cartcount").css({
+                    visibility: "inherit"
+                });
+              }
+
               if($scope.isModalOpen){
                 $scope.isModalOpen = false;
                 $scope.bodyOpenModalClass = "";
@@ -113,7 +131,6 @@
                 $scope.modalClass="close-modal";
                 $scope.closeFooter = "";
                 document.ontouchmove = function (e) {
-                    console.log("radi");
                   return true;
                   
                 }
@@ -125,7 +142,6 @@
                 $scope.isCartOpen = false;
                 $scope.closeFooter = "close-footer";
                 document.ontouchmove = function (e) {
-                    console.log("radi");
                   return true;
                   
                 }
@@ -143,8 +159,9 @@
         basket.cartData.async(localStorage.cartId).then(function(data){
             $scope.cartProducts.productsInCart = data.cartProducts;
             $scope.cartProducts.cartCount = data.cartCount;
-            $scope.cartProducts.cartTotalPrice = data.totalPrice;
+            $scope.cartProducts.cartTotalPrice = data.totalPrice.toFixed(2);
             $scope.cartProducts.cartQty = data.cartQty;
+            $scope.cartProducts.currencySymbol = data.currencySymbol;
         });
         
 
@@ -155,7 +172,7 @@
                 basket.cartData.async(localStorage.cartId).then(function(data){
                     $scope.cartProducts.productsInCart = data.cartProducts;
                     $scope.cartProducts.cartCount = data.cartCount;
-                    $scope.cartProducts.cartTotalPrice = data.totalPrice;
+                    $scope.cartProducts.cartTotalPrice = data.totalPrice.toFixed(2);
                     $scope.cartProducts.cartQty = data.cartQty;
                 });
 
@@ -165,9 +182,9 @@
             var index = $scope.cartProducts.productsInCart.indexOf(el);
             $scope.cartProducts.productsInCart.splice(index, 1);
             $scope.cartCount = $scope.cartProducts.productsInCart.length;
-            $scope.totalPrice = 0;
+            $scope.totalPrice = 0.00;
             for(var i = 0 ; i < $scope.cartProducts.productsInCart.length ; i++){
-                $scope.totalPrice += $scope.cartProducts.productsInCart[i].price;
+                $scope.totalPrice += $scope.cartProducts.productsInCart[i].price.toFixed(2);
             }
 
             
@@ -189,9 +206,10 @@
         }
          
         $scope.modalOpen = false;
-
         $scope.isModalOpen = false;
 
+        
+        
         $scope.openModal = function() {
             if ($scope.isModalOpen) {
             } else {
@@ -218,14 +236,13 @@
                 $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
                 $scope.sidemenuFooterOpen = "sidemenu-footer-open";
                 document.ontouchmove = function (e) {
-                    console.log("radi");
                   e.preventDefault();
                 }
             }
         };
 
         $scope.goHome = function(path){
-            console.log('Home')
+
             if($scope.isModalOpen){
                 $scope.isModalOpen = false;
                 $scope.bodyOpenModalClass = "";
@@ -252,7 +269,6 @@
                 $scope.sidemenuFooterOpen = ""
 
                 document.ontouchmove = function (e) {
-                    console.log("radi");
                   return true;
 
                 }
@@ -265,7 +281,6 @@
                 $scope.closeFooter = "";
                 $scope.isCartOpen = false;
                 document.ontouchmove = function (e) {
-                    console.log("radi");
                   return true;
 
                 }
@@ -322,7 +337,6 @@
         var w = angular.element($window);
         w.bind('resize', function () {
             if($window.innerWidth < 990 && $scope.productGridType !== 'col-md-12 col-xs-12'){
-                console.log("uso");
                $scope.productGridType = localStorage.productGridType +' opacity-0';
                 $timeout(function(){
                     $scope.productGridType = 'col-md-6 col-xs-6';

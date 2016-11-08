@@ -2,15 +2,14 @@
 
     "use strict";
 
-    $moa.controller('BasketController', ['$scope', '$stateParams' , '$location' , 'basket', function BasketController($scope,
+    $moa.controller('BasketController', ['$scope', '$stateParams' , '$location' , 
+                                         'basket', function BasketController($scope,
      $stateParams ,$location , basket) {
 
-      
-
-        console.log($stateParams.cartId);
+       console.log($stateParams.cartId);
        basket.cartData.async($stateParams.cartId).then(function(data){
-            $scope.cartProducts = data.cartProducts;
-            $scope.totalPrice = data.totalPrice;
+          $scope.cartProducts = data.cartProducts;
+          $scope.totalPrice = data.totalPrice.toFixed(2);
        });
 
        //view vars
@@ -27,40 +26,40 @@
        $scope.company = "";
 
        $scope.submitCheckout = function(){
-            var requuestData = {
-                "firstName" : $scope.firstName,
-                "lastName" : $scope.lastName,
-                "email": $scope.email,
-                "adress1": $scope.adress1,
-                "adress2": $scope.adress2,
-                "zip": $scope.zip,
-                "city": $scope.city,
-                "state": $scope.state,
-                "telephone": $scope.telephone,
-                "countryCode" : $scope.countryCode,
-                "company": $scope.company,
-                "cartId": $routeParams.cartId
-            };
-            console.log(requuestData);
-            basket.checkout.async(requuestData).then(function(response){
-                if(response === "1"){
-                    basket.deleteCart.async(localStorage.cartId).then(function(response){
-                       if(response === "1"){
-                          localStorage.cartId = null;
-                          var buttonHref = document.getElementById();
-                          $location.path("/");
-                       } else {
-                          console.log(response);
-                       }
-                    });
-                    
-                } else {
-                  basket.deleteCart.async(localStorage.cartId).then(function(response){
-                        localStorage.cartId = null;
-                    });
-                  $location.path("/")
-                }
+        var requuestData = {
+          "firstName" : $scope.firstName,
+          "lastName" : $scope.lastName,
+          "email": $scope.email,
+          "adress1": $scope.adress1,
+          "adress2": $scope.adress2,
+          "zip": $scope.zip,
+          "city": $scope.city,
+          "state": $scope.state,
+          "telephone": $scope.telephone,
+          "countryCode" : $scope.countryCode,
+          "company": $scope.company,
+          "cartId": $routeParams.cartId
+        };
+
+        basket.checkout.async(requuestData).then(function(response){
+          if(response === "1"){
+            basket.deleteCart.async(localStorage.cartId).then(function(response){
+               if(response === "1"){
+                  localStorage.cartId = null;
+                  var buttonHref = document.getElementById();
+                  $location.path("/");
+               } else {
+                  console.log(response);
+               }
             });
+              
+          } else {
+            basket.deleteCart.async(localStorage.cartId).then(function(response){
+                  localStorage.cartId = null;
+              });
+            $location.path("/")
+          }
+        });
        }
         
     }]);

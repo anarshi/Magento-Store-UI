@@ -7,7 +7,12 @@
     "url": "git://git@github.com:Wildhoney/Magento-on-Angular.git"
   },
   "dependencies": {
+    "angular-dynamic-locale": "^0.1.32",
+    "angular-i18n": "^1.5.8",
     "angular-pan-zoom": "^1.0.18",
+    "angular-translate-handler-log": "^2.13.0",
+    "angular-translate-loader-static-files": "^2.13.0",
+    "angular-translate-storage-local": "^2.13.0",
     "crossfilter": "~1.2.0",
     "grunt-contrib-cssmin": "~0.7.0",
     "grunt-contrib-jasmine": "~0.5.2",

@@ -1,0 +1,39 @@
+.intro-container-title > h1{
+	margin-bottom: 30px;
+}
+
+.main-intro-conainer{
+	padding-top: 25%;
+	height: 100vh;
+}
+
+.intro-page-currency{
+	   
+    font-size: 15px;
+	margin-top: 50px !important;
+	width: 80% !important;
+    margin: 0 auto !important;
+}
+
+.intro-page-button{
+	font-size: 12px;
+    padding: 0;
+    height: 62px;
+	width: 80%;
+	margin-top: 30px;
+
+}
+
+@media (min-width: 1500px){
+	.main-intro-conainer{
+		padding-top: 20%;
+		height: 100vh;
+	}
+}
+
+@media (max-width: 990px){
+	.main-intro-conainer{
+		padding-top: 30%;
+		height: 100vh;
+	}
+}

@@ -11,16 +11,21 @@
     window.moaApp = angular.module("moaApp", ["ui.router" , "ngSanitize","ngAnimate","ngTouch","angular-inview" , 'ngRoute', 'anim-in-out']);
     window.moaApp.config(['$stateProvider', '$locationProvider' ,'$urlRouterProvider', function($stateProvider,$locationProvider,$urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('welcome');
         // $locationProvider.html5Mode(true);
 
         $stateProvider
-            .state("home", {
+            .state("welcome", {
                 url: '/',
+                templateUrl : "views/introPage.html"
+            })
+            .state("home", {
+                url: '/home/:currencyCode',
                 templateUrl : "views/home-page.html"
+
             })
             .state("product", {
-                url: '/product/:product_id',
+                url: '/product/:product_id/:currencyCode',
                 templateUrl : "views/product.html"
             })
             .state('checkout',{

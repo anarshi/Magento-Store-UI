@@ -53,6 +53,7 @@
     <script src="js/controllers/LookBookController.js"></script>
     <script src="js/controllers/SidemenuController.js"></script>
     <script src="js/controllers/ServiceDeskController.js"></script>
+    <script src="js/controllers/IntroPageController.js"></script>
     <script src="js/services/Basket.js"></script>
     <script src="js/services/cartProducts.js"></script>
     <script src="js/directives/onScroll.js"></script>
@@ -77,7 +78,7 @@
                    <div data-count="1">
                         <h3>{{crProduct.name}}</h3>
                         <p>EU 44 | US 11 | UK 10 QTY: <span class="count">{{crProduct.cartQty}}</span></p>
-                                <h4>€ {{crProduct.price}}</h4>
+                                <h4> {{crProduct.currencySymbol + " " + crProduct.price.toFixed(2)}}</h4>
                         <button class="ui-cart-item-remove no-hijack" ng-click="removeFromCart(crProduct)">x</button>
                     </div>
                 </li>
@@ -85,7 +86,7 @@
         </div>
         
 
-        <footer>Total <span>€ {{cartProducts.cartTotalPrice}}</span></footer>
+        <footer>Total <span> {{cartProducts.currencySymbol + " " + cartProducts.cartTotalPrice}}</span></footer>
         <button ng-click="goToCart()" class="checkout" >
             <span><strong>Checkout</strong></span>
             <span class="hover"><strong>Checkout</strong></span>

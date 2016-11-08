@@ -35,9 +35,12 @@
 
             $scope.allImages = [];
             var searchCriteria = $stateParams.product_id;
-            $http.get('http://45.79.162.17:8888/product/' + searchCriteria).then(function successCallback(response) {
+
+
+
+            $http.post('http://45.79.162.17:8888/product/' + searchCriteria,{currencyCode: $stateParams.currencyCode}).then(function successCallback(response) {
                 $scope.product = response.data;
-                $scope.product.price = '$ ' + $scope.product.price;
+                $scope.product.price = $scope.product.price.toFixed(2);
                 $scope.slides = [];
 
                 for (var i = 0; i < $scope.product.allImages.length; i++) {
@@ -98,7 +101,6 @@
                             $(".next").prop("disabled",true);
                             $(".next").addClass("disabled");
                         } else{
-                            console.log($scope.slides.length);
                             if($(".next").prop("disabled")){
                                 $(".next").prop("disabled",false);
                                 $(".next").removeClass("disabled");
@@ -109,7 +111,7 @@
                     }
                 }
             }, function errorCallback(response) {
-                console.log("ERROR: " + response);
+                console.log(response);
             });
 
             
@@ -161,7 +163,7 @@
                         basket.cartData.async(localStorage.cartId).then(function(data) {
                             $scope.cartProducts.productsInCart = data.cartProducts;
                             $scope.cartProducts.cartCount = data.cartCount;
-                            $scope.cartProducts.cartTotalPrice = data.totalPrice;
+                            $scope.cartProducts.cartTotalPrice = data.totalPrice.toFixed(2);
                             openCartService.setCartOpen(true);
                         });
                     });
@@ -171,7 +173,7 @@
                         basket.cartData.async(localStorage.cartId).then(function(data) {
                             $scope.cartProducts.productsInCart = data.cartProducts;
                             $scope.cartProducts.cartCount = data.cartCount;
-                            $scope.cartProducts.cartTotalPrice = data.totalPrice;
+                            $scope.cartProducts.cartTotalPrice = data.totalPrice.toFixed(2);
                             openCartService.setCartOpen(true);
                         });
                     });
@@ -339,9 +341,9 @@
                             ease: Power4.easeIn
                         }, 0));
                     } else {
-                        t1.insert(new TweenLite(info, 0.5, {
+                        t1.insert(new TweenLite(info, 0.1, {
                             opacity: "1",
-                            transfor: "translate(0,0)",
+                            transform: "translate(0,0)",
                             ease: Power4.easeIn
                         }, 0));
                     }
@@ -619,7 +621,7 @@
 
                                 
                             } else {
-                                console.log('asdads');
+
                                 if($(".next").prop("disabled")){
                                     $(".next").prop("disabled",false);
                                     $(".next").removeClass("disabled");
@@ -775,7 +777,6 @@
             $scope.showMaterial = "hide";
 
             $scope.showTabContent = function(contentId){
-                console.log(contentId);
 
                 switch(contentId) {
                     case 1:
@@ -800,7 +801,6 @@
                         $scope.fitActive = "";
                         $scope.materialActive = "active";
                         $scope.deliveryActive = "";
-                        console.log("uso");
 
                         $scope.showFit = "hide";
                         $scope.showDelivery = "hide";

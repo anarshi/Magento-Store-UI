@@ -17,7 +17,7 @@
                      <small>{{product.name}}</small>
                   </h2>
                   <span class="price">
-                  {{product.price}}
+                  {{product.currencySymbol + " " + product.price}}
                   </span>
                   <p>{{product.longDescription}}</p>
                   <ul class="info-buttons">
@@ -51,7 +51,7 @@
                      <small>{{product.name}}</small>
                   </h2>
                   <span class="price">
-                  {{product.price}}
+                  {{product.currencySymbol + " " + product.price}}
                   </span>
                   <p class="">{{product.longDescription}}</p>
                   <ul class="info-buttons">
@@ -69,7 +69,7 @@
                      Fits true to size. Go up to the nearest whole size if you take a half size. 
                      <u class="sizeguideBtn">Size guide</u>
                   </p>
-                  <p class="infotext delivery" ng-class="showDelivery">We offer free worldwide shipping on all orders over €100,-</p>
+                  <p class="infotext delivery" ng-class="showDelivery">We offer free worldwide shipping on all orders over {{product.currencySymbol}} 100,-</p>
                   <p class="infotext material hide" ng-class="showMaterial"></p>
                </footer>
             </div>

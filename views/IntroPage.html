@@ -1,0 +1,17 @@
+<div class="container-fluid main-intro-conainer" ng-controller="IntroPageController">
+	<div class="row">
+		<div class="col-md-12 col-xs-12 intro-container-title text-center">
+			<h1>Select Currency</h1>
+		</div>
+		<div class="col-md-12 col-xs-12 text-center country-select ">
+			<select id="billing_country" name="billing_country" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true" ng-model="currencyCode"  ng-change="currencyCodeFunc(countryCode)">
+                        <option value="SEK">Sweeden</option>
+                        <option value="EUR">Rest of Europe</option>
+                    </select>
+		</div>
+		<div class="col-md-12 col-xs-12 text-center country-submit">
+			<button id="onestepcheckout-place-order" type="submit" ng-click="enterSite()" class="onestepcheckout-place-order ui-submit-checkout intro-page-button">
+                                    <span><strong>Enter</strong></span>
+                              </button>		</div>
+	</div>
+</div>

@@ -4,6 +4,7 @@
 @import "lookbook-ios.css";
 @import "about-ios.css";
 @import "serviceDesk-ios.css";
+@import "introPage.css"
 
 * {
     margin: 0;

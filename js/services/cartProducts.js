@@ -8,8 +8,9 @@
        return {
             productsInCart: [],
             cartCount: 0,
-            cartTotalPrice: 0,
-            cartQty: 0
+            cartTotalPrice: 0.00,
+            cartQty: 0,
+            currencySymbol: ""
        };
     }]);
 

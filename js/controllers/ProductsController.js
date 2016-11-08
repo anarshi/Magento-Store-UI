@@ -7,19 +7,22 @@
      * @author Adam Timberlake
      * @module Moa
      */
-    $moa.controller('ProductsController', ['$scope', '$rootScope', '$http' ,
+    $moa.controller('ProductsController', ['$scope', '$rootScope', '$http' ,   '$stateParams' ,
 
-    function productsController($scope, $rootScope,$http) {
+    function productsController($scope, $rootScope,$http,  $stateParams) {
 
         $scope.products = [];
 
         $http({
-            method: 'GET',
-            url: 'http://45.79.162.17:8888/products'
+            method: 'POST',
+            url: 'http://45.79.162.17:8888/products',
+            data: {
+                currencyCode: $stateParams.currencyCode
+            }
         }).then(function successCallback(response) {
             $scope.products = response.data;
         }, function errorCallback(response) {
-            console.log("ERROR: " + response);
+            console.log(response);
         });
 
         $scope.showSubText = function(id){

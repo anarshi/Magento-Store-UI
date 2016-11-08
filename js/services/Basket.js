@@ -16,7 +16,7 @@
                             }).then(function successCallback(response) {
                                 return response.data;
                             }, function errorCallback(response) {
-                                console.log("ERROR: " + response.data);
+                                console.log(response.data);
                         });
 
                  return promise;
@@ -33,7 +33,7 @@
                             }).then(function successCallback(response) {
                                 return  response.data;
                             }, function errorCallback(response) {
-                                console.log("ERROR: " + response);
+                                console.log(response);
                             });
                         
 
@@ -44,21 +44,24 @@
         this.cartData = {
             async: function cartData(cartId){
                 var promise = $http({
-                        method: 'GET',
-                        url: 'http://45.79.162.17:8888/getCartData/' + cartId
+                        method: 'POST',
+                        url: 'http://45.79.162.17:8888/getCartData/' + cartId,
+                        data:{
+                            currencyCode: "SEK"
+                        }
                     }).then(function successCallback(response) {
                         var cartData = {};
-
                         cartData.cartProducts = response.data;
                         cartData.cartCount = cartData.cartProducts.length;
-                        cartData.totalPrice = 0;
+                        cartData.totalPrice = 0.00;
+                        cartData.currencySymbol = cartData.currencySymbol;
                         for(var i = 0 ; i < cartData.cartProducts.length ; i++){
-                            cartData.totalPrice += cartData.cartProducts[i].price * cartData.cartProducts[i].cartQty;
+                            cartData.totalPrice += cartData.cartProducts[i].price.toFixed(2) * cartData.cartProducts[i].cartQty;
                         }
                         return cartData;
                      
                     }, function errorCallback(response) {
-                        console.log("ERROR: " + response);
+                        console.log(response);
                     });
                 return promise;
             }
@@ -72,7 +75,7 @@
                             }).then(function successCallback(response) {
                                return response.data;
                             }, function errorCallback(response) {
-                                console.log("ERROR: " + response);
+                                console.log(response);
                             });
                             
                 return promise;
@@ -96,7 +99,7 @@
                                     }).then(function successCallback(response, status, headers, config) {
                                        return response.data;
                                     }, function errorCallback(response) {
-                                        console.log("ERROR: " + response);
+                                        console.log(response);
                                     });
                     return promise;
                 }
@@ -110,7 +113,7 @@
                             }).then(function successCallback(response) {
                                return response.data;
                             }, function errorCallback(response) {
-                                console.log("ERROR: " + response);
+                                console.log(response);
                             });
 
                 return promise;
