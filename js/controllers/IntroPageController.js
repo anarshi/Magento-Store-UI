@@ -6,6 +6,7 @@
      $stateParams ,$location , $state) {
 
   
+  
 
         $scope.enterSite = function(){
         	$state.go("home", {currencyCode: $scope.currencyCode});
