@@ -160,20 +160,22 @@
                 if (localStorage.cartId != null && !isNaN(localStorage.cartId)) {
                     basket.addToCart.async(localStorage.cartId, productId).then(function(response) {
                         localStorage.cartId = response;
-                        basket.cartData.async(localStorage.cartId).then(function(data) {
+                        basket.cartData.async(localStorage.cartId,localStorage.currencyCode).then(function(data) {
                             $scope.cartProducts.productsInCart = data.cartProducts;
                             $scope.cartProducts.cartCount = data.cartCount;
                             $scope.cartProducts.cartTotalPrice = data.totalPrice.toFixed(2);
+                            $scope.currencySymbol = data.currencySymbol;
                             openCartService.setCartOpen(true);
                         });
                     });
                 } else {
                     basket.initialize.async(productId).then(function(response) {
                         localStorage.cartId = response;
-                        basket.cartData.async(localStorage.cartId).then(function(data) {
+                        basket.cartData.async(localStorage.cartId,localStorage.currencyCode).then(function(data) {
                             $scope.cartProducts.productsInCart = data.cartProducts;
                             $scope.cartProducts.cartCount = data.cartCount;
                             $scope.cartProducts.cartTotalPrice = data.totalPrice.toFixed(2);
+                            $scope.currencySymbol = data.currencySymbol;
                             openCartService.setCartOpen(true);
                         });
                     });

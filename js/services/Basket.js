@@ -42,19 +42,20 @@
         }
 
         this.cartData = {
-            async: function cartData(cartId){
+            async: function cartData(cartId,currencyCode){
                 var promise = $http({
                         method: 'POST',
                         url: 'http://45.79.162.17:8888/getCartData/' + cartId,
                         data:{
-                            currencyCode: "SEK"
+                            currencyCode: currencyCode
                         }
                     }).then(function successCallback(response) {
                         var cartData = {};
+                        console.log(response.data);
                         cartData.cartProducts = response.data;
                         cartData.cartCount = cartData.cartProducts.length;
                         cartData.totalPrice = 0.00;
-                        cartData.currencySymbol = cartData.currencySymbol;
+                        cartData.currencySymbol = response.data[0].currencySymbol;
                         for(var i = 0 ; i < cartData.cartProducts.length ; i++){
                             cartData.totalPrice += cartData.cartProducts[i].price.toFixed(2) * cartData.cartProducts[i].cartQty;
                         }

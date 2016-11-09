@@ -2,14 +2,13 @@
 
     "use strict";
 
-    $moa.controller('BasketController', ['$scope', '$stateParams' , '$location' , 
-                                         'basket', function BasketController($scope,
-     $stateParams ,$location , basket) {
+    $moa.controller('BasketController', ['$scope', '$stateParams' , '$location'  ,'basket', function BasketController($scope,
+     $stateParams ,$location , basket ) {
 
-       console.log($stateParams.cartId);
-       basket.cartData.async($stateParams.cartId).then(function(data){
+       basket.cartData.async($stateParams.cartId,localStorage.currencyCode).then(function(data){
           $scope.cartProducts = data.cartProducts;
           $scope.totalPrice = data.totalPrice.toFixed(2);
+          $scope.currencySymbol = data.currencySymbol;
        });
 
        //view vars
@@ -26,7 +25,7 @@
        $scope.company = "";
 
        $scope.submitCheckout = function(){
-        var requuestData = {
+        var requestData = {
           "firstName" : $scope.firstName,
           "lastName" : $scope.lastName,
           "email": $scope.email,
@@ -41,7 +40,7 @@
           "cartId": $routeParams.cartId
         };
 
-        basket.checkout.async(requuestData).then(function(response){
+        basket.checkout.async(requestData).then(function(response){
           if(response === "1"){
             basket.deleteCart.async(localStorage.cartId).then(function(response){
                if(response === "1"){

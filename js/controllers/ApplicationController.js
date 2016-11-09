@@ -150,30 +150,32 @@
                 //Empty
             }
 
+
+            $scope.cartCount = 0;
+
+            $scope.cartProducts = cartProducts;
+            basket.cartData.async(localStorage.cartId,localStorage.currencyCode).then(function(data){
+                $scope.cartProducts.productsInCart = data.cartProducts;
+                $scope.cartProducts.cartCount = data.cartCount;
+                $scope.cartProducts.cartTotalPrice = data.totalPrice.toFixed(2);
+                $scope.cartProducts.cartQty = data.cartQty;
+                $scope.cartProducts.currencySymbol = data.currencySymbol;
+            });
+
          });
 
-        $scope.cartCount = 0;
-
-        $scope.cartProducts = cartProducts;
-
-        basket.cartData.async(localStorage.cartId).then(function(data){
-            $scope.cartProducts.productsInCart = data.cartProducts;
-            $scope.cartProducts.cartCount = data.cartCount;
-            $scope.cartProducts.cartTotalPrice = data.totalPrice.toFixed(2);
-            $scope.cartProducts.cartQty = data.cartQty;
-            $scope.cartProducts.currencySymbol = data.currencySymbol;
-        });
         
 
         $scope.removeFromCart = function(el){
             basket.removeFromCart.async(localStorage.cartId,el.id).then(function(data){
                 localStorage.cartId = data;
 
-                basket.cartData.async(localStorage.cartId).then(function(data){
+                basket.cartData.async(localStorage.cartId,localStorage.currencyCode).then(function(data){
                     $scope.cartProducts.productsInCart = data.cartProducts;
                     $scope.cartProducts.cartCount = data.cartCount;
                     $scope.cartProducts.cartTotalPrice = data.totalPrice.toFixed(2);
                     $scope.cartProducts.cartQty = data.cartQty;
+                    $scope.cartProducts.currencySymbol = data.currencySymbol;
                 });
 
                
