@@ -12,7 +12,7 @@
     function productsController($scope, $rootScope,$http,  $stateParams) {
 
         $scope.products = [];
-        
+
 
         $http({
             method: 'POST',
@@ -22,6 +22,7 @@
             }
         }).then(function successCallback(response) {
             $scope.products = response.data;
+            console.log(response);
         }, function errorCallback(response) {
             console.log(response);
         });
