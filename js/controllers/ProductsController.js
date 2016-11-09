@@ -12,6 +12,7 @@
     function productsController($scope, $rootScope,$http,  $stateParams) {
 
         $scope.products = [];
+        
 
         $http({
             method: 'POST',
