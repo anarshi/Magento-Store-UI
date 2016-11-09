@@ -7,9 +7,9 @@
      * @author Adam Timberlake
      * @module Moa
      */
-    $moa.controller('ProductsController', ['$scope', '$rootScope', '$http' ,   '$stateParams' ,
+    $moa.controller('ProductsController', ['$scope', '$rootScope', '$http' , '$state' , '$stateParams' ,
 
-    function productsController($scope, $rootScope,$http,  $stateParams) {
+    function productsController($scope, $rootScope,$http, $state ,$stateParams) {
 
         $scope.products = [];
 
@@ -26,6 +26,10 @@
         }, function errorCallback(response) {
             console.log(response);
         });
+
+        // $scope.openProduct = function(id,currencyCode){
+        //     $state.go("product",{id: id , currencyCode: currencyCode});
+        // }
 
         $scope.showSubText = function(id){
             var containerEl = document.getElementById(id + '');
