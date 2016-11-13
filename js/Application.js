@@ -21,7 +21,7 @@
             })
             .state("home", {
                 url: '/home/:currencyCode',
-                templateUrl : "views/asdasdasd.html"
+                templateUrl : "views/home-page.html"
 
             })
             .state("product", {
