@@ -55,7 +55,12 @@
                         cartData.cartProducts = response.data;
                         cartData.cartCount = cartData.cartProducts.length;
                         cartData.totalPrice = 0.00;
-                        cartData.currencySymbol = response.data[0].currencySymbol;
+                        if(response.data[0]){
+                            cartData.currencySymbol = response.data[0].currencySymbol;
+                        } else {
+                            cartData.currencySymbol = "";
+                        }
+                        
                         for(var i = 0 ; i < cartData.cartProducts.length ; i++){
                             cartData.totalPrice += cartData.cartProducts[i].price.toFixed(2) * cartData.cartProducts[i].cartQty;
                         }
