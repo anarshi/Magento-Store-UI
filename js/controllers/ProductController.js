@@ -36,7 +36,7 @@
             $scope.allImages = [];
             var searchCriteria = $stateParams.product_id;
 
-
+            
 
             $http.post('http://45.79.162.17:8888/product/' + searchCriteria,{currencyCode: $stateParams.currencyCode}).then(function successCallback(response) {
                 $scope.product = response.data;

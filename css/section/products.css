@@ -51,6 +51,30 @@ section.products {
     font-weight: 600;
 }
 
+
+/* NEW */
+
+.product-page .upsells .bar {
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    font-size: 12px;
+    padding: 0px;
+    background: #003593;
+    line-height: 50vh;
+    text-align: center;
+    color: #FFF;
+}
+
+/* /NEw  */
+
+
+
 .product-page .info ul.info-buttons li button.active, .product-page .info ul.info-buttons li button:hover {
     color: #000;
 }
@@ -1029,23 +1053,6 @@ filterList ul li.key, .filterList ul li.key:hover {
     overflow: hidden;
         background: #f3f3f5;
    /*  position: relative; */
-}
-
-.product-page .upsells .bar {
-    display: block;
-    position: relative;
-    width: 100vw;
-    height: 50vh;
-    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: .1875rem;
-    font-size: 12px;
-    padding: 0px;
-    background: #1D1D1F;
-    line-height: 50vh;
-    text-align: center;
-    color: #FFF;
 }
 
 .scroll-container-products::scrollbar{

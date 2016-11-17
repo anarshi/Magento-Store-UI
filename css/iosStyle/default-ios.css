@@ -121,7 +121,7 @@ nav#navBar.ready .menu {
 nav#navBar .menu {
     width: 72px;
     height: 52px;
-    background-size: 18px 14px !important;
+    background-size: 23px 23px !important;
     transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
     -o-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
     -moz-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
@@ -283,24 +283,51 @@ img {
     color: #FFF;
 }
 */
+
+nav#navBar .cartcount span.label, nav#navBar .menu span.label {
+    display: block;
+    position: absolute;
+    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-indent: 0;
+    font-size: 10px;
+    text-rendering: auto;
+    -webkit-font-smoothing: initial;
+    height: 52px;
+    line-height: 52px;
+    padding: 0;
+    margin: 0;
+    background: rgba(255,255,255,0);
+    opacity: 0;
+    visibility: hidden;
+    color: white;
+    transition: all 250ms cubic-bezier(.25,.46,.45,.94);
+    -webkit-transition: all 250ms cubic-bezier(.25,.46,.45,.94);
+    -moz-transition: all 250ms cubic-bezier(.25,.46,.45,.94);
+    -o-transition: all 250ms cubic-bezier(.25,.46,.45,.94);
+    -ms-transition: all 250ms cubic-bezier(.25,.46,.45,.94);
+}
+
 nav#navBar.ready>span {
     color: black;
     display: block;
     position: absolute;
-    width: 119px;
-    height: 28px;
+    width: 133px;
+    height: 30px;
     letter-spacing: 6px;
     font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
     font-weight: bold;
     font-size: 20px;
-    background-size: 99px 27px;
+    background-size: 132px 23px;
     opacity: 1;
     background-position: center center;
     background-repeat: no-repeat;
     left: 50%;
-    top: 50%;
-    padding: 0 0 0 15px;
-    margin: -15px -75px;
+    top: 58%;
+    padding: -2px 0 0 15px;
+    margin: -19px -68px;
     /* text-indent: -9999px; */
     transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
     -o-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
@@ -308,6 +335,7 @@ nav#navBar.ready>span {
     -webkit-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
     -ms-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
 }
+
 /* 
 nav#navBar>span {
     font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
@@ -454,7 +482,7 @@ body {
     position: absolute;
     width: 24px;
     height: 24px;
-    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: .1875rem;
@@ -464,7 +492,7 @@ body {
     top: 14px;
     margin: 0;
     padding: 0;
-    background: #f3f3f5;
+    background: white;
     color: #000;
     font-size: .6875rem;
     text-align: center;
@@ -767,7 +795,7 @@ ul.cart-products {
 
 #legalfooter .inner {
     margin-top: 75px;
-    background: #1B1B1F;
+    background: #003593;
     padding: 75px 0;
 }
 
@@ -782,7 +810,7 @@ ul.cart-products {
     font-size: 15px;
     line-height: 1.5;
     margin: 0 0 20px;
-    background: rgb(27, 27, 31);    
+    background: #003593;    
 }
 
 #legalfooter .inner ul {

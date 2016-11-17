@@ -86,14 +86,7 @@ body #navBar.top, body .transform-container {
     transition-timing-function: cubic-bezier(.645,.045,.355,1);
 }
 
-nav#navBar.ready {
-    left: 0;
-    right: 0;
-    height: 52px;
-    z-index: 98;
-    background: #FFF;
-    border-color: #DEDFE0;
-}
+
 
 nav#navBar.top-hide {
     top: 0;
@@ -128,24 +121,6 @@ nav#navBar {
     position: fixed;
     top: 0;
     z-index: 99;
-}
-
-nav#navBar.ready .menu {
-    top: 50%!important;
-    opacity: 1;
-}
-
-nav#navBar .menu {
-    width: 72px;
-    height: 52px;
-    background-size: 18px 14px !important;
-    transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
-    -o-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
-    -moz-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
-    -webkit-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
-    -ms-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
-    background-image: url('../images/svg/menu.svg') !important;
-    opacity: 1;
 }
 
     
@@ -263,14 +238,13 @@ nav#navBar .cartcount span.label, nav#navBar .menu span.label {
     background: rgba(255,255,255,0);
     opacity: 0;
     visibility: hidden;
-    color: #1D1D1F;
+    color: white;
     transition: all 250ms cubic-bezier(.25,.46,.45,.94);
     -webkit-transition: all 250ms cubic-bezier(.25,.46,.45,.94);
     -moz-transition: all 250ms cubic-bezier(.25,.46,.45,.94);
     -o-transition: all 250ms cubic-bezier(.25,.46,.45,.94);
     -ms-transition: all 250ms cubic-bezier(.25,.46,.45,.94);
 }
-
 .show-menu-text{
     opacity: 1 !important;
     visibility: visible !important;
@@ -397,6 +371,603 @@ ul.cart-products li {
     left: 0;
 }
 
+/* NEW */
+
+#iNoBounceToggle > div > header > div > div:nth-child(1) > button > span:nth-child(1){
+        background-image: url(../images/svg/twoRows.svg);
+}
+
+
+.filter-menu  > div > button{
+    display: block;
+    position: relative;
+    width: 60px;
+    height: 54px;
+    transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
+    -moz-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
+    -o-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
+    -webkit-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
+    -ms-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
+    text-decoration: none;
+    text-indent: -9999px;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.filter-menu li, .filter-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-menu li .items.row1 span {
+    background-image: url(../images/svg/oneRow.svg);
+}
+
+.filter-menu li .items.active span {
+    opacity: 1;
+    background-image: url(../images/svg/oneRow-white.png);
+}
+
+.filter-text-container{
+    width: 50% !important;
+}
+
+.filter-buttons-container{
+    width: 130px !important;
+}
+
+.filter-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    font-family: 'AvenirNext LT Pro Regular';
+    padding-top: 16px;
+}
+
+.filter-text:hover{
+    cursor: pointer;
+}
+
+.filter-menu li .items span {
+    opacity: .2;
+    background-size: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../images/svg/arrowIcon.svg);
+}
+
+.filter-menu li .items>span {
+    background-size: 12px;
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -o-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -moz-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -webkit-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -ms-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    top: 0;
+    left: 0;
+}
+
+.filter-menu li {
+    display: block;
+    position: relative;
+    width: auto;
+    transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    background: #1458b9;
+    float: left;
+    height: inherit;
+    margin: 0;
+    /* border-top: 1px solid #FFF; */
+    border-right: 1px solid #003593;
+}
+
+.filter-menu li .items {
+    display: block;
+    position: relative;
+    width: 60px;
+    height: 54px;
+    transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
+    -moz-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
+    -o-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
+    -webkit-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
+    -ms-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
+    text-decoration: none;
+    text-indent: -9999px;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    background-color: transparent;
+    overflow: hidden;
+}
+.active {
+    left: 0!important;
+    visibility: visible!important;
+}
+
+.filter-menu > div > button >span {
+    background-size: 12px;
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -o-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -moz-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -webkit-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    -ms-transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    top: 0;
+    left: 0;
+}
+
+.filter-menu > div > button > span {
+    opacity: .2;
+    background-size: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../images/svg/arrowIcon.svg);
+}
+
+
+
+nav#navBar .menu {
+    left: 9px !important;
+    width: 53px;
+    height: 52px;
+    background-size: 18px 18px !important;
+    transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
+    -o-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
+    -moz-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
+    -webkit-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
+    -ms-transition: opacity 400ms cubic-bezier(.645,.045,.355,1) 250ms,left .4s cubic-bezier(.25,.46,.45,.94);
+    background-image: url(../images/svg/menu-button.png) !important;
+    opacity: 1;
+}
+
+nav#navBar.ready .menu {
+    top: 40%!important;
+    opacity: 1;
+}
+
+nav#navBar.ready>span {
+    color: black;
+    display: block;
+    position: absolute;
+    width: 133px;
+    height: 30px;
+    letter-spacing: 6px;
+    font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
+    font-weight: bold;
+    font-size: 20px;
+    background-size: 110px 16px;
+    opacity: 1;
+    background-position: center center;
+    background-repeat: no-repeat;
+    left: 50%;
+    top: 42%;
+    padding: -2px 0 0 15px;
+    margin: -19px -68px;
+    /* text-indent: -9999px; */
+    transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
+    -o-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
+    -moz-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
+    -webkit-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
+    -ms-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
+}
+
+
+.cartcount {
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    letter-spacing: 0;
+    border-radius: 12px;
+    right: -50px;
+    top: 22px;
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: #000;
+    font-size: .6875rem;
+    text-align: center;
+    line-height: 23px;
+    cursor: pointer;
+    border: 1px solid #FFF;
+    z-index: 100;
+}
+
+nav#navBar.ready {
+    left: 0;
+    right: 0;
+    height: 110px;
+    z-index: 1;
+    background: #003593;
+    border-color: #003593;
+}
+
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 12px !important;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    background-color: #eeeeee;
+    border: 1px solid white !important;
+    border-radius: 0px !important;
+    text-transform: uppercase;
+    color: #003593 !important;
+}
+
+.cleaninput.border-bottom {
+    border: 1px solid white !important;
+    /* padding: 10px 14px; */
+    width: 100% !important;
+    background: white;
+    height: 45px;
+    font-weight: 900;
+    font-size: 12px;
+    color: #003593;
+}
+
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+    color: #555555;
+    text-align: center;
+    background-color: white !important;
+}
+
+.cleaninput {
+    display: block;
+    position: relative;
+    font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
+    font-weight: 400;
+    font-size: 9px;
+    letter-spacing: .125rem;
+    /* background: 0 0; */
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    color: #000;
+    margin: 0 0 0px;
+    /* padding: 0 0 10px; */
+        text-transform: uppercase;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    margin: 0 auto;
+    float: none;
+    width: 80%;
+}
+
+
+#shoppingcart button.checkout {
+    transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -o-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -moz-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -webkit-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    -ms-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
+    bottom: 0;
+    color: #FFF;
+    background: #003593;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+.cartcount.active {
+    background: #003593 !important;
+    color: white !important;
+    left: inherit !important;
+}
+
+#shoppingcart button.checkout, #shoppingcart footer {
+    width: 281px;
+    height: 54px;
+    display: block;
+    position: absolute;
+    font-family: AvenirNextLTPro-Regular,Arial,Helvetica;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: .1875rem;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    line-height: 54px;
+    text-align: center;
+}
+
+.hide-top-navbar{
+    display: none !important;
+}
+
+.filter-menu {
+    height: 56px;
+    width: 74% !important;
+    margin: 82px auto;
+    float: none !important;
+    z-index: 2;
+    background: #1458B9;
+}
+
+#filters.show {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    bottom: 0;
+    transition-property: opacity,visibility;
+    transition-timing-function: cubic-bezier(.77,0,.175,1);
+    transition-duration: .5s,.5s;
+    transition-delay: 0;
+}
+
+#filters {
+    display: block;
+    position: fixed;
+    transition-property: opacity,visibility;
+    transition-timing-function: cubic-bezier(.77,0,.175,1);
+    transition-duration: .5s,.5s,0;
+    transition-delay: 0,0;
+    background: rgba(29,29,31,.97);
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    opacity: 0;
+    height: 0;
+    z-index: 97;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+#filters button.closeFilters {
+    display: block;
+    position: absolute;
+    right: 12px;
+    top: 62px;
+    padding: 20px;
+    margin: 0;
+    background: url(../images/svg/oneRow.svg) center center no-repeat;
+    border: none;
+    text-indent: -9999px;
+    width: 12px;
+    height: 12px;
+    background-size: 12px;
+    z-index: 100;
+}
+
+#filters button.closeFilters span.label {
+    display: block;
+    position: absolute;
+    font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    text-indent: 0;
+    font-size: .65rem;
+    text-rendering: auto;
+    text-align: right;
+    padding: 0;
+    margin: -15px 0;
+    background: 0 0;
+    visibility: hidden;
+    transition: all 250ms cubic-bezier(.25,.46,.45,.94);
+    right: 26px;
+    top: 50%;
+    opacity: 0;
+    width: 100px;
+    height: 30px;
+    line-height: 32px;
+    color: #fff;
+}
+
+/* #filters.show #filterLists {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out 600ms;
+}
+
+@media only screen and (max-width: 64em) and (min-width: 43.75em){
+    #filters #filterLists {
+        width: 90vw;
+        margin: 15vh 7vw;
+    }
+
+#filters #filterLists {
+    display: block;
+    position: relative;
+    transition: opacity 500ms ease-in-out;
+    width: 80vw;
+    height: 63vh;
+    opacity: 0;
+    margin: 15vh 12vw;
+} */
+
+.filterList h3 {
+    font-family: "AvenirNextLTPro-Demi",Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: .8125rem;
+    text-align: left;
+    letter-spacing: .3rem;
+    color: #FFF;
+    margin: 0 0 30px;
+    padding: 0;
+}
+
+.filterList .scrollpane {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+@media only screen and (min-width: 43.75em){
+    .filterList {
+        display: inline-block!important;
+        width: 20%;
+        height: 100%;
+    }
+}
+
+.filterList {
+    margin: 0 0 0 -4px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* #filters.show footer {
+    transition: all 500ms ease-in-out 500ms;
+    opacity: 1;
+}
+
+@media only screen and (min-width: 43.75em){
+    #filters footer {
+        width: auto;
+        left: 20px;
+        bottom: 20px;
+        top: auto;
+        text-align: left;
+    }
+}
+
+#filters footer {
+    display: block;
+    position: absolute;
+    transition: all 500ms ease-in-out 100ms;
+    width: 100%;
+    left: 0;
+    bottom: 71px;
+    opacity: 0;
+} */
+/* 
+@media only screen and (min-width: 43.75em){
+    #filters footer p {
+        margin: 0 0 0 8vw;
+    }
+
+}
+
+
+@media only screen and (max-width: 64em) and (min-width: 43.75em){
+    #filters footer p {
+        width: 50%;
+        margin: 0 0 0 4vw!important;
+    }
+
+}
+
+#filters footer p {
+    font-family: "AvenirNext LT Pro Regular",Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: .6rem;
+    color: #FFF;
+    letter-spacing: .25rem;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+} */
+
+#filters.show nav.footerbuttons {
+    transition: all 500ms ease-in-out 650ms;
+    right: 0;
+}
+
+#filters nav.footerbuttons {
+    opacity: 1;
+    visibility: visible;
+}
+
+av.footerbuttons.show {
+    right: 0;
+    opacity: 1;
+}
+
+nav.footerbuttons {
+    display: block;
+    position: absolute;
+    transition: opacity .5s cubic-bezier(.25,.46,.45,.94),visibility .5s cubic-bezier(.25,.46,.45,.94);
+    overflow: hidden;
+    opacity: 0;
+    right: -400px;
+    bottom: -20px;
+}
+
+nav.footerbuttons button {
+    width: 200px;
+    height: 52px;
+    font-family: "AvenirNextLT Pro Regular",Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: .68rem;
+    letter-spacing: .25rem;
+    text-align: center;
+    outline: 0;
+    background: #FFF;
+    color: #000;
+    float: left;
+    overflow: hidden;
+    line-height: 52px;
+}
+
+nav.footerbuttons button>span {
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    top: 0;
+    left: 0;
+}
+
+nav.footerbuttons button>span.hover {
+    top: 100%;
+}
+
+#filters nav.footerbuttons button.disabled {
+    background: #FFF!important;
+    color: rgba(0,0,0,.2)!important;
+    opacity: 1!important;
+}
+
+
+    .jspContainer {
+        overflow: hidden;
+        position: relative;
+    }
+
+
+
+
+/* /NEW */
+
 ul.cart-products li figure {
     width: 281px;
     height: 150px;
@@ -420,33 +991,6 @@ img {
     color: #FFF;
 }
 */
-nav#navBar.ready>span {
-    color: black;
-    display: block;
-    position: absolute;
-    width: 119px;
-    height: 28px;
-    letter-spacing: 6px;
-    font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
-    font-weight: bold;
-    font-size: 20px;
-    background-size: 99px 27px;
-    opacity: 1;
-    background-position: center center;
-    background-repeat: no-repeat;
-    left: 50%;
-    top: 50%;
-    padding: 0 0 0 15px;
-    margin: -15px -60px;
-    /* text-indent: -9999px; */
-    transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
-    -o-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
-    -moz-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
-    -webkit-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
-    -ms-transition: opacity 500ms cubic-bezier(.645,.045,.355,1);
-}
-
-
 
 .move-right-content-no-fixed{
     -ms-transform: translate(280px,0px); /* IE 9+ */
@@ -643,11 +1187,6 @@ body {
     transform: translate3d(281px,0,0);
 }
 
-.cartcount.active {
-    background: #000 !important;
-    color: #f3f3f5 !important;
-    left: inherit !important;
-}
 
 .single-overlay.show {
     visibility: visible;
@@ -657,30 +1196,7 @@ body {
     right: 26px;
 }
 
-.cartcount {
-    display: block;
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: .1875rem;
-    letter-spacing: 0;
-    border-radius: 12px;
-    right: -50px;
-    top: 14px;
-    margin: 0;
-    padding: 0;
-    background: #f3f3f5;
-    color: #000;
-    font-size: .6875rem;
-    text-align: center;
-    line-height: 23px;
-    cursor: pointer;
-    border: 1px solid #FFF;
-    z-index: 100;
-}
+
 
 .cartcount span.label {
     display: block;
@@ -863,23 +1379,6 @@ ul.cart-products {
     padding: 0 32px;
 }
 
-#shoppingcart button.checkout, #shoppingcart footer {
-    width: 281px;
-    height: 54px;
-    display: block;
-    position: absolute;
-    font-family: AvenirNextLTPro-Regular,Arial,Helvetica;
-    font-weight: 400;
-    text-transform: uppercase;
-    font-size: .6875rem;
-    letter-spacing: .1875rem;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    line-height: 54px;
-    text-align: center;
-}
-
 #shoppingcart footer span {
     font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
     text-transform: uppercase;
@@ -906,18 +1405,6 @@ ul.cart-products {
     color: rgba(255,255,255,.5);
 }
 
-#shoppingcart button.checkout {
-    transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -moz-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -ms-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -o-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -webkit-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    bottom: 0;
-    color: #FFF;
-    background: #000;
-    text-align: center;
-    overflow: hidden;
-}
 #shoppingcart button.checkout .spinner.ng-hide {
     display: none;
 }
@@ -960,18 +1447,6 @@ ul.cart-products {
     cursor: default;
     opacity: .7;
     box-shadow: none;
-}
-#shoppingcart button.checkout {
-    transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -o-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -moz-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -webkit-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    -ms-transition: all 350ms cubic-bezier(.25,.46,.45,.94);
-    bottom: 0;
-    color: #FFF;
-    background: #000;
-    text-align: center;
-    overflow: hidden;
 }
 
 #shoppingcart button.checkout>span {
@@ -1022,8 +1497,15 @@ ul.cart-products {
 
 #legalfooter .inner {
     margin-top: 75px;
-    background: #1B1B1F;
+    background: #003593;
     padding: 75px 0;
+}
+
+.no-hijack,
+.no-hijack:focus,
+.no-hijack:active,
+.no-hijack:hover{
+    color: white;
 }
 
 #legalfooter p {
@@ -1037,7 +1519,7 @@ ul.cart-products {
     font-size: 15px;
     line-height: 1.5;
     margin: 0 0 20px;
-    background: rgb(27, 27, 31);    
+    background: #003593;    
 }
 
 #legalfooter .inner ul {
@@ -1266,6 +1748,7 @@ ul.cart-products {
     background-image: url('../images/svg/oneRow.svg');
 }
 
+
 .footer-bar li .items.row4 span {
     background-image: url('../images/svg/grid.svg');
 }
@@ -1330,7 +1813,7 @@ div.btn:active {
 }
 
 #legalfooter .inner ul li button:hover{
-    background-color: black;
+    background-color: #003593;
 }
 
 .instagram:hover{

@@ -18,6 +18,35 @@
               
             }
         };
+        $scope.isFilterOpen = false;
+        $scope.openFilter = function(){
+            console.log("openFilter");
+            if($scope.isFilterOpen){
+                $scope.isFilterOpen = false;
+                $scope.openFilterClass = "";
+            } else {
+                $scope.isFilterOpen = true;
+                $scope.openFilterClass = "show";
+            }
+            
+        }
+
+        $scope.topNavabarStyle = {};
+        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){ 
+            if(toState.url === "/lookbook"){
+                console.log("in intro page is not");
+                $scope.topNavabarStyle = "hide-top-navbar";
+            } else if(toState.url === "/about"){
+                $scope.topNavabarStyle = "";
+            } else if(toState.url !== "/"){
+                console.log("asd");
+                $scope.topNavabarStyle = "";
+            } else {
+                console.log("in intro page"); 
+                $scope.topNavabarStyle = "hide-top-navbar";
+                console.log($scope.topNavabarStyle);
+            }
+        })
 
 
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
