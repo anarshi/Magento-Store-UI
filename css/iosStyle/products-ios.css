@@ -22,6 +22,239 @@ section.products {
     box-shadow: none;
 }
 
+.product-info-btn{
+    padding: 15px !important;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: "AvenirNext LT Pro Demi";
+    background: #f3f3f3 !important;
+    border-top: 1px solid #003593 !important;
+    border-bottom: 1px solid #003593 !important;
+    border-radius: 0px !important;
+    border-left: transparent !important;
+    border-right: transparent !important;
+    color:  #003593 !important;
+    text-align: left !important;
+}
+
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default{
+    border-color:  #003593 !important;
+}
+
+/* Nike total style */
+
+.exp-panel__bg {
+    background: #000;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease;
+    -moz-transition: opacity 400ms ease;
+    -o-transition: opacity 400ms ease;
+    transition: opacity 400ms ease;
+}
+
+.exp-panel {
+    z-index: 999999999;
+    background: #fff;
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+}
+
+.exp-panel--show-panel, .stock-Android .exp-panel--show-panel {
+    -webkit-transform: translateX(0) !important;
+    -moz-transform: translateX(0) !important;
+    -ms-transform: translateX(0) !important;
+    -o-transform: translateX(0) !important;
+    transform: translateX(0) !important;
+    z-index: 99999999999;
+}
+
+.back-btn-product-info{
+    padding: 23px 15px !important;
+    width: 100%;
+    border-radius: 0px !important;
+    color: #003593 !important;
+    font-family: "AvenirNext LT Pro Demi";
+    border-bottom: 1px solid #003593 !important;
+    text-align: center !important;
+    border-top: transparent !important;
+    border-left: transparent !important;
+    border-right:  transparent !important;
+}
+
+#mainId > div > div.exp-panel.exp-panel--show-panel.stock-Android > button > span{
+    top: 4px !important;
+}
+
+.exp-panel--is-back-btn {
+    text-align: center;
+    padding: 22px 44px;
+    background: #fff;
+    z-index: 1;
+    will-change: transform;
+}
+
+.exp-panel__btn {
+    width: 100%;
+    border: none;
+    border-bottom: solid 1px #ddd;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    display: block;
+}
+
+.exp-panel, .exp-panel__bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%) ;
+}
+
+/* end of nike total style */
+
+.product-info-btn:active,
+.product-info-btn:focus,
+.product-info-btn:hover{
+    border-color:  #003593 !important;
+   border-top: 1px solid #003593 !important;
+    border-bottom: 1px solid #003593 !important;
+}
+
+.product-page .info ul.info-buttons {
+    position: relative;
+    display: inline-block;
+    width: inherit;
+    margin: 25px 0 0;
+    padding-left: 0;
+}
+
+.product-page .info ul.info-buttons li:not(:last-of-type) {
+    margin-right: 20px;
+}
+
+.product-page .info ul.info-buttons li {
+    display: block;
+    position: relative;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    float: left;
+}
+
+.product-page .info ul.info-buttons li.fit button {
+    border-right: 0;
+}
+
+.product-page .info ul.info-buttons li button.active {
+    font-weight: 600;
+}
+
+
+/* NEW */
+
+.product-page .upsells .bar {
+    margin-top: 90px;
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    font-size: 12px;
+    padding: 0px;
+    background: #003593;
+    line-height: 50vh;
+    text-align: center;
+    color: #FFF;
+}
+
+/* /NEw  */
+
+
+
+.product-page .info ul.info-buttons li button.active, .product-page .info ul.info-buttons li button:hover {
+    color: #000;
+}
+
+.product-page .info ul.info-buttons li button {
+    background: 0 0;
+    outline: 0;
+    padding: 0;
+    width: 100%;
+    color: #848484;
+    text-align: center;
+    font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    letter-spacing: .25rem;
+    font-size: 9px;
+    margin-bottom: 10px!important;
+    transition: color .45s cubic-bezier(.455,.03,.515,.955);
+    -webkit-transition: color .45s cubic-bezier(.455,.03,.515,.955);
+}
+
+.product-page .info p.infotext.hide {
+    transition-delay: 0;
+    transition-duration: .35s,.35s;
+    -webkit-transition-delay: 0;
+    -webkit-transition-duration: .35s,.35s;
+    display: block!important;
+    visibility: hidden;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.product-page .info p.infotext {
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 99%;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    transition-property: opacity,visibility;
+    transition-timing-function: cubic-bezier(.455,.03,.515,.955);
+    transition-duration: .35s,.35s;
+    transition-delay: 0s;
+    -webkit-transform: translate(-50%,0);
+    -webkit-transition-property: opacity,visibility;
+    -webkit-transition-timing-function: cubic-bezier(.455,.03,.515,.955);
+    -webkit-transition-duration: .35s,.35s;
+    -webkit-transition-delay: 0s;
+}
+
+.product-page .info p {
+    font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #000;
+    font-size: 10px;
+    line-height: 1.5rem;
+    margin: 0 0 20px;
+}
+
+.footer-bar li .items.disabled {
+    background: 0 0;
+    cursor: default;
+    opacity: .2 !important;
+    background-color: transparent !important;
+}
+
 
 .catalog-product img {
     top: -6%;
@@ -233,7 +466,7 @@ section.products div.right {
 }
 
 .product-page .product-container .content {
-    width: 100vw;
+    width: 100%;
     height: auto;
     display: block;
     position: relative;
@@ -338,6 +571,7 @@ section.products div.right {
 .product-page .info.ready {
     visibility: visible;
     opacity: 1;
+    z-index: 1;
 }
 
 @media only screen and (min-width: 63.813em){
@@ -440,6 +674,8 @@ section.products div.right {
     background-color: white;
 }
 
+
+
 .footer-bar {
     display: block;
     position: fixed;
@@ -448,7 +684,7 @@ section.products div.right {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 54px;
+    height: 52px;
     opacity: 1;
     visibility: visible;
     overflow: hidden;
@@ -621,20 +857,20 @@ NAV
 
 .product-page footer.info {
     margin-top: 0;
-    text-align: left!important;
     margin-bottom: 5rem;
 }
 
 .product-page footer.info h2 {
-    font-size: 1.3rem;
+    font-size: 16px !important;
     line-height: 1.5625rem;
     margin: 0 0 30px;
     font-weight: 900;
+    color:  #464646;
 }
 
 .info-outer{
     margin-top:50px;
-    display: none;
+   
 }
 
 .sizeBtn-container{
@@ -651,14 +887,40 @@ NAV
     transition: transform .3s ease-in-out;
 }
 
+
+.free-delivery-title{
+    font-size: 16px;
+    color: #003594;
+    font-weight: 900;
+    font-family: "AvenirNext LT Pro Demi";
+}
+
+.delivery-desc > a,
+.delivery-desc > a:focus,
+.delivery-desc > a:hover,
+.delivery-desc > a:active{
+    color: #003594;
+    font-weight: 800;
+    text-decoration: underline;
+
+}
+
+
+
 .btnAdd{
+    font-family: "AvenirNext LT Pro Demi";
     position: relative;
     height: 54px ;
     width: 190px ;
     color: white ;
     margin-bottom: 0px ;
     bottom: 0px ;
-    background-color: black ;
+    background-color: #003593 !important;
+}
+
+.btnAdd > span{
+    font-family: "AvenirNext LT Pro Demi";
+    color: white;
 }
 
 .addbtn:focus{
@@ -670,7 +932,7 @@ NAV
     color: white;
     margin-bottom: 0px;
     bottom: 0px;
-    background-color: rgb(51,51,51);
+    background-color: #003593;
 }
 
 .addBtn:hover{
@@ -682,7 +944,7 @@ NAV
     color: white;
     margin-bottom: 0px;
     bottom: 0px;
-    background-color: rgb(51,51,51) !important;
+    background-color: #003593 !important;
     cursor: pointer;
 }
 
@@ -706,15 +968,24 @@ NAV
     margin: 0 0 20px;
 }
 
+#prev span{
+    opacity: 1;
+}
+
+#next span{
+    opacity: 1;
+}
+
 .single-footer nav.footerbuttons .sizeBtn {
-    height: 100%;
-    color: rgb(51,51,51);
+    color: rgb(0, 53, 147);
     position: relative;
-    background: url('../../images/svg/up-arrow.svg') 165px center no-repeat #FFF !important;
-    background-size: 9px !important;
-    text-align: left;
-    padding-top: 1.15rem;
-    right: -4px;
+    padding-top: 0px;
+    right: 0px;
+    font-weight: 900;
+    top: 1px;
+    font-size: 11px;
+    text-align: center;
+    font-family: "AvenirNext LT Pro Demi";
 }
 
 
@@ -722,11 +993,17 @@ NAV
     outline: none !important;
     border: none !important;
 }
-.single-footer nav.footerbuttons button, .single-footer nav.footerbuttons button * {
+.single-footer nav.footerbuttons button, .single-footer nav.footerbuttons button {
+    font-weight: 900;
     font-style: normal!important;
 }
 
+.single-footer nav.footerbuttons .sizeBtn > span {
+    color: #003593;
+}
+
 .single-footer nav.footerbuttons button {
+    float: right;
     width: 190px;
 }
 
@@ -773,7 +1050,7 @@ nav.footerbuttons {
     -webkit-transition: all .6s cubic-bezier(.215,.61,.355,1);
     width: 380px;
     height: 100%;
-    background: #151517;
+    background: #003593;
     z-index: 19;
     bottom: 0;
     opacity: 1;
@@ -874,7 +1151,7 @@ filterList ul li.key, .filterList ul li.key:hover {
     font-weight: 100;
     margin: 0;
     padding: 0;
-    color: #9C9C9C;
+    color: #ffffff;
     letter-spacing: 3px;
     cursor: pointer;
     white-space: nowrap;
@@ -908,26 +1185,9 @@ filterList ul li.key, .filterList ul li.key:hover {
 
 .product-page .upsells {
     display: block;
-    overflow: hidden;
+    
         background: #f3f3f5;
    /*  position: relative; */
-}
-
-.product-page .upsells .bar {
-    display: block;
-    position: relative;
-    width: 100vw;
-    height: 50vh;
-    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: .1875rem;
-    font-size: 12px;
-    padding: 0px;
-    background: #1D1D1F;
-    line-height: 50vh;
-    text-align: center;
-    color: #FFF;
 }
 
 .scroll-container-products::scrollbar{
@@ -1134,7 +1394,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
 /* end of new style */
 
 
-@media all and (orientation:portrait) {
+@media screen and (max-width: 990px) {
 
     .show-when-small{
         display: block;
@@ -1172,9 +1432,10 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
         bottom: 0;
     }
     
-    .image-container{
-        display: none !important;
+    .footer-bar {
+        height: 120px;
     }
+    
 
     .info-inner{
         display: none;
@@ -1184,12 +1445,16 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
         display: block;
     }
 
-    .single-footer nav.footerbuttons .sizeBtn {
-        background: #FFF!important;
+    .footer-btn-container-height-with-add{
+        height: 104px !important;
+    }
+
+    .footer-btn-container-height-no-add{
+        height: 52px !important;
     }
 
     .single-footer nav.footerbuttons button {
-        width: 50vw;
+        width: 100%;
         z-index: 9999999999;
     }
 
@@ -1213,8 +1478,15 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     }
 
     .sizeBtn{
+        background: #003593 !important;
+         color: white !important;
         right: 4px;
         left: 0px;
+    }
+
+    .sizeBtn-size-is-choosen{
+        background: white !important;
+        color: #003593 !important;
     }
 
     footer{
@@ -1231,6 +1503,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
 /*new style*/
 .product-page .product-container figure.ready {
     opacity: 1;
+    outline-color: transparent;
 }
 
 .product-page .product-container figure img {
@@ -1274,9 +1547,9 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     .product-page .product-container figure {
         -webkit-transform: translate3d(0,100px,0);
         transform: translate3d(0,100px,0);
-        transition-timing-function: ease-out;
+        -webkit-transition-timing-function: ease-out;
         transition-duration: 1.5s;
-        transition-property: -webkit-transform;
+        -webkit-transition-property: -webkit-transform;
         transition-property: transform;
     }
 }
@@ -1354,4 +1627,106 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
         width: 100vw;
         height: 90vw;
     }
+}
+
+.slick-slide {
+    outline: none;
+}
+
+
+.product-page .product-container ul.slick-dots {
+    position: absolute;
+    list-style-type: none;
+    left: 50%;
+    bottom: 5%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    margin: 0;
+}
+
+.product-page .product-container ul.slick-dots li.slick-active {
+    background: #1458b9;
+    height: 9px;
+    width: 9px;
+}
+
+.product-page .product-container ul.slick-dots li {
+    float: left;
+    width: 8px;
+    height: 8px;
+    background: #d8d8d8;
+    border-radius: 50%;
+    margin: 0 4px;
+    text-indent: -9999px;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+}
+
+.product-desc{
+    text-align: left !important;
+    font-size: 16px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    line-height: 26px;
+}
+
+
+@media only screen and (max-width: 63.75em){
+    .product-page .product-container .image-container {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: auto;
+        -webkit-transform: scale3d(1,1,1) !important;
+        transform: scale3d(1,1,1) !important;
+        margin-bottom: 0 !important;
+        margin-top: 52px;
+    }
+
+    .product-page .product-container figure {
+        display: block;
+        width: 100vw;
+        height: 90vw;
+    }
+
+    .product-page .product-container figure .hover {
+        cursor: pointer;
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 43.688em){
+    .product-page .product-container .image-container {
+        min-height: 400px;
+        -webkit-transform: scale3d(1,1,1) c;
+        transform: scale3d(1,1,1) !important;
+        margin-bottom: 0 !important;
+    }
+
+    .product-page .product-container figure {
+        width: 100vw;
+        height: 90vw;
+        margin-left: 0;
+        min-height: 400px;
+        background-size: contain;
+    }
+
+    .product-page footer.info ul.info-buttons {
+        width: 94%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .product-page footer.info p.infotext {
+        width: 100%;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .product-page footer.info {
+        z-index: 1 !important;
+        margin-bottom: 80px;
+    }
+    
 }

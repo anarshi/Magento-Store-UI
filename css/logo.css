@@ -1,6 +1,29 @@
 nav#navBar>span {
-    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+	font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
     /*opacity: 0;*/
     cursor: pointer;
-    background-image: url(../images/white-logo.png);
+    background-image: url(../images/svg/camicamina.svg);
+}
+
+nav#navBar-home>span {
+	font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    /*opacity: 0;*/
+    cursor: pointer;
+    background-image: url(../images/svg/camicamina.svg);
+}
+
+@media screen and (max-width: 990px){
+	nav#navBar>span {
+	    background-image: url(../images/white-logo.png);
+	}
+
+	nav#navBar-home>span {
+	    background-image: url(../images/white-logo.png);
+	}
+
+
+	.product-page-small-logo {
+	    background-image: url(../images/svg/camicamina.svg) !important;
+	} 
+
 }

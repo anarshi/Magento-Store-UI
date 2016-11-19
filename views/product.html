@@ -1,7 +1,23 @@
+ <header class="navbar-fixed-top" ng-class="topNavbarStyle">
+        <nav id="navBar" class="navBar fixed ready top-hide top" ng-class="topNavbarStyle">
+            <button role="button" class="menu" ng-class="topNavbarMenuStyle" ng-click="openModal()">
+                Menu<span class="label" ng-class="menuLabelClass">MENU</span>
+            </button>
+            <span class="logo" ng-class="topNavbarLogoStyle" ng-click="goHome('/')"></span>
+            <aside class="cartcount show " ng-class="topNavbarCartcountStyle" ng-click="openCart()">{{cartProducts.cartCount}}<span class="label" ng-class="bagLabelClass">BAG</span></aside>
+        </nav>
+        <div class="col-md-12 col-xs-12 filter-menu" ng-class="filterMenuButtonClass">
+            <div class="col-md-2 col-xs-2"></div>
+            <div class="col-md-2 col-xs-2"></div>
+            <div class="col-md-10 col-xs-10"></div>
+        </div>
+       
+    </header>
+
 <div class="page product-page main-container" ng-init="productsControllerInit" id="mainId" ng-click="closeModal" style="opacity: 1;" ng-controller="ProductController" ng-init="init()">
    <div class="page product-page" style="opacity: 1;">
       <section class="product-container">
-         <div class="content">
+         <div class="content text-center">
             <div class="transform-container">
                <div class="image-container"  dir="rtl" ng-class="imageContainerZoomClass"  data-images="{{imageNumber}}"; style="
                   transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1); -webkit-transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1);" id="image-container">
@@ -12,32 +28,7 @@
                </div>
             </div>
             <aside class="info fixed ready hide-when-small" id="info">
-               <div class="info-inner">
-                  <h2>{{product.name}}<br>
-                     <small>{{product.name}}</small>
-                  </h2>
-                  <span class="price">
-                  {{product.currencySymbol + " " + product.price}}
-                  </span>
-                  <p>{{product.longDescription}}</p>
-                  <ul class="info-buttons">
-                      <li class="fit">
-                          <button class="" ng-class="fitActive" ng-click="showTabContent(1)">Fit<i></i></button>
-                      </li>
-                      <li class="delivery">
-                          <button class="" ng-class="deliveryActive" ng-click="showTabContent(2)">Delivery<i></i></button>
-                      </li>
-                      <li class="material">
-                          <button class=""  ng-class="materialActive" ng-click="showTabContent(3)">Material<i></i></button>
-                      </li>
-                  </ul>
-                  <p class="infotext fit " ng-class="showFit">
-                     Fits true to size. Go up to the nearest whole size if you take a half size. 
-                     <u class="sizeguideBtn">Size guide</u>
-                  </p>
-                  <p class="infotext delivery" ng-class="showDelivery">We offer free worldwide shipping on all orders over €100,-</p>
-                  <p class="infotext material hide" ng-class="showMaterial"></p>
-               </div>
+               
             </aside>
             <div class="transform-container ">
                <div class="js-margin" style="z-index: 0; transform: matrix(1, 0, 0, 1, 0, 0);">
@@ -46,34 +37,35 @@
                </div>
             </div>
             <div class="transform-container info-outer">
-               <footer class="info columns  col-md-12 ready ">
+               <footer class="info columns  col-md-12 ready text-center">
                   <h2 class="">{{product.name}}
-                     <small>{{product.name}}</small>
                   </h2>
-                  <span class="price">
+                 <!--  <span class="price">
                   {{product.currencySymbol + " " + product.price}}
-                  </span>
-                  <p class="">{{product.longDescription}}</p>
-                  <ul class="info-buttons">
-                      <li class="fit">
-                          <button class="" ng-class="fitActive" ng-click="showTabContent(1)">Fit<i></i></button>
-                      </li>
-                      <li class="delivery">
-                          <button class="" ng-class="deliveryActive" ng-click="showTabContent(2)">Delivery<i></i></button>
-                      </li>
-                      <li class="material">
-                          <button class=""  ng-class="materialActive" ng-click="showTabContent(3)">Material<i></i></button>
-                      </li>
-                  </ul>
-                  <p class="infotext fit " ng-class="showFit">
-                     Fits true to size. Go up to the nearest whole size if you take a half size. 
-                     <u class="sizeguideBtn">Size guide</u>
-                  </p>
-                  <p class="infotext delivery" ng-class="showDelivery">We offer free worldwide shipping on all orders over {{product.currencySymbol}} 100,-</p>
-                  <p class="infotext material hide" ng-class="showMaterial"></p>
+                  </span> -->
+                  <h4 class="free-delivery-title"> Free worldwide delivery </h4>
+                  <p class="delivery-desc">Read out <a href="#">Delivery & Returns</a> for more info.</p>
+                  <div class="product-desc col-md-12 col-xs-12">
+                    {{product.longDescription}}
+                  </div>
+                  
+                  <h4 class="free-delivery-title"> Designer </h4>
+                  <p>Camilla Prokopovich</p>
+                  <h4 class="free-delivery-title"> Material </h4>
+                  <p>100% New Zeeland wool</p>
+                  <h4 class="free-delivery-title"> Technique </h4>
+                  <p>Hand-tufted</p>
+                  <h4 class="free-delivery-title"> Handmade in </h4>
+                  <p>India</p>
+
+                 
                </footer>
+               <div class="col-md-12 col-xs-12 product-info no-padding">
+                  <button class="btn btn-default product-info-btn" ng-click="showProductInfo()">Product information <span class="glyphicon glyphicon-chevron-right pull-right"></span></button>
+               </div>
             </div>
             <div class="transform-container">
+
                <footer class="upsells col-md-12 no-padding js-margin show"  style="transform: matrix(1, 0, 0, 1, 0, 0);">
                   <div class="bar show col-md-12 no-padding" id="related-products"><span>You may also like</span></div>
                   <div class="scroll-container-products" id="scroll-container">
@@ -93,39 +85,15 @@
          <div class="scrollpane">
             <div class="filterList">
                <ul>
-                  <li class="key">EU | US | UK</li>
-                  <li data-id="2709" ng-click = "chooseSize('36 | 03 | 02')">
-                     36 | 03 | 02
+                  <li class="key">Width x Height</li>
+                  <li data-id="2709" ng-click = "chooseSize('200x300 | $950')">
+                     200x300 | $950
                   </li>
-                  <li data-id="2708" ng-click = "chooseSize('37 | 04 | 03')">
-                     37 | 04 | 03
+                  <li data-id="2708" ng-click = "chooseSize('300x400 | $1150')">
+                     300x400 | $1150
                   </li>
-                  <li data-id="2707" ng-click = "chooseSize('38 | 05 | 04')">
-                     38 | 05 | 04
-                  </li>
-                  <li data-id="2706" ng-click = "chooseSize('39 | 06 | 05')">
-                     39 | 06 | 05
-                  </li>
-                  <li data-id="2705" ng-click = "chooseSize('40 | 07 | 06')">
-                     40 | 07 | 06
-                  </li>
-                  <li data-id="2704" ng-click = "chooseSize('41 | 08 | 07')">
-                     41 | 08 | 07
-                  </li>
-                  <li data-id="2703" ng-click = "chooseSize('42 | 09 | 08')">
-                     42 | 09 | 08
-                  </li>
-                  <li data-id="2702" ng-click = "chooseSize('43 | 10 | 09')">
-                     43 | 10 | 09
-                  </li>
-                  <li data-id="2701" ng-click = "chooseSize('44 | 11 | 10')">
-                     44 | 11 | 10
-                  </li>
-                  <li data-id="2700" ng-click = "chooseSize('45 | 12 | 11')">
-                     45 | 12 | 11
-                  </li>
-                  <li data-id="2699" ng-click = "chooseSize('46 | 13 | 12')">
-                     46 | 13 | 12
+                  <li data-id="2707" ng-click = "chooseSize('320x450 | $1300')">
+                     320x450 | $1300
                   </li>
                </ul>
             </div>
@@ -147,15 +115,25 @@
             </li>
          </ul>
          <nav class="footerbuttons col-md-12 col-xs-12 col-lg-12 no-padding" id="footer-bar" ng-class="footerClass">
-            <button class="sizeBtn hide-when-small" ng-click="showSizes()"><span><strong>Size</strong></span>  </button>
-            <button class="addBtn btnAdd hide-when-small" id="addBtn" ng-click="addToCart()" ng-disabled="isSizeChoosen"><span><strong>Add to bag</strong></span></button>
-            <div class="col-md-6 col-xs-6 col-lg-6 no-padding show-when-small  sizeBtn-container">
-               <button class="sizeBtn " ng-click="showSizes()"><span><strong>Size</strong></span>  </button>
+            <button class="sizeBtn hide-when-small" ng-click="showSizes()" >Select Size</button>
+            <button class="addBtn btnAdd hide-when-small" id="addBtn" ng-click="addToCart()" ng-shown="isSizeChoosen"><span><strong>Add to bag</strong></span></button>
+            <div class="col-md-12 col-xs-12 col-lg-12 no-padding show-when-small  sizeBtn-container">
+               <button class="sizeBtn " ng-click="showSizes()" ng-class="sizeBtnClass"><strong>Select Size</strong></button>
             </div>
-            <div class="col-md-6 col-lg-6 col-lg-6 no-padding show-when-small">
-               <button class="addBtn btnAdd " id="addBtn" ng-click="addToCart()" ng-disabled="isSizeChoosen"><span><strong>Add to bag</strong></span></button>
+            <div class="col-md-12 col-lg-12 col-lg-12 no-padding show-when-small">
+               <button class="addBtn btnAdd " id="addBtn" ng-click="addToCart()" ng-show="isSizeChoosen"><span><strong>Add to bag</strong></span></button>
             </div>
          </nav>
       </footer>
+      <div class="exp-panel__bg " ng-class="productInfoClass"></div>
+      <div class="exp-panel  " ng-class="productInfoClass" js-hook="panel">
+       <button class="btn btn-default back-btn-product-info" ng-click="closeProductInfo()">
+     <span class="glyphicon glyphicon-chevron-left pull-left"></span>
+     PRODUCT INFORMATION
+   </button>
+       <div class="exp-panel__body" id="expContentPanelBody_default">
+         <div class="exp-panel__body-content" js-hook="panelBody" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);"></div>
+       </div>
+     </div>
    </div>
 </div>

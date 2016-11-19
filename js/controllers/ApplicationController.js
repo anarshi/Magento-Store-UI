@@ -9,15 +9,15 @@
     function applicationController($rootScope, $scope , $route  ,  $location , $http , $timeout
                                      , $window ,basket ,cartProducts,openCartService , $state) {
 
-        window.onbeforeunload = function () {
-            var url = window.location.href;
-            if(window.location.href.split("/")[5] === "" || url.indexOf("welcome") !== -1 || url.indexOf("home") !== -1){
-                window.location.reload();
-                $state.go("welcome");
+        // window.onbeforeunload = function () {
+        //     var url = window.location.href;
+        //     if(window.location.href.split("/")[5] === "" || url.indexOf("welcome") !== -1 || url.indexOf("home") !== -1){
+        //         window.location.reload();
+        //         $state.go("welcome");
                  
               
-            }
-        };
+        //     }
+        // };
         $scope.isFilterOpen = false;
         $scope.openFilter = function(){
             console.log("openFilter");
@@ -32,19 +32,66 @@
         }
 
         $scope.topNavabarStyle = {};
+        $scope.currentState = "";
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){ 
-            if(toState.url === "/lookbook"){
-                console.log("in intro page is not");
-                $scope.topNavabarStyle = "hide-top-navbar";
-            } else if(toState.url === "/about"){
-                $scope.topNavabarStyle = "";
-            } else if(toState.url !== "/"){
-                console.log("asd");
-                $scope.topNavabarStyle = "";
+            $scope.currentState = toState.templateUrl;
+            console.log(toState.templateUrl);
+            if(toState.templateUrl === "views/lookbook.html"){
+               $scope.topNavbarStyle = "product-page-navabar ";
+                $scope.topNavbarLogoStyle = "product-page-navbar-span-logo-icon product-page-small-logo" ;
+                $scope.topNavbarCartcountStyle = "product-page-cartcount";
+                $scope.topNavbarMenuStyle = "product-page-navbar-menu"
+                $scope.filterMenuButtonClass = "hide-filter-menu";
+                $scope.menuLabelClass = "product-menu-label";
+                $scope.bagLabelClass = "product-bag-label";
+
+            } else if(toState.templateUrl === "views/about.html"){
+                $scope.topNavbarStyle = "product-page-navabar ";
+                $scope.topNavbarLogoStyle = "product-page-navbar-span-logo-icon product-page-small-logo" ;
+                $scope.topNavbarCartcountStyle = "product-page-cartcount";
+                $scope.topNavbarMenuStyle = "product-page-navbar-menu"
+                $scope.filterMenuButtonClass = "hide-filter-menu";
+                $scope.menuLabelClass = "product-menu-label";
+                $scope.bagLabelClass = "product-bag-label";
+
+            } else if(toState.templateUrl === "views/product.html"){
+                $scope.topNavbarStyle = "product-page-navabar ";
+                $scope.topNavbarLogoStyle = "product-page-navbar-span-logo-icon product-page-small-logo" ;
+                $scope.topNavbarCartcountStyle = "product-page-cartcount";
+                $scope.topNavbarMenuStyle = "product-page-navbar-menu"
+                $scope.filterMenuButtonClass = "hide-filter-menu";
+                $scope.menuLabelClass = "product-menu-label";
+                $scope.bagLabelClass = "product-bag-label";
+
+            } else if (toState.templateUrl === "views/home_page.html"){
+                $scope.topNavbarStyle = "";
+                $scope.topNavbarLogoStyle = "";
+                $scope.topNavbarCartcountStyle = "";
+                $scope.filterMenuButtonClass = "";
+                $scope.menuLabelClass = "";
+                $scope.bagLabelClass = "";
+
+            }else if(toState.templateUrl === "views/serviceDesk.html"){
+                $scope.topNavbarStyle = "product-page-navabar ";
+                $scope.topNavbarLogoStyle = "product-page-navbar-span-logo-icon product-page-small-logo" ;
+                $scope.topNavbarCartcountStyle = "product-page-cartcount";
+                $scope.topNavbarMenuStyle = "product-page-navbar-menu"
+                $scope.filterMenuButtonClass = "hide-filter-menu";
+                $scope.menuLabelClass = "product-menu-label";
+                $scope.bagLabelClass = "product-bag-label";
+            } else if(toState.templateUrl === "views/checkout.html"){
+                $scope.topNavbarStyle = "product-page-navabar ";
+                $scope.topNavbarLogoStyle = "product-page-navbar-span-logo-icon product-page-small-logo" ;
+                $scope.topNavbarCartcountStyle = "product-page-cartcount";
+                $scope.topNavbarMenuStyle = "product-page-navbar-menu"
+                $scope.filterMenuButtonClass = "hide-filter-menu";
+                $scope.menuLabelClass = "product-menu-label";
+                $scope.bagLabelClass = "product-bag-label";
             } else {
-                console.log("in intro page"); 
-                $scope.topNavabarStyle = "hide-top-navbar";
-                console.log($scope.topNavabarStyle);
+                $scope.topNavbarStyle = "hide-top-navbar";
+                $scope.topNavbarLogoStyle = "";
+                $scope.topNavbarCartcountStyle = "";
+                $scope.filterMenuButtonClass = "";
             }
         })
 
@@ -330,9 +377,81 @@
             }
            
             //localStorage.setItem('productGridType',$scope.productGridType);
-            $scope.oneRowActive = "active";
+            $scope.oneRowActive = "active ";
             $scope.twoRowActive = "";
             $scope.threeRowActive = "";
+        };
+
+
+         $scope.oneAtATime = true;
+
+          $scope.groups = [
+            {
+              title: 'Dynamic Group Header - 1',
+              content: 'Dynamic Group Body - 1'
+            },
+            {
+              title: 'Dynamic Group Header - 2',
+              content: 'Dynamic Group Body - 2'
+            }
+          ];
+
+          $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+          $scope.addItem = function() {
+            var newItemNo = $scope.items.length + 1;
+            $scope.items.push('Item ' + newItemNo);
+          };
+
+          $scope.status = {
+            isCustomHeaderOpen: false,
+            isFirstOpen: true,
+            isFirstDisabled: false
+          };
+
+        var productFilter = $("#productFilter");
+        var singleOverlay = $('.single-overlay');
+        $scope.showFilter = function(){
+            if ($("#productFilter").hasClass('hide')) {
+                $scope.filterBtn = "filter-btn-clicked";  
+                $("#productFilter").removeClass('hide');
+                $('body').addClass('no-scroll lock-scroll');
+                $("#productFilter").removeClass('hide');
+                singleOverlay.addClass('show');
+
+                document.ontouchmove = function(e) {
+                    e.preventDefault();
+                }
+
+            } else {
+                $scope.filterBtn = "";
+                $('body').removeClass('no-scroll lock-scroll');
+                 $("#productFilter").addClass('hide');
+                singleOverlay.removeClass('show');
+
+                document.ontouchmove = function(e) {
+                    return true;
+                }
+
+            }
+        }
+
+        $scope.clearFilter = function(){
+            $scope.filterBtn = "";
+            $("#productFilter").addClass('hide');
+            singleOverlay.removeClass('show');
+             $('body').removeClass('no-scroll lock-scroll');
+
+            //loggic for filering data
+        }
+
+
+
+        $scope.closeFilter = function() {
+            $scope.filterBtn = "";
+            $("#productFilter").addClass('hide');
+            singleOverlay.removeClass('show');  
+             $('body').removeClass('no-scroll lock-scroll');
         };
 
         $scope.twoRowGrid = function(){
@@ -377,6 +496,10 @@
                 $scope.twoRowActive = "active";
                 $scope.threeRowActive = ""; 
             }
+
+
+           // $scope.scrollPaneFilterClass = $(".accordio-container").height - 255;
+
         });
 
         switch($scope.productGridType) {
@@ -458,6 +581,30 @@
                $(this).find("span").removeClass("show-bag-text");
             }
         );
+
+
+         angular.element($window).bind("scroll", function() {
+            if($(window).scrollTop()  >  100){
+               if($("#navBar-home").hasClass("shrink") && $scope.currentState === "views/home_page.html"){
+
+               } else if(!$("#navBar-home").hasClass("shrink") && $scope.currentState === "views/home_page.html") {
+                    $("#navBar-home").addClass("shrink");
+                   // $("#filterMenu-home").removeClass("filter-menu");
+                    $("#filterMenu-home").addClass("filter-menu-wide");
+               }
+                
+            } else if($scope.currentState === "views/home_page.html") {
+
+               if($("#navBar-home").hasClass("shrink")){
+                    $("#navBar-home").removeClass("shrink");
+                    $("#filterMenu-home").removeClass("filter-menu-wide");
+                     //$("#filterMenu-home").addClass("filter-menu");
+               } else {
+
+               }
+
+            }
+         });
 
        
         

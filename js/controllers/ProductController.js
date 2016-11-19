@@ -52,7 +52,7 @@
 
                 if ($scope.slides.length > 1) {
                     $(".image-container").css({
-                        "margin-bottom": "-90%"
+                        "margin-bottom": "-124%"
                     });
                 }
 
@@ -210,7 +210,13 @@
             };
 
 
-            $scope.isSizeChoosen = true;
+            $scope.isSizeChoosen = false;
+            $scope.sizeBtnClass="";
+            if($scope.isSizeChoosen){
+                $scope.footerClass="footer-btn-container-height-with-add";
+            }else{
+                $scope.footerClass  ="footer-btn-container-height-no-add";
+            }
 
             //should take size as parameter in fuction this is just a test case
             $scope.showSizes = function() {
@@ -238,9 +244,11 @@
             };
 
             $scope.chooseSize = function(id) {
-                $scope.isSizeChoosen = false;
+                $scope.sizeBtnClass="sizeBtn-size-is-choosen";
+                $scope.isSizeChoosen = true;
+                $scope.footerClass="footer-btn-container-height-with-add";
                 $scope.choosenSize = id;
-                $('.sizeBtn > span > strong').text(id);
+                $('.sizeBtn').text(id);
                 $scope.showSizes();
             }
 
@@ -362,7 +370,7 @@
                         t1.insert(new TweenMax(imageContainer, .5, {
                             css: {
                                 transform: "matrix(0.65, 0, 0, 0.65, 0, 0)",
-                                marginBottom: "-90%"
+                                marginBottom: "-124%"
                             },
                             ease: Power4.easeIn
                         }), 0);
@@ -478,7 +486,7 @@
                         t1.insert(new TweenMax(imageContainer, .5, {
                             css: {
                                 transform: "matrix(0.65, 0, 0, 0.65, 0, 0)",
-                                marginBottom: "-90%"
+                                marginBottom: "-124%"
                             },
                             ease: Power4.easeIn
                         }), 0);
@@ -811,6 +819,13 @@
                 }
             };
 
+            $scope.showProductInfo = function(){
+                $scope.productInfoClass = "exp-panel--show-panel stock-Android exp-panel--show-panel";
+            }
+
+            $scope.closeProductInfo = function(){
+                $scope.productInfoClass = "";
+            }
         }
         
     ]).animation('.slide-animation', function() {
@@ -853,6 +868,8 @@
                 }
             }
         };
+
+
 
 
     });

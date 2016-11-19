@@ -1,27 +1,28 @@
 <div class="home-page container main-container">
+
      <header class="navbar-fixed-top">
-        <nav id="navBar" class="navBar fixed ready top-hide top"  ng-class="topNavabarStyle">
+        <nav id="navBar-home" class="navBar fixed ready top-hide top"  ng-class="topNavabarStyle">
             <button role="button" class="menu" ng-click="openModal()">
                 Menu<span class="label">MENU</span>
             </button>
             <span class="logo" ng-click="goHome('/')"></span>
             <aside class="cartcount show " ng-click="openCart()">{{cartProducts.cartCount}}<span class="label">BAG</span></aside>
         </nav>
-        <div class="col-md-12 col-xs-12 filter-menu no-padding">
-            <div class="col-md-4 no-padding filter-buttons-container">
+        <div id="filterMenu-home" class="col-md-12 col-xs-12 filter-menu no-padding">
+            <div class="col-md-4 col-xs-2 no-padding filter-buttons-container">
                 <ul>
                     <li ng-click="oneRowGrid()">
                         <button data-rows="large" ng-class="oneRowActive" class="items row1 up active" ng-click="oneRowGrid()">
-                            <span ng-class="oneRowActive" class="active">1</span>
+                            <span ng-class="oneRowActive" >1</span>
                             <span class="hover">1</span>
                         </button>
                     </li>
                     <li ng-click="twoRowGrid()"><button data-rows="medium" ng-class="twoRowActive" class="items row2  down" ng-click="twoRowGrid()">
-                        <span>2</span>
+                        <span ng-class="twoRowActive">2</span>
                         <span class="hover">2</span></button></li>
                 </ul>    
             </div>
-            <div class="col-md-7 col-xs-7 filter-text-container" ng-click="openFilter()">
+            <div class="col-md-7 col-xs-2 filter-text-container" ng-click="showFilter()">
                 <p class="filter-text">filter</p>
             </div>
         </div>
@@ -48,104 +49,18 @@
 
     </section>
 
-    <section id="filters" ng-class="openFilterClass">
-        <button class="closeFilters">x<span class="label">CLOSE</span></button>
-        <div class="filterHolder">
-
-        <div id="filterLists">
-            <div class="filterList">
-                <h3>Colour</h3>
-
-                <div class="scrollpane" style="overflow: hidden; padding: 0px; width: 131px;">
-                    
-                <div class="jspContainer" style="width: 131px; height: 421px;"><div class="jspPane" style="padding: 0px; top: 0px; left: 0px; width: 131px;"><ul data-type="colour">
-                                            <li data-filter="green">Green</li>
-                                            <li data-filter="black">Black</li>
-                                            <li data-filter="blue">Blue</li>
-                                            <li data-filter="brown">Brown</li>
-                                            <li data-filter="grey">Grey</li>
-                                            <li data-filter="red">Red</li>
-                                            <li data-filter="white">White</li>
-                                        </ul></div></div></div>
-            </div>
-                    <div class="filterList">
-                <h3>Gender</h3>
-
-                <div class="scrollpane" style="overflow: hidden; padding: 0px; width: 131px;">
-                    
-                <div class="jspContainer" style="width: 131px; height: 421px;"><div class="jspPane" style="padding: 0px; top: 0px; left: 0px; width: 131px;"><ul data-type="gender">
-                                            <li data-filter="men">Men</li>
-                                            <li data-filter="women">Women</li>
-                                        </ul></div></div></div>
-            </div>
-                    <div class="filterList">
-                <h3>Product</h3>
-
-                <div class="scrollpane" style="overflow: hidden; padding: 0px; width: 131px;">
-                    
-                <div class="jspContainer" style="width: 131px; height: 421px;"><div class="jspPane" style="padding: 0px; top: 0px; left: 0px; width: 131px;"><ul data-type="product">
-                                            <li data-filter="shoes">Shoes</li>
-                                        </ul></div></div></div>
-            </div>
-                    <div class="filterList">
-                <h3>Size</h3>
-
-                <div class="scrollpane" style="overflow: hidden; padding: 0px; width: 131px;">
-                    
-                <div class="jspContainer" style="width: 131px; height: 421px;"><div class="jspPane" style="padding: 0px; top: 0px; left: 0px; width: 131px;"><ul data-type="size">
-                                            <li data-filter="36-3-2">36 | 03 | 02</li>
-                                            <li data-filter="37-4-3">37 | 04 | 03</li>
-                                            <li data-filter="38-5-4">38 | 05 | 04</li>
-                                            <li data-filter="39-6-5">39 | 06 | 05</li>
-                                            <li data-filter="40-7-6">40 | 07 | 06</li>
-                                            <li data-filter="41-8-7">41 | 08 | 07</li>
-                                            <li data-filter="42-9-8">42 | 09 | 08</li>
-                                            <li data-filter="43-10-9">43 | 10 | 09</li>
-                                            <li data-filter="44-11-10">44 | 11 | 10</li>
-                                            <li data-filter="45-12-11">45 | 12 | 11</li>
-                                            <li data-filter="46-13-12">46 | 13 | 12</li>
-                                        </ul></div></div></div>
-            </div>
-                    <div class="filterList">
-                <h3>Style</h3>
-
-                <div class="scrollpane" style="overflow: hidden; padding: 0px; width: 131px;">
-                    
-                <div class="jspContainer" style="width: 131px; height: 421px;"><div class="jspPane" style="padding: 0px; top: 0px; left: 0px; width: 131px;"><ul data-type="style">
-                                            <li data-filter="chelsea-boot">Chelsea boot</li>
-                                            <li data-filter="derby">Derby</li>
-                                            <li data-filter="high-1">High 1</li>
-                                            <li data-filter="low-1">Low 1</li>
-                                            <li data-filter="low-2">Low 2</li>
-                                            <li data-filter="low-3">Low 3</li>
-                                            <li data-filter="low-4">Low 4</li>
-                                            <li data-filter="low-5">Low 5</li>
-                                            <li data-filter="mid-1">Mid 1</li>
-                                            <li data-filter="mid-2">Mid 2</li>
-                                        </ul></div></div></div>
-            </div>
-                </div>
-
-        <footer><p>You can select several options simultaneously</p></footer>
-        </div>
-        <nav class="footerbuttons show">
-            <button class="clearBtn inverse"><span><strong>Clear all</strong></span><span class="hover"><strong>Clear all</strong></span></button>
-            <button class="applyBtn disabled"><span><strong>Apply</strong></span><span class="hover"><strong>Apply</strong></span></button>
-        </nav>
-    </section>
-
     <section>
         
         <footer id="collection-footer" class="footer-bar-home footer-bar"  ng-class="closeFooter">
             <ul>
                 <li ng-click="oneRowGrid()">
                     <button data-rows="large"  ng-class="oneRowActive" class="items row1 up" ng-click="oneRowGrid()">
-                        <span ng-class="oneRowActive">1</span>
+                        <span ng-class="oneRowActive" class="row1-icon">1</span>
                         <span class="hover">1</span>
                     </button>
                 </li>
                 <li ng-click="twoRowGrid()"><button data-rows="medium" ng-class="twoRowActive"  class="items row2  down" ng-click="twoRowGrid()">
-                    <span >2</span>
+                    <span ng-class="twoRowActive" class="row2-icon">2</span>
                     <span class="hover">2</span></button></li>
                 <li class="hide-for-small" ng-click="threeRowGrid()">
                     <button data-rows="small" ng-class="threeRowActive" class="items row4" >
@@ -154,6 +69,10 @@
                     </button>
                 </li>
             </ul>
+
+            <nav class="footerbuttons show">
+                <button id="filterBtn" ng-class="filterBtn"><span>Filter <strong class="filtercount"></strong></span><span class="hover">Filter <strong class="filtercount"></strong></span></button>
+            </nav>
 
         </footer>
 
@@ -161,12 +80,12 @@
             <ul>
                 <li ng-click="oneRowGrid()">
                     <button data-rows="large"  ng-class="oneRowActive" class="items row1 up" ng-click="oneRowGrid()">
-                        <span ng-class="oneRowActive">1</span>
+                        <span ng-class="oneRowActive" class="row1-icon">1</span>
                         <span class="hover">1</span>
                     </button>
                 </li>
                 <li ng-click="twoRowGrid()"><button data-rows="medium" ng-class="twoRowActive"  class="items row2  down" ng-click="twoRowGrid()">
-                    <span >2</span>
+                    <span ng-class="twoRowActive" class="row2-icon" >2</span>
                     <span class="hover">2</span></button></li>
                 <li class="hide-for-small" ng-click="threeRowGrid()">
                     <button data-rows="small" ng-class="threeRowActive" class="items row4" >
@@ -175,9 +94,81 @@
                     </button>
                 </li>
             </ul>
-
+            <nav class="footerbuttons show">
+                <button id="filterBtn" ng-class="filterBtn" ng-click="showFilter()"><span>Filter <strong class="filtercount"></strong></span><span class="hover">Filter <strong class="filtercount"></strong></span></button>
+            </nav>
         </footer>
     </section>
+
+    <aside id="productFilter" class="home-page-filter hide">
+         <div class="col-md-12 col-xs-12  close-filter-button">
+            <button class="btn btn-default " ng-click="closeFilter()">Filter  
+            <span class="glyphicon glyphicon-remove pull-right"></span>
+            </button>
+         </div>
+         <div class="scrollpane">
+            
+            <div class="filterList">
+                <div class="col-md-12 col-xs-12 info-text-filter">
+                   you can select several options simultaneously
+               </div>
+               <div class="col-md-12 col-xs-12 accordio-container no-padding">
+                   <uib-accordion >
+                        <div uib-accordion-group class="panel-default" is-open="status.open">
+                          <uib-accordion-heading>
+                            Size
+                             <i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus': status.open, 'glyphicon glyphicon-plus': !status.open}"></i>
+                          </uib-accordion-heading>
+                          <div class="col-md-12 col-xs-12 accordio-checbox-container no-padding">
+                            <label for="size1" class="checkbox-accordion-label">300x400</label>
+                             <input type="checkbox" name="carpet-size" id="size1" class="css-checkbox" /><label for="size1" class="css-label pull-right" ></label>
+                          </div>
+                           <div class="col-md-12 col-xs-12 accordio-checbox-container no-padding">
+                            <label for="size2" class="checkbox-accordion-label">300x400</label>
+                             <input type="checkbox" name="carpet-size" id="size2" class="css-checkbox" /><label for="size2" class="css-label pull-right" ></label>
+                          </div>
+                           <div class="col-md-12 col-xs-12 accordio-checbox-container no-padding">
+                            <label for="size3" class="checkbox-accordion-label">300x400</label>
+                             <input type="checkbox" name="carpet-size" id="size3" class="css-checkbox" /><label for="size3" class="css-label pull-right" ></label>
+                          </div>
+                        
+                        </div>
+
+                      </uib-accordion>
+                      <uib-accordion close-others="oneAtATime">
+                        <div uib-accordion-group class="panel-default" is-open="status1.open">
+                          <uib-accordion-heading>
+                            Collection
+                             <i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus': status1.open, 'glyphicon glyphicon-plus': !status1.open}"></i>
+                          </uib-accordion-heading>
+                          <div class="col-md-12 col-xs-12 accordio-checbox-container no-padding">
+                            <label for="collection1" class="checkbox-accordion-label">Collection 1</label>
+                             <input type="checkbox" name="carpet-size" id="collection1" class="css-checkbox" /><label for="collection1" class="css-label pull-right" ></label>
+                          </div>
+                           <div class="col-md-12 col-xs-12 accordio-checbox-container no-padding">
+                            <label for="collection2" class="checkbox-accordion-label">Collection 2</label>
+                             <input type="checkbox" name="carpet-size" id="collection2" class="css-checkbox" /><label for="collection2" class="css-label pull-right" ></label>
+                          </div>
+                           <div class="col-md-12 col-xs-12 accordio-checbox-container no-padding">
+                            <label for="collection3" class="checkbox-accordion-label">Collection 3</label>
+                             <input type="checkbox" name="carpet-size" id="collection3" class="css-checkbox" /><label for="collection3" class="css-label pull-right" ></label>
+                          </div>
+                        
+                        </div>
+                        
+                      </uib-accordion>
+               </div>
+               <div class="footer-buttons-filter">
+                   <div class="col-md-12 col-xs-12 clear-filter-button">
+                       <button class="btn btn-primary" ng-click="clearFilter()" >Clear All</button>
+                   </div>
+                   <div class="col-md-12 col-xs-12 apply-filter-button">
+                       <button class="btn btn-primary" ng-click="applyFilter()" >Apply</button>
+                   </div>
+               </div>
+            </div>
+         </div>
+      </aside>
 
    
         <footer id="legalfooter" in-view="footerInView($index, $inview, $inviewInfo)" >

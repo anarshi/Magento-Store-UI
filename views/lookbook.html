@@ -1,3 +1,18 @@
+ <header class="navbar-fixed-top" ng-class="topNavbarStyle">
+    <nav id="navBar" class="navBar fixed ready top-hide top" ng-class="topNavbarStyle">
+        <button role="button" class="menu" ng-class="topNavbarMenuStyle" ng-click="openModal()">
+            Menu<span class="label" ng-class="menuLabelClass">MENU</span>
+        </button>
+        <span class="logo" ng-class="topNavbarLogoStyle" ng-click="goHome('/')"></span>
+        <aside class="cartcount show " ng-class="topNavbarCartcountStyle" ng-click="openCart()">{{cartProducts.cartCount}}<span class="label" ng-class="bagLabelClass">BAG</span></aside>
+    </nav>
+    <div class="col-md-12 col-xs-12 filter-menu" ng-class="filterMenuButtonClass">
+        <div class="col-md-2 col-xs-2"></div>
+        <div class="col-md-2 col-xs-2"></div>
+        <div class="col-md-10 col-xs-10"></div>
+    </div>
+   
+</header>
 <div class="lookbook-page" style="opacity:1" ng-controller="LookBookController" ng-show="isLoading">
 <div class="transform-container">
 	<figure ng-repeat="lookBook in products" class="lookbook-image" ng-click = "goToProduct(lookBook.id)" ng-style="{ 'background-image': 'url({{ lookBook.allImages[0] }})' }" id="{{ $index }}" prId="{{ lookBook.id }}" ></figure>
