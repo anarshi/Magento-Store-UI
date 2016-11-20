@@ -72,6 +72,19 @@
 
 </head>
 <body on-scroll-directive   id="body" ng-keyup="keyUp($event)"  ng-class="bodyOpenModalClass">
+<!-- 
+        <div class="">
+               <nav id="navBar" class="navBar fixed ready top-hide top" style="">
+               <button role="button" class="menu" ng-click="openModal()">
+                 Menu<span class="label">MENU</span>
+              </button>
+               <span class="logo" data-href="https://www.etq-amsterdam.com">ETQ.</span>
+               <aside class="cartcount show">0<span class="label">BAG</span></aside>
+           </nav>    <figure id="overlay" class="overlay">
+              <button>X</button>
+           </figure>
+           </div> -->
+
     <section data-sidebar class="filters" ng-class="modalClass" >
         <div class="view left-sidebar-menu-container" ng-include="'views/sidebarMenu.html'"></div>
     </section>
@@ -103,7 +116,7 @@
         </button>
     </aside>
      <figure id="overlay" class="overlay" ng-click="closeModal()"></figure>
-    <div class="transform-container" ng-class="contentClass">
+    <div class="transform-container-index col-md-12 col-xs-12 no-padding" ng-class="contentClass">
        
         <div ui-view class="anim-in-out anim-fade" id="iNoBounceToggle"></div>
     </div>

@@ -509,6 +509,7 @@ section.products div.right {
 
 @media only screen and (min-width: 63.813em){
     .product-page .product-container figure {
+        margin-top: 50px;
         width: 100vw;
         height: 90vw;
     }
@@ -517,7 +518,7 @@ section.products div.right {
 .product-page .product-container figure {
     display: block;
     position: relative;
-    background-size: cover;
+    /* background-size: cover; */
     margin: 0;
     padding: 0;
 }
@@ -1271,7 +1272,8 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li.onsc
 .product-page .product-container figure {
     display: block;
     position: relative;
-    background-size: cover !important; 
+    /* background-size: cover !important;  */
+
     width: 100vw;
     height: 90vw;
     opacity: 1;
@@ -1537,6 +1539,8 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
 
 @media only screen and (min-width: 64.063em){
     .product-page .product-container figure.fitImage, .product-page .product-container figure.onscreen {
+        margin-top: 60px;
+        background-size: contain;
         -webkit-transform: translate3d(0,0,0);
         transform: translate3d(0,0,0);
     }
@@ -1637,7 +1641,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     position: absolute;
     list-style-type: none;
     left: 50%;
-    bottom: 5%;
+    bottom: -5%;
     -webkit-transform: translate(-50%,0);
     transform: translate(-50%,0);
     margin: 0;

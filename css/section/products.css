@@ -258,6 +258,7 @@ section.products {
 
 .catalog-product img {
     top: -6%;
+    width: 82%;
     left: 10%;
     height: auto;
 }
@@ -1637,7 +1638,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     position: absolute;
     list-style-type: none;
     left: 50%;
-    bottom: 5%;
+    bottom: -5%;
     -webkit-transform: translate(-50%,0);
     transform: translate(-50%,0);
     margin: 0;

@@ -14,9 +14,13 @@
 }
 
 .open-sidemenu{
-    -webkit-transform: translate3d(0px,0,0) !important;
-    transform: translate3d(0px,0,0) !important;
+     transition: all .5s cubic-bezier(.645,.045,.355,1) !important;
+    -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1) !important;
+    -o-transition: all .5s cubic-bezier(.645,.045,.355,1) !important;
+    -moz-transition:  all .5s cubic-bezier(.645,.045,.355,1) !important;
+     -webkit-transform: translate3d(0px,0,0) !important;
     -moz-transform: translate3d(0px,0,0) !important;
+    transform: translate3d(0px,0,0) !important;
     -ms-transform: translate3d(0px,0,0) !important;
 }
 

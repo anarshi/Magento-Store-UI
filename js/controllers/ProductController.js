@@ -261,6 +261,7 @@
                             rtl: true,
                             dots: true,
                             arrows: false,
+                            lazyLoad: 'ondemand'
 
                         });
                     }, 500);

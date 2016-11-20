@@ -46,6 +46,10 @@
                 $scope.bagLabelClass = "product-bag-label";
 
             } else if(toState.templateUrl === "views/about.html"){
+                 console.log( $(".transform-container-index"));
+                $(".transform-container-index").css({
+                    "height":"100%"
+                });
                 $scope.topNavbarStyle = "product-page-navabar ";
                 $scope.topNavbarLogoStyle = "product-page-navbar-span-logo-icon product-page-small-logo" ;
                 $scope.topNavbarCartcountStyle = "product-page-cartcount";
@@ -55,6 +59,7 @@
                 $scope.bagLabelClass = "product-bag-label";
 
             } else if(toState.templateUrl === "views/product.html"){
+
                 $scope.topNavbarStyle = "product-page-navabar ";
                 $scope.topNavbarLogoStyle = "product-page-navbar-span-logo-icon product-page-small-logo" ;
                 $scope.topNavbarCartcountStyle = "product-page-cartcount";
@@ -160,7 +165,7 @@
 
                     $scope.isCartOpen = true;
                     $scope.cartOpenClass = "move-cart-left ";
-                    $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
+                    $scope.bodyOpenModalClass = "menu-open";
                     $scope.closeFooter = "close-footer";
                 } else {
                     $scope.contentClass = "";
@@ -303,7 +308,7 @@
                        
                     }
                 }else {
-                   $scope.contentClass = "move-right-content"; 
+                   $scope.contentClass = "move-right-content-no-fixed"; 
                 }
                 $scope.isModalOpen = true;
                 
@@ -311,7 +316,8 @@
                 $scope.openSidemenu = "open-sidemenu";
                 $scope.sidebar_footer_class = "open-modal-footer";
                 $scope.closeFooter = "close-footer";
-                $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open";
+                // $scope.navbarOpenClass= "move-right-content-no-fixed";
+                $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open ";
                 $scope.sidemenuFooterOpen = "sidemenu-footer-open";
                 document.ontouchmove = function (e) {
                   e.preventDefault();
@@ -336,7 +342,6 @@
 
         $scope.closeModal = function () {
             if($scope.isModalOpen){
-
                 $scope.isModalOpen = false;
                 $scope.bodyOpenModalClass = "";
                 $scope.sidebar_footer_class = "close-modal-footer";
