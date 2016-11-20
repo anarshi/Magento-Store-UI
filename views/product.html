@@ -21,7 +21,7 @@
             <div class="transform-container">
                <div class="image-container"  dir="rtl" ng-class="imageContainerZoomClass"  data-images="{{imageNumber}}"; style="
                   transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1); -webkit-transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1);" id="image-container">
-                  <figure class="ready onscreen slides" ng-repeat="slide in slides" ng-click = "zoomIn($event)" id="figure{{$index}}"  ng-style="{ background: 'url({{ slide.image }})' }">
+                  <figure class="ready onscreen slides" ng-repeat="slide in slides" ng-click = "zoomIn($event)" id="figure{{$index}}" preload-bg-image="{{ slide.image }}"  ng-style="{ background: 'url({{ slide.image }})' }">
                      <img src="{{slide.image}}" data-small="{{slide.image}}">
                      <div class="hover " id={{$index}}></div>
                   </figure>
@@ -54,13 +54,13 @@
                   </div>
                   
                   <h4 class="free-delivery-title"> Designer </h4>
-                  <p>Camilla Prokopovich</p>
+                  <p>{{product.designer}}</p>
                   <h4 class="free-delivery-title"> Material </h4>
-                  <p>100% New Zeeland wool</p>
+                  <p>{{product.material}}</p>
                   <h4 class="free-delivery-title"> Technique </h4>
-                  <p>Hand-tufted</p>
+                  <p>{{product.mTechnique}}</p>
                   <h4 class="free-delivery-title"> Handmade in </h4>
-                  <p>India</p>
+                  <p>{{product.mCountry}}</p>
 
                  
                </footer>

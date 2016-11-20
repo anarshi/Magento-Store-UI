@@ -33,19 +33,57 @@
             <div data-sidebar class="right">
             </div>
             <div id="catalog" class="container thumbs">
-                <div id="{{product.id}}" class = "catalog-product product"  ng-class="productGridType" ng-repeat="product in products" >
-                    <a  ng-mouseenter="showSubText(product.id)" 
-                ng-mouseleave="hideSubText(product.id)" ui-sref="product({product_id: product.id , currencyCode: product.currencyCode })" >
-                    </a>
-                    <img ng-src="{{product.allImages[0]}}" alt="{{product.name}}'s image" />
-                    <span class="hover">
-                            <strong>Low 4</strong>
-                            {{product.name}}
+                <div  id="{{product.id}}" class = "catalog-product product" ui-sref="product({product_id: product.id , currencyCode: product.currencyCode })"  ng-class="productGridType" ng-repeat="product in products" >
+                    <!-- <a  ng-mouseenter="showSubText(product.id)" 
+                ng-mouseleave="hideSubText(product.id)"  >
+                    </a> -->
+                    <img  preload-image ng-src="{{product.allImages[0]}}" alt="{{product.name}}'s image" />
+                    <div  class="col-md-12 col-xs-12">
+                            <strong>{{product.name}}</strong>
+                            
 
-                    </span>
+                    </div>
                 </div>
             </div>
         </section>
+        <aside id="productFilter" class="home-page-filter hide">
+         <div class="col-md-12 col-xs-12  close-filter-button">
+            <button class="btn btn-default " ng-click="closeFilter()">Filter  
+            <span class="glyphicon glyphicon-remove pull-right"></span>
+            </button>
+         </div>
+         <div class="scrollpane">
+            
+            <div class="filterList">
+                <div class="col-md-12 col-xs-12 info-text-filter">
+                   you can select several options simultaneously
+               </div>
+               <div class="col-md-12 col-xs-12 accordio-container no-padding">
+                  
+                      <uib-accordion close-others="oneAtATime" ng-repeat="category in filterCategories">
+                        <div uib-accordion-group class="panel-default" is-open="status$index.open" >
+                          <uib-accordion-heading>
+                              {{category.name}}
+                             <i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus': status{{$index}}.open, 'glyphicon glyphicon-plus': !status{{$index}}.open}"></i>
+                          </uib-accordion-heading>
+                          <div class="col-md-12 col-xs-12 accordio-checbox-container no-padding" ng-repeat="filterValue in category">
+                            <label for="{{filterValue.label + $index}}" class="checkbox-accordion-label">{{filterValue.label}}</label>
+                             <input type="checkbox" name="carpet-size{{$index}}" id="{{filterValue.label  +   $index}}" value="{{filterValue.value}}" class="css-checkbox" ng-click="selectFilter(filterValue,category)" /><label for="{{filterValue.label + $index}}" class="css-label pull-right" ></label>
+                          </div>    
+                        </div>
+                      </uib-accordion>
+               </div>
+               <div class="footer-buttons-filter">
+                   <div class="col-md-12 col-xs-12 clear-filter-button">
+                       <button class="btn btn-primary" ng-click="clearFilter()" >Clear All</button>
+                   </div>
+                   <div class="col-md-12 col-xs-12 apply-filter-button">
+                       <button class="btn btn-primary" ng-click="applyFilter()" >Apply</button>
+                   </div>
+               </div>
+            </div>
+         </div>
+      </aside>
 
     </section>
 
@@ -100,76 +138,7 @@
         </footer>
     </section>
 
-    <aside id="productFilter" class="home-page-filter hide">
-         <div class="col-md-12 col-xs-12  close-filter-button">
-            <button class="btn btn-default " ng-click="closeFilter()">Filter  
-            <span class="glyphicon glyphicon-remove pull-right"></span>
-            </button>
-         </div>
-         <div class="scrollpane">
-            
-            <div class="filterList">
-                <div class="col-md-12 col-xs-12 info-text-filter">
-                   you can select several options simultaneously
-               </div>
-               <div class="col-md-12 col-xs-12 accordio-container no-padding">
-                   <uib-accordion >
-                        <div uib-accordion-group class="panel-default" is-open="status.open">
-                          <uib-accordion-heading>
-                            Size
-                             <i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus': status.open, 'glyphicon glyphicon-plus': !status.open}"></i>
-                          </uib-accordion-heading>
-                          <div class="col-md-12 col-xs-12 accordio-checbox-container no-padding">
-                            <label for="size1" class="checkbox-accordion-label">300x400</label>
-                             <input type="checkbox" name="carpet-size" id="size1" class="css-checkbox" /><label for="size1" class="css-label pull-right" ></label>
-                          </div>
-                           <div class="col-md-12 col-xs-12 accordio-checbox-container no-padding">
-                            <label for="size2" class="checkbox-accordion-label">300x400</label>
-                             <input type="checkbox" name="carpet-size" id="size2" class="css-checkbox" /><label for="size2" class="css-label pull-right" ></label>
-                          </div>
-                           <div class="col-md-12 col-xs-12 accordio-checbox-container no-padding">
-                            <label for="size3" class="checkbox-accordion-label">300x400</label>
-                             <input type="checkbox" name="carpet-size" id="size3" class="css-checkbox" /><label for="size3" class="css-label pull-right" ></label>
-                          </div>
-                        
-                        </div>
-
-                      </uib-accordion>
-                      <uib-accordion close-others="oneAtATime">
-                        <div uib-accordion-group class="panel-default" is-open="status1.open">
-                          <uib-accordion-heading>
-                            Collection
-                             <i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus': status1.open, 'glyphicon glyphicon-plus': !status1.open}"></i>
-                          </uib-accordion-heading>
-                          <div class="col-md-12 col-xs-12 accordio-checbox-container no-padding">
-                            <label for="collection1" class="checkbox-accordion-label">Collection 1</label>
-                             <input type="checkbox" name="carpet-size" id="collection1" class="css-checkbox" /><label for="collection1" class="css-label pull-right" ></label>
-                          </div>
-                           <div class="col-md-12 col-xs-12 accordio-checbox-container no-padding">
-                            <label for="collection2" class="checkbox-accordion-label">Collection 2</label>
-                             <input type="checkbox" name="carpet-size" id="collection2" class="css-checkbox" /><label for="collection2" class="css-label pull-right" ></label>
-                          </div>
-                           <div class="col-md-12 col-xs-12 accordio-checbox-container no-padding">
-                            <label for="collection3" class="checkbox-accordion-label">Collection 3</label>
-                             <input type="checkbox" name="carpet-size" id="collection3" class="css-checkbox" /><label for="collection3" class="css-label pull-right" ></label>
-                          </div>
-                        
-                        </div>
-                        
-                      </uib-accordion>
-               </div>
-               <div class="footer-buttons-filter">
-                   <div class="col-md-12 col-xs-12 clear-filter-button">
-                       <button class="btn btn-primary" ng-click="clearFilter()" >Clear All</button>
-                   </div>
-                   <div class="col-md-12 col-xs-12 apply-filter-button">
-                       <button class="btn btn-primary" ng-click="applyFilter()" >Apply</button>
-                   </div>
-               </div>
-            </div>
-         </div>
-      </aside>
-
+    
    
         <footer id="legalfooter" in-view="footerInView($index, $inview, $inviewInfo)" >
             <div class="inner">

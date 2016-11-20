@@ -26,39 +26,39 @@
 			<div class="col-md-12" id="newbillingaddressform">
 				<div class="col-md-6   col-xs-12">
 					<label for="billing_first_name">First name *</label>
-					<input type="text" id="billing_first_name" name="billing_first_name" value="" class="cleaninput border-bottom" required="" ng-model="firstName">
+					<input type="text" id="billing_first_name" name="billing_first_name" value="" class="cleaninput checkout-input border-bottom" required="" ng-model="firstName">
 				</div>
 				<div class="col-md-6 col-xs-12">
 					<label for="billing_last_name">Last name *</label>
-					<input type="text" id="billing_last_name" name="billing_last_name" value="" class="cleaninput border-bottom" required="true" ng-model="lastName">
+					<input type="text" id="billing_last_name" name="billing_last_name" value="" class="cleaninput checkout-input border-bottom" required="true" ng-model="lastName">
 				</div>
 				<div class="col-md-6  col-xs-12">
 					<label for="billing_company">Company</label>
-					<input type="text" id="billing_company" name="billing_company" value="" class="cleaninput border-bottom" required="true" ng-model="company">
+					<input type="text" id="billing_company" name="billing_company" value="" class="cleaninput checkout-input border-bottom" required="true" ng-model="company">
 				</div>
 				<div class="col-md-6 col-xs-12">
 					<label for="billing_email">E-Mail *</label>
-					<input type="email" id="billing_email" name="billing_email" value="" class="cleaninput border-bottom " required="" ng-model="email">
+					<input type="email" id="billing_email" name="billing_email" value="" class="cleaninput border-bottom checkout-input" required="" ng-model="email">
 				</div>
 				<div class="col-md-6  col-xs-12">
 					<label for="billing_adress_line_1">Adress line 1 *</label>
-					<input type="text" id="billing_adress_line_1" name="billing_adress_line_1" value="" class="cleaninput border-bottom " required="" ng-model="adress2">
+					<input type="text" id="billing_adress_line_1" name="billing_adress_line_1" value="" class="cleaninput checkout-input border-bottom " required="" ng-model="adress2">
 				</div>
 				<div class="col-md-6 col-xs-12">
 					<label for="billing_adress_line_2">Adress line 2</label>
-					<input type="text" id="billing_adress_line_2" name="billing_adress_line_2" value="" class="cleaninput border-bottom  " required="" ng-model="adress1">
+					<input type="text" id="billing_adress_line_2" name="billing_adress_line_2" value="" class="cleaninput checkout-input border-bottom  " required="" ng-model="adress1">
 				</div>
 				<div class="col-md-6  col-xs-12">
 					<label for="billing_zip">Zip *</label>
-					<input type="text" id="billing_zip" name="billing_zip" value="" class="cleaninput border-bottom" required="" ng-model="zip">
+					<input type="text" id="billing_zip" name="billing_zip" value="" class="cleaninput border-bottom checkout-input" required="" ng-model="zip">
 				</div>
 				<div class="col-md-6 col-xs-12">
 					<label for="billing_city">City *</label>
-					<input type="text" id="billing_city" name="billing_city" value="" class="cleaninput border-bottom" required="" ng-model="city">
+					<input type="text" id="billing_city" name="billing_city" value="" class="cleaninput border-bottom checkout-input" required="" ng-model="city">
 				</div>
 				<div class="col-md-6  col-xs-12">
 					<label for="billing_country">Country *</label>
-					<select id="billing_country" name="billing_country" class="cleaninput border-bottom ui-trigger_checkout_update ui-country-select" required="" ng-model="countryCode"  ng-change="contryCodeFunc(countryCode)">
+					<select id="billing_country" name="billing_country" class="cleaninput checkout-input border-bottom ui-trigger_checkout_update ui-country-select" required="" ng-model="countryCode"  ng-change="contryCodeFunc(countryCode)">
             			<option></option>
                         <option value="AX">Åland Islands</option>
                         <option value="AF">Afghanistan</option>
@@ -308,11 +308,11 @@
 				</div>
 				<div class="col-md-6 col-xs-12">
 					<label for="billing_telephone">Telephone *</label>
-					<input type="text" id="billing_telephone" name="billing_telephone" value="" class="cleaninput border-bottom" required="" ng-model = "telephone">
+					<input type="text" id="billing_telephone" name="billing_telephone" value="" class="cleaninput border-bottom checkout-input" required="" ng-model = "telephone">
 				</div>
 				<div class="col-md-6 col-xs-12">
 					<label for="billing_state">State *</label>
-					<input type="text" id="billing_state" name="billing_state" value="" class="cleaninput border-bottom" required="" ng-model = "state">
+					<input type="text" id="billing_state" name="billing_state" value="" class="cleaninput border-bottom checkout-input" required="" ng-model = "state">
 				</div>
 			</div> 
 		    <div class="col-md-12 checkout__shipping-method " id="shipping-method">
@@ -340,7 +340,7 @@
 					<div class="col-md-12 col-xs-12 payment-el-container">
 					    <div class="col-md-12 col-xs-12 payment_method__wrapper">
 					    	<p>Select your bank</p>
-					    	<p><select name="mollie-payments-for-woocommerce_issuer_mollie_wc_gateway_ideal" class="cleaninput border-bottom"><option value=""></option><option value="ideal_ABNANL2A">ABN AMRO</option><option value="ideal_ASNBNL21">ASN Bank</option><option value="ideal_BUNQNL2A">Bunq</option><option value="ideal_INGBNL2A">ING</option><option value="ideal_KNABNL2H">Knab</option><option value="ideal_RABONL2U">Rabobank</option><option value="ideal_RBRBNL21">RegioBank</option><option value="ideal_SNSBNL2A">SNS Bank</option><option value="ideal_TRIONL2U">Triodos Bank</option><option value="ideal_FVLBNL22">van Lanschot</option></select></p>
+					    	<p><select name="mollie-payments-for-woocommerce_issuer_mollie_wc_gateway_ideal" class="cleaninput checkout-input border-bottom"><option value=""></option><option value="ideal_ABNANL2A">ABN AMRO</option><option value="ideal_ASNBNL21">ASN Bank</option><option value="ideal_BUNQNL2A">Bunq</option><option value="ideal_INGBNL2A">ING</option><option value="ideal_KNABNL2H">Knab</option><option value="ideal_RABONL2U">Rabobank</option><option value="ideal_RBRBNL21">RegioBank</option><option value="ideal_SNSBNL2A">SNS Bank</option><option value="ideal_TRIONL2U">Triodos Bank</option><option value="ideal_FVLBNL22">van Lanschot</option></select></p>
 					    </div>
 					    <div class="col-md-12 col-xs-12 payment-radio-container no-padding-right">
 							<div class="radio payment-radio ">
@@ -387,8 +387,9 @@
 					            <img ng-src="{{cartProduct.imageUrl}}">
 					        </figure>
 			    		</div>
-			    		<p class="col-xs-8 col-md-3 text-left elipsis product-name">{{cartProduct.name}}</p>
-			    		<p class="col-xs-8 col-md-2  text-left elipsis">EU 43 | US 10 | UK 9</p>
+
+			    		<p class="col-xs-8 col-md-2  text-left elipsis"></p>
+                              <p class="col-xs-8 col-md-3 text-left elipsis product-name">{{cartProduct.name}}</p>
 			    		<div class="col-xs-8 col-md-5 columns padleft">
 				        		<p class="col-xs-6 col-md-6 columns text-left">{{cartProduct.cartQty}}</p>
 				                <p class="col-xs-6 col-md-6 columns text-right" style="float: right;"> {{cartProduct.currencySymbol + " " + cartProduct.price.toFixed(2)}}</p>

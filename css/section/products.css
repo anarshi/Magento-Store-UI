@@ -1041,6 +1041,7 @@ nav.footerbuttons {
 }
 
 .product-page-sizes {
+    z-index: 999999999;
     display: block;
     position: fixed;
     transition: all .6s cubic-bezier(.215,.61,.355,1);
@@ -1096,6 +1097,7 @@ nav.footerbuttons {
     position: absolute;
     margin: 0;
     padding: 0;
+    z-index: 99999;
     max-height: 100%;
     border-bottom: none;
     top: 50%;
@@ -1494,7 +1496,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     }
 
     .product-page-sizes {
-        z-index: 9999;
+        z-index: 999999;
         width: 100vw;
     }
 }

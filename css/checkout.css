@@ -4,6 +4,16 @@
     margin: 0 auto;
 }
 
+.checkout-input{
+    border: 1px solid #d5d5d6 !important; 
+    width: 100% !important;
+    background: #f3f3f3 !important;
+    height: 45px !important ;
+    font-weight: 900 !important;
+    font-size: 12px !important; 
+    color: #003593 !important;
+}
+
 .header h1 {
     font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
     text-transform: uppercase;
@@ -20,7 +30,7 @@
 .header {
     display: block;
     position: relative;
-    background: #000;
+    background: #003594;
     margin: 55px 0 8px;
     padding: 20px;
     height: 40vh;
@@ -317,7 +327,7 @@ p.sum span.value {
     padding: 0;
     height: 52px;
     line-height: 52px;
-    background: #000;
+    background: #003594;
     color: #FFF;
     overflow: hidden;
 }
@@ -362,7 +372,7 @@ p.sum span.value {
         width: 100%;
         position: relative;
         
-        background: #000;
+        background: #003594;
         margin: 0 0 90px;
         padding: 20px;
     }

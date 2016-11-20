@@ -3,7 +3,7 @@ body {
     height: auto;
     overflow-x: hidden;
     text-rendering: optimizeLegibility!important;
-    -webkit-font-smoothing: antialiased !important;
+    -webkit-font-smoothing: antialiased!important;
     background: #f3f3f5;
     left: 0;
     right: 0;
@@ -28,10 +28,12 @@ body {
 }
 
 #aboutintro {
+    width: 100vw;
+    height: 100vh;
     margin-top: 0;
     top: 0;
     color: #FFF;
-    background: #000;
+    background: ##274595;
 }
 
 .about-template {
@@ -73,7 +75,7 @@ body {
     position: absolute;
     width: 10px;    
     height: 209px;
-    background: url('../../images/svg/about-arrow.svg') center center no-repeat;
+    background: url('../images/svg/about-arrow.svg') center center no-repeat;
     background-size: 56px 54px;
     text-align: center;
     text-indent: -9999px;
@@ -84,7 +86,7 @@ body {
 
 .about-template-1 figure {
     right: 0;
-    width: 60%;
+    width: 60vw;
 }
 
 .about-template figure {
@@ -138,7 +140,7 @@ body {
 }
 
 .about-template-1 aside p.large {
-    width: 42%;
+    width: 42vw;
 }
 
 .about-template p.large {
@@ -148,7 +150,7 @@ body {
 }
 
 .about-template-1 aside p {
-    width: 30%;
+    width: 30vw;
 }
 
 .about-template p {
@@ -175,7 +177,7 @@ body {
 }
 
 .about-template-1 aside {
-    width: 40%;
+    width: 40vw;
     left: 0;
     background: #FFF;
     padding: 0 100px;
@@ -192,12 +194,12 @@ body {
 
 .about-template-2 figure {
     left: 0;
-    width: 40%;
+    width: 40vw;
     background-color: #FFF;
 }
 
 .about-template-2 aside {
-    width: 60%;
+    width: 60vw;
     right: 0;
     background: #f3f3f5;
     padding: 0 0 0 100px;
@@ -207,109 +209,108 @@ body {
     display: inline-block;
     vertical-align: text-top;
     margin-right: 70px;
-    width: 19%;
+    width: 19vw;
 }
 
 
 @media only screen and (orientation: portrait){
-	#aboutintro {
-	    width: 100%;
-	    height: 50% !important;
-	    top: auto !important;
-	    margin-top: 0;
-	    padding-top: 52px;
-	    min-height: 50% !important;
-	}
+    #aboutintro {
+        width: 100vw;
+        height: 50vh !important;
+        top: auto !important;
+        margin-top: 0;
+        padding-top: 52px;
+        min-height: 50vh !important;
+    }
 
 }
 
 @media only screen and (max-width: 1108px) and (min-width: 720px) {
-
     .about-template-1 aside, .about-template-1 figure {
-            width: 50%;
+            width: 50vw;
             padding: 0 60px;
     }
 
-    .about-template-1 aside, .about-template-1 figure {
-        width: 50%;
+        .about-template-1 aside, .about-template-1 figure {
+        width: 50vw;
         padding: 0 60px;
     }
 
 
-    p.large, .about-template-1 figure p.large {
-        width: 50%;
-    }
+        p.large, .about-template-1 figure p.large {
+    width: 50vw;
+}
 
-    .about-template-1 aside, .about-template-1 figure {
-        width: 50%;
-        padding: 0 60px;
-    }
+.about-template-1 aside, .about-template-1 figure {
+    width: 50vw;
+    padding: 0 60px;
+}
 
-    .about-template-2 aside {
-        padding: 0 10px 0 50px;
-    }
+.about-template-2 aside {
+    padding: 0 10px 0 50px;
+}
 
-    .about-template-2 aside p.large {
-        width: 50%;
-    }
+.about-template-2 aside p.large {
+    width: 50vw;
+}
 
 }
 
 
 @media only screen and (max-width: 43.688em){
-	.about-template figure {
-	    display: block;
-	    position: relative;
-	    width: 100% !important;
-	    height: 240px;
-	    top: 0;
-	    margin-bottom: 0;
-	}
-
     .about-template figure {
         display: block;
         position: relative;
-        width: 100% !important;
+        width: 100vw !important;
         height: 240px;
         top: 0;
         margin-bottom: 0;
     }
 
-	.about-template aside, .about-template figure {
-	    display: block;
-	    position: relative;
-	    margin: 0px;
-	    top: auto;
-	    bottom: 0;
-	}
+    .about-template figure {
+        display: block;
+        position: relative;
+        width: 100vw!important;
+        height: 240px;
+        top: 0;
+        margin-bottom: 0;
+    }
+
+    .about-template aside, .about-template figure {
+        display: block;
+        position: relative;
+        margin: 0px;
+        top: auto;
+        bottom: 0;
+    }
 
     .about-template {
         display: block;
         position: relative;
-        width: 100%;
+        width: 100vw;
         height: inherit !important;
-        min-height: 100% !important;
+        min-height: 100vh !important;
         top: auto!important;
         padding-left:0px !important;
     }
 
-	.about-template .vertical-center {
-	    display: block;
-	    position: relative;
-	    -webkit-transform: translate(0,0) !important;
-	    transform: translate(0,0) !important;
-	    top: auto;
-	}
+    .about-template .vertical-center {
+        display: block;
+        position: relative;
+        -webkit-transform: translate(0,0) !important;
+        transform: translate(0,0) !important;
+        top: auto;
+    }
 
 
     .about-template-1 aside p.large {
-    	margin-bottom: 60px;
-	}
+            margin-bottom: 60px;
+    }
 
-	.about-template-1 aside p {
-    	width: 100% !important;
-	}
-	.about-template h2 {
+    .about-template-1 aside p {
+            width: 100% !important;
+    }
+    .about-template h2 {
        font-size: 12px !important;
        line-height: 12px !important;
    }
@@ -322,12 +323,12 @@ body {
        width: 100%!important;
    }
 
-	.about-template aside {
-	    display: block;
-	    position: relative;
-	    margin: 0;
-	    padding: 50px 25px!important;
-	    width: 100% !important;
-	    height: auto;
-	}
+    .about-template aside {
+        display: block;
+        position: relative;
+        margin: 0;
+        padding: 50px 25px!important;
+        width: 100vw!important;
+        height: auto;
+    }
 }

@@ -221,6 +221,7 @@
             //should take size as parameter in fuction this is just a test case
             $scope.showSizes = function() {
                 if (productSizes.hasClass('hide')) {
+                    console.log("uso ovde");
                     productSizes.removeClass('hide');
                     $('body').addClass('no-scroll lock-scroll');
                     productSizes.removeClass('hide');
@@ -231,6 +232,7 @@
                     }
 
                 } else {
+                     console.log("uso ovde else ");
                     $('body').removeClass('no-scroll lock-scroll');
                     productSizes.addClass('hide');
                     singleOverlay.removeClass('show');
@@ -244,6 +246,7 @@
             };
 
             $scope.chooseSize = function(id) {
+                console.log("uso ovde asd ");
                 $scope.sizeBtnClass="sizeBtn-size-is-choosen";
                 $scope.isSizeChoosen = true;
                 $scope.footerClass="footer-btn-container-height-with-add";

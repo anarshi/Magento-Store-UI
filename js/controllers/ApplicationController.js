@@ -49,7 +49,7 @@
                  console.log( $(".transform-container-index"));
                 $(".transform-container-index").css({
                     "height":"100%"
-                });
+                }); 
                 $scope.topNavbarStyle = "product-page-navabar ";
                 $scope.topNavbarLogoStyle = "product-page-navbar-span-logo-icon product-page-small-logo" ;
                 $scope.topNavbarCartcountStyle = "product-page-cartcount";
@@ -418,7 +418,8 @@
         var singleOverlay = $('.single-overlay');
         $scope.showFilter = function(){
             if ($("#productFilter").hasClass('hide')) {
-                $scope.filterBtn = "filter-btn-clicked";  
+
+                //$scope.filterBtn = "filter-btn-clicked";  
                 $("#productFilter").removeClass('hide');
                 $('body').addClass('no-scroll lock-scroll');
                 $("#productFilter").removeClass('hide');
@@ -441,24 +442,7 @@
             }
         }
 
-        $scope.clearFilter = function(){
-            $scope.filterBtn = "";
-            $("#productFilter").addClass('hide');
-            singleOverlay.removeClass('show');
-             $('body').removeClass('no-scroll lock-scroll');
-
-            //loggic for filering data
-        }
-
-
-
-        $scope.closeFilter = function() {
-            $scope.filterBtn = "";
-            $("#productFilter").addClass('hide');
-            singleOverlay.removeClass('show');  
-             $('body').removeClass('no-scroll lock-scroll');
-        };
-
+        
         $scope.twoRowGrid = function(){
             if(!$(".catalog-product").hasClass('col-md-6 col-xs-6')){
                 $scope.productGridType = localStorage.productGridType +' opacity-0';

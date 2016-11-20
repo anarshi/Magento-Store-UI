@@ -258,6 +258,7 @@ section.products {
 
 .catalog-product img {
     top: -6%;
+    width: 82%;
     left: 10%;
     height: auto;
 }
@@ -509,7 +510,6 @@ section.products div.right {
 
 @media only screen and (min-width: 63.813em){
     .product-page .product-container figure {
-        margin-top: 50px;
         width: 100vw;
         height: 90vw;
     }
@@ -518,7 +518,7 @@ section.products div.right {
 .product-page .product-container figure {
     display: block;
     position: relative;
-    /* background-size: cover; */
+    background-size: cover;
     margin: 0;
     padding: 0;
 }
@@ -1041,6 +1041,7 @@ nav.footerbuttons {
 }
 
 .product-page-sizes {
+    z-index: 9999999;
     display: block;
     position: fixed;
     transition: all .6s cubic-bezier(.215,.61,.355,1);
@@ -1096,6 +1097,7 @@ nav.footerbuttons {
     position: absolute;
     margin: 0;
     padding: 0;
+    z-index: 99999;
     max-height: 100%;
     border-bottom: none;
     top: 50%;
@@ -1272,8 +1274,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li.onsc
 .product-page .product-container figure {
     display: block;
     position: relative;
-    /* background-size: cover !important;  */
-
+    background-size: cover !important; 
     width: 100vw;
     height: 90vw;
     opacity: 1;
@@ -1495,7 +1496,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     }
 
     .product-page-sizes {
-        z-index: 9999;
+        z-index: 9999999;
         width: 100vw;
     }
 }
@@ -1539,8 +1540,6 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
 
 @media only screen and (min-width: 64.063em){
     .product-page .product-container figure.fitImage, .product-page .product-container figure.onscreen {
-        margin-top: 60px;
-        background-size: contain;
         -webkit-transform: translate3d(0,0,0);
         transform: translate3d(0,0,0);
     }
@@ -1550,9 +1549,9 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     .product-page .product-container figure {
         -webkit-transform: translate3d(0,100px,0);
         transform: translate3d(0,100px,0);
-        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
         transition-duration: 1.5s;
-        -webkit-transition-property: -webkit-transform;
+        transition-property: -webkit-transform;
         transition-property: transform;
     }
 }

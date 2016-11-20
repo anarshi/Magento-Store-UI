@@ -18,6 +18,9 @@
 }
 
 
+.catalog-product:hover{
+    cursor: pointer;
+}
 
 /* body.menu-open #navBar.top, body.menu-open .transform-container {
     -webkit-transform: translate3d(281px,0,0);
@@ -1210,7 +1213,7 @@ nav#navBar-home.ready {
 }
 
 .cleaninput.border-bottom {
-    border: 1px solid white !important;
+    border: 1px solid white ;
     /* padding: 10px 14px; */
     width: 100% !important;
     background: white;
@@ -1922,6 +1925,8 @@ ul.cart-products li div {
     position: absolute;
     z-index: 99;
     left: 0;
+    font-family: "AvenirNext LT Pro Demi";
+    font-size: 11px;
     top: 170px;
     margin: 0;
     padding: 0 25px 0 35px;
