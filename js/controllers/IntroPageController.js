@@ -20,7 +20,7 @@
 
         $scope.saveEmail = function(){
                 
-            if($scope.emailInput !== '' && $scope.emailInput){
+            if($scope.emailInput !== '' && $scope.emailInput && $scope.emailInput.indexOf("@") != -1 && $scope.emailInput.indexOf(".") != -1){
                 $scope.toShowBlue = false;
                 $scope.toShowNew = true;
                 $scope.showAlert = false;
