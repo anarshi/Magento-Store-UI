@@ -34,20 +34,17 @@
 	</div> -->
 
 	
-		<div class="col-md-12 col-xs-12  center-vertically no-padding">
+		<div class="col-md-12 col-xs-12  center-vertically no-padding" ng-show="toShowBlue">
 		<form ng-submit="saveEmail()">
 			<div class="col-md-12 col-xs-12 info-intro-text-container ">
-				<div class="col-md-12 col-xs-12 text-center welcome-title" ng-show="toShowBlue">
+				<div class="col-md-12 col-xs-12 text-center welcome-title" >
 				welcome to camicamina
 				</div>
-				<div class="col-md-12 col-xs-12 text-center welcome-opening" ng-show="toShowBlue">
+				<div class="col-md-12 col-xs-12 text-center welcome-opening" >
 					opening this december
 				</div>
-				<div class="col-md-12 col-xs-12 text-center welcome-sub-opening" ng-show="toShowBlue">
+				<div class="col-md-12 col-xs-12 text-center welcome-sub-opening">
 					Sign up for our prelaunch sale
-				</div>
-				<div class="col-md-12 col-xs-12 text-center thanks-text" ng-show="toShowNew">
-					thank you!
 				</div>
 			</div>
 
@@ -56,6 +53,16 @@
 				<input type="submit" class=" form-control signup-btn" value="Sign up" />
 			</div>
 				</form>
+		</div>
+
+
+
+		<div class="col-md-12 col-xs-12  center-vertically no-padding" ng-show="toShowNew">
+			<div class="col-md-12 col-xs-12 info-intro-text-container ">
+				<div class="col-md-12 col-xs-12 text-center thanks-text" >
+					thank you!
+				</div>
+			</div>
 		</div>
 
 	
