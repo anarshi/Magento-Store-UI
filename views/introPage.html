@@ -54,7 +54,10 @@
 				<!-- <div class="alert alert-warning myAlert" ng-show="showAlert">
 				  Please enter your email.
 				</div> -->
-				<input type="text" ng-focus="focusInput()" ng-blur="blurInput()" ng-model="emailInput" class="form-control email-input" name="client-email  ng-class="blink" placeholder="{{somePlaceholder}}" ng-class="blink"/>
+				<div class="col-md-12 col-xs-12 no-padding text-center">
+					<input type="text" ng-focus="focusInput()" ng-blur="blurInput()" ng-model="emailInput" class="email-input" name="client-email  ng-class="blink" placeholder="{{somePlaceholder}}" ng-class="blink"/>
+				</div>
+				
 				<input type="submit" class=" form-control signup-btn" value="Sign up" />
 			</div>
 				</form>

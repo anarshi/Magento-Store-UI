@@ -129,6 +129,13 @@
    text-transform: uppercase;
 }
 
+.email-input:focus,
+.email-input:focus:hover,
+.email-input:active{
+	border: transparent !important;
+	outline: none !important;
+}
+
 .email-input {
 	text-transform: uppercase;
     text-align: center;
@@ -183,27 +190,27 @@
 }
 
 
-.form-control::-webkit-input-placeholder {
+.email-input::-webkit-input-placeholder {
    text-align: center;
    color: #003594 ;
    text-transform: uppercase;
 }
 
-.form-control:-moz-placeholder { /* Firefox 18- */
+.email-input:-moz-placeholder { /* Firefox 18- */
    text-align: center;
-   color: #003594 !important;
+   color: #003594 ;
    text-transform: uppercase;
 }
 
-.form-control::-moz-placeholder {  /* Firefox 19+ */
+.email-input::-moz-placeholder {  /* Firefox 19+ */
    text-align: center;
-   color: #003594 !important;
+   color: #003594 ;
    text-transform: uppercase;
 }
 
-.form-control:-ms-input-placeholder {  
+.email-input:-ms-input-placeholder {  
    text-align: center;
-   color: rgb(102,122,127) !important;
+   color: #003594 ;
    text-transform: uppercase;
 }
 
