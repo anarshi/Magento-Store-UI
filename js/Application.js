@@ -43,6 +43,10 @@
             .state('service' , {
                 url:'/service',
                 templateUrl : "views/serviceDesk.html"
+            })
+            .state("thankyou" , {
+                url:"/thankyou",
+                templateUrl: "views/thankyou.html"
             });
     }]);
 

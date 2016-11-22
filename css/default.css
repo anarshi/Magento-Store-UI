@@ -5,6 +5,7 @@
 @import "about.css";
 @import "lookbook.css";
 @import "introPage.css";
+@import "lato.css"
 
 
 * {
@@ -114,6 +115,44 @@ body #navBar-home.top, body .transform-container {
 }
 
 
+
+nav#navBar-intro.ready{
+    left: 0;
+    right: 0;
+    height: 52px;
+    z-index: 1;
+    background: transparent
+    border-color: transparent;
+}
+
+nav#navBar-intro.ready>span {
+    color: black;
+    display: block;
+    /* position: absolute; */
+    width: 209px;
+    height: 53px;
+    margin: 7px auto !important;
+    letter-spacing: 6px;
+    /* font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica; */
+    /* font-weight: bold; */
+    font-size: 20px;
+    background-size: 183px 27px;
+    opacity: 1;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* left: 40%; */
+    /* top: 52%; */
+    padding: -2px 0 0 15px;
+    margin: -19px -68px;
+}
+
+nav#navBar-intro.fixed {
+    bottom: auto;
+    top: 0;
+    visibility: visible!important;
+    opacity: 1!important;
+    position: fixed;
+}
 
 
 nav#navBar.top-hide {

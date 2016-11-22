@@ -5,6 +5,10 @@ nav#navBar>span {
     background-image: url(../images/svg/camicamina.svg);
 }
 
+.intro-logo{
+    background-image: url(../images/blue-intro-logo.png);
+}
+
 nav#navBar-home>span {
 	font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
     /*opacity: 0;*/

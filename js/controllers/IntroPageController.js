@@ -13,6 +13,12 @@
         	console.log(localStorage.currencyCode);
         	$state.go("home", {currencyCode: $scope.currencyCode});
         }
+
+
+        $scope.saveEmail = function(){
+            $state.go("thankyou");
+        }
+
     }]);
 
 })(window.moaApp);

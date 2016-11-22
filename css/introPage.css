@@ -1,3 +1,6 @@
+@import "lato.css";
+
+
 .intro-container-title > h1{
 	margin-bottom: 30px;
 }
@@ -20,6 +23,15 @@
 
 }
 
+.thanks-text{
+	font-size: 25px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	text-transform: uppercase;
+	color: white;
+}
+
+
 /* NEW */
 	.language{
 		margin-top: 5px !important;
@@ -38,13 +50,126 @@
     height: 45px;
     width: 50%;
     margin-top: 15px;
-    background: #003593;
+    background: #003594;
     color: white;
 }
 
-.main-intro-conainer {
+/* .main-intro-conainer {
 	height: 100vh;
     background: url(../images/landingimage.png);
+} */
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v5/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
+}
+
+
+
+
+.welcome-title{
+	font-size: 20px;
+	text-transform: uppercase;
+	margin-top: 40px;
+	color: white;
+	font-family: 'AvenirNext LT Pro Ultra Light';
+	
+}
+
+.welcome-opening{
+	font-size: 19px;
+	text-transform: uppercase;
+	color: white;
+	margin-top: 5px;
+   font-family: 'AvenirNext LT Pro Demi';
+
+}
+
+.welcome-sub-opening{
+	font-size: 20px;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+	color: white;
+	margin-top: 5px;
+	font-family: 'AvenirNext LT Pro Ultra Light';
+	
+}
+
+.email-input {
+	text-transform: uppercase;
+    text-align: center;
+    width: 30% !important;
+    margin: 30px auto !important;
+    border-radius: 0px !important;
+    border: transparent !important;
+    color: #223f8e !important;
+    height: 60px !important;
+    color: #003594;
+}
+
+
+.signup-btn,
+.signup-btn:active,
+.signup-btn:focus,
+.signup-btn:hover {
+	outline: none !important;
+    font-size: 16px !important;
+    left: 35%;
+    height: 60px;
+    border-radius: 0px !important;
+    width: 30%;
+    margin: 0 auto;
+    border: transparent !important;
+    background: rgb(0,53,147) !important;
+    text-transform: uppercase
+}
+
+
+.email-input::-webkit-input-placeholder {
+   text-align: center;
+   color: #003594 !important;
+   text-transform: uppercase;
+}
+
+.email-input:-moz-placeholder { /* Firefox 18- */
+   text-align: center;
+   color: #003594 !important;
+   text-transform: uppercase;
+}
+
+.email-input::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;
+   color: #003594 !important;
+   text-transform: uppercase;
+}
+
+.email-input:-ms-input-placeholder {  
+   text-align: center;
+   color: rgb(102,122,127) !important;
+   text-transform: uppercase;
+}
+
+.center-vertically {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.info-intro-text-container{
+	padding: 0px !important;
+	background: rgba(0,53,147,0.7);
+}
+
+.main-intro-conainer {
+    height: 100vh;
+    background-size: cover center center;
+    background: url(../images/intro-backgournd.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .main-intro-conainer > .row{
@@ -57,7 +182,11 @@
 	}
 
 
-@media (max-width: 990px){
+
+@media screen and (max-width: 1300px){}
+
+
+@media  screen and (max-width: 990px){
 	.main-intro-conainer > .row{
 		position: fixed;
 		margin-top: 75vh;
@@ -71,6 +200,22 @@
 	    margin-top: 15px;
 	    background: #003593;
 	    color: white;
+	}
+
+	.signup-btn,
+.signup-btn:active,
+.signup-btn:focus,
+.signup-btn:hover  {
+	outline: none !important;
+		font-size: 16px !important;
+	    left:20%;
+	    border-radius: 0px !important;
+	    width: 60%;
+	}
+
+	.email-input {
+	    width: 60% !important;
+	    
 	}
 
 	.country-select > div{
@@ -89,8 +234,23 @@
 
 /* NEW */
 
-@media (min-width: 1500px){
-	
+@media (max-width: 450px){
+	.email-input {
+	    width: 70% !important;
+	    
+	}
+
+
+	.signup-btn,
+.signup-btn:active,
+.signup-btn:focus,
+.signup-btn:hover  {
+	outline: none !important;
+		font-size: 16px !important;
+	    left:15%;
+	    border-radius: 0px !important;
+	    width: 70%;
+	}
 }
 
 

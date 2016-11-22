@@ -1,5 +1,15 @@
+
+
+ <header class="navbar-fixed-top" >
+        <nav id="navBar-intro" class="navBar fixed ready top-hide top" >
+            <span class="intro-logo" ng-class="topNavbarLogoStyle" ></span>  
+        </nav>
+ </header>
+
+
 <div class="container-fluid main-intro-conainer" ng-controller="IntroPageController">
-	<div class="row">
+
+	<!-- <div class="row">
 		<div class="col-md-12 col-xs-12 text-center country-select ">
 		 <div class="input-group">
 	      <div class="input-group-addon">Store</div>
@@ -21,5 +31,29 @@
                                     <span><strong>Enter</strong></span>
                               </button>		</div>
                               
+	</div> -->
+
+
+	<div class="col-md-12 col-xs-12  center-vertically no-padding">
+		<div class="col-md-12 col-xs-12 info-intro-text-container ">
+			<div class="col-md-12 col-xs-12 text-center welcome-title">
+			welcome to camicamina
+			</div>
+			<div class="col-md-12 col-xs-12 text-center welcome-opening">
+				opening this december
+			</div>
+			<div class="col-md-12 col-xs-12 text-center welcome-sub-opening">
+				Sign up for out prelaunch sale
+			</div>
+		</div>
+		<div class="col-md-12 col-xs-12 button-container">
+			<input type="text" class="form-control email-input" placeholder="Type your email here" />
+			<button ng-click="saveEmail()" class="btn btn-primary signup-btn">Sign up</button>
+		</div>
 	</div>
+
+
+
+
+
 </div>
