@@ -51,10 +51,10 @@
 			</div>
 
 			<div class="col-md-12 col-xs-12 button-container">
-				<div class="alert alert-warning myAlert" ng-show="showAlert">
-				  <strong>Warning!</strong> You must enter email.
-				</div>
-				<input type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Type your email here'" ng-model="emailInput" class="form-control email-input" name="client-email" placeholder="Type your email here" />
+				<!-- <div class="alert alert-warning myAlert" ng-show="showAlert">
+				  Please enter your email.
+				</div> -->
+				<input type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Type your email here'" ng-model="emailInput" class="form-control email-input" name="client-email  ng-class="blink" placeholder="{{somePlaceholder}}" ng-class="blink"/>
 				<input type="submit" class=" form-control signup-btn" value="Sign up" />
 			</div>
 				</form>
