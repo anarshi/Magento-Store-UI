@@ -16,12 +16,19 @@
 
         $scope.toShowNew = false;
         $scope.toShowBlue = true;
+        $scope.showAlert = false;
 
         $scope.saveEmail = function(){
-                console.log($scope.emailInput);
-
+                
+            if($scope.emailInput !== '' && $scope.emailInput){
                 $scope.toShowBlue = false;
                 $scope.toShowNew = true;
+                $scope.showAlert = false;
+            } else {
+                $scope.showAlert = true;
+            }
+
+               
            
 
            //  $.ajax({

@@ -35,8 +35,10 @@
 
 	
 		<div class="col-md-12 col-xs-12  center-vertically no-padding" ng-show="toShowBlue">
+
 		<form ng-submit="saveEmail()">
 			<div class="col-md-12 col-xs-12 info-intro-text-container ">
+
 				<div class="col-md-12 col-xs-12 text-center welcome-title" >
 				welcome to camicamina
 				</div>
@@ -49,7 +51,10 @@
 			</div>
 
 			<div class="col-md-12 col-xs-12 button-container">
-				<input type="email" required  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Type your email here'" ng-model="emailInput" class="form-control email-input" name="client-email" placeholder="Type your email here" />
+				<div class="alert alert-warning myAlert" ng-show="showAlert">
+				  <strong>Warning!</strong> You must enter email.
+				</div>
+				<input type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Type your email here'" ng-model="emailInput" class="form-control email-input" name="client-email" placeholder="Type your email here" />
 				<input type="submit" class=" form-control signup-btn" value="Sign up" />
 			</div>
 				</form>

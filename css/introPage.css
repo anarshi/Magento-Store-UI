@@ -109,6 +109,11 @@
     color: #003594;
 }
 
+.myAlert{
+	width: 50% !important;
+	margin: 40px auto !important;
+}
+
 
 .signup-btn,
 .signup-btn:active,
@@ -214,6 +219,12 @@
 	    border-radius: 0px !important;
 	    width: 60% !important;
 	}
+
+	.myAlert{
+		width: 70% !important;
+		margin: 40px auto !important;
+	}
+
 
 	.email-input {
 	    width: 60% !important;
