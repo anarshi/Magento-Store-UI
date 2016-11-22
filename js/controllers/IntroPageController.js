@@ -16,6 +16,18 @@
 
 
         $scope.saveEmail = function(){
+
+            console.log($("input[name='client-email']").val());
+
+            // $.ajax({
+            //     url:"/saveEmail",
+            //     type: "post",
+            //     data:{
+            //         email: emailInputValue
+            //     }
+            // });
+
+
             $state.go("thankyou");
         }
 
