@@ -14,21 +14,32 @@
         	$state.go("home", {currencyCode: $scope.currencyCode});
         }
 
+        $scope.toShowNew = false;
+        $scope.toShowBlue = true;
 
         $scope.saveEmail = function(){
+                console.log($scope.emailInput);
 
-            console.log($("input[name='client-email']").val());
+                $scope.toShowBlue = false;
+                $scope.toShowNew = true;
+           
 
-            // $.ajax({
-            //     url:"/saveEmail",
-            //     type: "post",
-            //     data:{
-            //         email: emailInputValue
-            //     }
-            // });
+           //  $.ajax({
+           //      url:"/saveEmail",
+           //      type: "post",
+           //      data:{
+           //          email: emailInputValue
+           //      },
+           //      success: function(){
+           //          console.log();
+           //      },
+           //      error: function(){
+
+           //      }
+           //  });
 
 
-            $state.go("thankyou");
+          
         }
 
     }]);

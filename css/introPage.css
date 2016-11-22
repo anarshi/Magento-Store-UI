@@ -114,16 +114,18 @@
 .signup-btn:active,
 .signup-btn:focus,
 .signup-btn:hover {
-	outline: none !important;
+	height: 60px !important;
+    outline: none !important;
     font-size: 16px !important;
     left: 35%;
+    color: white !important;
     height: 60px;
     border-radius: 0px !important;
     width: 30%;
     margin: 0 auto;
     border: transparent !important;
     background: rgb(0,53,147) !important;
-    text-transform: uppercase
+    text-transform: uppercase;
 }
 
 
@@ -210,7 +212,7 @@
 		font-size: 16px !important;
 	    left:20%;
 	    border-radius: 0px !important;
-	    width: 60%;
+	    width: 60% !important;
 	}
 
 	.email-input {
@@ -249,7 +251,7 @@
 		font-size: 16px !important;
 	    left:15%;
 	    border-radius: 0px !important;
-	    width: 70%;
+	    width: 70% !important;
 	}
 }
 
