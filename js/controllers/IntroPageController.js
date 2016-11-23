@@ -6,7 +6,9 @@
         'basket' ,function IntroPageController($scope,
      $stateParams ,$location , $state , $timeout, basket) {
 
-  
+      document.addEventListener("touchmove", function(event){
+        event.preventDefault();
+    });
   
 
         $scope.enterSite = function(){
