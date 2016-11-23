@@ -226,6 +226,7 @@
 }
 
 .main-intro-conainer {
+	position: fixed;
     height: 100vh;
     background-size: cover center center;
     background: url(../images/intro-backgournd.jpg) no-repeat center center fixed;
