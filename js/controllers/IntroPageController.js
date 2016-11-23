@@ -29,7 +29,7 @@
             if($scope.blink === "blink-soft"){
                 $scope.somePlaceholder = "Please enter email";
             } else {
-                $scope.somePlaceholder="Type you email here";
+                $scope.somePlaceholder= "Type you email here";
             }
         }
 
@@ -39,6 +39,21 @@
                 $scope.toShowBlue = false;
                 $scope.toShowNew = true;
                 $scope.showAlert = false;
+
+                $.ajax({
+                  url:"http://104.236.246.190:8888/writeEmail",
+                  type: "post",
+                  data:{
+                    email: $scope.emailInput
+                  },
+                  success: function(data){
+                    console.log(data);
+                  },
+                  error: function(data){
+                    console.log(data);
+                  }
+                });
+
             } else {
                 console.log("suo u else");
                 $scope.blink="blink";
