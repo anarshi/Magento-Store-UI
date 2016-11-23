@@ -67,6 +67,7 @@ body, html {
 
 
 .transform-container-index{
+    height: 100%;
     transition-property: -webkit-transform;
     transition-property: transform;
     transition-duration: .5s;
