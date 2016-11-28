@@ -183,7 +183,7 @@
 
         document.addEventListener('touchmove', function(event){
             event.stopPropagation();
-        });
+        } , {passive: true});
 
          $scope.$on('$locationChangeSuccess', function() {
 
@@ -434,9 +434,9 @@
                 $("#productFilter").removeClass('hide');
                 singleOverlay.addClass('show');
 
-                document.ontouchmove = function(e) {
+                document.addEventListener('ontouchmove' , function(){
                     e.preventDefault();
-                }
+                },{passive: true});
 
             } else {
                 $scope.filterBtn = "";
