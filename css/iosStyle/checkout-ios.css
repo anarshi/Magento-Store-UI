@@ -21,6 +21,7 @@
     letter-spacing: .1875rem;
     margin: 0;
     padding: 0;
+    transform: translateY(16%);
     line-height: 30vh;
     text-align: center;
     font-size: 20px;
@@ -378,7 +379,7 @@ p.sum span.value {
     }
 
     .header h1 {
-        display: table-cell;
+        /* display: table-cell; */
         vertical-align: middle;
         font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
         text-transform: uppercase;
@@ -386,9 +387,27 @@ p.sum span.value {
         letter-spacing: .1875rem;
         margin: 0;
         padding: 0;
-        line-height: 8vh;
+        transform: translateY(18%);
+        /* line-height: 8vh; */
         font-size: 20px;
         color: #FFF;
     }
 
+}
+
+@media screen and (max-width: 325px){
+    .header h1 {
+        /* display: table-cell; */
+        vertical-align: middle;
+        font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: .1875rem;
+        margin: 0;
+        padding: 0;
+        transform: translateY(79%);
+        line-height: 8vh; 
+        font-size: 20px;
+        color: #FFF;
+    }
 }

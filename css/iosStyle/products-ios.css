@@ -22,6 +22,25 @@ section.products {
     box-shadow: none;
 }
 
+
+#billing_country{
+    -webkit-border-radius:  0px !important;
+    background: url(../../images/svg/down-arrow.png) no-repeat right #f3f3f3 !important;
+    -webkit-appearance: none;
+    background-size: 10px !important;
+    background-position-x: 98% !important;
+
+}
+
+#checkout-bank{
+    -webkit-border-radius:  0px !important;
+    background: url(../../images/svg/down-arrow.png) no-repeat right #f3f3f3 !important;
+    -webkit-appearance: none;
+    background-size: 10px !important;
+    background-position-x: 98% !important;
+
+}
+
 .product-info-btn{
     padding: 15px !important;
     width: 100%;

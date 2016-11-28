@@ -172,7 +172,10 @@
 
                     $scope.isCartOpen = true;
                     $scope.cartOpenClass = "move-cart-left ";
-                    $scope.bodyOpenModalClass = "menu-open";
+                    $scope.bodyOpenModalClass = "menu-open lock-scroll no-scroll";
+                    document.ontouchmove = function(e){
+                        e.preventDefault();
+                    }
                     $scope.closeFooter = "close-footer";
                 } else {
                     $scope.contentClass = "";
@@ -180,6 +183,9 @@
                     $scope.bodyOpenModalClass = "";
                     $scope.closeFooter = "";
                     $scope.isCartOpen = false;
+                     document.ontouchmove = function(){
+                        return true;
+                    }
                 }
             }
         ,true);

@@ -18,6 +18,7 @@
             $scope.isSet = false;
             $scope.zoomArray = [];
             $scope.zoomId = "0";
+            $scope.productChoosenId = null;
             $scope.isConfigurableFirst = false;
             var imageContainer = document.getElementsByClassName("image-container")[0];
             var info = document.getElementById("info");
@@ -186,7 +187,15 @@
             $scope.cartProducts = cartProducts;
 
             $scope.addToCart = function() {
-                var productId = $stateParams.product_id;
+                console.log($scope.productChoosenId);
+                var productId = null;
+                if($scope.productChoosenId != null){
+                     productId = $scope.productChoosenId;
+                } else {
+                    productId  = $stateParams.product_id;
+                }
+                
+                
                 if (localStorage.cartId != null && !isNaN(localStorage.cartId)) {
                     basket.addToCart.async(localStorage.cartId, productId).then(function(response) {
                         localStorage.cartId = response;
@@ -280,7 +289,7 @@
                 $scope.footerClass="footer-btn-container-height-with-add";
                 $scope.choosenSize = chosedSizeText;
                 $('.sizeBtn').text(chosedSizeText);
-
+                $scope.productChoosenId = id;
                 $scope.showSizes();
 
                 if($window.innerWidth < 1020){
