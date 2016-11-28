@@ -995,10 +995,19 @@
 
             $scope.showProductInfo = function(){
                 $scope.productInfoClass = "exp-panel--show-panel stock-Android exp-panel--show-panel";
+               $("body").addClass("no-scroll lock-scroll");
+               document.ontouchmove = function (e) {
+                    e.preventDefault();
+               }
             }
 
             $scope.closeProductInfo = function(){
                 $scope.productInfoClass = "";
+                $("body").removeClass("no-scroll lock-scroll");
+                document.ontouchmove = function () {
+                    return true
+               }
+            
             }
         }
         
