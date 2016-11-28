@@ -30,7 +30,7 @@
                         arrows: false
 
                     });
-                }, 500);
+                }, 0);
             }else {
                  $timeout(function() {
                     $('.image-container').slick("unslick");
