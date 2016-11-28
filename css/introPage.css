@@ -23,6 +23,13 @@
 
 }
 
+.drop_list {
+    overflow: hidden;
+    background: no-repeat #ffffff;
+    background-image:url('../images/svg/down-arr.svg');
+    background-position: top right; 
+}
+
 .thanks-text{
 	font-size: 25px;
 	margin-top: 40px;
