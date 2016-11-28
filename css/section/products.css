@@ -166,7 +166,7 @@ section.products {
     display: block;
     position: relative;
     width: 100vw;
-    height: 50vh;
+    height: 50%;
     font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
     text-transform: uppercase;
     font-weight: 400;
