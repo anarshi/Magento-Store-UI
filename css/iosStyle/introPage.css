@@ -45,6 +45,14 @@
 	    /* margin-top: 50px !important; */
 	    width: 50% !important;
 	    /* margin: 0 auto !important; */
+
+		background: url(../images/svg/down_arr.svg) calc(100% - 15px) center no-repeat;
+		background-size: 10px;
+		cursor: pointer;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		outline: 0;
 	}
 
 .drop_list {
