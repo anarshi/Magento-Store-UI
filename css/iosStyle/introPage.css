@@ -261,6 +261,13 @@
 		top: 50%;
 	}	
 
+	.center-vertically {
+	  position: relative;
+	  top: 40% !important;
+	  transform: translateY(-50%);
+	  -webkit-transform: translateY(-50%);
+	}
+
 	.intro-page-button {
 	    font-size: 12px;
 	    padding: 0;
