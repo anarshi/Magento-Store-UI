@@ -38,22 +38,13 @@
 	}
 
 	.intro-page-currency {
-		-webkit-appearance: none;
-        -webkit-border-radius: 0px;
-		-webkit-appearance: none !important;
-	    font-size: 15px;
-	    /* margin-top: 50px !important; */
-	    width: 50% !important;
-	    /* margin: 0 auto !important; */
+	    background: url(../images/svg/down-arrow.png) no-repeat right #fff !important;
+	    -webkit-appearance: none;
+	    background-size: 10px !important;
+	    background-position-x: 98% !important;
 
-		background: url(../images/svg/down_arr.svg) calc(100% - 15px) center no-repeat;
-		background-size: 10px;
-		cursor: pointer;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		outline: 0;
 	}
+
 
 .drop_list {
     overflow: hidden;
@@ -315,12 +306,12 @@
 
 
 	.intro-page-currency {
-		-webkit-appearance: none;
-	    font-size: 15px;
-	    /* margin-top: 50px !important; */
-	    width: 80% !important;
-	    /* margin: 0 auto !important; */
+	    background: url(../images/svg/down-arrow.png) no-repeat right #fff !important;
+	    -webkit-appearance: none;
+	    background-size: 10px !important;
+	    background-position-x: 98% !important;
 	}
+
 }
 
 
