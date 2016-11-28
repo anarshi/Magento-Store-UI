@@ -38,11 +38,11 @@
 	}
 
 	.intro-page-currency {
-		-webkit-border-radisu:  0px !important;
+		-webkit-border-radius:  0px !important;
 	    background: url(../images/svg/down-arrow.png) no-repeat right #fff !important;
 	    -webkit-appearance: none;
 	    background-size: 10px !important;
-	    background-position-x: 98% !important;
+	    background-position-x: 95% !important;
 
 	}
 
@@ -307,11 +307,11 @@
 
 
 	.intro-page-currency {
-		-webkit-border-radisu:  0px !important;
+		-webkit-border-radius:  0px !important;
 	    background: url(../images/svg/down-arrow.png) no-repeat right #fff !important;
 	    -webkit-appearance: none;
 	    background-size: 10px !important;
-	    background-position-x: 98% !important;
+	    background-position-x: 95% !important;
 	}
 
 }
