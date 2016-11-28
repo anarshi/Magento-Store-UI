@@ -103,7 +103,11 @@
         };
 
         FilterService.getFilterCategories.async().then(function(data){
+
             $scope.filterCategories = data;
+            console.log("uso");
+            console.log($scope.filterCategories);
+
         });
 
 
@@ -111,7 +115,6 @@
 
             $scope.isFilterSet = true;
             var collectionArray = divideArrayBasedOnParametar($scope.selectedFilterOptions,"Collection");
-            console.log(collectionArray);
             var designerArray = divideArrayBasedOnParametar($scope.selectedFilterOptions,"Designer");
             var carpetSizesArray = divideArrayBasedOnParametar($scope.selectedFilterOptions,"Size");
               $scope.productGridType = localStorage.productGridType +  ' opacity-0';
@@ -156,17 +159,18 @@
 
         function divideArrayBasedOnParametar(array,paramaterName){
             var toRetArray = [];
-            for (var i = 0; i < array.length; i++) {
-                if(array[i].name === paramaterName){
-                    toRetArray.push(array[i]);
-                }
-            }
+            // for (var i = 0; i < array.length; i++) {
+            //     if(array[i].name === paramaterName){
+            //         toRetArray.push(array[i]);
+            //     }
+            // }
             return toRetArray;
         }
 
         $scope.selectedFilterOptions = [];
 
         $scope.selectFilter = function(filterValue,categoryParent){
+            console.log("stampam" + $scope.filterCategories);
             console.log(filterValue);
             var findedIndex = $scope.filterCategories.indexOf(categoryParent);
             if(findedIndex != -1){

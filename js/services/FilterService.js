@@ -16,6 +16,10 @@
                             }).then(function successCallback(response) {
                                 console.log("FilterData");
                                 console.log(response.data);
+                                for(var  i  = 0 ; i < response.data[0].length ; i++){
+                                    console.log("FilterData");
+                                    console.log(response.data[0][i]);
+                                }
                                 return response.data;
                             }, function errorCallback(response) {
                                 console.log(response.data);
