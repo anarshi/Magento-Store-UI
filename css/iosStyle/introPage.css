@@ -38,6 +38,7 @@
 	}
 
 	.intro-page-currency {
+		-webkit-border-radisu:  0px !important;
 	    background: url(../images/svg/down-arrow.png) no-repeat right #fff !important;
 	    -webkit-appearance: none;
 	    background-size: 10px !important;
@@ -306,6 +307,7 @@
 
 
 	.intro-page-currency {
+		-webkit-border-radisu:  0px !important;
 	    background: url(../images/svg/down-arrow.png) no-repeat right #fff !important;
 	    -webkit-appearance: none;
 	    background-size: 10px !important;
