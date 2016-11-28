@@ -23,17 +23,15 @@
             var info = document.getElementById("info");
 
             if ($window.innerWidth <= 1020 ) {
-                 $timeout(function() {
-                    $('.image-container').slick("unslick");
-                }, 0);
                 $timeout(function() {
+                    console.log("izvrsio se");
                     $('.image-container').slick({
                         rtl: true,
                         dots: true,
                         arrows: false
 
                     });
-                }, 0);
+                }, 1000);
             }else {
                  $timeout(function() {
                     $('.image-container').slick("unslick");
