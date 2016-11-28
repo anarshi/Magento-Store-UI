@@ -211,10 +211,10 @@
                 $scope.contentClass = "close-main-container";
                 $scope.modalClass="close-modal";
                 $scope.closeFooter = "";
-                document.ontouchmove = function (e) {
-                  return true;
+                // document.ontouchmove = function (e) {
+                //   return true;
                   
-                }
+                // }
             
             } else if($scope.isCartOpen){
                 $scope.contentClass = "";
