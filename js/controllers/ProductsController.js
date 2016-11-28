@@ -57,9 +57,9 @@
                     $scope.productGridType = localStorage.productGridType;
                     localStorage.setItem('productGridType',$scope.productGridType);
                 },1000);
-           document.ontouchmove = function (e) {
-                  return true;
-                }
+           // document.ontouchmove = function (e) {
+           //        return true;
+           //      }
             $http({
                 method: 'POST',
                 url: 'http://104.236.246.190:8888/getAllConfigProducts',
@@ -95,9 +95,9 @@
             $("#productFilter").addClass('hide');
             singleOverlay.removeClass('show');  
             $('body').removeClass('no-scroll lock-scroll');
-            document.ontouchmove = function (e) {
-                  return true;
-                }
+            // document.ontouchmove = function (e) {
+            //       return true;
+            //     }
                 
             
         };
@@ -120,9 +120,9 @@
                     localStorage.setItem('productGridType',$scope.productGridType);
                 },1000);
 
-                document.ontouchmove = function (e) {
-                  return true;
-                }
+                // document.ontouchmove = function (e) {
+                //   return true;
+                // }
            
            
             //localStorage.setItem('productGridType',$scope.productGridType);

@@ -18,6 +18,9 @@
               
         //     }
         // };
+
+      
+
         $scope.isFilterOpen = false;
         $scope.openFilter = function(){
             console.log("openFilter");
@@ -222,10 +225,10 @@
                 $scope.bodyOpenModalClass = "";
                 $scope.isCartOpen = false;
                 $scope.closeFooter = "close-footer";
-                document.ontouchmove = function (e) {
-                  return true;
+                // document.ontouchmove = function (e) {
+                //   return true;
                   
-                }
+                // }
 
             }else {
                 //Empty
@@ -319,9 +322,9 @@
                 // $scope.navbarOpenClass= "move-right-content-no-fixed";
                 $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open ";
                 $scope.sidemenuFooterOpen = "sidemenu-footer-open";
-                document.ontouchmove = function (e) {
-                  e.preventDefault();
-                }
+                // document.ontouchmove = function (e) {
+                //   e.preventDefault();
+                // }
             }
         };
 
@@ -351,10 +354,10 @@
                 $scope.openSidemenu = "";
                 $scope.sidemenuFooterOpen = ""
 
-                document.ontouchmove = function (e) {
-                  return true;
+                // document.ontouchmove = function (e) {
+                //   return true;
 
-                }
+                // }
             
             } else if($scope.isCartOpen){
                 openCartService.setCartOpen(false);
@@ -363,10 +366,10 @@
                 $scope.bodyOpenModalClass = "";
                 $scope.closeFooter = "";
                 $scope.isCartOpen = false;
-                document.ontouchmove = function (e) {
-                  return true;
+                // document.ontouchmove = function (e) {
+                //   return true;
 
-                }
+                // }
             }else {
                 //Empty
             }
@@ -431,9 +434,9 @@
                 $("#productFilter").removeClass('hide');
                 singleOverlay.addClass('show');
 
-                document.ontouchmove = function(e) {
-                    e.preventDefault();
-                }
+                // document.ontouchmove = function(e) {
+                //     e.preventDefault();
+                // }
 
             } else {
                 $scope.filterBtn = "";
@@ -441,9 +444,9 @@
                  $("#productFilter").addClass('hide');
                 singleOverlay.removeClass('show');
 
-                document.ontouchmove = function(e) {
-                    return true;
-                }
+                // document.ontouchmove = function(e) {
+                //     return true;
+                // }
 
             }
         }
