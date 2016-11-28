@@ -2484,7 +2484,7 @@ div.error {
     }
 
 
-    .home-page #catalog{
+        .home-page #catalog {
         display: block;
         position: relative;
         width: 100%;
@@ -2498,7 +2498,7 @@ div.error {
         float: left;
         top: 100px;
         min-height: 100vh;
-        padding-bottom: 90px!important
+        padding-bottom: 100px!important;
     }
 
 

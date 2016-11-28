@@ -33,9 +33,15 @@
 
 
 body, html {
-    height: 100%;
-    position: relative;
+     min-height: 100% !important;
     background-color: rgb(243,243,243) !important;
+}
+
+/* html {
+ 
+} */
+body {
+  height: 100%;
 }
 
 
@@ -64,8 +70,23 @@ body, html {
     outline: none !important;
 }
 
+.reset-filter-container{
+    margin-top: 40px;
+}
+
+.reset-filter-container button{
+    border: transparent !important;
+    border-radius: 0px !important;
+    height: 45px !important;
+    width: 170px !important;
+    text-transform: uppercase !important;
+    background: #003593 !important; 
+    font-size: 12px !important;
+    font-family: "AvenirNext LT Pro Regular"
+}
 
 .transform-container-index{
+    height: 100%;
     transition-property: -webkit-transform;
     transition-property: transform;
     transition-duration: .5s;
@@ -114,6 +135,44 @@ body #navBar-home.top, body .transform-container {
 }
 
 
+
+nav#navBar-intro.ready{
+    left: 0;
+    right: 0;
+    height: 52px;
+    z-index: 1;
+    background: transparent
+    border-color: transparent;
+}
+
+nav#navBar-intro.ready>span {
+    color: black;
+    display: block;
+    /* position: absolute; */
+    width: 209px;
+    height: 53px;
+    margin: 7px auto !important;
+    letter-spacing: 6px;
+    /* font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica; */
+    /* font-weight: bold; */
+    font-size: 20px;
+    background-size: 183px 27px;
+    opacity: 1;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* left: 40%; */
+    /* top: 52%; */
+    padding: -2px 0 0 15px;
+    margin: -19px -68px;
+}
+
+nav#navBar-intro.fixed {
+    bottom: auto;
+    top: 0;
+    visibility: visible!important;
+    opacity: 1!important;
+    position: fixed;
+}
 
 
 nav#navBar.top-hide {
@@ -2137,7 +2196,7 @@ ul.cart-products {
     letter-spacing: .3rem;
 }
 
-.close-footer {
+.close-footer { 
 
     transform: translateY(100%);
     -webkit-transform: translateY(100%);
@@ -2148,7 +2207,7 @@ ul.cart-products {
 
 
 #collection-footer {
-    top: calc(100vh - 54px);
+    top: calc(100% - 54px);
 }
 
 .footer-bar li, .footer-bar ul {
@@ -2424,6 +2483,23 @@ div.error {
     }
 
 
+        .home-page #catalog {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: auto;
+        transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
+        -o-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
+        -moz-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
+        -wekit-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
+        -ms-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
+        background: #f3f3f5;
+        float: left;
+        top: 100px;
+        min-height: 100vh;
+        padding-bottom: 100px!important;
+    }
+
 
     /* NEW MEDIA*/
      nav#navBar.ready {
@@ -2536,5 +2612,3 @@ div.error {
     top: 0px !important;
    }
 }
-
-
