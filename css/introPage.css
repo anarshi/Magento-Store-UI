@@ -258,7 +258,7 @@
 @media  screen and (max-width: 990px){
 	.main-intro-conainer > .row{
 		position: relative;
-		top: 70%;
+		top: 50%;
 	}	
 
 	.intro-page-button {

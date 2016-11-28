@@ -52,11 +52,14 @@
             $scope.isFilterSet = false;
             $('input:checkbox').removeAttr('checked');
             $scope.productGridType =" opacity-0";
-           setTimeout(function(){
+          $scope.productGridType = localStorage.productGridType +  ' opacity-0';
+                $timeout(function(){
                     $scope.productGridType = localStorage.productGridType;
-                    $window.scrollTo(10, 0);
-                    $window.scrollTo(0, 0);
-                },500);
+                    localStorage.setItem('productGridType',$scope.productGridType);
+                },1000);
+           document.ontouchmove = function (e) {
+                  return true;
+                }
             $http({
                 method: 'POST',
                 url: 'http://104.236.246.190:8888/getAllConfigProducts',
@@ -92,7 +95,9 @@
             $("#productFilter").addClass('hide');
             singleOverlay.removeClass('show');  
             $('body').removeClass('no-scroll lock-scroll');
-
+            document.ontouchmove = function (e) {
+                  return true;
+                }
                 
             
         };
@@ -109,7 +114,15 @@
             console.log(collectionArray);
             var designerArray = divideArrayBasedOnParametar($scope.selectedFilterOptions,"Designer");
             var carpetSizesArray = divideArrayBasedOnParametar($scope.selectedFilterOptions,"Size");
-             
+              $scope.productGridType = localStorage.productGridType +  ' opacity-0';
+                $timeout(function(){
+                    $scope.productGridType = localStorage.productGridType;
+                    localStorage.setItem('productGridType',$scope.productGridType);
+                },1000);
+
+                document.ontouchmove = function (e) {
+                  return true;
+                }
            
            
             //localStorage.setItem('productGridType',$scope.productGridType);
@@ -128,13 +141,12 @@
                     storeId: localStorage.storeId
                 }
             }).then(function successCallback(response) {
+
                 $scope.products = response.data;
                 $scope.closeFilter();
-                $scope.productGridType = localStorage.productGridType +  ' opacity-0';
-                $timeout(function(){
-                    $scope.productGridType = "col-md-4 col-xs-4";
-                    localStorage.setItem('productGridType',$scope.productGridType);
-                },1000);
+                
+
+                
                 
             }, function errorCallback(response) {
                 console.log(response);
