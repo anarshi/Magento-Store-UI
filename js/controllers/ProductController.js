@@ -23,6 +23,9 @@
             var info = document.getElementById("info");
 
             if ($window.innerWidth <= 1020 ) {
+                 $timeout(function() {
+                    $('.image-container').slick("unslick");
+                }, 0);
                 $timeout(function() {
                     $('.image-container').slick({
                         rtl: true,
