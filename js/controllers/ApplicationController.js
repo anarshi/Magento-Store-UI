@@ -19,6 +19,10 @@
         //     }
         // };
 
+         document.ontouchmove = function (e) {
+                  return true;
+                }
+
       
 
         $scope.isFilterOpen = false;

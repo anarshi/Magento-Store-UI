@@ -14,7 +14,9 @@
 
         $scope.products = [];
 
-
+         document.ontouchmove = function (e) {
+                  return true;
+                }
         $http({
             method: 'POST',
             url: 'http://104.236.246.190:8888/getAllConfigProducts',
