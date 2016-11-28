@@ -38,6 +38,8 @@
 	}
 
 	.intro-page-currency {
+		-webkit-appearance: none;
+        -webkit-border-radius: 0px;
 		-webkit-appearance: none !important;
 	    font-size: 15px;
 	    /* margin-top: 50px !important; */
@@ -305,6 +307,7 @@
 
 
 	.intro-page-currency {
+		-webkit-appearance: none;
 	    font-size: 15px;
 	    /* margin-top: 50px !important; */
 	    width: 80% !important;
