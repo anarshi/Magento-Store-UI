@@ -1,26 +1,30 @@
+
+
+
+
 <div class="container-fluid main-intro-conainer" ng-controller="IntroPageController">
 
- <div class="col-md-12 col-xs-12" >
+<!--  <div class="col-md-12 col-xs-12" >
         <nav id="navBar-intro" class="navBar ready top-hide top" >
             <span class="intro-logo" ng-class="topNavbarLogoStyle" ></span>  
         </nav>
- </div>
+ </div> -->
 
 
-	<!-- <div class="row">
+	<div class="row">
 		<div class="col-md-12 col-xs-12 text-center country-select ">
 		 <div class="input-group">
 	      <div class="input-group-addon">Store</div>
-	          <select id="billing_country" name="billing_country" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true" ng-model="currencyCode"  ng-change="currencyCodeFunc(countryCode)">
+	          <select id="billing_country" name="billing_country" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true" ng-model="currencyCode"   >
                         <option value="SEK">Sweeden</option>
                         <option value="EUR">Rest of Europe</option>
                     </select>
 	    </div>
 		<div class="input-group language">
 	      <div class="input-group-addon">language</div>
-	          <select id="language" name="language" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true" ng-model="language"  ng-change="language(lang)">
-                        <option value="SEK">SVENSKA</option>
-                        <option value="EUR">Rest of Europe</option>
+	          <select id="language" name="language" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true"  ng-model="storeId">
+                        <!-- <option value="2">SVENSKA</option> -->
+                        <option value="1">English</option>
                     </select>
 	    </div>	
 		</div>
@@ -29,10 +33,10 @@
                                     <span><strong>Enter</strong></span>
                               </button>		</div>
                               
-	</div> -->
+	</div>
 
 	
-		<div class="col-md-12 col-xs-12  center-vertically no-padding" ng-show="toShowBlue">
+		<!-- <div class="col-md-12 col-xs-12  center-vertically no-padding" ng-show="toShowBlue">
 
 		<form ng-submit="saveEmail()">
 			<div class="col-md-12 col-xs-12 info-intro-text-container ">
@@ -49,9 +53,9 @@
 			</div>
 
 			<div class="col-md-12 col-xs-12 button-container">
-				<!-- <div class="alert alert-warning myAlert" ng-show="showAlert">
+				<div class="alert alert-warning myAlert" ng-show="showAlert">
 				  Please enter your email.
-				</div> -->
+				</div>
 				<div class="col-md-12 col-xs-12 no-padding text-center">
 					<input type="text" ng-focus="focusInput()" ng-blur="blurInput()" ng-model="emailInput" class="email-input" name="client-email  ng-class="blink" placeholder="{{somePlaceholder}}" ng-class="blink"/>
 				</div>
@@ -69,7 +73,7 @@
 					thank you!
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 	
 

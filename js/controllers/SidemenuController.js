@@ -54,7 +54,7 @@
 
         $scope.loadNewPage = function(){
             console.log("load new page");
-            window.location.href = "http://45.79.162.17/store/#/service";
+            window.location.href = "http://104.236.246.190/store/#/service";
         }
     }]);
 

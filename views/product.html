@@ -45,26 +45,26 @@
                     <!--  <span class="price">
                      {{product.currencySymbol + " " + product.price}}
                      </span> -->
-                     <h4 class="free-delivery-title"> Free worldwide delivery </h4>
+                     <h4 class="free-delivery-title"  ng-show="showProductData"> Free worldwide delivery </h4>
                   </div>
                   
-                  <p class="delivery-desc">Read out <a href="#">Delivery & Returns</a> for more info.</p>
-                  <div class="product-desc col-md-12 col-xs-12">
+                  <p class="delivery-desc" ng-show="showProductData">Read out <a href="#">Delivery & Returns</a> for more info.</p>
+                  <div class="product-desc col-md-12 col-xs-12"  ng-show="showProductData">
                     {{product.longDescription}}
                   </div>
                   
-                  <h4 class="free-delivery-title"> Designer </h4>
-                  <p>{{product.designer}}</p>
-                  <h4 class="free-delivery-title"> Material </h4>
-                  <p>{{product.material}}</p>
-                  <h4 class="free-delivery-title"> Technique </h4>
-                  <p>{{product.mTechnique}}</p>
-                  <h4 class="free-delivery-title"> Handmade in </h4>
-                  <p>{{product.mCountry}}</p>
+                  <h4 class="free-delivery-title"  ng-show="showProductData"> Designer </h4>
+                  <p  ng-show="showProductData">{{product.designer}}</p>
+                  <h4 class="free-delivery-title"  ng-show="showProductData"> Material </h4>
+                  <p  ng-show="showProductData">{{product.material}}</p>
+                  <h4 class="free-delivery-title"  ng-show="showProductData"> Technique </h4>
+                  <p  ng-show="showProductData">{{product.mTechnique}}</p>
+                  <h4 class="free-delivery-title"  ng-show="showProductData"> Handmade in </h4>
+                  <p  ng-show="showProductData">{{product.mCountry}}</p>
 
                  
                </footer>
-               <div class="col-md-12 col-xs-12 product-info no-padding">
+               <div class="col-md-12 col-xs-12 product-info no-padding"  ng-show="showProductData">
                   <button class="btn btn-default product-info-btn" ng-click="showProductInfo()">Product information <span class="glyphicon glyphicon-chevron-right pull-right"></span></button>
                </div>
             </div>
@@ -90,15 +90,10 @@
             <div class="filterList">
                <ul>
                   <li class="key">Width x Height</li>
-                  <li data-id="2709" ng-click = "chooseSize('200x300 | $950')">
-                     200x300 | $950
+                  <li data-id="2709" ng-click = "chooseSize('{{assProduct.size}} | {{assProduct.currencySymbol}}{{assProduct.price.toFixed(2)}}' , {{assProduct.id}})" ng-repeat="assProduct in associatedProducts">
+                     {{assProduct.size}} | {{assProduct.currencySymbol}}{{assProduct.price.toFixed(2)}}
                   </li>
-                  <li data-id="2708" ng-click = "chooseSize('300x400 | $1150')">
-                     300x400 | $1150
-                  </li>
-                  <li data-id="2707" ng-click = "chooseSize('320x450 | $1300')">
-                     320x450 | $1300
-                  </li>
+                 
                </ul>
             </div>
          </div>
@@ -119,7 +114,8 @@
             </li>
          </ul>
          <nav class="footerbuttons col-md-12 col-xs-12 col-lg-12 no-padding" id="footer-bar" ng-class="footerClass">
-            <button class="sizeBtn hide-when-small" ng-click="showSizes()" >Select Size</button>
+            <button class="sizeBtn hide-when-small" ng-click="showSizes()" ng-show="isConfigurableFirst">Select Size</button>
+            <button class="sizeBtn hide-when-small" ng-hide="isConfigurableFirst">Select Size</button>
             <button class="addBtn btnAdd hide-when-small" id="addBtn" ng-click="addToCart()" ng-shown="isSizeChoosen"><span><strong>Add to bag</strong></span></button>
             <div class="col-md-12 col-xs-12 col-lg-12 no-padding show-when-small  sizeBtn-container">
                <button class="sizeBtn " ng-click="showSizes()" ng-class="sizeBtnClass"><strong>Select Size</strong></button>

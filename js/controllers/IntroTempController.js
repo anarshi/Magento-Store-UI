@@ -2,8 +2,8 @@
 
     "use strict";
 
-    $moa.controller('IntroPageController', ['$scope', '$stateParams' , '$location' , '$state' ,'$timeout', 
-        'basket' ,function IntroPageController($scope,
+    $moa.controller('IntroTempController', ['$scope', '$stateParams' , '$location' , '$state' ,'$timeout', 
+        'basket' ,function IntroTempController($scope,
      $stateParams ,$location , $state , $timeout, basket) {
 
       document.addEventListener("touchmove", function(event){

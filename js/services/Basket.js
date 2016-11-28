@@ -12,7 +12,7 @@
             async: function initialize(productId){
                     var promise = $http({
                             method: 'GET',
-                            url: 'http://45.79.162.17:8888/startCartSession/' + productId
+                            url: 'http://104.236.246.190:8888/startCartSession/' + productId
                             }).then(function successCallback(response) {
                                 return response.data;
                             }, function errorCallback(response) {
@@ -29,7 +29,7 @@
                         var promise =
                         $http({
                                 method: 'GET',
-                                url: 'http://45.79.162.17:8888/cart/' + cartId + '/' + productId
+                                url: 'http://104.236.246.190:8888/cart/' + cartId + '/' + productId
                             }).then(function successCallback(response) {
                                 return  response.data;
                             }, function errorCallback(response) {
@@ -45,7 +45,7 @@
             async: function cartData(cartId,currencyCode){
                 var promise = $http({
                         method: 'POST',
-                        url: 'http://45.79.162.17:8888/getCartData/' + cartId,
+                        url: 'http://104.236.246.190:8888/getCartData/' + cartId,
                         data:{
                             currencyCode: currencyCode
                         }
@@ -77,7 +77,7 @@
             async: function removeFromCart(cartId,productId){
                 var promise = $http({
                                 method: 'GET',
-                                url: 'http://45.79.162.17:8888/deleteProductFromCart/' + cartId + "/" + productId
+                                url: 'http://104.236.246.190:8888/deleteProductFromCart/' + cartId + "/" + productId
                             }).then(function successCallback(response) {
                                return response.data;
                             }, function errorCallback(response) {
@@ -95,7 +95,7 @@
                     
                     var promise  =  $http({
                                         method: 'POST',
-                                        url: 'http://45.79.162.17:8888/checkout',
+                                        url: 'http://104.236.246.190:8888/checkout',
                                         dataType:"jsonp",
                                         data: parameter,
 
@@ -115,7 +115,7 @@
             async: function deleteCart(cartId){
                 var promise = $http({
                                 method: 'GET',
-                                url: 'http://45.79.162.17:8888/deleteCart/' + cartId 
+                                url: 'http://104.236.246.190:8888/deleteCart/' + cartId 
                             }).then(function successCallback(response) {
                                return response.data;
                             }, function errorCallback(response) {

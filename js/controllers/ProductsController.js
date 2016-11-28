@@ -7,18 +7,20 @@
      * @author Adam Timberlake
      * @module Moa
      */
-    $moa.controller('ProductsController', ['$scope', '$rootScope', '$http' , '$state' , '$stateParams' , 'FilterService',
+    $moa.controller('ProductsController', ['$scope', '$rootScope', '$http' , '$state' , '$stateParams'
+                                            , "$window" , 'FilterService',
 
-    function productsController($scope, $rootScope,$http, $state ,$stateParams , FilterService) {
+    function productsController($scope, $rootScope,$http, $state ,$stateParams , $window , FilterService) {
 
         $scope.products = [];
 
 
         $http({
             method: 'POST',
-            url: 'http://45.79.162.17:8888/products',
+            url: 'http://104.236.246.190:8888/getAllConfigProducts',
             data: {
-                currencyCode: $stateParams.currencyCode
+                currencyCode: $stateParams.currencyCode,
+                storeId: localStorage.storeId
             }
         }).then(function successCallback(response) {
             $scope.products = response.data;
@@ -47,20 +49,30 @@
 
         
         $scope.clearFilter = function(){
-           
-
+            $scope.isFilterSet = false;
+            $('input:checkbox').removeAttr('checked');
+            $scope.productGridType =" opacity-0";
+           setTimeout(function(){
+                    $scope.productGridType = localStorage.productGridType;
+                    $window.scrollTo(10, 0);
+                    $window.scrollTo(0, 0);
+                },500);
             $http({
                 method: 'POST',
-                url: 'http://45.79.162.17:8888/getFilterProducts',
+                url: 'http://104.236.246.190:8888/getAllConfigProducts',
                 data: {
                     carpet_collection: null,
                     carpet_designer: null ,
-                    currencyCode: localStorage.currencyCode
+                    currencyCode: localStorage.currencyCode,
+                    storeId: localStorage.storeId
                 }
             }).then(function successCallback(response) {
                 $scope.products = response.data;
                 $scope.closeFilter();
-                $('input:checkbox').removeAttr('checked');
+                 
+                    
+                  
+                
             }, function errorCallback(response) {
                 console.log(response);
             });
@@ -92,27 +104,35 @@
 
         $scope.applyFilter = function(){
 
+            $scope.isFilterSet = true;
             var collectionArray = divideArrayBasedOnParametar($scope.selectedFilterOptions,"Collection");
             console.log(collectionArray);
             var designerArray = divideArrayBasedOnParametar($scope.selectedFilterOptions,"Designer");
             var carpetSizesArray = divideArrayBasedOnParametar($scope.selectedFilterOptions,"Size");
-            console.log(designerArray);
-            console.log($stateParams.currencyCode);
-            console.log(localStorage.currencyCode);
+            $scope.productGridType = localStorage.getItem("productGridType") + " opacity-0";
+
+
             $http({
                 method: 'POST',
-                url: 'http://45.79.162.17:8888/getFilterProducts',
+                url: 'http://104.236.246.190:8888/getFilterProducts',
                 data: {
                     carpet_collection: collectionArray,
                     carpet_designer: designerArray ,
                     carpet_size: carpetSizesArray,
-                    currencyCode: localStorage.currencyCode
+                    currencyCode: localStorage.currencyCode,
+                    storeId: localStorage.storeId
                 }
             }).then(function successCallback(response) {
                 $scope.products = response.data;
                 $scope.closeFilter();
+                 setTimeout(function(){
+                    $scope.productGridType = localStorage.productGridType;
+                    $window.scrollTo(10, 0);
+                    $window.scrollTo(0, 0);
+                },500);
             }, function errorCallback(response) {
                 console.log(response);
+                $scope.closeFilter();
             });
         }
 

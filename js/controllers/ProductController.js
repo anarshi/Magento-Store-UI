@@ -18,10 +18,11 @@
             $scope.isSet = false;
             $scope.zoomArray = [];
             $scope.zoomId = "0";
+            $scope.isConfigurableFirst = false;
             var imageContainer = document.getElementsByClassName("image-container")[0];
             var info = document.getElementById("info");
 
-            if ($window.innerWidth <= 1020) {
+            if ($window.innerWidth <= 1020 ) {
                 $timeout(function() {
                     $('.image-container').slick({
                         rtl: true,
@@ -30,29 +31,59 @@
 
                     });
                 }, 500);
+            }else {
+                 $timeout(function() {
+                    $('.image-container').slick("unslick");
+                }, 0);
             }
 
 
             $scope.allImages = [];
             var searchCriteria = $stateParams.product_id;
 
+
+
             
 
-            $http.post('http://45.79.162.17:8888/product/' + searchCriteria,{currencyCode: $stateParams.currencyCode}).then(function successCallback(response) {
+            $http.post('http://104.236.246.190:8888/product/' + searchCriteria,{currencyCode: $stateParams.currencyCode , storeId: localStorage.storeId}).then(function successCallback(response) {
                 $scope.product = response.data;
                 $scope.product.price = $scope.product.price.toFixed(2);
                 $scope.slides = [];
+
+
+
+                if($scope.product.typeId === "configurable"){
+                    $scope.isConfigurableFirst = true;
+                    $scope.associatedProducts = [];
+                    for (var i = 0; i < $scope.product.childProducts.length; i++) {
+                        $scope.associatedProducts.push($scope.product.childProducts[i]);
+                    }
+
+                    $scope.showProductData = false;
+                    
+                } else {
+                    $scope.isConfigurableFirst = false;
+                    $scope.showProductData = true;
+                    $scope.sizeBtnClass="sizeBtn-size-is-choosen";
+                    $scope.isSizeChoosen = true;
+                    $scope.footerClass="footer-btn-container-height-with-add";
+                    var chosedSizeText = $scope.product.size  +  " | " + $scope.product.currencySymbol + $scope.product.price;
+                    $('.sizeBtn').text(chosedSizeText);
+                }
 
                 for (var i = 0; i < $scope.product.allImages.length; i++) {
                     $scope.slides.push({
                         image: $scope.product.allImages[i],
                         description: "pulled image"
                     });
+
                 }
+
+                console.log($scope.slides);
 
                 if ($scope.slides.length > 1) {
                     $(".image-container").css({
-                        "margin-bottom": "-124%"
+                        "margin-bottom": "-90%"
                     });
                 }
 
@@ -112,9 +143,7 @@
                 }
             }, function errorCallback(response) {
                 console.log(response);
-            });
-
-            
+            });    
             
 
             slider.css({
@@ -218,10 +247,10 @@
                 $scope.footerClass  ="footer-btn-container-height-no-add";
             }
 
+
             //should take size as parameter in fuction this is just a test case
             $scope.showSizes = function() {
-                if (productSizes.hasClass('hide')) {
-                    console.log("uso ovde");
+                if (productSizes.hasClass('hide') && $scope.isConfigurableFirst) {
                     productSizes.removeClass('hide');
                     $('body').addClass('no-scroll lock-scroll');
                     productSizes.removeClass('hide');
@@ -232,7 +261,6 @@
                     }
 
                 } else {
-                     console.log("uso ovde else ");
                     $('body').removeClass('no-scroll lock-scroll');
                     productSizes.addClass('hide');
                     singleOverlay.removeClass('show');
@@ -245,34 +273,176 @@
 
             };
 
-            $scope.chooseSize = function(id) {
-                console.log("uso ovde asd ");
+            $scope.chooseSize = function(chosedSizeText,id) {
                 $scope.sizeBtnClass="sizeBtn-size-is-choosen";
                 $scope.isSizeChoosen = true;
                 $scope.footerClass="footer-btn-container-height-with-add";
-                $scope.choosenSize = id;
-                $('.sizeBtn').text(id);
+                $scope.choosenSize = chosedSizeText;
+                $('.sizeBtn').text(chosedSizeText);
+
                 $scope.showSizes();
+
+                if($window.innerWidth < 1020){
+                     for(var j = 0 ; j < $scope.slides.length ; j++){
+                         $('.image-container').slick('slickRemove',0);
+                    }
+
+                    $('.image-container').slick('unslick');
+                }
+               
+
+
+                $http.post("http://104.236.246.190:8888/getSimpleProductsById/" + id,{currencyCode: $stateParams.currencyCode , storeId: localStorage.storeId}).then(function successCallback(response) {
+                            //$('.image-container').slick('unslick');
+                            console.log($scope.slides.length);
+                            
+
+                            $scope.product = response.data;
+                            $scope.product.price = $scope.product.price.toFixed(2);
+                            $scope.slides = [];
+
+                            if($scope.product.typeId === "configurable"){
+                                $scope.associatedProducts = [];
+                                for (var i = 0; i < $scope.product.childProducts.length; i++) {
+                                    $scope.associatedProducts.push($scope.product.childProducts[i]);
+                                }
+
+                                $scope.showProductData = false;
+                                
+                            } else {
+                                $scope.showProductData = true;
+                            }
+
+                            for (var i = 0; i < $scope.product.allImages.length; i++) {
+                                $scope.slides.push({
+                                    image: $scope.product.allImages[i],
+                                    description: "pulled image"
+                                });
+
+                            }
+
+                            console.log($scope.slides);
+
+                            if ($scope.slides.length > 1) {
+                                $(".image-container").css({
+                                    "margin-bottom": "-90%"
+                                });
+                            }
+
+                            console.log($window.innerWidth < 1020);
+
+                            if ($window.innerWidth < 1020) {
+                                console.log("uso u <1200ifpx");
+                                
+                               setTimeout(function(){
+                                    
+                                    $('#image-container').slick({
+                                        rtl: true,
+                                        dots: true,
+                                        arrows: false
+
+                                    });
+                               },0)
+
+                            } else if($('.image-container').hasClass("slick-initialized")) {
+                                //  console.log("uso u <1200sspx");
+                                // $timeout(function() {
+                                //     $('.image-container').slick("unslick");
+                                // }, 0);
+                            } else {
+                                 setTimeout(function(){
+                                    
+                                    $('#image-container').slick('unslick');
+                               },0)
+                            }
+
+
+                        if($scope.zoomArray.length > 0 ){
+                            if($(window).scrollTop() === 0 || parseFloat($scope.zoomArray[0].obj) === 0){
+                                $(".prev").prop("disabled",true);
+                                $(".prev").addClass("disabled");
+                            }else {
+                                if($(".prev").prop("disabled")){
+                                    $(".prev").prop("disabled",false);
+                                    $(".prev").removeClass("disabled");
+                                }
+                            }
+
+                            if($(window).scrollTop() !== 0 && parseFloat($scope.zoomArray[0].obj) === parseFloat($scope.allSlides.length - 1)){
+
+                                    $(".next").prop("disabled",true);
+                                    $(".next").addClass("disabled");
+                                }else {
+
+                                    if($(".next").prop("disabled")){
+                                        $(".next").prop("disabled",false);
+                                        $(".next").removeClass("disabled");
+                                    }
+                                }
+
+                            } else {
+                                if($(window).scrollTop() === 0 || $scope.slides.length === 1){
+                                    $(".prev").prop("disabled",true);
+                                    $(".prev").addClass("disabled");
+                                }else {
+                                    if($(".prev").prop("disabled")){
+                                        $(".prev").prop("disabled",false);
+                                        $(".prev").removeClass("disabled");
+                                    }
+                                }
+
+                                if($(window).scrollTop() !== 0){
+
+                                    $(".next").prop("disabled",true);
+                                    $(".next").addClass("disabled");
+                                }else {
+
+                                    if($scope.slides.length === 1){
+                                        $(".next").prop("disabled",true);
+                                        $(".next").addClass("disabled");
+                                    } else{
+                                        if($(".next").prop("disabled")){
+                                            $(".next").prop("disabled",false);
+                                            $(".next").removeClass("disabled");
+                                        }
+                                    }
+
+                                    
+                                }
+                            }
+                        }, function errorCallback(response) {
+                            console.log(response);
+                        });
+
+
+               
+
+
             }
 
 
             angular.element($window).bind("resize", function() {
                 var slider = $("#slider");
-                if ($window.innerWidth < 1020) {
+                if ($window.innerWidth < 1020 ) {
+                    $timeout(function() {
+                        $('.image-container').slick("unslick");
+                    }, 0);
+
+
                     $timeout(function() {
                         $('.image-container').slick({
                             rtl: true,
                             dots: true,
-                            arrows: false,
-                            lazyLoad: 'ondemand'
+                            arrows: false
 
                         });
-                    }, 500);
+
+                    }, 0);
 
                 } else {
                     $timeout(function() {
                         $('.image-container').slick("unslick");
-                    }, 500);
+                    }, 0);
                 }
                 slider.css({
                     'height': $window.innerWidth + "px",
@@ -374,7 +544,7 @@
                         t1.insert(new TweenMax(imageContainer, .5, {
                             css: {
                                 transform: "matrix(0.65, 0, 0, 0.65, 0, 0)",
-                                marginBottom: "-124%"
+                                marginBottom: "-90%"
                             },
                             ease: Power4.easeIn
                         }), 0);
@@ -490,7 +660,7 @@
                         t1.insert(new TweenMax(imageContainer, .5, {
                             css: {
                                 transform: "matrix(0.65, 0, 0, 0.65, 0, 0)",
-                                marginBottom: "-124%"
+                                marginBottom: "-90%"
                             },
                             ease: Power4.easeIn
                         }), 0);

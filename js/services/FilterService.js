@@ -12,7 +12,7 @@
             async: function filterProducts(){
                     var promise = $http({
                             method: "get",
-                            url: 'http://45.79.162.17:8888//getFilterData',
+                            url: 'http://104.236.246.190:8888/getFilterData',
                             }).then(function successCallback(response) {
                                 console.log("FilterData");
                                 console.log(response.data);
@@ -29,7 +29,7 @@
             async: function filterProducts(carpetDesignerValue,carpetCollectionValue,currencyCodeValue){
                     var promise = $http({
                             method: "post",
-                            url: 'http://45.79.162.17:8888/getFilterProducts',
+                            url: 'http://104.236.246.190:8888/getFilterProducts',
                             data:{
                                 carpet_designer_value: carpetDesignerValue,
                                 carpet_collection_value: carpetCollectionValue,

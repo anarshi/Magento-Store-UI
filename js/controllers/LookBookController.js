@@ -27,7 +27,7 @@
         //loading all slides
         $http({
             method: 'GET',
-            url: 'http://45.79.162.17:8888/lookbook'
+            url: 'http://104.236.246.190:8888/lookbook'
         }).then(function successCallback(response) {
             $scope.products = response.data;
 
