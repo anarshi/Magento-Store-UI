@@ -374,9 +374,15 @@
 
         $scope.oneRowGrid = function(){
             if(!$(".catalog-product").hasClass('col-md-12 col-xs-12')){
+                console.log("uso");
                  $scope.productGridType = localStorage.productGridType +  ' opacity-0';
+                 $(".catalog-product").addClass(localStorage.productGridType +' opacity-0');
                 $timeout(function(){
                     $scope.productGridType = 'col-md-12 col-xs-12';
+                    $(".catalog-product").removeClass("col-md-6 col-xs-6");
+                    $(".catalog-product").removeClass("col-md-4 col-xs-4");
+                    $(".catalog-product").removeClass("opacity-0");
+                    $(".catalog-product").addClass("col-md-12 col-xs-12");
                     localStorage.setItem('productGridType',$scope.productGridType);
                 },1000);
             }
@@ -446,8 +452,14 @@
         $scope.twoRowGrid = function(){
             if(!$(".catalog-product").hasClass('col-md-6 col-xs-6')){
                 $scope.productGridType = localStorage.productGridType +' opacity-0';
+                $(".catalog-product").addClass(localStorage.productGridType +' opacity-0');
                 $timeout(function(){
                     $scope.productGridType = 'col-md-6 col-xs-6';
+                    $(".catalog-product").removeClass("col-md-4 col-xs-4");
+                    $(".catalog-product").removeClass("col-md-12 col-xs-12");
+                    $(".catalog-product").removeClass("opacity-0");
+                     $(".catalog-product").addClass("col-md-6 col-xs-6");
+
                     localStorage.setItem('productGridType',$scope.productGridType);
                 },1000);
             }
@@ -460,9 +472,15 @@
 
         $scope.threeRowGrid = function(){
             if(!$(".catalog-product").hasClass('col-md-4 col-xs-6')){
+                $(".catalog-product").addClass(localStorage.productGridType +' opacity-0');
                 $scope.productGridType = localStorage.productGridType +' opacity-0';
                 $timeout(function(){
                     $scope.productGridType = 'col-md-4 col-xs-6';
+                     $(".catalog-product").removeClass("col-md-12 col-xs-12");
+                     $(".catalog-product").removeClass("col-md-6 col-xs-6");
+                     $(".catalog-product").removeClass("opacity-0");
+                    $(".catalog-product").addClass("col-md-4 col-xs-6");
+
                     localStorage.setItem('productGridType',$scope.productGridType);
                 },1000);
             }

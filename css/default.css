@@ -34,16 +34,16 @@
 
 
 body, html {
-     height: 100%;
+     min-height: 100% !important;
     background-color: rgb(243,243,243) !important;
 }
 
 /* html {
  
-}
-body {
-  min-height: 100%;
 } */
+body {
+  height: 100%;
+}
 
 
 #legalfooter{
@@ -2483,6 +2483,23 @@ div.error {
         display: none;
     }
 
+
+    .home-page #catalog{
+        display: block;
+        position: relative;
+        width: 100%;
+        height: auto;
+        transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
+        -o-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
+        -moz-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
+        -wekit-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
+        -ms-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
+        background: #f3f3f5;
+        float: left;
+        top: 100px;
+        min-height: 100vh;
+        padding-bottom: 90px!important
+    }
 
 
     /* NEW MEDIA*/

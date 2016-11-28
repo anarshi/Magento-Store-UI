@@ -8,9 +8,9 @@
      * @module Moa
      */
     $moa.controller('ProductsController', ['$scope', '$rootScope', '$http' , '$state' , '$stateParams'
-                                            , "$window" , 'FilterService',
+                                            , "$window" , "$timeout" , 'FilterService',
 
-    function productsController($scope, $rootScope,$http, $state ,$stateParams , $window , FilterService) {
+    function productsController($scope, $rootScope,$http, $state ,$stateParams , $window , $timeout , FilterService) {
 
         $scope.products = [];
 
@@ -92,13 +92,13 @@
             $("#productFilter").addClass('hide');
             singleOverlay.removeClass('show');  
             $('body').removeClass('no-scroll lock-scroll');
+
+                
+            
         };
 
         FilterService.getFilterCategories.async().then(function(data){
             $scope.filterCategories = data;
-            console.log("filterData Products");
-            console.log(data);
-            //console.log($scope.filterCategories[0].name);
         });
 
 
@@ -109,8 +109,13 @@
             console.log(collectionArray);
             var designerArray = divideArrayBasedOnParametar($scope.selectedFilterOptions,"Designer");
             var carpetSizesArray = divideArrayBasedOnParametar($scope.selectedFilterOptions,"Size");
-            $scope.productGridType = localStorage.getItem("productGridType") + " opacity-0";
-
+             
+           
+           
+            //localStorage.setItem('productGridType',$scope.productGridType);
+            $scope.oneRowActive = "active ";
+            $scope.twoRowActive = "";
+            $scope.threeRowActive = "";
 
             $http({
                 method: 'POST',
@@ -125,11 +130,12 @@
             }).then(function successCallback(response) {
                 $scope.products = response.data;
                 $scope.closeFilter();
-                 setTimeout(function(){
-                    $scope.productGridType = localStorage.productGridType;
-                    $window.scrollTo(10, 0);
-                    $window.scrollTo(0, 0);
-                },500);
+                $scope.productGridType = localStorage.productGridType +  ' opacity-0';
+                $timeout(function(){
+                    $scope.productGridType = "col-md-4 col-xs-4";
+                    localStorage.setItem('productGridType',$scope.productGridType);
+                },1000);
+                
             }, function errorCallback(response) {
                 console.log(response);
                 $scope.closeFilter();
