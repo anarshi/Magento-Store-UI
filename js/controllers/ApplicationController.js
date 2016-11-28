@@ -185,9 +185,9 @@
         ,true);
 
 
-        // document.addEventListener('touchmove', function(event){
-        //     event.stopPropagation();
-        // } , {passive: true});
+        document.addEventListener('touchmove', function(event){
+            event.stopPropagation();
+        });
 
          $scope.$on('$locationChangeSuccess', function() {
 
@@ -218,10 +218,10 @@
                 $scope.contentClass = "close-main-container";
                 $scope.modalClass="close-modal";
                 $scope.closeFooter = "";
-                // document.ontouchmove = function (e) {
-                //   return true;
+                document.ontouchmove = function (e) {
+                  return true;
                   
-                // }
+                }
             
             } else if($scope.isCartOpen){
                 $scope.contentClass = "";
@@ -229,10 +229,10 @@
                 $scope.bodyOpenModalClass = "";
                 $scope.isCartOpen = false;
                 $scope.closeFooter = "close-footer";
-                // document.ontouchmove = function (e) {
-                //   return true;
+                document.ontouchmove = function (e) {
+                  return true;
                   
-                // }
+                }
 
             }else {
                 //Empty
@@ -326,9 +326,9 @@
                 // $scope.navbarOpenClass= "move-right-content-no-fixed";
                 $scope.bodyOpenModalClass = "no-scroll lock-scroll menu-open ";
                 $scope.sidemenuFooterOpen = "sidemenu-footer-open";
-                // document.ontouchmove = function (e) {
-                //   e.preventDefault();
-                // }
+                document.ontouchmove = function (e) {
+                  e.preventDefault();
+                }
             }
         };
 
@@ -358,10 +358,10 @@
                 $scope.openSidemenu = "";
                 $scope.sidemenuFooterOpen = ""
 
-                // document.ontouchmove = function (e) {
-                //   return true;
+                document.ontouchmove = function (e) {
+                  return true;
 
-                // }
+                }
             
             } else if($scope.isCartOpen){
                 openCartService.setCartOpen(false);
@@ -370,10 +370,10 @@
                 $scope.bodyOpenModalClass = "";
                 $scope.closeFooter = "";
                 $scope.isCartOpen = false;
-                // document.ontouchmove = function (e) {
-                //   return true;
+                document.ontouchmove = function (e) {
+                  return true;
 
-                // }
+                }
             }else {
                 //Empty
             }
@@ -438,9 +438,10 @@
                 $("#productFilter").removeClass('hide');
                 singleOverlay.addClass('show');
 
-                // document.addEventListener('ontouchmove' , function(){
-                //     e.preventDefault();
-                // },{passive: true});
+                document.ontouchmove = function(e) {
+                    return true;
+                }
+
 
             } else {
                 $scope.filterBtn = "";
@@ -448,9 +449,9 @@
                  $("#productFilter").addClass('hide');
                 singleOverlay.removeClass('show');
 
-                // document.ontouchmove = function(e) {
-                //     return true;
-                // }
+                document.ontouchmove = function(e) {
+                    return true;
+                }
 
             }
         }
