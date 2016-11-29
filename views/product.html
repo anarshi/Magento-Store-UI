@@ -74,7 +74,7 @@
                   <div class="bar show col-md-12 no-padding" id="related-products"><span>You may also like</span></div>
                   <div class="scroll-container-products" id="scroll-container">
                      <ul>
-                        <li class="onscreen" style="background-image: url({{relatedProduct.allImages[0]}});" ng-repeat="relatedProduct in relatedProducts"><a href="https://www.etq-amsterdam.com/shop/low-5-black-denim/"></a></li>
+                        <li class="onscreen" style="background-image: url({{relatedProduct.allImages[0]}});" ng-repeat="relatedProduct in relatedProducts"><a ui-sref="product({product_id: relatedProduct.id , currencyCode: relatedProduct.currencyCode })"></a></li>
                      </ul>
                   </div>
                </footer>

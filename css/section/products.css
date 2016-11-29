@@ -179,7 +179,7 @@ section.products {
     color: #FFF;
 }
 
-#billing_country{
+#checkout-country{
     -webkit-border-radius:  0px !important;
     background: url(../../images/svg/down-arrow.png) no-repeat right #f3f3f3 !important;
     -webkit-appearance: none;
