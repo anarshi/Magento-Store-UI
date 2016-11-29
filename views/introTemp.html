@@ -15,7 +15,8 @@
 		<div class="col-md-12 col-xs-12 text-center country-select ">
 		 <div class="input-group">
 	      <div class="input-group-addon">Store</div>
-	      		<select id="billing_country" name="billing_country" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true" ng-model="currencyCode"   >
+	      		<select id="billing_country" name="billing_country" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true" ng-model="currencyCode" ng-class="chooseCountryClass"  >
+	      				<option value="" disabled selected>Select your country</option>
                         <option value="SEK">Sweeden</option>
                         <option value="EUR">Rest of Europe</option>
                     </select>
@@ -24,8 +25,9 @@
 		<div class="input-group language">
 	      <div class="input-group-addon">language</div>
 
-	          <select id="language" name="language" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true"  ng-model="storeId">
+	          <select id="language" name="language" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true" ng-class="chooseLangagueClass"  ng-model="storeId">
                         <!-- <option value="2">SVENSKA</option> -->
+                        <option value="" disabled selected>Select your language</option>
                         <option value="1">English</option>
                     </select>
 	    </div>	

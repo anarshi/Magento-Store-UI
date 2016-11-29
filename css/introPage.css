@@ -14,6 +14,14 @@
     margin: 0 auto !important;
 } */
 
+.blink-select{
+	background: url(../images/svg/down-arrow.png) no-repeat right rgba(255,255,255,0.8) !important;
+}
+
+.blink-soft-select{
+
+}
+
 .intro-page-button{
 	font-size: 12px;
     padding: 0;
@@ -58,7 +66,7 @@
 
 	.intro-page-currency {
 		-webkit-border-radius:  0px !important;
-	    background: url(../images/svg/down-arrow.png) no-repeat right #fff !important;
+	    background: url(../images/svg/down-arrow.png) no-repeat right #fff ;
 	    -webkit-appearance: none;
 	    background-size: 10px !important;
 	    background-position-x: 97% !important;
@@ -321,7 +329,7 @@
 
 .intro-page-currency {
 	-webkit-border-radius:  0px !important;
-    background: url(../images/svg/down-arrow.png) no-repeat right #fff !important;
+    background: url(../images/svg/down-arrow.png) no-repeat right #fff ;
     -webkit-appearance: none;
     background-size: 10px !important;
     background-position-x: 96% !important;

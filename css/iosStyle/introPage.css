@@ -58,7 +58,7 @@
 
 	.intro-page-currency {
 		-webkit-border-radius:  0px !important;
-	    background: url(../images/svg/down-arrow.png) no-repeat right #fff !important;
+	    background: url(../images/svg/down-arrow.png) no-repeat right #fff ;
 	    -webkit-appearance: none;
 	    background-size: 10px !important;
 	    background-position-x: 97% !important;
@@ -122,6 +122,15 @@
 	background: rgba(255,255,255,0.8) !important;
 
 }
+
+.blink-select{
+	background: url(../images/svg/down-arrow.png) no-repeat right rgba(255,255,255,0.8) !important;
+}
+
+.blink-soft-select{
+
+}
+
 
 
 
@@ -321,7 +330,7 @@
 
 .intro-page-currency {
 	-webkit-border-radius:  0px !important;
-    background: url(../images/svg/down-arrow.png) no-repeat right #fff !important;
+    background: url(../images/svg/down-arrow.png) no-repeat right #fff ;
     -webkit-appearance: none;
     background-size: 10px !important;
     background-position-x: 96% !important;

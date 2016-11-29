@@ -12,10 +12,23 @@
   
 
         $scope.enterSite = function(){
-        	localStorage.currencyCode = $scope.currencyCode;
-          localStorage.storeId = $scope.storeId;
-        	console.log(localStorage.currencyCode);
-        	$state.go("home", {currencyCode: $scope.currencyCode});
+          console.log("currencyCode: "+ scope.currencyCode);
+
+          if(scope.currencyCode === "nocurrency" || scope.currencyCode === "" || $scope.storeId === "nolanguage" || $scope.storeId === "nolanguage"){
+            $scope.chooseLangagueClass="blink-select";
+            $scope.chooseCountryClass="blink-select";
+            $timeout(function(){
+                $scope.chooseLangagueClass="blink-soft-select";
+                $scope.chooseCountryClass="blink-soft-select";
+            },300); 
+
+          } else {
+
+            localStorage.currencyCode = $scope.currencyCode;
+            localStorage.storeId = $scope.storeId;
+            $state.go("home", {currencyCode: $scope.currencyCode});
+
+          }
         }
 
         $scope.somePlaceholder = "Type your email here";
