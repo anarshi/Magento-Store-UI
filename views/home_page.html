@@ -66,12 +66,14 @@
                       <uib-accordion close-others="oneAtATime" ng-repeat="category in filterCategories">
                         <div uib-accordion-group class="panel-default" is-open="status$index.open" >
                           <uib-accordion-heading>
-                              {{category.name}}
-                             <i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus': status{{$index}}.open, 'glyphicon glyphicon-plus': !status{{$index}}.open}"></i>
+                              <label class="filter-heading-label">{{category.name}}<i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus': status{{$index}}.open, 'glyphicon glyphicon-plus': !status{{$index}}.open}"></i></label>
+                             
                           </uib-accordion-heading>
                           <div class="col-md-12 col-xs-12 accordio-checbox-container no-padding" ng-repeat="filterValue in category" ng-if="filterValue.label">
-                            <label for="{{filterValue.label + $index}}" class="checkbox-accordion-label">{{filterValue.label}}</label>
-                             <input type="checkbox" name="carpet-size{{$index}}" id="{{filterValue.label  +   $index}}" value="{{filterValue.value}}" class="css-checkbox" ng-click="selectFilter(filterValue,category)" /><label for="{{filterValue.label + $index}}" class="css-label pull-right" ></label>
+                            <label for="{{filterValue.label + $index}}" class="checkbox-accordion-label">{{filterValue.label}}
+                                <input type="checkbox" name="carpet-size{{$index}}" id="{{filterValue.label  +   $index}}" value="{{filterValue.value}}" class="css-checkbox" ng-click="selectFilter(filterValue,category)" /><label for="{{filterValue.label + $index}}" class="css-label pull-right" ></label>
+                            </label>
+                             
                           </div>    
                         </div>
                       </uib-accordion>

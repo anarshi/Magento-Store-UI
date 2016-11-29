@@ -695,12 +695,14 @@ ul.cart-products li {
     overflow: auto;
 }
 
-.checkbox-accordion-label{
+.checkbox-accordion-label {
+    height: 100%;
+    width: 100%;
+    padding: 12px 15px !important;
     margin-top: 0px;
     color: #003593;
     font-family: 'AvenirNext LT Pro Demi';
     font-size: 12px;
-
 }
 
  .radio label:before {
@@ -774,12 +776,21 @@ label.css-label {
 .panel-body{
     padding: 0px !important;
 }
+.filter-heading-label{
+    padding: 19px 16.5px !important;
+    margin: 0px;
+    width: 100%;
+    font-size: 12px;
+    color: #003593;
+    font-family: "AvenirNext LT Pro Demi";
+
+}
 
 .accordio-checbox-container{
     background: #f3f3f5;
-    padding: 12px 15px !important;
     border-bottom: 1px solid #003594 !important
 }
+
 .panel-title > a {
     color: inherit;
     color: #003594 !important;
@@ -799,7 +810,7 @@ label.css-label {
 
 
 .panel-heading {
-    padding: 19px 15px !important;
+    padding: 0px !important; 
     border-bottom: 1px solid transparent;
     border-top-right-radius: 0px !important;
     border-top-left-radius: 0px !important;
