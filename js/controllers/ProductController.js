@@ -22,6 +22,7 @@
             $scope.isConfigurableFirst = false;
             var imageContainer = document.getElementsByClassName("image-container")[0];
             var info = document.getElementById("info");
+            $scope.relatedProducts = [];
 
             if ($window.innerWidth <= 1020 ) {
                 $timeout(function() {
@@ -34,10 +35,28 @@
                     });
                 }, 1000);
             }else {
-                 $timeout(function() {
-                    $('.image-container').slick("unslick");
-                }, 0);
+
+                if($(".image-container").hasClass("slick-initialized")){
+                     $timeout(function() {
+                        $('.image-container').slick("unslick");
+                    }, 0);
+                }
+                
             }
+
+             $http.post("http://104.236.246.190:8888/getRelatedProducts/" + $stateParams.product_id ,
+                    {
+                        storeId: localStorage.storeId,
+                        currencyCode: localStorage.currencyCode
+
+                    }).then(function successCallback(response){
+                        $scope.relatedProducts = [];
+                        for (var i = 0; i < response.data.length; i++) {
+                            $scope.relatedProducts.push(response.data[i]);
+                        }
+                    } , function errorCallback(response) {
+                            console.log(response);
+                    });
 
 
             $scope.allImages = [];
@@ -85,7 +104,7 @@
 
                 if ($scope.slides.length > 1) {
                     $(".image-container").css({
-                        "margin-bottom": "-90%"
+                        "margin-bottom": "-60%"
                     });
                 }
 
@@ -292,6 +311,22 @@
                 $scope.productChoosenId = id;
                 $scope.showSizes();
 
+
+                $http.post("http://104.236.246.190:8888/getRelatedProducts/" + $scope.productChoosenId ,
+                    {
+                        storeId: localStorage.storeId,
+                        currencyCode: localStorage.currencyCode
+
+                    }).then(function successCallback(response){
+                        console.log(response.data);
+                        $scope.relatedProducts = [];
+                        for (var i = 0; i < response.data.length; i++) {
+                            $scope.relatedProducts.push(response.data[i]);
+                        }
+                    } , function errorCallback(response) {
+                            console.log(response);
+                    });
+
                 if($window.innerWidth < 1020){
                      for(var j = 0 ; j < $scope.slides.length ; j++){
                          $('.image-container').slick('slickRemove',0);
@@ -335,7 +370,7 @@
 
                             if ($scope.slides.length > 1) {
                                 $(".image-container").css({
-                                    "margin-bottom": "-90%"
+                                    "margin-bottom": "-60%"
                                 });
                             }
 
@@ -355,15 +390,12 @@
                                },0)
 
                             } else if($('.image-container').hasClass("slick-initialized")) {
-                                //  console.log("uso u <1200sspx");
-                                // $timeout(function() {
-                                //     $('.image-container').slick("unslick");
-                                // }, 0);
-                            } else {
-                                 setTimeout(function(){
+                                setTimeout(function(){
                                     
                                     $('#image-container').slick('unslick');
                                },0)
+                            } else {
+                                 
                             }
 
 
@@ -450,9 +482,12 @@
                     }, 0);
 
                 } else {
-                    $timeout(function() {
-                        $('.image-container').slick("unslick");
-                    }, 0);
+                    if($(".image-container").hasClass("slick-initialized")){
+                        $timeout(function() {
+                            $('.image-container').slick("unslick");
+                        }, 0);
+                    }
+                    
                 }
                 slider.css({
                     'height': $window.innerWidth + "px",
@@ -554,7 +589,7 @@
                         t1.insert(new TweenMax(imageContainer, .5, {
                             css: {
                                 transform: "matrix(0.65, 0, 0, 0.65, 0, 0)",
-                                marginBottom: "-90%"
+                                marginBottom: "-60%"
                             },
                             ease: Power4.easeIn
                         }), 0);
@@ -670,7 +705,7 @@
                         t1.insert(new TweenMax(imageContainer, .5, {
                             css: {
                                 transform: "matrix(0.65, 0, 0, 0.65, 0, 0)",
-                                marginBottom: "-90%"
+                                marginBottom: "-60%"
                             },
                             ease: Power4.easeIn
                         }), 0);
