@@ -128,6 +128,8 @@
         TweenLite.to($("#lang-caret"), 0.5, {rotation:0, transformOrigin:"center"});
       }
 
+      if($scope.isCountryUp){
+
         $scope.isCountryUp = false;
         TweenLite.to($("#country-caret"), 0.5, {rotation:0, transformOrigin:"center"});
         if(vm.data.os.toLowerCase() === "ios"){
