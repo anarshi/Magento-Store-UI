@@ -3,8 +3,15 @@
     "use strict";
 
     $moa.controller('IntroPageController', ['$scope', '$stateParams' , '$location' , '$state' ,'$timeout', 
-        'basket' ,function IntroPageController($scope,
-     $stateParams ,$location , $state , $timeout, basket) {
+        'basket' ,'deviceDetector' ,function IntroPageController($scope,
+     $stateParams ,$location , $state , $timeout, basket ,  deviceDetector) {
+
+
+    var vm = this;
+    vm.data = deviceDetector;
+    vm.allData = JSON.stringify(vm.data, null, 2);
+
+    
 
     //initial placeholders
     $scope.choosenLang = "Select your language";
@@ -40,12 +47,12 @@
     }
 
     $scope.closeDropdownMenu = function(){
-      if($scope.isCountryUp === true){
+      if($scope.isCountryUp === true && (vm.data.os.toLowerCase() === "ios"  || vm.data.os.toLowerCase() === "android")){
         $scope.isCountryUp = false;
         TweenLite.to($("#country-caret"), 0.5, {rotation:0, transformOrigin:"center"});
       } 
 
-      if($scope.isLangUp ===  true){
+      if($scope.isLangUp ===  true && && (vm.data.os.toLowerCase() === "ios"  || vm.data.os.toLowerCase() === "android") ){
         $scope.isLangUp = false;
         TweenLite.to($("#lang-caret"), 0.5, {rotation:0, transformOrigin:"center"});
       } 

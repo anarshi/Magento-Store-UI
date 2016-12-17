@@ -4,10 +4,10 @@
 
     $moa.controller('ApplicationController', ['$rootScope', '$scope'  ,  '$route','$location' 
                                                 , '$http' ,'$timeout', '$window' 
-                                                ,'basket', 'cartProducts','openCartService' , '$state',
+                                                ,'basket',  'deviceDetector' , 'cartProducts','openCartService' , '$state',
 
     function applicationController($rootScope, $scope , $route  ,  $location , $http , $timeout
-                                     , $window ,basket ,cartProducts,openCartService , $state) {
+                                     , $window ,basket ,deviceDetector ,cartProducts,openCartService , $state) {
 
         // window.onbeforeunload = function () {
         //     var url = window.location.href;
@@ -18,6 +18,8 @@
               
         //     }
         // };
+
+      
 
          document.ontouchmove = function (e) {
                   return true;
