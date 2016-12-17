@@ -62,7 +62,7 @@
       if($scope.isCountryUp === true && (vm.data.os.toLowerCase() !== "ios"  && vm.data.os.toLowerCase() !== "android")){
         $scope.isCountryUp = false;
         TweenLite.to($("#country-caret"), 0.5, {rotation:0, transformOrigin:"center"});
-         $(".countryDropdownButton").removeClass("open");
+         //$(".countryDropdownButton").removeClass("open");
       } 
 
       if($scope.isLangUp ===  true && (vm.data.os.toLowerCase() !== "ios"  && vm.data.os.toLowerCase() !== "android") ){
@@ -81,7 +81,7 @@
       $scope.currencyCode = selectedCountry;
 
       //$(".countryDropdownButton").dropdown('hide');
-      // $(".countryDropdownButton").trigger("click");
+      $(".countryDropdownButton").dropdown("toggle");
 
       $("body").trigger("click");
 
@@ -114,7 +114,7 @@
 
       $scope.storeId = value;
 
-      //$(".langDropdownButton").dropdown('toggle');
+      $(".langDropdownButton").dropdown('toggle');
 
       $("body").trigger("click");
 

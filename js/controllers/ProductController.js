@@ -485,7 +485,7 @@
                         $('.image-container').slick({
                             dots: true,
                             rtl:false,
-                            vertical:false,
+                            vertical:false, 
                             arrows: false
 
                         });
