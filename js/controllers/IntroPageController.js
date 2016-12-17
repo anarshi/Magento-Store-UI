@@ -2,8 +2,7 @@
 
     "use strict";
 
-    $moa.controller('IntroPageController', ['$scope', '$stateParams' , '$location' , '$state' ,'$timeout', 
-        'basket' ,'deviceDetector' ,function IntroPageController($scope,
+    $moa.controller('IntroPageController', ['$scope', '$stateParams' , '$location' , '$state' ,'$timeout', 'basket' ,'deviceDetector' , function IntroPageController($scope,
      $stateParams ,$location , $state , $timeout, basket ,  deviceDetector) {
 
 
@@ -52,7 +51,7 @@
         TweenLite.to($("#country-caret"), 0.5, {rotation:0, transformOrigin:"center"});
       } 
 
-      if($scope.isLangUp ===  true && && (vm.data.os.toLowerCase() === "ios"  || vm.data.os.toLowerCase() === "android") ){
+      if($scope.isLangUp ===  true && (vm.data.os.toLowerCase() === "ios"  || vm.data.os.toLowerCase() === "android") ){
         $scope.isLangUp = false;
         TweenLite.to($("#lang-caret"), 0.5, {rotation:0, transformOrigin:"center"});
       } 
