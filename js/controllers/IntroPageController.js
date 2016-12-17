@@ -192,11 +192,11 @@
 
         $scope.isLangUp = false;
         TweenLite.to($("#lang-caret"), 0.5, {rotation:0, transformOrigin:"center"});
-        // if(vm.data.os.toLowerCase() === "ios"){
-        //   var el = angular.element();
-        //   $(el).parent().removeClass("open");
-        //   $(el).attr("aria-expanded","false");
-        // }
+        if(vm.data.os.toLowerCase() === "ios"){
+          var el = angular.element();
+          $(el).parent().removeClass("open");
+          $(el).attr("aria-expanded","false");
+        }
 
       } else {
          //stops scrolling on ios
@@ -212,11 +212,11 @@
 
         $scope.isLangUp = true;
         TweenLite.to($("#lang-caret"), 0.5, {rotation:-180, transformOrigin:"center"});
-        // if(vm.data.os.toLowerCase() === "ios"){
-        //   var el = angular.element();
-        //   $(el).parent().addClass("open");
-        //   $(el).attr("aria-expanded","true");
-        // }
+        if(vm.data.os.toLowerCase() === "ios"){
+          var el = angular.element();
+          $(el).parent().addClass("open");
+          $(el).attr("aria-expanded","true");
+        }
       }
 
     }
