@@ -109,6 +109,10 @@
       }
     }
 
+    document.addEventListener('touchmove', function(event){
+        event.stopPropagation();
+    });
+
 
     $scope.chooseLang = function(value,e){
 
