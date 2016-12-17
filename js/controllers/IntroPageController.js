@@ -101,23 +101,59 @@
       }
 
       if($scope.isCountryUp){
+
+         if(vm.data.os.toLowerCase() === "ios"){
+          document.addEventListener('touchmove', function(){
+            return true;
+          });
+
+           document.ontouchmove = function(e){
+              return true;
+          }
+        }
+
         $scope.isCountryUp = false;
         TweenLite.to($("#country-caret"), 0.5, {rotation:0, transformOrigin:"center"});
+        if(vm.data.os.toLowerCase() === "ios"){
+          var el = angular.element();
+          $(el).parent().addClass("open");
+          $(el).attr("aria-expanded","true");
+        }
       } else {
+
+         //stops scrolling on ios
+        if(vm.data.os.toLowerCase() === "ios"){
+          document.addEventListener('touchmove', function(event){
+            event.stopPropagation();
+          });
+
+           document.ontouchmove = function(e){
+              e.preventDefault();
+          }
+        }
+        
         $scope.isCountryUp = true;
         TweenLite.to($("#country-caret"), 0.5, {rotation:-180, transformOrigin:"center"});
+        if(vm.data.os.toLowerCase() === "ios"){
+          var el = angular.element();
+          $(el).parent().addClass("open");
+          $(el).attr("aria-expanded","true");
+        }
       }
     }
 
-    document.addEventListener('touchmove', function(event){
+
+    //stops scrolling on ios
+    if(vm.data.os.toLowerCase() === "ios"){
+      document.addEventListener('touchmove', function(event){
         event.stopPropagation();
-    });
+      });
 
-     document.ontouchmove = function(e){
-        e.preventDefault();
+       document.ontouchmove = function(e){
+          e.preventDefault();
+      }
     }
-
-
+    
     $scope.chooseLang = function(value,e){
 
       $scope.storeId = value;
@@ -125,6 +161,8 @@
       $(".langDropdownButton").dropdown('toggle');
 
       $("body").trigger("click");
+
+
 
       //ajdust to backend return lang ids from databse
       //this is temp solution just for demostration
@@ -140,11 +178,44 @@
       }
 
       if($scope.isLangUp){
+
+        if(vm.data.os.toLowerCase() === "ios"){
+        document.addEventListener('touchmove', function(){
+          return true;
+        });
+
+         document.ontouchmove = function(e){
+            return true;
+        }
+      }
+
         $scope.isLangUp = false;
         TweenLite.to($("#lang-caret"), 0.5, {rotation:0, transformOrigin:"center"});
+        if(vm.data.os.toLowerCase() === "ios"){
+          var el = angular.element();
+          $(el).parent().removeClass("open");
+          $(el).attr("aria-expanded","false");
+        }
+
       } else {
-         $scope.isLangUp = true;
+         //stops scrolling on ios
+          if(vm.data.os.toLowerCase() === "ios"){
+            document.addEventListener('touchmove', function(event){
+              event.stopPropagation();
+            });
+
+             document.ontouchmove = function(e){
+                e.preventDefault();
+            }
+          }
+
+        $scope.isLangUp = true;
         TweenLite.to($("#lang-caret"), 0.5, {rotation:-180, transformOrigin:"center"});
+        if(vm.data.os.toLowerCase() === "ios"){
+          var el = angular.element();
+          $(el).parent().addClass("open");
+          $(el).attr("aria-expanded","true");
+        }
       }
 
     }
