@@ -23,24 +23,24 @@
                     <div uib-dropdown >
 				    <button uib-dropdown-toggle class="countryDropdownButton" ng-click="rotateCountryIcon($event)">{{choosenCountry}}<span class="caret" id="country-caret"></span></button>
 				    <ul uib-dropdown-menu>
-				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
 				    </ul>
 				</div>
 	          
@@ -55,10 +55,10 @@
                     <!-- </select> -->
 
              <div uib-dropdown click-outside="closeDropdownMenu()">
-				    <button uib-dropdown-toggle class="langDropdownbutton" ng-click="rotateLangIcon($event)" >{{choosenLang}}<span class="caret" id="lang-caret"></span></button>
+				    <button uib-dropdown-toggle class="langDropdownbutton" id="dropdown-btn" ng-click="rotateLangIcon($event)" >{{choosenLang}}<span class="caret" id="lang-caret"></span></button>
 				    <ul uib-dropdown-menu>
-				        <li ng-click="chooseLang('1')">Svenska</li>
-				        <li ng-click="chooseLang('2')">English</li>
+				        <li ng-click="chooseLang('1',$event)">Svenska</li>
+				        <li ng-click="chooseLang('2',$event)">English</li>
 				    </ul>
 				</div>
 	    </div>	

@@ -10,7 +10,7 @@
     vm.data = deviceDetector;
     vm.allData = JSON.stringify(vm.data, null, 2);
 
-    
+    console.log(vm.data.os);
 
     //initial placeholders
     $scope.choosenLang = "Select your language";
@@ -19,6 +19,8 @@
     $scope.isCountryUp = false;
     $scope.rotateCountryIcon = function(e){
       e.stopPropagation();
+      var target = angular.element(e.target);
+      $(target).parent().addClass("open");
       if($scope.isCountryUp){
         $scope.isCountryUp = false;
         TweenLite.to($("#country-caret"), 0.5, {rotation:0, transformOrigin:"center"});
@@ -33,8 +35,7 @@
     $scope.rotateLangIcon = function(e){
       e.stopPropagation();
        var target = angular.element(e.target);
-       target.parent().innerHtml= "stefan";
-        
+      $(target).parent().addClass("open");
       if($scope.isLangUp){
         $scope.isLangUp = false;
         TweenLite.to($("#lang-caret"), 0.5, {rotation:0, transformOrigin:"center"});
@@ -46,12 +47,13 @@
     }
 
     $scope.closeDropdownMenu = function(){
-      if($scope.isCountryUp === true && (vm.data.os.toLowerCase() === "ios"  || vm.data.os.toLowerCase() === "android")){
+      if($scope.isCountryUp === true && (vm.data.os.toLowerCase() !== "ios"  && vm.data.os.toLowerCase() !== "android")){
         $scope.isCountryUp = false;
         TweenLite.to($("#country-caret"), 0.5, {rotation:0, transformOrigin:"center"});
+         $(".countryDropdownButton").removeClass("open");
       } 
 
-      if($scope.isLangUp ===  true && (vm.data.os.toLowerCase() === "ios"  || vm.data.os.toLowerCase() === "android") ){
+      if($scope.isLangUp ===  true && (vm.data.os.toLowerCase() !== "ios"  && vm.data.os.toLowerCase() !== "android") ){
         $scope.isLangUp = false;
         TweenLite.to($("#lang-caret"), 0.5, {rotation:0, transformOrigin:"center"});
       } 
@@ -63,29 +65,57 @@
 
     $scope.selectedCountry;
     $scope.selectedLang;
-    $scope.chooseACountry = function(selectedCountry){
+    $scope.chooseACountry = function(selectedCountry,e){
       $scope.currencyCode = selectedCountry;
 
-      //ajdust to backend return lang ids from databse
+      var target = angular.element(e.target);
+      $(target).parent().parent().removeClass("open");
+      $(".countryDropdownbutton").attr("aria-expanded","false");
+       $(".countryDropdownbutton").click();
+             //ajdust to backend return lang ids from databse
       //this is temp solution just for demostration
       if(selectedCountry === "SEK"){
         $scope.choosenCountry = "Sweeden";
       } else if(selectedCountry === "EUR") {
           $scope.choosenCountry = "Rest of europe";
       }
+
+      if($scope.isCountryUp){
+        $scope.isCountryUp = false;
+        TweenLite.to($("#country-caret"), 0.5, {rotation:0, transformOrigin:"center"});
+      } else {
+         $scope.isCountryUp = true;
+        TweenLite.to($("#country-caret"), 0.5, {rotation:-180, transformOrigin:"center"});
+      }
     }
 
 
 
-    $scope.chooseLang = function(value){
-      $scope.storeId = value;
+    $scope.chooseLang = function(value,e){
 
+      $scope.storeId = value;
+      var target = angular.element(e.target);
+      $(target).parent().parent().removeClass("open");
+      $(".langDropdownButton").attr("aria-expanded","false");
+       $(".langDropdownButton").click();
+
+       $(".countryDropdownbutton").parent().removeClass("open");
+      $(".countryDropdownbutton").attr("aria-expanded","false");
+       $(".countryDropdownbutton").click();
       //ajdust to backend return lang ids from databse
       //this is temp solution just for demostration
       if(parseFloat(value) === 1 ){
         $scope.choosenLang = "Svenska"; 
       } else if(parseFloat(value) === 2 ){
         $scope.choosenLang = "English"; 
+      }
+
+      if($scope.isLangUp){
+        $scope.isLangUp = false;
+        TweenLite.to($("#lang-caret"), 0.5, {rotation:0, transformOrigin:"center"});
+      } else {
+         $scope.isLangUp = true;
+        TweenLite.to($("#lang-caret"), 0.5, {rotation:-180, transformOrigin:"center"});
       }
 
     }
