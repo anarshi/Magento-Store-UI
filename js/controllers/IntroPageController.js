@@ -113,6 +113,10 @@
         event.stopPropagation();
     });
 
+     document.ontouchmove = function(e){
+        e.preventDefault();
+    }
+
 
     $scope.chooseLang = function(value,e){
 
