@@ -19,20 +19,34 @@
     $scope.isCountryUp = false;
     $scope.rotateCountryIcon = function(e){
       e.stopPropagation();
-      
-      console.log("isLangUp: " + $scope.isLangUp);
+        
+
 
       if($scope.isLangUp){
-        console.log("uso");
+
         $(".langDropdownbutton").dropdown('toggle');
         $scope.isLangUp = false;
         TweenLite.to($("#lang-caret"), 0.5, {rotation:0, transformOrigin:"center"});
       }
 
       if($scope.isCountryUp){
+
+        if(vm.data.os.toLowerCase() === "ios"){
+          var el = angular.element(e.target);
+          $(el).attr("aria-expanded","false");
+          $(el).parent().removeClass("open");
+        }
+
         $scope.isCountryUp = false;
         TweenLite.to($("#country-caret"), 0.5, {rotation:0, transformOrigin:"center"});
       } else {
+
+        if(vm.data.os.toLowerCase() === "ios"){
+          var el = angular.element(e.target);
+          $(el).attr("aria-expanded","true");
+          $(el).parent().addClass("open");
+        }
+
          $scope.isCountryUp = true;
         TweenLite.to($("#country-caret"), 0.5, {rotation:-180, transformOrigin:"center"});
       }
