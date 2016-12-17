@@ -82,7 +82,7 @@
 
       //$(".countryDropdownButton").dropdown('hide');
       $(".countryDropdownButton").dropdown("toggle");
-
+       $('.countryDropdownButton').trigger('click.bs.dropdown');
       $("body").trigger("click");
 
 
@@ -131,7 +131,7 @@
               e.preventDefault();
           }
         }
-        
+
         $scope.isCountryUp = true;
         TweenLite.to($("#country-caret"), 0.5, {rotation:-180, transformOrigin:"center"});
         if(vm.data.os.toLowerCase() === "ios"){
@@ -158,7 +158,8 @@
 
       $scope.storeId = value;
 
-      $(".langDropdownButton").dropdown('toggle');
+      $(".langDropdownbutton").dropdown('toggle');
+      $('.langDropdownbutton').trigger('click.bs.dropdown');
 
       $("body").trigger("click");
 

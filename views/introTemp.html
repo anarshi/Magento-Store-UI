@@ -21,7 +21,7 @@
                         <option  class="billing_country_option"value="EUR">Rest of Europe</option>
                     </select> -->
                     <div uib-dropdown >
-				    <button uib-dropdown-toggle data-toggle="dropdown-menu" class="countryDropdownButton" ng-click="rotateCountryIcon($event)">{{choosenCountry}}<span class="caret" id="country-caret"></span></button>
+				    <button uib-dropdown-toggle data-toggle="dropdown" class="countryDropdownButton" ng-click="rotateCountryIcon($event)">{{choosenCountry}}<span class="caret" id="country-caret"></span></button>
 				    <ul uib-dropdown-menu>
 				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
 				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
