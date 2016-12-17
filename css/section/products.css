@@ -275,11 +275,12 @@ section.products {
 
 
 .catalog-product img {
-    top: -6%;
-    width: 82%;
-    left: 10%;
+    width: 100%;
     height: auto;
+    position: relative;
 }
+
+
  .thumbs{
     padding: 0 30px;
 }
@@ -1000,7 +1001,7 @@ NAV
     padding-top: 0px;
     right: 0px;
     font-weight: 900;
-    top: 1px;
+    top: 0px;
     font-size: 11px;
     text-align: center;
     font-family: "AvenirNext LT Pro Demi";

@@ -22,25 +22,6 @@ section.products {
     box-shadow: none;
 }
 
-
-#checkout-country{
-    -webkit-border-radius:  0px !important;
-    background: url(../../images/svg/down-arrow.png) no-repeat right #f3f3f3 !important;
-    -webkit-appearance: none;
-    background-size: 10px !important;
-    background-position-x: 98% !important;
-
-}
-
-#checkout-bank{
-    -webkit-border-radius:  0px !important;
-    background: url(../../images/svg/down-arrow.png) no-repeat right #f3f3f3 !important;
-    -webkit-appearance: none;
-    background-size: 10px !important;
-    background-position-x: 98% !important;
-
-}
-
 .product-info-btn{
     padding: 15px !important;
     width: 100%;
@@ -185,7 +166,7 @@ section.products {
     display: block;
     position: relative;
     width: 100vw;
-    height: 50vh;
+    height: 50%;
     font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
     text-transform: uppercase;
     font-weight: 400;
@@ -196,6 +177,24 @@ section.products {
     line-height: 50vh;
     text-align: center;
     color: #FFF;
+}
+
+#checkout-country{
+    -webkit-border-radius:  0px !important;
+    background: url(../../images/svg/down-arrow.png) no-repeat right #f3f3f3 !important;
+    -webkit-appearance: none;
+    background-size: 10px !important;
+    background-position-x: 98% !important;
+
+}
+
+#checkout-bank{
+    -webkit-border-radius:  0px !important;
+    background: url(../../images/svg/down-arrow.png) no-repeat right #f3f3f3 !important;
+    -webkit-appearance: none;
+    background-size: 10px !important;
+    background-position-x: 98% !important;
+
 }
 
 /* /NEw  */
@@ -276,11 +275,12 @@ section.products {
 
 
 .catalog-product img {
-    top: -6%;
-    width: 82%;
-    left: 10%;
+    width: 100%;
     height: auto;
+    position: relative;
 }
+
+
  .thumbs{
     padding: 0 30px;
 }
@@ -1001,7 +1001,7 @@ NAV
     padding-top: 0px;
     right: 0px;
     font-weight: 900;
-    top: 1px;
+    top: 0px;
     font-size: 11px;
     text-align: center;
     font-family: "AvenirNext LT Pro Demi";
@@ -1060,7 +1060,7 @@ nav.footerbuttons {
 }
 
 .product-page-sizes {
-    z-index: 9999999;
+    z-index: 999999999;
     display: block;
     position: fixed;
     transition: all .6s cubic-bezier(.215,.61,.355,1);
@@ -1515,7 +1515,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     }
 
     .product-page-sizes {
-        z-index: 9999999;
+        z-index: 999999;
         width: 100vw;
     }
 }

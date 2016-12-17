@@ -25,10 +25,15 @@
 .intro-page-button{
 	font-size: 12px;
     padding: 0;
-    height: 62px;
+    height: 60px;
 	width: 80%;
 	margin-top: 30px;
+	outline: 0 !important;
 
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
 }
 
 .drop_list {
@@ -76,11 +81,12 @@
 .intro-page-button {
     font-size: 12px;
     padding: 0;
-    height: 45px;
-    width: 50%;
+    height: 60px;
+    width: 40%;
     margin-top: 15px;
     background: #003594;
     color: white;
+    outline: 0 !important;
 }
 
 .main-intro-conainer {
@@ -276,7 +282,7 @@
  }
 
 	.country-select > div{
-		width: 50% !important;
+		width: 40% !important;
 	}
 
 
@@ -287,17 +293,18 @@
 @media  screen and (max-width: 990px){
 	.main-intro-conainer > .row{
 		position: relative;
-		top: 50%;
+		top: 35%;
 	}	
 
 	.intro-page-button {
 	    font-size: 12px;
 	    padding: 0;
-	    height: 45px;
+	    height: 60px;
 	    width: 80%;
 	    margin-top: 15px;
 	    background: #003593;
 	    color: white;
+	    outline: 0 !important;
 	}
 
 	.signup-btn,
@@ -360,6 +367,8 @@
 
 
 
-@media (max-width: 800px){
-	
+@media (max-width: 480px){
+	.input-group-addon {
+	    font-size: 11px !important;
+	}
 }

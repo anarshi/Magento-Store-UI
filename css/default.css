@@ -13,7 +13,6 @@
     padding: 0;
 }
 
-
 .animation-container{
 
 }
@@ -29,7 +28,7 @@
 } */
 
 .shrink{
-    height: 52px !important;
+    height: 40px !important;
 }
 
 
@@ -478,7 +477,7 @@ nav#navBar-home .menu {
     cursor: pointer;
     top: 50%;
     left: 0;
-    margin: -23px 0;
+    margin: -19px 0;
 }
 
 .menu:hover{
@@ -770,7 +769,6 @@ label.css-label {
     color: #333333;
     background-color: #fff !important;
     border-color: #dddddd;
-    border-bottom: 1px solid #003593 !important;
 }
 
 .panel-body{
@@ -786,9 +784,9 @@ label.css-label {
 
 }
 
-.accordio-checbox-container{
+.accordio-checbox-container {
     background: #f3f3f5;
-    border-bottom: 1px solid #003594 !important
+    /* border-bottom: 1px solid #003594 !important; */
 }
 
 .panel-title > a {
@@ -966,6 +964,7 @@ nav.footerbuttons button>span {
     transition: top .35s cubic-bezier(.455,.03,.515,.955);
     top: 0;
     left: 0;
+    padding: 20px;
 }
 
 
@@ -1033,11 +1032,11 @@ nav.footerbuttons button>span {
 }
 
 .filter-text {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     color: white;
     font-family: 'AvenirNext LT Pro Regular';
-    padding-top: 16px;
+    padding-top: 14px;
 }
 
 .filter-text:hover{
@@ -1088,7 +1087,7 @@ nav.footerbuttons button>span {
     display: block;
     position: relative;
     width: 60px;
-    height: 54px;
+    height: 45px;
     transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
     -moz-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
     -o-transition: background-color .45s cubic-bezier(.25,.46,.45,.94);
@@ -1103,6 +1102,7 @@ nav.footerbuttons button>span {
     background-color: transparent;
     overflow: hidden;
 }
+
 .active {
     left: 0!important;
     visibility: visible!important;
@@ -1168,7 +1168,7 @@ nav#navBar.ready .menu {
 }
 
 nav#navBar-home.ready .menu {
-    top: 40%!important;
+    top: 38% !important;
     opacity: 1;
 }
 
@@ -1228,8 +1228,8 @@ nav#navBar-home.ready>span {
 .cartcount {
     display: block;
     position: absolute;
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     font-family: AvenirNextLTPro-Demi,Arial,Helvetica;
     text-transform: uppercase;
     font-weight: 400;
@@ -1237,14 +1237,14 @@ nav#navBar-home.ready>span {
     letter-spacing: 0;
     border-radius: 12px;
     right: -50px;
-    top: 12px;
+    top: 15px;
     margin: 0;
-    padding: 0;
+    padding-bottom: 0px;
     background: #003593;
     color: #fff;
     font-size: .6875rem;
     text-align: center;
-    line-height: 23px;
+    line-height: 21px;
     cursor: pointer;
     border: 1px solid #003593;
     z-index: 100;
@@ -1276,9 +1276,13 @@ nav#navBar-home.ready {
     font-weight: normal;
     line-height: 1;
     text-align: center;
-    background-color: #eeeeee;
+    background-color: rgba(255, 255, 255, 0.6) !important;
     border: 1px solid white !important;
+    border-right: 1px solid white !important;
     border-radius: 0px !important;
+    border-left:  none !important;
+    border-top: none !important;
+    border-bottom: none !important;
     text-transform: uppercase;
     color: #003593 !important;
 }
@@ -1300,7 +1304,7 @@ nav#navBar-home.ready {
     line-height: 1;
     color: #555555;
     text-align: center;
-    background-color: white !important;
+    background-color: rgba(255, 255, 255, 0.6) !important;
 }
 
 
@@ -1586,7 +1590,7 @@ nav.footerbuttons button {
     color: #000;
     float: left;
     overflow: hidden;
-    line-height: 52px;
+    /* ine-height: 52px; */
 }
 
 
@@ -2298,7 +2302,6 @@ ul.cart-products {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     display: inline-block;
-    padding: 1rem 2rem 1.0625rem;
     font-size: 1rem;
     background-color: #008CBA;
     border-color: #007095;
@@ -2522,7 +2525,7 @@ div.error {
     }
 
     nav#navBar-home.ready {
-        height: 110px;
+        height: 90px;
         background: #003593;
         border-color: #003593;
     }
@@ -2531,7 +2534,7 @@ div.error {
         top: 12px;
         background: white;
         color: #000;
-        line-height: 23px;
+        line-height: 21px;
         border: 1px solid #FFF;
     }
 
@@ -2541,7 +2544,7 @@ div.error {
     }
 
     nav#navBar-home.ready>span {
-        left: 50%;
+        left: 49%;
         top: 42%;
     }
 
@@ -2557,9 +2560,9 @@ div.error {
 
     .filter-menu {
         display: block;
-        height: 56px;
+        height: 45px;
         width: 74% !important;
-        margin: 82px auto;
+        margin: 65px auto;
         float: none !important;
         z-index: 2;
         background: #1458B9;
@@ -2568,12 +2571,12 @@ div.error {
 
 
     #navBar-home > aside{
-        top: 32px;
+        top: 25px;
     }
 
     .filter-menu-wide {
         display: block;
-        height: 56px;
+        height: 45px;
         width: 100% !important;
         margin: 0px auto;
         float: none !important;
@@ -2609,7 +2612,7 @@ div.error {
         top: 11px;
         background: #274595;
         color: #fff;
-        line-height: 23px;
+        line-height: 21px;
         border: 1px solid #334f9a;
     }
     /* /prodcut-page-style */

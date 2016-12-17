@@ -9,7 +9,7 @@
 
 
     window.moaApp = angular.module("moaApp", ["ui.router" , "ngSanitize","ngAnimate","ngTouch","angular-inview" , 
-                                              'ngRoute', 'anim-in-out','ui.bootstrap','angular-preload-image' ]);
+                                              'ngRoute', 'anim-in-out','ui.bootstrap','angular-preload-image']);
     window.moaApp.config(['$stateProvider', '$locationProvider' ,'$urlRouterProvider', function($stateProvider,$locationProvider,$urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');

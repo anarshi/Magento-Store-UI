@@ -68,7 +68,7 @@
     height: 372px;
     top: 50%;
     left: -100px;
-    opacity: 0;
+    opacity: 1;
     display: block;
     margin: -218px 0;
     transition: all 750ms ease .25s;
@@ -81,8 +81,8 @@
     position: absolute;
     height: 372px;
     top: 50%;
-    left: -100px;
-    opacity: 0;
+    /* left: -100px; */
+    opacity: 1;
     display: block;
     margin: -218px 0;
     transition: all 750ms ease .25s;

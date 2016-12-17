@@ -507,15 +507,16 @@
 
         var w = angular.element($window);
         w.bind('resize', function () {
-            if($window.innerWidth < 990 && $scope.productGridType !== 'col-md-12 col-xs-12'){
-               // $scope.productGridType = localStorage.productGridType +' opacity-0';
-               //  $timeout(function(){
-               //      $scope.productGridType = 'col-md-6 col-xs-6';
-               //      localStorage.setItem('productGridType',$scope.productGridType);
-               //  },1000);
-               //  $scope.oneRowActive = "";
-               //  $scope.twoRowActive = "active";
-               //  $scope.threeRowActive = ""; 
+            if($window.innerWidth < 990 && $scope.productGridType === 'col-md-12 col-xs-12'){
+                console.log("radi");
+               $scope.productGridType = localStorage.productGridType +' opacity-0';
+                $timeout(function(){
+                    $scope.productGridType = 'col-md-6 col-xs-6';
+                    localStorage.setItem('productGridType',$scope.productGridType);
+                },1000);
+                $scope.oneRowActive = "";
+                $scope.twoRowActive = "active";
+                $scope.threeRowActive = ""; 
             }
 
 
@@ -605,7 +606,7 @@
 
 
          angular.element($window).bind("scroll", function() {
-            if($(window).scrollTop()  >  100){
+            if($(window).scrollTop()  >  100 && $(window).innerWidth() <= 990  ){
                if($("#navBar-home").hasClass("shrink") && $scope.currentState === "views/home_page.html"){
 
                } else if(!$("#navBar-home").hasClass("shrink") && $scope.currentState === "views/home_page.html") {
@@ -614,7 +615,7 @@
                     $("#filterMenu-home").addClass("filter-menu-wide");
                }
                 
-            } else if($scope.currentState === "views/home_page.html") {
+            } else if($scope.currentState === "views/home_page.html" ) {
 
                if($("#navBar-home").hasClass("shrink")){
                     $("#navBar-home").removeClass("shrink");

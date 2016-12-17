@@ -2,7 +2,7 @@
 
 
 
-<div class="container-fluid main-intro-conainer" ng-controller="IntroPageController">
+<div class="container-fluid main-intro-conainer" ng-click="closeDropdownMenu()" ng-controller="IntroPageController">
 
  <div class="col-md-12 col-xs-12" >
         <nav id="navBar-intro" class="navBar ready top-hide top" >
@@ -15,21 +15,52 @@
 		<div class="col-md-12 col-xs-12 text-center country-select ">
 		 <div class="input-group">
 	      <div class="input-group-addon">Store</div>
-	      		<select id="billing_country" name="billing_country" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true" ng-model="currencyCode" ng-class="chooseCountryClass"  >
-	      				<option value="" disabled selected>Select your country</option>
-                        <option value="SEK">Sweeden</option>
-                        <option value="EUR">Rest of Europe</option>
-                    </select>
+	      		<!-- <select id="billing_country" name="billing_country" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true" ng-model="currencyCode" ng-class="chooseCountryClass"  >
+	      				<option class="billing_country_option" value="" disabled selected>Select your country</option>
+                        <option  class="billing_country_option"value="SEK">Sweeden</option>
+                        <option  class="billing_country_option"value="EUR">Rest of Europe</option>
+                    </select> -->
+                    <div uib-dropdown >
+				    <button uib-dropdown-toggle class="countryDropdownButton" ng-click="rotateCountryIcon($event)">{{choosenCountry}}<span class="caret" id="country-caret"></span></button>
+				    <ul uib-dropdown-menu>
+				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
+				        <li ng-click="chooseACountry('SEK')">Sweeden</li>
+				        <li ng-click="chooseACountry('EUR')">Rest of europe</li>
+				    </ul>
+				</div>
 	          
 	    </div>
 		<div class="input-group language">
 	      <div class="input-group-addon">language</div>
 
-	          <select id="language" name="language" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true" ng-class="chooseLangagueClass"  ng-model="storeId">
+	          <!-- <select id="language" name="language" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true" ng-class="chooseLangagueClass"  ng-model="storeId">
                         <!-- <option value="2">SVENSKA</option> -->
-                        <option value="" disabled selected>Select your language</option>
-                        <option value="1">English</option>
-                    </select>
+                        <!-- <option value="" disabled selected>Select your language</option>
+                        <option value="1">English</option> -->
+                    <!-- </select> -->
+
+             <div uib-dropdown click-outside="closeDropdownMenu()">
+				    <button uib-dropdown-toggle class="langDropdownbutton" ng-click="rotateLangIcon($event)" >{{choosenLang}}<span class="caret" id="lang-caret"></span></button>
+				    <ul uib-dropdown-menu>
+				        <li ng-click="chooseLang('1')">Svenska</li>
+				        <li ng-click="chooseLang('2')">English</li>
+				    </ul>
+				</div>
 	    </div>	
 		</div>
 		<div class="col-md-12 col-xs-12 text-center country-submit">
@@ -37,52 +68,117 @@
                                     <span><strong>Enter</strong></span>
                               </button>		</div>
                               
-	</div>
-
-	
-		<!-- <div class="col-md-12 col-xs-12  center-vertically no-padding" ng-show="toShowBlue">
-
-		<form ng-submit="saveEmail()">
-			<div class="col-md-12 col-xs-12 info-intro-text-container ">
-
-				<div class="col-md-12 col-xs-12 text-center welcome-title" >
-				welcome to camicamina
-				</div>
-				<div class="col-md-12 col-xs-12 text-center welcome-opening" >
-					opening this december
-				</div>
-				<div class="col-md-12 col-xs-12 text-center welcome-sub-opening">
-					Sign up for our prelaunch sale
-				</div>
-			</div>
-
-			<div class="col-md-12 col-xs-12 button-container">
-				<div class="alert alert-warning myAlert" ng-show="showAlert">
-				  Please enter your email.
-				</div>
-				<div class="col-md-12 col-xs-12 no-padding text-center">
-					<input type="text" ng-focus="focusInput()" ng-blur="blurInput()" ng-model="emailInput" class="email-input" name="client-email  ng-class="blink" placeholder="{{somePlaceholder}}" ng-class="blink"/>
-				</div>
-				
-				<input type="submit" class=" form-control signup-btn" value="Sign up" />
-			</div>
-				</form>
-		</div>
-
-
-
-		<div class="col-md-12 col-xs-12  center-vertically no-padding" ng-show="toShowNew">
-			<div class="col-md-12 col-xs-12 info-intro-text-container ">
-				<div class="col-md-12 col-xs-12 text-center thanks-text" >
-					thank you!
-				</div>
-			</div>
-		</div> -->
-
-	
-
-
-
-
+	</div>	
 
 </div>
+
+<style>
+	
+
+.countryDropdownButton {
+    height: 60px;
+    text-align: left;
+    color: #003594;
+    text-transform: uppercase;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.69);
+    padding-left:  15px;
+    font-size: 12.99px;
+}
+
+.langDropdownbutton{
+	height: 60px;
+    text-align: left;
+    color: #003594;
+    text-transform: uppercase;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.69);
+    padding-left:  15px;
+    font-size: 12.99px;
+}
+
+.caret {
+    float: right;
+    display: inline-block;
+    width: 0;
+    top: 23px;
+    right: 15px;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 6px solid;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    position: absolute;
+    margin-top: 5px;
+}
+
+.dropdown-menu{
+	padding: 0px !important;
+	background: transparent;
+	text-align: left;
+	width: 100%;
+	border-radius: 0px;
+	color: #003594;
+	border: none;
+	border-left: 1px solid white;
+	max-height: 245px;
+	overflow: auto;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+.dropdown-menu::-webkit-scrollbar-track {
+    background: white;
+    width: 2px !important;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+ 
+.dropdown-menu::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: #babec7 ; 
+    width: 2px !important;
+    /* -webkit-box-shadow: inset 0 0 2px #f2e5e5;  */
+}
+.dropdown-menu::-webkit-scrollbar-thumb:window-inactive {
+	background: #f2e5e5 
+}         
+
+.dropdown-menu li:hover{
+	cursor: pointer;
+	background: #f2e5e5 !important;
+	color: #003594 !important;
+}
+
+.dropdown-menu li{
+	padding: 15px;
+	color: #003594;
+	background: white;
+	text-transform: uppercase;
+}
+
+@media (max-width: 480px){
+	.countryDropdownButton {
+	    font-size: 11.99px;
+	}
+	.langDropdownbutton{
+	    font-size: 12px;
+	}
+}
+
+@media (max-width: 370px){
+	.countryDropdownButton {
+	    font-size: 10px;
+	}
+
+	.langDropdownbutton{
+	    font-size: 10px;
+	}
+}
+
+
+</style>
