@@ -152,16 +152,16 @@
     }
 
 
-    //stops scrolling on ios
-    if(vm.data.os.toLowerCase() === "ios"){
-      document.addEventListener('touchmove', function(event){
-        event.stopPropagation();
-      });
+    // //stops scrolling on ios
+    // if(vm.data.os.toLowerCase() === "ios"){
+    //   document.addEventListener('touchmove', function(event){
+    //     event.stopPropagation();
+    //   });
 
-       document.ontouchmove = function(e){
-          e.preventDefault();
-      }
-    }
+    //    document.ontouchmove = function(e){
+    //       e.preventDefault();
+    //   }
+    // }
     
     $scope.chooseLang = function(value,e){
 
