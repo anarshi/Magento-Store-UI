@@ -116,8 +116,9 @@
         TweenLite.to($("#country-caret"), 0.5, {rotation:0, transformOrigin:"center"});
         if(vm.data.os.toLowerCase() === "ios"){
           var el = angular.element();
-          $(el).parent().addClass("open");
-          $(el).attr("aria-expanded","true");
+          $(el).parent().parent().removeClass("open");
+          $(".countryDropdownButon").attr("aria-expanded","true");
+          console.log("ios");
         }
       } else {
 
@@ -135,9 +136,10 @@
         $scope.isCountryUp = true;
         TweenLite.to($("#country-caret"), 0.5, {rotation:-180, transformOrigin:"center"});
         if(vm.data.os.toLowerCase() === "ios"){
+          console.log("ios2");
           var el = angular.element();
-          $(el).parent().addClass("open");
-          $(el).attr("aria-expanded","true");
+          $(el).parent().parent().addClass("open");
+          $(".countryDropdownButon").attr("aria-expanded","true");
         }
       }
     }
@@ -194,8 +196,8 @@
         TweenLite.to($("#lang-caret"), 0.5, {rotation:0, transformOrigin:"center"});
         if(vm.data.os.toLowerCase() === "ios"){
           var el = angular.element();
-          $(el).parent().removeClass("open");
-          $(el).attr("aria-expanded","false");
+          $(el).parent().parent().removeClass("open");
+          $(".langDropdownbutton").attr("aria-expanded","false");
         }
 
       } else {
@@ -214,8 +216,8 @@
         TweenLite.to($("#lang-caret"), 0.5, {rotation:-180, transformOrigin:"center"});
         if(vm.data.os.toLowerCase() === "ios"){
           var el = angular.element();
-          $(el).parent().addClass("open");
-          $(el).attr("aria-expanded","true");
+          $(el).parent().parent().addClass("open");
+          $(".langDropdownbutton").attr("aria-expanded","true");
         }
       }
 
