@@ -2,9 +2,9 @@
 
     "use strict";
 
-    $moa.controller('ProductController', ['$scope', '$http', '$stateParams', '$location', '$window', '$timeout', 'basket', 'cartProducts', 'openCartService',
+    $moa.controller('ProductController', ['$scope', '$http', '$state' ,'$stateParams', '$location', '$window', '$timeout', 'basket', 'cartProducts', 'openCartService',
 
-        function ProductController($scope, $http, $stateParams, $location, $window, $timeout, basket, cartProducts, openCartService) {
+        function ProductController($scope, $http, $state , $stateParams, $location, $window, $timeout, basket, cartProducts, openCartService) {
 
 
             var inViewpoerEl = $('#related-products');
@@ -26,10 +26,10 @@
 
             if ($window.innerWidth <= 1020 ) {
                 $timeout(function() {
-                    console.log("izvrsio se");
                     $('.image-container').slick({
-                        rtl: true,
                         dots: true,
+                        rtl:false,
+                        vertical:false,
                         arrows: false
 
                     });
@@ -64,6 +64,9 @@
 
 
 
+            $scope.goToRelatedProduct = function(id,currencyCode){
+                $state.go("product", {product_id: id , currencyCode: currencyCode});
+            }
             
 
             $http.post('http://104.236.246.190:8888/product/' + searchCriteria,{currencyCode: $stateParams.currencyCode , storeId: localStorage.storeId}).then(function successCallback(response) {
@@ -323,6 +326,13 @@
                         for (var i = 0; i < response.data.length; i++) {
                             $scope.relatedProducts.push(response.data[i]);
                         }
+
+                        $(".relatedProductLink").click(function(){
+                            var prId = $(this).attr("data-id");
+                            var prCrCode = $(this).attr("data-currency");
+                            console.log("prdId: " + prId  + " Code: " + prCrCode );
+                        });
+
                     } , function errorCallback(response) {
                             console.log(response);
                     });
@@ -380,10 +390,10 @@
                                 console.log("uso u <1200ifpx");
                                 
                                setTimeout(function(){
-                                    
                                     $('#image-container').slick({
-                                        rtl: true,
                                         dots: true,
+                                        rtl:false,
+                                        vertical:false,
                                         arrows: false
 
                                     });
@@ -473,8 +483,9 @@
 
                     $timeout(function() {
                         $('.image-container').slick({
-                            rtl: true,
                             dots: true,
+                            rtl:false,
+                            vertical:false,
                             arrows: false
 
                         });
@@ -489,10 +500,11 @@
                     }
                     
                 }
-                slider.css({
-                    'height': $window.innerWidth + "px",
+                // slider.css({
+                //     'height': $window.innerWidth + "px",
+                //      'left' : "0px !important"
 
-                });
+                // });
             });
 
             $scope.scrollValueGlobal = 0;

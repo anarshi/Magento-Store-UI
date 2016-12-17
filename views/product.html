@@ -19,7 +19,7 @@
       <section class="product-container">
          <div class="content text-center">
             <div class="transform-container">
-               <div class="image-container"  dir="rtl" ng-class="imageContainerZoomClass"  data-images="{{imageNumber}}"; style="
+               <div class="image-container"  ng-class="imageContainerZoomClass"  data-images="{{imageNumber}}"; style="
                   transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1); -webkit-transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1);" id="image-container">
                   <figure class="ready onscreen slides" ng-repeat="slide in slides" ng-click = "zoomIn($event)" id="figure{{$index}}" preload-bg-image="{{ slide.image }}"  ng-style="{ background: 'url({{ slide.image }})' }">
                      <img src="{{slide.image}}" data-small="{{slide.image}}">
@@ -74,7 +74,7 @@
                   <div class="bar show col-md-12 no-padding" id="related-products"><span>You may also like</span></div>
                   <div class="scroll-container-products" id="scroll-container">
                      <ul>
-                        <li class="onscreen" style="background-image: url({{relatedProduct.allImages[0]}});" ng-repeat="relatedProduct in relatedProducts"><a ui-sref="product({product_id: relatedProduct.id , currencyCode: relatedProduct.currencyCode })"></a></li>
+                        <li ng-click="goToRelatedProduct(relatedProduct.id,relatedProduct.currencyCode)" ui-sref="product({product_id: relatedProduct.id , currencyCode: relatedProduct.currencyCode })" class="onscreen" style="background-image: url({{relatedProduct.allImages[0]}});" ng-repeat="relatedProduct in relatedProducts"><a ng-href="/product/{{product.id}}/{{product.currencyCode}}" data-id = "{{product.id}}" data-currency="{{product.currencyCode}}" class="relatedProductLink" ></a></li>
                      </ul>
                   </div>
                </footer>
@@ -134,3 +134,6 @@
      </div>
    </div>
 </div>
+<style>
+
+</style>

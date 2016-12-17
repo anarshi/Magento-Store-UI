@@ -13,14 +13,22 @@
     console.log(vm.data.os);
 
     //initial placeholders
-    $scope.choosenLang = "Select your language";
+    $scope.choosenLang = "Select language";
     $scope.choosenCountry = "Select your country";
 
     $scope.isCountryUp = false;
     $scope.rotateCountryIcon = function(e){
       e.stopPropagation();
-      var target = angular.element(e.target);
-      $(target).parent().addClass("open");
+      
+      console.log("isLangUp: " + $scope.isLangUp);
+
+      if($scope.isLangUp){
+        console.log("uso");
+        $(".langDropdownbutton").dropdown('toggle');
+        $scope.isLangUp = false;
+        TweenLite.to($("#lang-caret"), 0.5, {rotation:0, transformOrigin:"center"});
+      }
+
       if($scope.isCountryUp){
         $scope.isCountryUp = false;
         TweenLite.to($("#country-caret"), 0.5, {rotation:0, transformOrigin:"center"});
@@ -34,8 +42,12 @@
     $scope.isLangUp = false;
     $scope.rotateLangIcon = function(e){
       e.stopPropagation();
-       var target = angular.element(e.target);
-      $(target).parent().addClass("open");
+       
+      if($scope.isCountryUp){
+        $scope.isCountryUp = false;
+        TweenLite.to($("#country-caret"), 0.5, {rotation:-180, transformOrigin:"center"});
+      }
+
       if($scope.isLangUp){
         $scope.isLangUp = false;
         TweenLite.to($("#lang-caret"), 0.5, {rotation:0, transformOrigin:"center"});
@@ -68,11 +80,13 @@
     $scope.chooseACountry = function(selectedCountry,e){
       $scope.currencyCode = selectedCountry;
 
-      var target = angular.element(e.target);
-      $(target).parent().parent().removeClass("open");
-      $(".countryDropdownbutton").attr("aria-expanded","false");
-       $(".countryDropdownbutton").click();
-             //ajdust to backend return lang ids from databse
+      //$(".countryDropdownButton").dropdown('hide');
+      // $(".countryDropdownButton").trigger("click");
+
+      $("body").trigger("click");
+
+
+      //ajdust to backend return lang ids from databse
       //this is temp solution just for demostration
       if(selectedCountry === "SEK"){
         $scope.choosenCountry = "Sweeden";
@@ -80,34 +94,41 @@
           $scope.choosenCountry = "Rest of europe";
       }
 
+      if($scope.isLangUp){
+        $(".langDropdownbutton").dropdown('toggle');
+        $scope.isLangUp = false;
+        TweenLite.to($("#lang-caret"), 0.5, {rotation:0, transformOrigin:"center"});
+      }
+
       if($scope.isCountryUp){
         $scope.isCountryUp = false;
         TweenLite.to($("#country-caret"), 0.5, {rotation:0, transformOrigin:"center"});
       } else {
-         $scope.isCountryUp = true;
+        $scope.isCountryUp = true;
         TweenLite.to($("#country-caret"), 0.5, {rotation:-180, transformOrigin:"center"});
       }
     }
 
 
-
     $scope.chooseLang = function(value,e){
 
       $scope.storeId = value;
-      var target = angular.element(e.target);
-      $(target).parent().parent().removeClass("open");
-      $(".langDropdownButton").attr("aria-expanded","false");
-       $(".langDropdownButton").click();
 
-       $(".countryDropdownbutton").parent().removeClass("open");
-      $(".countryDropdownbutton").attr("aria-expanded","false");
-       $(".countryDropdownbutton").click();
+      //$(".langDropdownButton").dropdown('toggle');
+
+      $("body").trigger("click");
+
       //ajdust to backend return lang ids from databse
       //this is temp solution just for demostration
       if(parseFloat(value) === 1 ){
         $scope.choosenLang = "Svenska"; 
       } else if(parseFloat(value) === 2 ){
         $scope.choosenLang = "English"; 
+      }
+
+      if($scope.isCountryUp){
+        $scope.isCountryUp = false;
+        TweenLite.to($("#country-caret"), 0.5, {rotation:-180, transformOrigin:"center"});
       }
 
       if($scope.isLangUp){

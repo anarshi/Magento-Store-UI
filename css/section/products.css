@@ -881,10 +881,19 @@ NAV
 
 .product-page footer.info h2 {
     font-size: 16px !important;
-    line-height: 1.5625rem;
     margin: 0 0 30px;
     font-weight: 900;
     color:  #464646;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
 }
 
 .info-outer{
@@ -1660,7 +1669,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     list-style-type: none;
     left: 50%;
     bottom: -5%;
-    -webkit-transform: translate(-50%,0);
+    -webkit-transform: translate(-50%,0) ;
     transform: translate(-50%,0);
     margin: 0;
 }

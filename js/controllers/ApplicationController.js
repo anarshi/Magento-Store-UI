@@ -510,15 +510,15 @@
         var w = angular.element($window);
         w.bind('resize', function () {
             if($window.innerWidth < 990 && $scope.productGridType === 'col-md-12 col-xs-12'){
-                console.log("radi");
-               $scope.productGridType = localStorage.productGridType +' opacity-0';
-                $timeout(function(){
-                    $scope.productGridType = 'col-md-6 col-xs-6';
-                    localStorage.setItem('productGridType',$scope.productGridType);
-                },1000);
-                $scope.oneRowActive = "";
-                $scope.twoRowActive = "active";
-                $scope.threeRowActive = ""; 
+               //  console.log("radi");
+               // $scope.productGridType = localStorage.productGridType +' opacity-0';
+               //  $timeout(function(){
+               //      $scope.productGridType = 'col-md-6 col-xs-6';
+               //      localStorage.setItem('productGridType',$scope.productGridType);
+               //  },1000);
+               //  $scope.oneRowActive = "";
+               //  $scope.twoRowActive = "active";
+               //  $scope.threeRowActive = ""; 
             }
 
 
