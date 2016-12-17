@@ -223,7 +223,7 @@
         $scope.isLangUp = false;
         TweenLite.to($("#lang-caret"), 0.5, {rotation:0, transformOrigin:"center"});
         if(vm.data.os.toLowerCase() === "ios"){
-          var el = angular.element();
+          var el = angular.element(e.target);
           $(el).parent().parent().removeClass("open");
           $(".langDropdownbutton").attr("aria-expanded","false");
         }
@@ -243,7 +243,7 @@
         $scope.isLangUp = true;
         TweenLite.to($("#lang-caret"), 0.5, {rotation:-180, transformOrigin:"center"});
         if(vm.data.os.toLowerCase() === "ios"){
-          var el = angular.element();
+          var el = angular.element(e.target);
           $(el).parent().parent().addClass("open");
           $(".langDropdownbutton").attr("aria-expanded","true");
         }
