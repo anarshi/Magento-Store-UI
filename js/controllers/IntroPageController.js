@@ -63,10 +63,24 @@
       }
 
       if($scope.isLangUp){
+
+        if(vm.data.os.toLowerCase() === "ios"){
+          var el = angular.element(e.target);
+          $(el).attr("aria-expanded","false");
+          $(el).parent().removeClass("open");
+        }
+
         $scope.isLangUp = false;
         TweenLite.to($("#lang-caret"), 0.5, {rotation:0, transformOrigin:"center"});
       } else {
-         $scope.isLangUp = true;
+
+        if(vm.data.os.toLowerCase() === "ios"){
+          var el = angular.element(e.target);
+          $(el).attr("aria-expanded","true");
+          $(el).parent().addClass("open");
+        }
+
+        $scope.isLangUp = true;
         TweenLite.to($("#lang-caret"), 0.5, {rotation:-180, transformOrigin:"center"});
       }
      
