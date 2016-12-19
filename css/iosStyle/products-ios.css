@@ -1,3 +1,9 @@
+body, html {
+    height: inherit !important;
+    background-color: rgb(243,243,243) !important;
+}
+
+
 section.products {
     width: 100%;
     overflow: hidden;

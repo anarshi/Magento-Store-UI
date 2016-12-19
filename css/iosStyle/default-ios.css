@@ -34,7 +34,7 @@
 
 
 body, html {
-     min-height: 100% !important;
+     height: 100% ;
     background-color: rgb(243,243,243) !important;
 }
 
