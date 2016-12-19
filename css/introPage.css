@@ -281,7 +281,7 @@
 
 .main-intro-conainer > .row{
     position: relative;
-	top: 50%;
+	top: 40%;
  }
 
 	.country-select > div{
@@ -296,7 +296,7 @@
 @media  screen and (max-width: 990px){
 	.main-intro-conainer > .row{
 		position: relative;
-		top: 35%;
+		top: 25%;
 	}	
 
 	.intro-page-button {

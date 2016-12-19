@@ -4,6 +4,16 @@
 
 <div class="container-fluid main-intro-conainer" ng-click="closeDropdownMenu()" ng-controller="IntroPageController">
 
+<!-- Small modal -->
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
+
  <div class="col-md-12 col-xs-12" >
         <nav id="navBar-intro" class="navBar ready top-hide top" >
             <span class="intro-logo" ng-class="topNavbarLogoStyle" ></span>  
@@ -55,8 +65,16 @@
                     <!-- </select> -->
 
              <div uib-dropdown click-outside="closeDropdownMenu()">
-				    <button uib-dropdown-toggle class="langDropdownbutton" id="dropdown-btn" ng-click="rotateLangIcon($event)" >{{choosenLang}}<span class="caret" id="lang-caret"></span></button>
+				    <button  uib-dropdown-toggle class="langDropdownbutton"  id="dropdown-btn" ng-click="rotateLangIcon($event)" >{{choosenLang}}<span class="caret" id="lang-caret"></span></button>
 				    <ul uib-dropdown-menu>
+				        <li ng-click="chooseLang('1',$event)">Svenska</li>
+				        <li ng-click="chooseLang('2',$event)">English</li>
+				        <li ng-click="chooseLang('1',$event)">Svenska</li>
+				        <li ng-click="chooseLang('2',$event)">English</li>
+				        <li ng-click="chooseLang('1',$event)">Svenska</li>
+				        <li ng-click="chooseLang('2',$event)">English</li>
+				        <li ng-click="chooseLang('1',$event)">Svenska</li>
+				        <li ng-click="chooseLang('2',$event)">English</li>
 				        <li ng-click="chooseLang('1',$event)">Svenska</li>
 				        <li ng-click="chooseLang('2',$event)">English</li>
 				    </ul>

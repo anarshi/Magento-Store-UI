@@ -33,7 +33,7 @@
 
 
 body, html {
-     height: 100% !important;
+     height: 100% ;
     background-color: rgb(243,243,243) !important;
 }
 
@@ -1651,11 +1651,12 @@ img {
 */
 
 .move-right-content-no-fixed{
-    /* -ms-transform: translate(280px,0px); /* IE 9+ */
-    -webkit-transform: translateX(280px); /* Safari */
-    transform: translateX(280px); /* Standard syntax */
-    -o-transform: translateX(280px); /* opera */
-    -moz-transform: translateX(280px); /* mozzila */ */
+    -ms-transform: translate(280px,0px);
+    -webkit-transform: translateX(280px); 
+    transform: translateX(280px); 
+    -o-transform: translateX(280px);
+    -moz-transform: translateX(280px); /
+
 
     transition: all .5s cubic-bezier(.645,.045,.355,1) !important;
     -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1) !important;
