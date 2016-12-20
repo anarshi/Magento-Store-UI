@@ -18,6 +18,9 @@
             $scope.isSet = false;
             $scope.zoomArray = [];
             $scope.zoomId = "0";
+            $scope.isOutOfStock = false;
+            $scope.addToBagText = "Add to bag";
+            $scope.productInformation = "";
             $scope.productChoosenId = null;
             $scope.isConfigurableFirst = false;
             var imageContainer = document.getElementsByClassName("image-container")[0];
@@ -74,6 +77,9 @@
                 $scope.product.price = $scope.product.price.toFixed(2);
                 $scope.slides = [];
 
+                
+
+                $scope.productInformation = response.data.product_information;
 
 
                 if($scope.product.typeId === "configurable"){
@@ -86,6 +92,13 @@
                     $scope.showProductData = false;
                     
                 } else {
+                    if(parseFloat(response.data.is_in_stock) === 1){
+                        $scope.isOutOfStock = false;
+                        $scope.addToBagText = "Add to bag";
+                    } else {
+                        $scope.isOutOfStock = true;
+                        $scope.addToBagText = "Out of stock";
+                    }
                     $scope.isConfigurableFirst = false;
                     $scope.showProductData = true;
                     $scope.sizeBtnClass="sizeBtn-size-is-choosen";
@@ -107,7 +120,7 @@
 
                 if ($scope.slides.length > 1) {
                     $(".image-container").css({
-                        "margin-bottom": "-60%"
+                        "margin-bottom": "-90%"
                     });
                 }
 
@@ -216,32 +229,34 @@
                 } else {
                     productId  = $stateParams.product_id;
                 }
-                
-                
+                    
+            if($scope.isOutOfStock === false){
                 if (localStorage.cartId != null && !isNaN(localStorage.cartId)) {
-                    basket.addToCart.async(localStorage.cartId, productId).then(function(response) {
-                        localStorage.cartId = response;
-                        basket.cartData.async(localStorage.cartId,localStorage.currencyCode).then(function(data) {
-                            $scope.cartProducts.productsInCart = data.cartProducts;
-                            $scope.cartProducts.cartCount = data.cartCount;
-                            $scope.cartProducts.cartTotalPrice = data.totalPrice.toFixed(2);
-                            $scope.currencySymbol = data.currencySymbol;
-                            openCartService.setCartOpen(true);
+                        basket.addToCart.async(localStorage.cartId, productId).then(function(response) {
+                            localStorage.cartId = response;
+                            basket.cartData.async(localStorage.cartId,localStorage.currencyCode).then(function(data) {
+                                $scope.cartProducts.productsInCart = data.cartProducts;
+                                $scope.cartProducts.cartCount = data.cartCount;
+                                $scope.cartProducts.cartTotalPrice = data.totalPrice.toFixed(2);
+                                $scope.currencySymbol = data.currencySymbol;
+                                openCartService.setCartOpen(true);
+                            });
                         });
-                    });
-                } else {
-                    basket.initialize.async(productId).then(function(response) {
-                        localStorage.cartId = response;
-                        basket.cartData.async(localStorage.cartId,localStorage.currencyCode).then(function(data) {
-                            $scope.cartProducts.productsInCart = data.cartProducts;
-                            $scope.cartProducts.cartCount = data.cartCount;
-                            $scope.cartProducts.cartTotalPrice = data.totalPrice.toFixed(2);
-                            $scope.currencySymbol = data.currencySymbol;
-                            openCartService.setCartOpen(true);
+                    } else {
+                        basket.initialize.async(productId).then(function(response) {
+                            localStorage.cartId = response;
+                            basket.cartData.async(localStorage.cartId,localStorage.currencyCode).then(function(data) {
+                                $scope.cartProducts.productsInCart = data.cartProducts;
+                                $scope.cartProducts.cartCount = data.cartCount;
+                                $scope.cartProducts.cartTotalPrice = data.totalPrice.toFixed(2);
+                                $scope.currencySymbol = data.currencySymbol;
+                                openCartService.setCartOpen(true);
+                            });
                         });
-                    });
-                }
-            };
+                    }
+                };
+            }    
+                
 
 
             $scope.goHome = function(path) {
@@ -349,12 +364,23 @@
 
                 $http.post("http://104.236.246.190:8888/getSimpleProductsById/" + id,{currencyCode: $stateParams.currencyCode , storeId: localStorage.storeId}).then(function successCallback(response) {
                             //$('.image-container').slick('unslick');
-                            console.log($scope.slides.length);
+                            //console.log($scope.slides.length);
                             
+                    
 
                             $scope.product = response.data;
                             $scope.product.price = $scope.product.price.toFixed(2);
                             $scope.slides = [];
+
+                             if(parseFloat(response.data.is_in_stock) === 1){
+                                $scope.addToBagText = "Add to bag";
+                                $scope.isOutOfStock = false;
+                            } else {
+                                $scope.isOutOfStock = true;
+                                $scope.addToBagText = "Out of stock";
+                            }
+
+                            console.log(response.data);
 
                             if($scope.product.typeId === "configurable"){
                                 $scope.associatedProducts = [];
@@ -380,7 +406,7 @@
 
                             if ($scope.slides.length > 1) {
                                 $(".image-container").css({
-                                    "margin-bottom": "-60%"
+                                    "margin-bottom": "-90%"
                                 });
                             }
 
@@ -601,7 +627,7 @@
                         t1.insert(new TweenMax(imageContainer, .5, {
                             css: {
                                 transform: "matrix(0.65, 0, 0, 0.65, 0, 0)",
-                                marginBottom: "-60%"
+                                marginBottom: "-90%"
                             },
                             ease: Power4.easeIn
                         }), 0);
@@ -717,7 +743,7 @@
                         t1.insert(new TweenMax(imageContainer, .5, {
                             css: {
                                 transform: "matrix(0.65, 0, 0, 0.65, 0, 0)",
-                                marginBottom: "-60%"
+                                marginBottom: "-90%"
                             },
                             ease: Power4.easeIn
                         }), 0);
@@ -931,12 +957,14 @@
                 } else if (inViewpoerEl.is(':in-viewport(-54)') && $($window).scrollTop() !== 0) {
 
                     $scope.isSet = false;
-                    if (!$('html').hasClass('touchevents')) {
-                        $("#info").css({
-                            "position": 'absolute',
-                            "top": ($scope.distance - 300) + 'px'
-                        });
-                    }
+                    // if (!$('html').hasClass('touchevents')) {
+                    //     // $("#info").css({
+                    //     //     "position": 'absolute',
+                    //     //     "top": ($scope.distance - 500) + 'px'
+                    //     // });
+
+                    //     console.log($scope.distance - 500);
+                    // }
 
 
                     $('#footer-bar').css({
@@ -967,12 +995,12 @@
 
                     }
 
-                    if (!$('html').hasClass('touchevents')) {
-                        $("#info").css({
-                            "position": 'fixed',
-                            "top": '50%'
-                        });
-                    }
+                    // if (!$('html').hasClass('touchevents')) {
+                    //     $("#info").css({
+                    //         "position": 'fixed',
+                    //         "top": '30%'
+                    //     });
+                    // }
 
 
                     $('#footer-bar').css({

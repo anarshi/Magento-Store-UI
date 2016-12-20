@@ -33,15 +33,20 @@
             <div data-sidebar class="right">
             </div>
             <div id="catalog" class="container thumbs">
+
                 <div  id="{{product.id}}" class = "catalog-product product" ui-sref="product({product_id: product.id , currencyCode: product.currencyCode })"  ng-class="productGridType" ng-repeat="product in products" >
                     <!-- <a  ng-mouseenter="showSubText(product.id)" 
                 ng-mouseleave="hideSubText(product.id)"  >
                     </a> -->
+
                     <img  preload-image ng-src="{{product.allImages[0]}}" alt="{{product.name}}'s image" />
                     <div  class="col-md-12 col-xs-12">
                             <strong>{{product.name}}</strong>
                             
 
+                    </div>
+                    <div ng-hide="isInStockCheck(product.is_in_stock)" class="col-md-12 col-xs-12">
+                        <label class="out-of-stock-label">Out of stock</label>
                     </div>
                 </div>
             </div>

@@ -26,6 +26,7 @@
             }
         }).then(function successCallback(response) {
             $scope.products = response.data;
+            console.log("config products");
             console.log(response);
         }, function errorCallback(response) {
             console.log(response);
@@ -146,7 +147,7 @@
                     storeId: localStorage.storeId
                 }
             }).then(function successCallback(response) {
-
+                console.log(response.data);
                 $scope.products = response.data;
                 $scope.closeFilter();
                 
@@ -157,6 +158,14 @@
                 console.log(response);
                 $scope.closeFilter();
             });
+        }
+
+        $scope.isInStockCheck = function(isInStock){
+            if(parseFloat(isInStock) === 1){
+                return true;
+            } else {
+                return false;
+            }
         }
 
         function divideArrayBasedOnParametar(array,paramaterName){

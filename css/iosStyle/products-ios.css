@@ -1,8 +1,8 @@
+
 body, html {
     height: inherit !important;
     background-color: rgb(243,243,243) !important;
 }
-
 
 section.products {
     width: 100%;
@@ -26,6 +26,19 @@ section.products {
     cursor: default;
     border: 0;
     box-shadow: none;
+}
+
+.product-info-text{
+    margin-top: 50px;
+    font-family: "AvenirNext LT Pro Regular";
+}
+
+.out-of-stock-label{
+    position: relative;
+    font-family: 'AvenirNext LT Pro Regular',Arial,Helvetica;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 10px auto !important;
 }
 
 .product-info-btn{
@@ -575,23 +588,21 @@ section.products div.right {
 
 
 .product-page aside.info, .product-page aside.info.fixed {
-    position: absolute ;
-    width: 224px;
-    top: 400px ;
+    position: absolute !important;
+    width: 41%;
+    top: 300px !important;
     bottom: auto;
     margin: 0;
-    right: 67px!important;
+    right: -28px!important;
     text-align: left!important;
     -webkit-transform: translate(0,0);
     -o-transform: translate(0,0);
     -moz-transform: translate(0,0);
     -ms-transform: translate(0,0);
     transform: translate(0,0);
-
     transition: -webkit-transform .5s cubic-bezier(.645,.045,.355,1);
     transition: transform .5s cubic-bezier(.645,.045,.355,1);
 }
-
 
 .product-page .info.ready {
     visibility: visible;
@@ -887,10 +898,19 @@ NAV
 
 .product-page footer.info h2 {
     font-size: 16px !important;
-    line-height: 1.5625rem;
     margin: 0 0 30px;
     font-weight: 900;
     color:  #464646;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
 }
 
 .info-outer{
@@ -1372,10 +1392,10 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     padding-top: 91%;
 }
 
+
 .touchevents .product-page aside.info, .touchevents .product-page aside.info.fixed {
     position: absolute;
-    width: 288px;
-    top: 120px ;
+    width: 41%;
     bottom: auto;
     margin: 0;
     right: 92px!important;
@@ -1387,13 +1407,12 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
 }
 
 .product-page aside.info.fixed {
-    top: 50%;
+    top: 200px ;
     bottom: auto;
     position: fixed;
-    left: 70%;
-    margin-top: -25px;
+    left: 53% !important;
     -webkit-transform: translate(0,-160px);
-    transform: translate(0,-160px);
+    transform: translate(0,-163px);
 }
 
 .product-page .info {
@@ -1444,7 +1463,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     }
 
     .hide-when-small{
-        display: none;
+        display: none !important;
     }
 
     .show-when-small{
@@ -1568,6 +1587,8 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
         -webkit-transform: translate3d(0,0,0);
         transform: translate3d(0,0,0);
     }
+
+    
 }
 
 @media only screen and (min-width: 64.063em){
@@ -1603,6 +1624,11 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     #catalog .col-xs-6 .hover {
         padding-top: 85%;
     }
+
+    .product-info-text{
+        margin-top: 50px;
+        font-family: "AvenirNext LT Pro Regular";
+    }   
 }
 
 
@@ -1653,6 +1679,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     .product-page .product-container figure {
         width: 100vw;
         height: 90vw;
+        left: -140px;
     }
 }
 
@@ -1666,7 +1693,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     list-style-type: none;
     left: 50%;
     bottom: -5%;
-    -webkit-transform: translate(-50%,0);
+    -webkit-transform: translate(-50%,0) ;
     transform: translate(-50%,0);
     margin: 0;
 }
