@@ -26,24 +26,9 @@
 		 <div class="input-group">
 	      <div class="input-group-addon">Store</div>
 	      		<select ng-show="isMobile" id="billing_country" name="billing_country" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true" ng-model="currencyCode" ng-class="chooseCountryClass"  >
-	      				<li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
-				        <li ng-click="chooseACountry('SEK',$event)">Sweeden</li>
-				        <li ng-click="chooseACountry('EUR',$event)">Rest of europe</li>
+	      				<option class="billing_country_option" value="" disabled selected>Select your country</option>
+                        <option  class="billing_country_option"value="SEK">Sweeden</option>
+                        <option  class="billing_country_option"value="EUR">Rest of Europe</option>
                     </select>
                     <div uib-dropdown ng-hide="isMobile" >
 				    <button uib-dropdown-toggle data-toggle="dropdown" class="countryDropdownButton" ng-click="rotateCountryIcon($event)">{{choosenCountry}}<span class="caret" id="country-caret"></span></button>
@@ -74,16 +59,9 @@
 	      <div class="input-group-addon">language</div>
 
 	          <select ng-show="isMobile" id="language" name="language" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true" ng-class="chooseLangagueClass"  ng-model="storeId">
-                         <li ng-click="chooseLang('1',$event)">Svenska</li>
-				        <li ng-click="chooseLang('2',$event)">English</li>
-				        <li ng-click="chooseLang('1',$event)">Svenska</li>
-				        <li ng-click="chooseLang('2',$event)">English</li>
-				        <li ng-click="chooseLang('1',$event)">Svenska</li>
-				        <li ng-click="chooseLang('2',$event)">English</li>
-				        <li ng-click="chooseLang('1',$event)">Svenska</li>
-				        <li ng-click="chooseLang('2',$event)">English</li>
-				        <li ng-click="chooseLang('1',$event)">Svenska</li>
-				        <li ng-click="chooseLang('2',$event)">English</li>
+                         <option value="2">SVENSKA</option>
+                        <option value="" disabled selected>Select your language</option>
+                        <option value="1">English</option>
                      </select> 
 
              <div uib-dropdown ng-hide="isMobile" click-outside="closeDropdownMenu()">
