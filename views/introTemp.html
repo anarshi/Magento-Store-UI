@@ -59,8 +59,9 @@
 	      <div class="input-group-addon">language</div>
 
 	          <select ng-show="isMobile" id="language" name="language" class="cleaninput border-bottom intro-page-currency ui-trigger_checkout_update ui-country-select" required="true" ng-class="chooseLangagueClass"  ng-model="storeId">
+	           			  <option value="" disabled selected>{{choosenLang}}</option>
                          <option value="2">SVENSKA</option>
-                        <option value="" disabled selected>Select your language</option>
+                       
                         <option value="1">English</option>
                      </select> 
 
