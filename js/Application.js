@@ -8,7 +8,7 @@
      */
 
 
-    window.moaApp = angular.module("moaApp", ["ui.router","ng.deviceDetector" , "ngTouch" , "ngSanitize","ngAnimate","ngTouch","angular-inview" , 
+    window.moaApp = angular.module("moaApp", ["ui.router","ng.deviceDetector", "ngSanitize","ngAnimate","angular-inview" , 
                                               'ngRoute', 'anim-in-out','ui.bootstrap','angular-preload-image']);
     window.moaApp.config(['$stateProvider', '$locationProvider' ,'$urlRouterProvider', function($stateProvider,$locationProvider,$urlRouterProvider) {
 
