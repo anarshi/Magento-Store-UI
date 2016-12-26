@@ -10,14 +10,17 @@
     vm.data = deviceDetector;
     vm.allData = JSON.stringify(vm.data, null, 2);
 
+
     $scope.showModal = function(){
       $(".bd-example-modal-sm").modal("show");
     }
 
     $scope.isMobile = false;
-    if(vm.data.os === "ios" || vm.data.os === "android" && vm.data.os === "microsoft"){
+    if(vm.data.os.toLowerCase() === "ios".toLowerCase() || vm.data.os.toLowerCase() === "android".toLowerCase() && vm.data.os.toLowerCase() === "microsoft".toLowerCase()){
       $scope.isMobile = true;
     }
+
+    console.log($scope.isMobile);
 
     console.log(vm.data.os);
 
