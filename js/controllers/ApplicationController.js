@@ -107,10 +107,15 @@
         $scope.$watch('sideNavIsOpen()', function() {
             if(!$scope.sideNavIsOpen()) {
                 $('body').removeClass('lock-scroll');
-
+                document.ontouchmove = function(e){
+                    return true;
+                };
                 console.log('closed');
             }
             else {
+                document.ontouchmove = function(e){
+                    e.preventDefault();
+                };
                 $('body').addClass('lock-scroll');
                 console.log('open');
             }
@@ -119,10 +124,15 @@
         $scope.$watch('sideNavIsOpenLeft()', function() {
             if(!$scope.sideNavIsOpenLeft()) {
                 $('body').removeClass('lock-scroll');
-
+                document.ontouchmove = function(e){
+                    e.preventDefault();
+                };
                 console.log('closed');
             }
             else {
+                document.ontouchmove = function(e){
+                    return true;
+                };
                 $('body').addClass('lock-scroll');
                 console.log('open');
             }
@@ -179,19 +189,13 @@
                 $scope.isOpenCategoryFilter = false;
                 $scope.toggleFilterBackDrop = "close-filter-backdrop";
                 $scope.bodyOpenModalClass = "";
-
-                //returns page to scrolled position
-                $('body').css('position','').css('left','auto').css('right','auto').css('top','auto');
-                $(window).scrollTop($('#colorbox').data('ycoord'));
-
+                document.ontouchmove = function(e){
+                    return true;
+                };
             } else {
-
-                //stop background on ios and all devices to scroll
-                var ycoord = $(window).scrollTop();
-                $('#colorbox').data('ycoord',ycoord);
-                ycoord = ycoord * -1;
-                $('body').css('position','fixed').css('left','0px').css('right','0px').css('top',ycoord + 'px');
-
+                document.ontouchmove = function(e){
+                    e.preventDefault();
+                };
                 $scope.openFilter = "open-category-filter";
                 $scope.isOpenCategoryFilter = true;
                 $scope.toggleFilterBackDrop = "open-filter-backdrop";
@@ -202,9 +206,9 @@
 
         $scope.closeCategoryFilter = function(){
 
-            //returns page to scrolled position
-            $('body').css('position','').css('left','auto').css('right','auto').css('top','auto');
-            $(window).scrollTop($('#colorbox').data('ycoord'));
+            document.ontouchmove = function(e){
+                return true;
+            };
 
             $scope.isOpenCategoryFilter = false;
             $scope.openFilter = "";
@@ -375,7 +379,7 @@
                     $scope.bodyOpenModalClass = "menu-open lock-scroll no-scroll";
                     document.ontouchmove = function(e){
                         e.preventDefault();
-                    }
+                    };
                     $scope.closeFooter = "close-footer";
                 } else {
                     $scope.contentClass = "";
