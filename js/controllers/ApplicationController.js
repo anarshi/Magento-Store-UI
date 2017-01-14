@@ -200,9 +200,9 @@
 
             $scope.closeCategoryFilter = function(){
 
-                // document.ontouchmove = function(e){
-                //     return true;
-                // };
+                document.ontouchmove = function(e){
+                    return true;
+                };
 
                 $scope.isOpenCategoryFilter = false;
                 $scope.openFilter = "";
