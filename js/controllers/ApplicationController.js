@@ -201,6 +201,11 @@
 
 
         $scope.closeCategoryFilter = function(){
+
+            //returns page to scrolled position
+            $('body').css('position','').css('left','auto').css('right','auto').css('top','auto');
+            $(window).scrollTop($('#colorbox').data('ycoord'));
+
             $scope.isOpenCategoryFilter = false;
             $scope.openFilter = "";
             $scope.toggleFilterBackDrop = "close-filter-backdrop";
