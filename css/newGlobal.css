@@ -671,7 +671,7 @@ md-backdrop ~ md-content {
     }
 
     .filter-toolbar-container > md-toolbar > div > div.dropdown{
-        width: 100% !important;
+        width: 86% !important;
     }
 
     .margin-md-button {

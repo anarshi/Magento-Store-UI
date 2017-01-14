@@ -125,13 +125,13 @@
             if(!$scope.sideNavIsOpenLeft()) {
                 $('body').removeClass('lock-scroll');
                 document.ontouchmove = function(e){
-                    e.preventDefault();
+                    return true;
                 };
                 console.log('closed');
             }
             else {
                 document.ontouchmove = function(e){
-                    return true;
+                    e.preventDefault();
                 };
                 $('body').addClass('lock-scroll');
                 console.log('open');
@@ -309,7 +309,7 @@
                 $scope.topNavbarCartcountStyle = "";
                 $scope.filterMenuButtonClass = "";
             }
-        })
+        });
 
 
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
