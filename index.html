@@ -3,28 +3,44 @@
 <head>
     <title>Camicamina</title>
     <meta charset="UTF-8">
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
-    <meta http-equiv="CACHE-CONTROL" content="NO-STORE"> 
-    <meta http-equiv="expires" content="0" />
-    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- new css -->
+    <link rel="stylesheet" href="css/newLogo.css" >
+    <link rel="stylesheet" href="css/newGlobal.css">
+
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
     <link rel="stylesheet" href="css/default.css" />
-     <link rel="stylesheet" type="text/css" href="css/logo.css">
-     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
+     <!--<link rel="stylesheet" type="text/css" href="css/logo.css">-->
+     <!--<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">-->
     <link rel="stylesheet" href="node_modules/angular-ui-router-anim-in-out/css/anim-in-out.css">
-    <meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link href='http://fonts.googleapis.com/
-    css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    <!--<link href='http://fonts.googleapis.com/-->
+    <!--css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>-->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
         
-    <link rel="stylesheet" href="css/fonts.css" />
-    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet"  href="css/checkbox.scss">
-     <script src="node_modules/angular/angular.js"></script>
+    <!--<link rel="stylesheet" href="css/fonts.css" />-->
+    <!--<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" />-->
+    <!--<link rel="stylesheet"  href="css/checkbox.scss">-->
+
+    <!-- Angular imports -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+
+     <!--<script src="node_modules/angular/angular.js"></script>-->
+    <script src="bower_components/angular-jquery/dist/angular-jquery.min.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-touch.js"></script>
@@ -38,6 +54,7 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/hammerjs/hammer.js"></script>
+    <script src="bower_components/angular-bootstrap-affix/dist/angular-bootstrap-affix.min.js"></script>
     <script src="node_modules/smooth-scroll/dist/js/smooth-scroll.js"></script>
     <script src="node_modules/angular-inview/angular-inview.js"></script>
     <script src="node_modules/jquery.scrollto/jquery.scrollTo.min.js"></script>
@@ -81,44 +98,272 @@
 
 
 </head>
-<body on-scroll-directive   id="body" ng-keyup="keyUp($event)"  ng-class="bodyOpenModalClass">
+<body id="body" ng-keyup="keyUp($event)" layout="column" ng-cloak  ng-class="bodyOpenModalClass">
+    <md-toolbar  class="md-hue-2 main-toolbar" ng-class="topNavbarStyle" style="position: fixed;" >
+        <div class="md-toolbar-tools">
 
-    <section data-sidebar class="filters" ng-class="modalClass" >
-        <div class="view left-sidebar-menu-container" ng-include="'views/sidebarMenu.html'"></div>
-    </section>
-    <aside id="shoppingcart" class="shoppingcart" ng-class="cartOpenClass" data-quantity="0">
+            <md-button class="md-icon-button" aria-label="Settings"  ng-click="toggleLeft()">
+                <md-icon md-svg-icon="images/svg/list-menu-white.svg" ></md-icon>
+            </md-button>
+            <span class="hide-xs menu-indicator-text"> Menu </span>
+            <span flex></span>
+                <span class="logo" ng-click="goHome('/')"></span>
+                <span flex></span>
 
-        <aside class="cartcount show active">{{cartProducts.cartCount}}<span class="label">CLOSE</span></aside>
-        <div id="cart-scroll">
-            <ul class="cart-products">
-                <li product-id="{{crProduct.id}}" ng-repeat="crProduct in cartProducts.productsInCart">
-                   <figure>
-                        <img width="300" height="300" ng-src="{{crProduct.imageUrl  }}" />
-                   </figure> 
-                   <div data-count="1">
-                        <h3>{{crProduct.name}}</h3>
-                         QTY: <span class="count">{{crProduct.cartQty}}</span></p>
-                                <h4> {{crProduct.currencySymbol + " " + crProduct.price.toFixed(2)}}</h4>
-                        <button class="ui-cart-item-remove no-hijack" ng-click="removeFromCart(crProduct)">x</button>
-                    </div>
-                </li>
-             </ul>
+                <div layout="row" class="right-toolbar-buttons-container">
+                    <md-divider class="vertical-divider hide-sm hide-xs"></md-divider>
+                    <md-menu class="hide-sm hide-xs">
+                        <span aria-label="Open demo menu" class="chose-country hide-xs hide-sm" ng-click="$mdOpenMenu($event)">
+                            Ship to:Sweeden
+                        </span>
+                        <!--<md-select ng-model="someModel">-->
+                            <!--<md-option ng-value="opt" >Option 1</md-option>-->
+                            <!--<md-option ng-value="opt" >Option 1</md-option>-->
+                            <!--<md-option ng-value="opt" >Option 1</md-option>-->
+                        <!--</md-select>-->
+                        <md-menu-content width="6">
+                            <md-menu-item ng-repeat="item in [1, 2, 3]">
+                                <md-button ng-click="ctrl.announceClick($index)">
+                                    <md-icon md-menu-align-target md-svg-icon="call:no-sim"></md-icon>
+                                    Option {{item}}
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                    <md-divider class="vertical-divider hide-sm hide-xs"></md-divider>
+                    <md-menu class="hide-sm hide-xs">
+                        <span aria-label="Open demo menu" class="chose-lang" ng-click="$mdOpenMenu($event)">
+                            English
+                        </span>
+                        <md-menu-content width="6">
+                            <md-menu-item ng-repeat="item in [1, 2, 3]">
+                                <md-button ng-click="ctrl.announceClick($index)">
+                                    <md-icon md-menu-align-target md-svg-icon="call:no-sim"></md-icon>
+                                    Option {{item}}
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                    <md-divider class="vertical-divider hide-sm hide-xs"></md-divider>
+                    <md-button class="md-icon-button margin-md-button shopping-bag-icon" aria-label="Eat cake" ng-click="toggleRight()">
+                        <md-icon md-svg-src="images/svg/shopping-bag.svg"></md-icon>
+                    </md-button>
+
+                </div>
+
+
         </div>
-        
+    </md-toolbar>
+    <!--<section data-sidebar class="filters" ng-class="modalClass" >-->
+        <!--<div class="view left-sidebar-menu-container" ng-include="'views/sidebarMenu.html'"></div>-->
+    <!--</section>-->
 
-        <footer>Total <span> {{currencySymbol + " " + cartProducts.cartTotalPrice}}</span></footer>
-        <button ng-click="goToCart()" class="checkout" >
-            <span><strong>Checkout</strong></span>
-            <span class="hover"><strong>Checkout</strong></span>
-            <div class="spinner ng-hide"><div class="bounce1"></div><div class="bounce2"></div></div>
-        </button>
-    </aside>
-     <figure id="overlay" class="overlay" ng-click="closeModal()"></figure>
-    <div class="transform-container-index col-md-12 col-xs-12 no-padding" ng-class="contentClass">
-       
-        <div ui-view class="anim-in-out anim-fade" id="iNoBounceToggle"></div>
+     <!--<figure id="overlay" class="overlay" ng-click="closeModal()"></figure>-->
+    <!--<div class="transform-container-index col-md-12 col-xs-12 no-padding" ng-class="contentClass">-->
+
+        <!--<div ui-view class="anim-in-out anim-fade" id="iNoBounceToggle"></div>-->
+    <!--</div>-->
+
+    <div style="height: 100%">
+
+
+        <md-sidenav
+                class="md-sidenav-left"
+                md-component-id="left"
+                md-whiteframe="4"
+                class="category-sidemenu">
+            <md-content class="sidemenu-content">
+                <md-button class="md-icon-button close-category-button" ng-class="showMainCategorySideMenuClass" aria-label="More" ng-click="toggleLeft()">
+                    <md-icon md-svg-icon="images/svg/cross-out.svg" ></md-icon>
+                </md-button>
+                <md-list class="sidemenu-list" ng-class="showMainCategorySideMenuClass">
+                    <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    <md-list-item class="md-3-line left-sidemnu-item" ng-click="null">
+
+                        <div class="md-list-item-text">
+                            <p>COLLECTION</p>
+                        </div>
+                        <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    </md-list-item>
+                    <md-list-item class="md-3-line left-sidemnu-item" ng-click="null">
+                        <div class="md-list-item-text">
+                            <p>CUSTOMER CARE</p>
+                        </div>
+                        <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    </md-list-item>
+                    <md-list-item class="md-3-line left-sidemnu-item" ng-click="null">
+                        <div class="md-list-item-text">
+                            <p>ABOUT</p>
+                        </div>
+                        <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    </md-list-item>
+                </md-list>
+
+
+                <md-list class="sidemenu-list-second" ng-class="showMainCategorySideMenuClass">
+                    <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    <md-list-item class="md-3-line left-sidemnu-item" ng-click="null">
+
+                        <div class="md-list-item-text">
+                            <p>Sign in</p>
+                        </div>
+                        <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    </md-list-item>
+                    <md-list-item class="md-3-line left-sidemnu-item" ng-click="openCountryList()">
+                        <div class="md-list-item-text">
+                            <p>Ship to: Sweeden</p>
+                        </div>
+                        <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    </md-list-item>
+                    <md-list-item class="md-3-line left-sidemnu-item" ng-click="openLangList()">
+                        <div class="md-list-item-text">
+                            <p>Change Language: English</p>
+                        </div>
+                        <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    </md-list-item>
+                </md-list>
+
+                <md-button class="md-icon-button back-country-icon" ng-class="backCountryIconClass" aria-label="More" ng-click="showMainCategorySideMenu()">
+                    <md-icon md-svg-icon="images/svg/back-arrow.svg"  ></md-icon>
+                </md-button>
+
+                <md-list ng-class="countryListSideMenuClass" >
+
+                    <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    <md-list-item class="md-3-line left-sidemnu-item" ng-click="showMainCategorySideMenu()">
+
+                        <div class="md-list-item-text">
+                            <p>Sweeden</p>
+                        </div>
+                        <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    </md-list-item>
+                    <md-list-item class="md-3-line left-sidemnu-item" ng-click="showMainCategorySideMenu()">
+                        <div class="md-list-item-text">
+                            <p>USA</p>
+                        </div>
+                        <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    </md-list-item>
+                    <md-list-item class="md-3-line left-sidemnu-item" ng-click="showMainCategorySideMenu()">
+                        <div class="md-list-item-text">
+                            <p>United Kingdom</p>
+                        </div>
+                        <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    </md-list-item>
+                </md-list>
+
+                <md-list ng-class="chooseLangListSideMenuClass" >
+                    <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    <md-list-item class="md-3-line left-sidemnu-item" ng-click="showMainCategorySideMenu()">
+
+                        <div class="md-list-item-text">
+                            <p>English</p>
+                        </div>
+                        <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    </md-list-item>
+                    <md-list-item class="md-3-line left-sidemnu-item" ng-click="showMainCategorySideMenu()">
+                        <div class="md-list-item-text">
+                            <p>Sweeden</p>
+                        </div>
+                        <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    </md-list-item>
+                    <md-list-item class="md-3-line left-sidemnu-item" ng-click="showMainCategorySideMenu()">
+                        <div class="md-list-item-text">
+                            <p>Deutsch</p>
+                        </div>
+                        <md-divider ng-if="!$last" class="vertical-divider-sidebar-menu"></md-divider>
+                    </md-list-item>
+                </md-list>
+
+                <div class="col-md-12 col-xs-12 social-footer">
+                    <div class="col-md-4 col-xs-4">
+                        <md-button class="md-icon-button" aria-label="More" ng-click="null">
+                            <md-icon md-svg-icon="images/svg/facebook-logo.svg" ></md-icon>
+                        </md-button>
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+                        <md-button class="md-icon-button"  aria-label="More" ng-click="null">
+                            <md-icon md-svg-icon="images/svg/instagram-logo.svg" ></md-icon>
+                        </md-button>
+
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+                        <md-button class="md-icon-button " aria-label="More" ng-click="null">
+                            <md-icon md-svg-icon="images/svg/twitter-logo.svg" ></md-icon>
+                        </md-button>
+                    </div>
+                </div>
+
+            </md-content>
+
+
+
+        </md-sidenav>
+
+        <md-content flex style="height: 100%">
+
+            <div layout="column" layout-align="top" class="anim-in-out anim-fade" style="height: 100%">
+                <div ui-view class="anim-in-out anim-fade" style="height: 100%;"></div>
+            </div>
+
+            <div flex></div>
+
+        </md-content>
+
+        <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+            <aside id="shoppingcart" class="shoppingcart" ng-class="cartOpenClass" data-quantity="0">
+
+                <aside class="cartcount show active">{{cartProducts.cartCount}}<span class="label">CLOSE</span></aside>
+                <div id="cart-scroll">
+                    <ul class="cart-products">
+                        <li product-id="{{crProduct.id}}" ng-repeat="crProduct in cartProducts.productsInCart">
+                            <figure>
+                                <img width="300" height="300" ng-src="{{crProduct.imageUrl  }}" />
+                            </figure>
+                            <div data-count="1">
+                                <h3>{{crProduct.name}}</h3>
+                                QTY: <span class="count">{{crProduct.cartQty}}</span></p>
+                                <h4> {{crProduct.currencySymbol + " " + crProduct.price.toFixed(2)}}</h4>
+                                <button class="ui-cart-item-remove no-hijack" ng-click="removeFromCart(crProduct)">x</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <footer>Total <span> {{currencySymbol + " " + cartProducts.cartTotalPrice}}</span></footer>
+                <button ng-click="goToCart()" class="checkout" >
+                    <span><strong>Checkout</strong></span>
+                    <span class="hover"><strong>Checkout</strong></span>
+                    <div class="spinner ng-hide"><div class="bounce1"></div><div class="bounce2"></div></div>
+                </button>
+            </aside>
+        </md-sidenav>
+
+
     </div>
+
 </body>
+
+<!-- For this demo, include the font-faces needed by mdIcon above -->
+<style>
+    @font-face {
+        font-family:"icomoon";
+        src:url("https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.eot");
+        font-weight:normal;
+        font-style:normal;
+    }
+
+    @font-face {
+        font-family: 'icomoon';
+        src:url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.eot?-cmq1um');
+        src:url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.eot?#iefix-cmq1um') format('embedded-opentype'),
+        url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.woff?-cmq1um') format('woff'),
+        url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.ttf?-cmq1um') format('truetype'),
+        url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.svg?-cmq1um#icomoon') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+</style>
 
 
 </html>

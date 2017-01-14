@@ -6,6 +6,9 @@
 @import "lookbook.css";
 @import "introPage.css";
 @import "lato.css";
+@import "fonts.css";
+
+@import "newLogo.css";
 
 
 * {
@@ -17,15 +20,13 @@
 
 }
 
+.no-padding{
+    padding: 0px !important;
+}
 
 .catalog-product:hover{
     cursor: pointer;
 }
-
-/* body.menu-open #navBar.top, body.menu-open .transform-container {
-    -webkit-transform: translate3d(281px,0,0);
-    transform: translate3d(281px,0,0);
-} */
 
 .shrink{
     height: 40px !important;
@@ -34,12 +35,9 @@
 
 body, html {
      height: 100% ;
-    background-color: rgb(243,243,243) !important;
+    background-color: white !important;
 }
 
-/* html {
- 
-} */
 body {
   height: 100%;
   margin: 0;
@@ -50,6 +48,8 @@ body {
 #legalfooter{
     position: relative;
     z-index: 21;
+    height: 319px;
+    background: #003594 !important;;
 }
 
 .footer-bar li .items:not(.disabled):not(.active):hover {
@@ -58,15 +58,6 @@ body {
 
 
 
-.cart-open .overlay, .menu-open .overlay {
-    visibility: visible;
-    opacity: 1;
-    transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -o-transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -ms-transition: all .5s cubic-bezier(.645,.045,.355,1);
-}
 
 .ui-cart-item-remove:focus{
     outline: none !important;
@@ -82,18 +73,11 @@ body {
     height: 45px !important;
     width: 170px !important;
     text-transform: uppercase !important;
-    background: #003593 !important; 
+    background: #003593 !important;
     font-size: 12px !important;
     font-family: "AvenirNext LT Pro Regular"
 }
 
-.transform-container-index{
-    height: 100%;
-    transition-property: -webkit-transform;
-    transition-property: transform;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(.645,.045,.355,1);
-}
 
 header h1 {
     color: white;
@@ -117,25 +101,6 @@ header h1 {
     padding-top: 13px;
     padding-left: 35px !important;
 }
-
-body #navBar.top, body .transform-container {
-    height: 100%;
-    transition-property: -webkit-transform;
-    transition-property: transform;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(.645,.045,.355,1);
-}
-
-
-
-body #navBar-home.top, body .transform-container {
-    height: 100%;
-    transition-property: -webkit-transform;
-    transition-property: transform;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(.645,.045,.355,1);
-}
-
 
 
 nav#navBar-intro.ready{
@@ -238,88 +203,16 @@ nav#navBar-home {
     z-index: 99;
 }
 
-    
+
 .menu-open #sidemenu div {
     opacity: 1;
     left: 0;
     transition: all 650ms ease 150ms;
 }
 
-.ng-leave{
-  top: 0;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-name: downfromtop;
-          animation-name: downfromtop;
-}
-
-@-webkit-keyframes downfromtop {
-  0%{
-    top: 0;
-  }
-  100% {
-    top: 100%;
-  }
-}
-
-@keyframes downfromtop {
-  0%{
-    top: 0;
-  }
-  100% {
-    top: 100%;
-  }
-}
-
-
-.ng-enter{
-  top: 0;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-name: upfrombottom;
-          animation-name: upfrombottom;
-}
-
-@-webkit-keyframes upfrombottom {
-  0%{
-    top: 100%;
-  }
-  100% {
-    top: 0;
-  }
-}
-
-@keyframes upfrombottom {
-  0%{
-    top: 100%;
-  }
-  100% {
-    top: 0;
-  }
-}
 
 
 
-.overlay {
-    margin: 0px;
-    display: block;
-    position: fixed;
-    width: 100%;
-    min-height: 100%;
-    z-index: 99;
-    background: rgba(29,29,31,.6);
-    visibility: hidden;
-    opacity: 0;
-    transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -o-transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -webkit-transition: all .5s cubic-bezier(.645,.045,.355,1);
-    -ms-transition: all .5s cubic-bezier(.645,.045,.355,1);
-}
 
 a {
     color: #008CBA;
@@ -581,7 +474,7 @@ ul.cart-products li {
      z-index: 999;
      background-image: url(../images/svg/twoRows-white.png) !important;
 } */
-   
+
 
 #collection-footer #filterBtn {
     background: #003593;
@@ -603,7 +496,7 @@ ul.cart-products li {
 
 .close-filter-button{
     width: 100%;
-    padding: 0px !important; 
+    padding: 0px !important;
 }
 
 .close-filter-button > button {
@@ -724,20 +617,20 @@ input[type=radio]:checked {
 
 input[type=checkbox].css-checkbox {
     position:absolute;
-     z-index:-1000; 
-     left:-1000px; 
-     overflow: hidden; 
-     clip: rect(0 0 0 0); 
-     height:1px; 
-     width:1px; 
-     margin:-1px; 
-     padding:0; 
+     z-index:-1000;
+     left:-1000px;
+     overflow: hidden;
+     clip: rect(0 0 0 0);
+     height:1px;
+     width:1px;
+     margin:-1px;
+     padding:0;
      border:0;
 }
 
 input[type=checkbox].css-checkbox + label.css-label {
   padding-left:30px;
-  height:25px; 
+  height:25px;
   display:inline-block;
   line-height:25px;
   background-repeat:no-repeat;
@@ -810,7 +703,7 @@ label.css-label {
 
 
 .panel-heading {
-    padding: 0px !important; 
+    padding: 0px !important;
     border-bottom: 1px solid transparent;
     border-top-right-radius: 0px !important;
     border-top-left-radius: 0px !important;
@@ -851,9 +744,9 @@ label.css-label {
     overflow: hidden;
     height: 0;
     transition: height 1s;
-    -webkit-transition: height 1s;        
-    -moz-transition: height 1s;        
-    -o-transition: height 1s;         
+    -webkit-transition: height 1s;
+    -moz-transition: height 1s;
+    -o-transition: height 1s;
 }
 .collapsable.showMe {
     height: 100px;
@@ -1007,7 +900,7 @@ nav.footerbuttons button>span {
 
 .filter-menu li .items.active span {
     opacity: 1;
-    
+
 }
 
 #filterMenu-home > div.col-md-4.col-xs-2.no-padding.filter-buttons-container > ul > li:nth-child(1) > button > span.active{
@@ -1295,7 +1188,7 @@ nav#navBar-home.ready {
     color: #003594;
     text-transform: uppercase;
     width: 100%;
-    
+
     padding-left: 15px;
     font-size: 12.99px;
     border: 1px solid #fff;
@@ -1361,7 +1254,7 @@ nav#navBar-home.ready {
 }
 
 #shoppingcart button.checkout, #shoppingcart footer {
-    width: 281px;
+    width: 100%;
     height: 54px;
     display: block;
     position: absolute;
@@ -1535,7 +1428,7 @@ nav#navBar-home.ready {
     bottom: 71px;
     opacity: 0;
 } */
-/* 
+/*
 @media only screen and (min-width: 43.75em){
     #filters footer p {
         margin: 0 0 0 8vw;
@@ -1616,13 +1509,6 @@ nav.footerbuttons button>span.hover {
     }
 
 
-
-@media and (max-width: 990px){
-
-
-}
-
-
 /* /NEW */
 
 
@@ -1654,8 +1540,8 @@ img {
 
 .move-right-content-no-fixed{
     -ms-transform: translate(280px,0px);
-    -webkit-transform: translateX(280px); 
-    transform: translateX(280px); 
+    -webkit-transform: translateX(280px);
+    transform: translateX(280px);
     -o-transform: translateX(280px);
     -moz-transform: translateX(280px); /
 
@@ -1741,26 +1627,24 @@ img {
     transition-property: transform;
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(.645,.045,.355,1);
+    margin-top: 56px !important;
+    background: #fcfcfc;;
 }
 
-
-.home-page #catalog{
+.home-page #catalog {
     display: block;
     position: relative;
     width: 100%;
     height: auto;
-    transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
-    -o-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
-    -moz-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
-    -wekit-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
-    -ms-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
-    background: #f3f3f5;
+.home-page #catalog
+    background: #e7e7e7;
     float: left;
-    top: 72px;
-    min-height: 100vh;
-    padding-bottom: 108px!important
+    /* top: 72px; */
+    /* padding-bottom: 108px!important; */
+    /* margin: 15px; */
+    /* margin-left: 15px; */
+    padding: 15px;
 }
-
 
 
 .close-main-container{
@@ -1792,7 +1676,7 @@ img {
     font-weight: 100;
     float: left;
     margin-left: 30px;
-  
+
 }
 
 .menu-title{
@@ -1827,10 +1711,18 @@ body {
     transform: translate3d(0,0,0);
 }
 
+
+
+:hov
+
+.cls
+
+element.style {
+}
 #shoppingcart {
     display: block;
     position: fixed;
-    width: 281px;
+    width: 320px;
     height: 100%;
     transition: all .5s cubic-bezier(.645,.045,.355,1);
     -moz-transition: all .5s cubic-bezier(.645,.045,.355,1);
@@ -1845,11 +1737,11 @@ body {
     min-height: 500px;
     z-index: 9999;
     margin-top: 0!important;
-    -webkit-transform: translate3d(281px,0,0);
-    -moz-transform: translate3d(281px,0,0);
-    -o-transform: translate3d(281px,0,0);
-    -ms-transform: translate3d(281px,0,0);
-    transform: translate3d(281px,0,0);
+    /*!* -webkit-transform: translate3d(281px,0,0); *!*/
+    /*-moz-transform: translate3d(281px,0,0);*/
+    /*-o-transform: translate3d(281px,0,0);*/
+    /*-ms-transform: translate3d(281px,0,0);*/
+    /*!* transform: translate3d(281px,0,0); *!*/
 }
 
 
@@ -1917,7 +1809,7 @@ body {
     -o-transition: all 750ms ease .25s !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
-    width: 281px!important;
+    width: 320px !important;
 }
 
 /*.ui-cart-item-remove:hover{
@@ -2054,7 +1946,7 @@ ul.cart-products {
     text-align: right;
     float: right;
     width: 50%;
-    padding-right: 35px;
+    padding-right: 0px;
 }
 
 .cart-open #shoppingcart button.checkout {
@@ -2112,7 +2004,7 @@ ul.cart-products {
 .footer-bar-home {
     display: block;
     position: fixed;
-    
+
     transition: all 450ms cubic-bezier(.455,.03,.515,.955),visibility 450ms cubic-bezier(.455,.03,.515,.955),transform 550ms cubic-bezier(.455,.03,.515,.955) !important;
     bottom: 0;
     left: 0;
@@ -2139,9 +2031,11 @@ ul.cart-products {
 
 
 #legalfooter .inner {
-    margin-top: 75px;
     background: #003593;
-    padding: 75px 0;
+    position: absolute;
+    bottom: 47px;
+    text-align: center;
+    width: 100%;
 }
 
 .no-hijack,
@@ -2162,7 +2056,7 @@ ul.cart-products {
     font-size: 15px;
     line-height: 1.5;
     margin: 0 0 20px;
-    background: #003593;    
+    background: #003593;
 }
 
 #legalfooter .inner ul {
@@ -2218,7 +2112,7 @@ ul.cart-products {
     letter-spacing: .3rem;
 }
 
-.close-footer { 
+.close-footer {
 
     transform: translateY(100%);
     -webkit-transform: translateY(100%);
@@ -2499,12 +2393,31 @@ div.error {
 }
 
 @media screen and (max-width: 990px){
+
+    .catalog-product{
+        padding: 0px !important;
+        border-bottom: 1px solid white;
+        border-right:1px solid white
+    }
+
     .footer-bar ul li:last-child{
         display: none;
     }
 
+    .product-name-catalog{
+        font-size: 11px !important;
+    }
 
-        .home-page #catalog {
+    .product-in-stock-info{
+        font-family: "AvenirNext LT Pro Regular";
+        color: #999999;
+        font-size: 11px !important;
+        margin-top: 5px;
+    }
+
+    .home-page #catalog {
+        /* top: 52px; */
+        margin-top: 18px;
         display: block;
         position: relative;
         width: 100%;
@@ -2514,11 +2427,11 @@ div.error {
         -moz-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
         -wekit-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
         -ms-transition: opacity .5s cubic-bezier(.455,.03,.515,.955),top .45s cubic-bezier(.455,.03,.515,.955);
-        background: #f3f3f5;
+        background: #e7e7e7;
         float: left;
-        top: 100px;
-        min-height: 100vh;
-        padding-bottom: 100px!important;
+        padding-left:0px;
+        padding-right:0px;
+        padding-bottom:0px;
     }
 
 
@@ -2633,5 +2546,30 @@ div.error {
     top: 0px !important;
    }
 }
+
+/* New Designe css*/
+
+.product-name-catalog{
+    margin-top: 12px;
+    color: #3e3e3e  ;
+
+}
+
+
+.product-in-stock-info{
+    font-family: "AvenirNext LT Pro Regular";
+    color: #979797;
+    font-size: 20px;
+    margin-top: 7px;
+}
+
+
+.products-category{
+    height: 50px;
+    color: black;
+
+}
+
+/* End of new desgine Css */
 
 

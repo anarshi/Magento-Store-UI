@@ -4,10 +4,10 @@
 
     $moa.controller('ApplicationController', ['$rootScope', '$scope'  ,  '$route','$location' 
                                                 , '$http' ,'$timeout', '$window' 
-                                                ,'basket',  'deviceDetector' , 'cartProducts','openCartService' , '$state',
-
+                                                ,'basket',  'deviceDetector' , 'cartProducts','openCartService' , '$state', '$mdSidenav' , '$log' ,
+                                                '$mdComponentRegistry' ,
     function applicationController($rootScope, $scope , $route  ,  $location , $http , $timeout
-                                     , $window ,basket ,deviceDetector ,cartProducts,openCartService , $state) {
+                                     , $window ,basket ,deviceDetector ,cartProducts,openCartService , $state , $mdSidenav, $log, $mdComponentRegistry) {
 
         // window.onbeforeunload = function () {
         //     var url = window.location.href;
@@ -19,12 +19,186 @@
         //     }
         // };
 
-      
 
-         document.ontouchmove = function (e) {
-                  return true;
-                }
 
+
+        $scope.isOpenCategoryFilter = false;
+
+
+        $scope.toggleLeft = buildDelayedToggler('left');
+        $scope.toggleRight = buildToggler('right');
+        $scope.isOpenRight = function(){
+            return $mdSidenav('right').isOpen();
+        };
+
+
+
+
+
+        function debounce(func, wait, context) {
+            var timer;
+
+            return function debounced() {
+                var context = $scope,
+                    args = Array.prototype.slice.call(arguments);
+                $timeout.cancel(timer);
+                timer = $timeout(function() {
+                    timer = undefined;
+                    func.apply(context, args);
+                }, wait || 10);
+            };
+        }
+
+        /**
+         * Build handler to open/close a SideNav; when animation finishes
+         * report completion in console
+         */
+        function buildDelayedToggler(navID) {
+            return debounce(function() {
+                // Component lookup should always be available since we are not using `ng-if`
+                $mdSidenav(navID)
+                    .toggle()
+                    .then(function () {
+                        $log.debug("toggle " + navID + " is done");
+                        console.log("toggle " + navID + " is done");
+                    });
+            }, 200);
+        }
+
+        function buildToggler(navID) {
+            return function() {
+                // Component lookup should always be available since we are not using `ng-if`
+                $mdSidenav(navID)
+                    .toggle()
+                    .then(function () {
+                        $log.debug("toggle " + navID + " is done");
+                        console.log("toggle " + navID + " is done");
+                    });
+            }
+        }
+
+        function buildToggler(componentId) {
+            return function() {
+                $mdSidenav(componentId).toggle();
+            }
+        }
+
+
+        // side nav left and right preventing scrollig when they are open
+        $scope.sideNavIsOpen = function() {
+            return false;
+        };
+
+        $scope.sideNavIsOpenLeft = function() {
+            return false;
+        };
+
+        //fire sideNavIsOpen when right side nav is open
+        $mdComponentRegistry.when('right').then(function(sideNav) {
+            $scope.sideNavIsOpen = angular.bind(sideNav, sideNav.isOpen);
+        });
+
+        //fire sideNavIsOpen when left side nav is open
+        $mdComponentRegistry.when('left').then(function(sideNav) {
+            $scope.sideNavIsOpenLeft = angular.bind(sideNav, sideNav.isOpen);
+        });
+
+
+        $scope.$watch('sideNavIsOpen()', function() {
+            if(!$scope.sideNavIsOpen()) {
+                $('body').removeClass('lock-scroll');
+
+                console.log('closed');
+            }
+            else {
+                $('body').addClass('lock-scroll');
+                console.log('open');
+            }
+        });
+
+        $scope.$watch('sideNavIsOpenLeft()', function() {
+            if(!$scope.sideNavIsOpenLeft()) {
+                $('body').removeClass('lock-scroll');
+
+                console.log('closed');
+            }
+            else {
+                $('body').addClass('lock-scroll');
+                console.log('open');
+            }
+        });
+
+        $scope.countryListSideMenuClass = "countryListStyle-hide";
+        $scope.chooseLangListSideMenuClass = "chooseLangListStyle-hide";
+        $scope.showMainCategorySideMenuClass = "";
+        $scope.translateSideMenuClass = "";
+        $scope.backCountryIconClass = "";
+        $scope.isCountryListOpen = false;
+        $scope.isLangListOpen = false;
+
+        $scope.openCountryList = function(){
+            if(!$scope.isCountryListOpen) {
+                $scope.isCountryListOpen = true;
+                $scope.showMainCategorySideMenuClass = "main-sidemenu-category";
+                $scope.countryListSideMenuClass = "countryListStyle-show";
+                $scope.translateSideMenuClass = "translateSideMenu";
+                $scope.backCountryIconClass = "showBackCountry";
+            }
+        };
+
+        $scope.openLangList = function(){
+            if(!$scope.isLangListOpen){
+                $scope.isLangListOpen = true;
+                $scope.chooseLangListSideMenuClass = "chooseLangListStyle-show";
+                $scope.showMainCategorySideMenuClass = "main-sidemenu-category";
+                $scope.backCountryIconClass = "showBackCountry";
+            }
+        };
+
+        $scope.showMainCategorySideMenu = function(){
+            if($scope.isCountryListOpen){
+                $scope.isCountryListOpen = false;
+                $scope.showMainCategorySideMenuClass = "main-sidemenu-category";
+                $scope.countryListSideMenuClass = "countryListStyle-hide";
+                $scope.translateSideMenuClass = "";
+                $scope.backCountryIconClass = "";
+                $scope.showMainCategorySideMenuClass = "";
+            } else if($scope.isLangListOpen){
+                $scope.isLangListOpen = false;
+                $scope.showMainCategorySideMenuClass = "";
+                $scope.chooseLangListSideMenuClass = "chooseLangListStyle-hide";
+                $scope.showMainCategorySideMenuClass = "";
+                $scope.backCountryIconClass = "";
+            }
+        };
+
+
+        $scope.openCategoryFilter = function(){
+            if($scope.isOpenCategoryFilter){
+                $scope.openFilter = "";
+                $scope.isOpenCategoryFilter = false;
+                $scope.toggleFilterBackDrop = "close-filter-backdrop";
+                $scope.bodyOpenModalClass = "";
+            } else {
+                $scope.openFilter = "open-category-filter";
+                $scope.isOpenCategoryFilter = true;
+                $scope.toggleFilterBackDrop = "open-filter-backdrop";
+                $scope.bodyOpenModalClass = "lock-scroll no-scroll";
+            }
+        };
+
+
+        $scope.closeCategoryFilter = function(){
+            $scope.isOpenCategoryFilter = false;
+            $scope.openFilter = "";
+            $scope.toggleFilterBackDrop = "close-filter-backdrop";
+            $scope.bodyOpenModalClass = "";
+        };
+
+
+        $scope.chooseCategory = function(){
+            $scope.closeCategoryFilter();
+        };
       
 
         $scope.isFilterOpen = false;

@@ -8,9 +8,10 @@
      */
 
 
-    window.moaApp = angular.module("moaApp", ["ui.router","ng.deviceDetector", "ngSanitize","ngAnimate","angular-inview" , 
-                                              'ngRoute', 'anim-in-out','ui.bootstrap','angular-preload-image']);
+    window.moaApp = angular.module("moaApp", ["ui.router","ngMaterial","ng.deviceDetector", "ngSanitize","ngAnimate","angular-inview" ,
+                                              'ngRoute', 'anim-in-out','ui.bootstrap','angular-preload-image' , 'mgcrea.bootstrap.affix']);
     window.moaApp.config(['$stateProvider', '$locationProvider' ,'$urlRouterProvider', function($stateProvider,$locationProvider,$urlRouterProvider) {
+
 
         $urlRouterProvider.otherwise('/');
 
@@ -25,7 +26,8 @@
             })
             .state("home", {
                 url: '/home/:currencyCode',
-                templateUrl : "views/home_page.html"
+                templateUrl : "views/home_page.html",
+                reloadOnSearch:true
 
             })
             .state("product", {

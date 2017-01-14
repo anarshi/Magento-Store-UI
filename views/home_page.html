@@ -1,190 +1,230 @@
 <div class="home-page container main-container">
 
-     <header class="navbar-fixed-top">
-        <nav id="navBar-home" class="navBar fixed ready top-hide top"  ng-class="topNavabarStyle">
-            <button role="button" class="menu" ng-click="openModal()">
-                Menu<span class="label">MENU</span>
-            </button>
-            <span class="logo" ng-click="goHome('/')"></span>
-            <aside class="cartcount show " ng-click="openCart()">{{cartProducts.cartCount}}<span class="label">BAG</span></aside>
-        </nav>
-        <div id="filterMenu-home" class="col-md-12 col-xs-12 filter-menu no-padding">
-            <div class="col-md-4 col-xs-2 no-padding filter-buttons-container">
-                <ul>
-                    <li ng-click="oneRowGrid()">
-                        <button data-rows="large" ng-class="oneRowActive" class="items row1 up active" ng-click="oneRowGrid()">
-                            <span ng-class="oneRowActive" >1</span>
-                            <span class="hover">1</span>
-                        </button>
-                    </li>
-                    <li ng-click="twoRowGrid()"><button data-rows="medium" ng-class="twoRowActive" class="items row2  down" ng-click="twoRowGrid()">
-                        <span ng-class="twoRowActive">2</span>
-                        <span class="hover">2</span></button></li>
-                </ul>    
-            </div>
-            <div class="col-md-7 col-xs-2 filter-text-container" ng-click="showFilter()">
-                <p class="filter-text">filter</p>
-            </div>
-        </div>
-       
-    </header>
-	    <section ng-controller="ProductsController" >
-        <section class="products" >
-            <div data-sidebar class="right">
-            </div>
-            <div id="catalog" class="container thumbs">
+     <!--<header class="navbar-fixed-top">-->
+        <!--<nav id="navBar-home" class="navBar fixed ready top-hide top"  ng-class="topNavabarStyle">-->
+            <!--<button role="button" class="menu" ng-click="openModal()">-->
+                <!--Menu<span class="label">MENU</span>-->
+            <!--</button>-->
+            <!--<span class="logo" ng-click="goHome('/')"></span>-->
+            <!--<aside class="cartcount show " ng-click="openCart()">{{cartProducts.cartCount}}<span class="label">BAG</span></aside>-->
+        <!--</nav>-->
+        <!--<div class="col-md-12 col-xs-12 no-padding text-center products-category">-->
+            <!--ALL RUGS-->
+        <!--</div>-->
+    <!--</header>-->
 
-                <div  id="{{product.id}}" class = "catalog-product product" ui-sref="product({product_id: product.id , currencyCode: product.currencyCode })"  ng-class="productGridType" ng-repeat="product in products" >
-                    <!-- <a  ng-mouseenter="showSubText(product.id)" 
-                ng-mouseleave="hideSubText(product.id)"  >
-                    </a> -->
+    <div class="col-md-12 col-xs-12 home-image-container no-padding hide-xs hide-sm">
 
-                    <img  preload-image ng-src="{{product.allImages[0]}}" alt="{{product.name}}'s image" />
-                    <div  class="col-md-12 col-xs-12">
-                            <strong>{{product.name}}</strong>
-                            
+    </div>
 
+    <div class="col-md-12 col-xs-12 filter-toolbar-container hide-xs hide-sm" bs-affix data-offset-top="980" data-offset-bottom="300">
+        <md-toolbar class="md-hue-2 filter-toolbar">
+            <div class="md-toolbar-tools" layout="row">
+
+                <div >
+                    <span class="collection-filter-label">COLLECTION</span>
+
+                </div>
+                <md-divider class="vertical-divider-filter-toolbar"></md-divider>
+                <div uib-dropdown ng-hide="isMobile" click-outside="closeDropdownMenu()">
+                    <button  uib-dropdown-toggle class="chose-collection-dropdown"  id="dropdown-btn" ng-click="openCategoryFilter()" >Chiaro di luna (12)<span class="caret caret-collection" id="caret-collection"></span></button>
+                    <ul uib-dropdown-menu class="hide-sm hide-xs">
+                        <li ng-click="chooseLang('1',$event)">Option 1 (120)</li>
+                        <li ng-click="chooseLang('2',$event)">Option 2 (20)</li>
+                        <li ng-click="chooseLang('1',$event)">Option 3 (30)</li>
+                    </ul>
+                </div>
+
+                <span flex></span>
+
+                <span flex></span>
+
+                <div layout="row" class="hide-sm hide-xs" >
+                    <div>
+                        <span class="sort-filter-label">Sort by: </span>
                     </div>
-                    <div ng-hide="isInStockCheck(product.is_in_stock)" class="col-md-12 col-xs-12">
-                        <label class="out-of-stock-label">Out of stock</label>
+
+                    <div uib-dropdown ng-hide="isMobile" click-outside="closeDropdownMenu()">
+                        <button  uib-dropdown-toggle class="chose-filter-dropdown"  id="dropdown-btn" ng-click="rotateLangIcon($event)" >Latest<span class="caret caret-collection" id="caret-collection"></span></button>
+                        <ul uib-dropdown-menu class="dropdown-filter">
+                            <li ng-click="chooseLang('1',$event)">Option 1</li>
+                            <li ng-click="chooseLang('2',$event)">Option 2</li>
+                            <li ng-click="chooseLang('1',$event)">Option 3</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 col-xs-12 text-center reset-filter-container" ng-show="isFilterSet">
-                <button class="btn btn-primary" ng-click="clearFilter()">Reset filter</button>
+        </md-toolbar>
+    </div>
+
+    <div class="col-md-12 col-xs-12 filter-toolbar-container show-sm show-xs">
+        <md-toolbar class="md-hue-2 filter-toolbar">
+            <div class="md-toolbar-tools" layout="row">
+
+                <div >
+                    <span class="collection-filter-label">COLLECTION</span>
+
+                </div>
+                <md-divider class="vertical-divider-filter-toolbar"></md-divider>
+                <div uib-dropdown ng-hide="isMobile" click-outside="closeDropdownMenu()">
+                    <button  uib-dropdown-toggle class="chose-collection-dropdown"  id="dropdown-btn" ng-click="openCategoryFilter()" >Chiaro di luna (12)<span class="caret caret-collection" id="caret-collection"></span></button>
+                    <ul uib-dropdown-menu class="hide-sm hide-xs">
+                        <li ng-click="chooseLang('1',$event)">Option 1 (120)</li>
+                        <li ng-click="chooseLang('2',$event)">Option 2 (20)</li>
+                        <li ng-click="chooseLang('1',$event)">Option 3 (30)</li>
+                    </ul>
+                </div>
+
+                <span flex></span>
+
+                <span flex></span>
+
+                <div layout="row" class="hide-sm hide-xs" >
+                    <div>
+                        <span class="sort-filter-label">Sort by: </span>
+                    </div>
+
+                    <div uib-dropdown ng-hide="isMobile" click-outside="closeDropdownMenu()">
+                        <button  uib-dropdown-toggle class="chose-filter-dropdown"  id="dropdown-btn" ng-click="rotateLangIcon($event)" >Latest<span class="caret caret-collection" id="caret-collection"></span></button>
+                        <ul uib-dropdown-menu class="dropdown-filter">
+                            <li ng-click="chooseLang('1',$event)">Option 1</li>
+                            <li ng-click="chooseLang('2',$event)">Option 2</li>
+                            <li ng-click="chooseLang('1',$event)">Option 3</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </section>
-        <aside id="productFilter" class="home-page-filter hide">
-         <div class="col-md-12 col-xs-12  close-filter-button">
-            <button class="btn btn-default " ng-click="closeFilter()">Filter  
-            <span class="glyphicon glyphicon-remove pull-right"></span>
-            </button>
-         </div>
-         <div class="scrollpane">
-            
-            <div class="filterList">
-                <div class="col-md-12 col-xs-12 info-text-filter">
-                   you can select several options simultaneously
-               </div>
-               <div class="col-md-12 col-xs-12 accordio-container no-padding">
-                  
-                      <uib-accordion close-others="oneAtATime" ng-repeat="category in filterCategories">
-                        <div uib-accordion-group class="panel-default" is-open="status$index.open" >
-                          <uib-accordion-heading>
-                              <label class="filter-heading-label">{{category.name}}<i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus': status{{$index}}.open, 'glyphicon glyphicon-plus': !status{{$index}}.open}"></i></label>
-                             
-                          </uib-accordion-heading>
-                          <div class="col-md-12 col-xs-12 accordio-checbox-container no-padding" ng-repeat="filterValue in category" ng-if="filterValue.label">
-                            <label for="{{filterValue.label + $index}}" class="checkbox-accordion-label">{{filterValue.label}}
-                                <input type="checkbox" name="carpet-size{{$index}}" id="{{filterValue.label  +   $index}}" value="{{filterValue.value}}" class="css-checkbox" ng-click="selectFilter(filterValue,category)" /><label for="{{filterValue.label + $index}}" class="css-label pull-right" ></label>
-                            </label>
-                             
-                          </div>    
-                        </div>
-                      </uib-accordion>
-               </div>
-               <div class="footer-buttons-filter">
-                   <div class="col-md-12 col-xs-12 clear-filter-button">
-                       <button class="btn btn-primary" ng-click="clearFilter()" >Clear All</button>
-                   </div>
-                   <div class="col-md-12 col-xs-12 apply-filter-button">
-                       <button class="btn btn-primary" ng-click="applyFilter()" >Apply</button>
-                   </div>
-               </div>
-            </div>
-         </div>
-      </aside>
+        </md-toolbar>
+        <div class="filter-menu-top " ng-class="openFilter">
+            <md-list class="category-filter-list">
+                <md-list-item class="md-3-line category-filter-list-item" ng-click="chooseCategory()">
+                    <div class="md-list-item-text category-filter-text">
+                        <p>All rugs</p>
+                    </div>
+                    <md-divider ng-if="!$last"></md-divider>
+                </md-list-item>
+                <md-list-item class="md-3-line category-filter-list-item" ng-click="chooseCategory()">
+                    <div class="md-list-item-text category-filter-text">
+                        <p>SS17</p>
+                    </div>
+                    <md-divider ng-if="!$last"></md-divider>
+                </md-list-item>
+                <md-list-item class="md-3-line category-filter-list-item" ng-click="chooseCategory()">
+                    <div class="md-list-item-text category-filter-text">
+                        <p>Chiaro di luna</p>
+                    </div>
+                    <md-divider ng-if="!$last"></md-divider>
+                </md-list-item>
+            </md-list>
+        </div>
+    </div>
 
-    </section>
-
-    <section>
-        
-        <footer id="collection-footer" class="footer-bar-home footer-bar"  ng-class="closeFooter">
-            <ul>
-                <li ng-click="oneRowGrid()">
-                    <button data-rows="large"  ng-class="oneRowActive" class="items row1 up" ng-click="oneRowGrid()">
-                        <span ng-class="oneRowActive" class="row1-icon">1</span>
-                        <span class="hover">1</span>
-                    </button>
-                </li>
-                <li ng-click="twoRowGrid()"><button data-rows="medium" ng-class="twoRowActive"  class="items row2  down" ng-click="twoRowGrid()">
-                    <span ng-class="twoRowActive" class="row2-icon">2</span>
-                    <span class="hover">2</span></button></li>
-                <li class="hide-for-small" ng-click="threeRowGrid()">
-                    <button data-rows="small" ng-class="threeRowActive" class="items row4" >
-                        <span >4</span>
-                        <span class="hover">4</span>
-                    </button>
-                </li>
-            </ul>
-
-            <nav class="footerbuttons show">
-                <button id="filterBtn" ng-class="filterBtn"><span>Filter <strong class="filtercount"></strong></span><span class="hover">Filter <strong class="filtercount"></strong></span></button>
-            </nav>
-
-        </footer>
-
-        <footer id="collection-footer-ios" class="footer-bar-home footer-bar"  ng-class="closeFooter">
-            <ul>
-                <li ng-click="oneRowGrid()">
-                    <button data-rows="large"  ng-class="oneRowActive" class="items row1 up" ng-click="oneRowGrid()">
-                        <span ng-class="oneRowActive" class="row1-icon">1</span>
-                        <span class="hover">1</span>
-                    </button>
-                </li>
-                <li ng-click="twoRowGrid()"><button data-rows="medium" ng-class="twoRowActive"  class="items row2  down" ng-click="twoRowGrid()">
-                    <span ng-class="twoRowActive" class="row2-icon" >2</span>
-                    <span class="hover">2</span></button></li>
-                <li class="hide-for-small" ng-click="threeRowGrid()">
-                    <button data-rows="small" ng-class="threeRowActive" class="items row4" >
-                        <span >4</span>
-                        <span class="hover">4</span>
-                    </button>
-                </li>
-            </ul>
-            <nav class="footerbuttons show">
-                <button id="filterBtn" ng-class="filterBtn" ng-click="showFilter()"><span>Filter <strong class="filtercount"></strong></span><span class="hover">Filter <strong class="filtercount"></strong></span></button>
-            </nav>
-        </footer>
-    </section>
-
+    <md-backdrop class="md-sidenav-backdrop md-opaque ng-scope close-filter-backdrop" ng-class="toggleFilterBackDrop" ng-click="closeCategoryFilter()"></md-backdrop>
     
+	<div class="col-md-12 col-xs-12 no-padding" ng-controller="ProductsController" >
+        <div class=" col-md-12 col-xs-12 no-padding products" >
+            <div data-sidebar class="right">
+            </div>
+            <div id="catalog" class="container thumbs">
+                <div  id="{{product.id}}" class = "col-md-4 col-xs-6 no-padding catalog-product product" ui-sref="product({product_id: product.id , currencyCode: product.currencyCode })"  ng-repeat="product in products" >
+                    <img  preload-image ng-src="{{product.allImages[0]}}" alt="{{product.name}}'s image" />
+                    <div  class="col-md-12 col-xs-12 no-padding text-center product-name-catalog">
+                            <strong>{{product.name}}</strong>
+                            
+                    </div>
+                    <div ng-hide="isInStockCheck(product.is_in_stock)" class="col-md-12 col-xs-12 no-padding text-center product-out-of-stock-info">
+                        Out of stock
+                    </div>
+
+                    <div ng-show="isInStockCheck(product.is_in_stock)" class="col-md-12 col-xs-12 no-padding text-center product-in-stock-info">
+                        More sizes available
+                    </div>
+
+                    <div class="col-md-12 col-xs-12 no-padding text-center price-text-product-catalog">
+                        Starting from &euro; 1.500
+                    </div>
+                </div>
+                <div  id="{{product.id}}" class = "col-md-4 col-xs-6 no-padding catalog-product product" ui-sref="product({product_id: product.id , currencyCode: product.currencyCode })"  ng-repeat="product in products" >
+                    <img  preload-image ng-src="{{product.allImages[0]}}" alt="{{product.name}}'s image" />
+                    <div  class="col-md-12 col-xs-12 no-padding text-center product-name-catalog">
+                        <strong>{{product.name}}</strong>
+
+                    </div>
+                    <div ng-hide="isInStockCheck(product.is_in_stock)" class="col-md-12 col-xs-12 no-padding text-center product-out-of-stock-info">
+                        Out of stock
+                    </div>
+
+                    <div ng-show="isInStockCheck(product.is_in_stock)" class="col-md-12 col-xs-12 no-padding text-center product-in-stock-info">
+                        More sizes available
+                    </div>
+
+                    <div class="col-md-12 col-xs-12 no-padding text-center price-text-product-catalog">
+                        Starting from &euro; 1.500
+                    </div>
+                </div>
+                <div  id="{{product.id}}" class = "col-md-4 col-xs-6 no-padding catalog-product product" ui-sref="product({product_id: product.id , currencyCode: product.currencyCode })"  ng-repeat="product in products" >
+                    <img  preload-image ng-src="{{product.allImages[0]}}" alt="{{product.name}}'s image" />
+                    <div  class="col-md-12 col-xs-12 no-padding text-center product-name-catalog">
+                        <strong>{{product.name}}</strong>
+
+                    </div>
+                    <div ng-hide="isInStockCheck(product.is_in_stock)" class="col-md-12 col-xs-12 no-padding text-center product-out-of-stock-info">
+                        Out of stock
+                    </div>
+
+                    <div ng-show="isInStockCheck(product.is_in_stock)" class="col-md-12 col-xs-12 no-padding text-center product-in-stock-info">
+                        More sizes available
+                    </div>
+
+                    <div class="col-md-12 col-xs-12 no-padding text-center price-text-product-catalog">
+                        Starting from &euro; 1.500
+                    </div>
+                </div>
+                <div  id="{{product.id}}" class = "col-md-4 col-xs-6 no-padding catalog-product product" ui-sref="product({product_id: product.id , currencyCode: product.currencyCode })"  ng-repeat="product in products" >
+                    <img  preload-image ng-src="{{product.allImages[0]}}" alt="{{product.name}}'s image" />
+                    <div  class="col-md-12 col-xs-12 no-padding text-center product-name-catalog">
+                        <strong>{{product.name}}</strong>
+
+                    </div>
+                    <div ng-hide="isInStockCheck(product.is_in_stock)" class="col-md-12 col-xs-12 no-padding text-center product-out-of-stock-info">
+                        Out of stock
+                    </div>
+
+                    <div ng-show="isInStockCheck(product.is_in_stock)" class="col-md-12 col-xs-12 no-padding text-center product-in-stock-info">
+                        More sizes available
+                    </div>
+
+                    <div class="col-md-12 col-xs-12 no-padding text-center price-text-product-catalog">
+                        Starting from &euro; 1.500
+                    </div>
+                </div>
+                <div  id="{{product.id}}" class = "col-md-4 col-xs-6 no-padding catalog-product product" ui-sref="product({product_id: product.id , currencyCode: product.currencyCode })"  ng-repeat="product in products" >
+                    <img  preload-image ng-src="{{product.allImages[0]}}" alt="{{product.name}}'s image" />
+                    <div  class="col-md-12 col-xs-12 no-padding text-center product-name-catalog">
+                        <strong>{{product.name}}</strong>
+
+                    </div>
+                    <div ng-hide="isInStockCheck(product.is_in_stock)" class="col-md-12 col-xs-12 no-padding text-center product-out-of-stock-info">
+                        Out of stock
+                    </div>
+
+                    <div ng-show="isInStockCheck(product.is_in_stock)" class="col-md-12 col-xs-12 no-padding text-center product-in-stock-info">
+                        More sizes available
+                    </div>
+
+                    <div class="col-md-12 col-xs-12 no-padding text-center price-text-product-catalog">
+                        Starting from &euro; 1.500
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
    
-        <footer id="legalfooter" in-view="footerInView($index, $inview, $inviewInfo)" >
+        <footer class="col-md-12 col-xs-12 no-padding" id="legalfooter" >
             <div class="inner">
-                <p class="header-home">CAMIACAMINA AB</p>
-
-                <p>SWEEDEN</p>
-
-                <p>
-                    <a href="mailto:service@abc.com" class="no-hijack">service@camicamina.com</a>
-                    <br>
-                    <a href="tel:+31 202 615 908" class="no-hijack">+46 8 000 000</a>
-                </p>
-
-                <ul>
-                    <!-- <li>
-                        <a href="#" target="_blanc"><button class="facebook"><span>
-                        <i class="fa fa-facebook"></i>
-                    </span><span class="hover">
-                        <i class="fa fa-facebook"></i>
-                    </span></button></a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blanc"><button class="instagram"><span>
-                        <i class="fa fa-instagram"></i>
-                    </span><span class="hover">
-                        <i class="fa fa-instagram"></i>
-                    </span></button></a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blanc"><button class="twitter"><span>
-                        <i class="fa fa-twitter"></i>
-                    </span><span class="hover">
-                        <i class="fa fa-twitter"></i>
-                    </span></button></a>
-                    </li> -->
-                </ul>
+                <div class="footer-logo"></div>
+                <div class="col-md-12 col-xs-12 text-center pale-blue-footer-text">&copy 2016 Camicamina AB. - All rights reserved.</div>
+                <div class="col-md-12 col-xs-12 text-center pale-blue-footer-text">VAT nr SE559015737501. Company nr. 559015-7375</div>
             </div>
         </footer>
 

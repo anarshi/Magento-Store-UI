@@ -1,0 +1,32 @@
+.logo {
+    height: 23px;
+    width: 138px;
+    background : url(../images/blue-intro-logo-white.png) no-repeat ;
+    background-size: contain;
+    margin-left: 350px;
+}
+
+.logo:focus{
+    ouline:none;
+    border:0px !important;
+}
+
+.footer-logo{
+    height: 23px;
+    width: 138px;
+    background : url(../images/footer-logo.png) no-repeat ;
+    background-size: contain;
+    margin: 0 auto;
+    margin-bottom:20px;
+}
+
+@media screen and (max-width: 1150px){
+    .logo {
+        height: 20px;
+        width: 138px;
+        background: url(../images/blue-intro-logo-white.png) no-repeat;
+        background-size: contain;
+        margin-left: 3px;
+    }
+}
+
