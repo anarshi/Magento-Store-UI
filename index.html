@@ -69,9 +69,9 @@
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ScrollToPlugin.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ScrollToPlugin.min.js"></script>-->
     <script src="js/jquery.viewport.min.js"></script>
     <script src="js/jquery.scrollintoview.min.js"></script>
     <script src="js/inViewport.js"></script>
@@ -163,9 +163,6 @@
 
         <!--<div ui-view class="anim-in-out anim-fade" id="iNoBounceToggle"></div>-->
     <!--</div>-->
-
-    <div style="height: 100%">
-
 
         <md-sidenav
                 class="md-sidenav-left"
@@ -299,10 +296,10 @@
 
         </md-sidenav>
 
-        <md-content flex style="height: 100%">
+        <md-content flex style="height: 100%; min-height: 100%;">
 
-            <div layout="column" layout-align="top" class="anim-in-out anim-fade" style="height: 100%">
-                <div ui-view class="anim-in-out anim-fade" style="height: 100%;"></div>
+            <div layout="column" layout-align="top" class="anim-in-out anim-fade" style="height: 100%; min-height: 100%;">
+                <div ui-view class="anim-in-out anim-fade" style="height: 100%; min-height: 100%;"></div>
             </div>
 
             <div flex></div>
@@ -338,9 +335,6 @@
                 </button>
             </aside>
         </md-sidenav>
-
-
-    </div>
 
 </body>
 

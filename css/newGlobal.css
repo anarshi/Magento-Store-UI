@@ -312,6 +312,7 @@ md-backdrop ~ md-content {
     color: #003594; !important;
     padding: 0px 16px !important;
     height: 52px;
+    min-height:52px;
 }
 
 
@@ -712,5 +713,12 @@ md-backdrop ~ md-content {
 
     .chose-collection-dropdown{
         font-size: 10px;
+    }
+}
+
+@media (max-height: 600px){
+    .social-footer {
+        position: relative !important;
+        top:133px !important;
     }
 }
