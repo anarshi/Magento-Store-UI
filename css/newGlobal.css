@@ -595,19 +595,19 @@ md-backdrop ~ md-content {
 
 
     .chooseLangListStyle-show {
-        top: 125px !important;
+        top: 105px !important;
     }
 
     .chooseLangListStyle-hide{
-        top:125px
+        top:105px
     }
 
     .countryListStyle-show {
-        top: 125px;
+        top: 105px;
     }
 
     .countryListStyle-hide{
-        top:125px !important;
+        top:105px !important;
     }
 
     .category-sidemenu{
@@ -615,13 +615,13 @@ md-backdrop ~ md-content {
         width: 320px !important;
     }
 
-    .sidemenu-list{
-        top:85px;
+    .sidemenu-list {
+        top: 65px;
         position: relative;
     }
 
-    .sidemenu-list-second{
-        top:170px;
+    .sidemenu-list-second {
+        top: 115px;
         position: relative;
     }
 
