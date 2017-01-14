@@ -462,6 +462,7 @@ md-backdrop ~ md-content {
     font-family: 'AvenirNext LT Pro Regular';
     padding-right: 15px;
     font-size: 13px;
+    padding-top:6px;
     color: rgb(0, 53, 148);
 }
 
@@ -713,6 +714,11 @@ md-backdrop ~ md-content {
     }
 }
 
+@media (max-width: 768px){
+    .filter-toolbar-container > md-toolbar > div > div.dropdown {
+        width: 86% !important;
+    }
+}
 
 @media (max-width: 480px){
     .countryDropdownButton {
@@ -723,6 +729,24 @@ md-backdrop ~ md-content {
     }
 }
 
+@media (max-width: 414px){
+    .filter-toolbar-container > md-toolbar > div > div.dropdown {
+        width: 74% !important;
+    }
+}
+
+@media (max-width: 412px) {
+    .filter-toolbar-container > md-toolbar > div > div.dropdown {
+        width: 73% !important;
+    }
+}
+
+@media (max-width: 375px){
+    .filter-toolbar-container > md-toolbar > div > div.dropdown {
+        width: 70% !important;
+    }
+}
+
 @media (max-width: 370px){
     .countryDropdownButton {
         font-size: 10px;
@@ -730,6 +754,16 @@ md-backdrop ~ md-content {
 
     .chose-collection-dropdown{
         font-size: 10px;
+    }
+}
+
+@media (max-width: 320px){
+    .filter-toolbar-container > md-toolbar > div > div.dropdown {
+        width: 64% !important;
+    }
+
+    .caret-collection{
+        top: 0px !important;
     }
 }
 
