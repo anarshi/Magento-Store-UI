@@ -161,7 +161,7 @@
                 $scope.showMainCategorySideMenuClass = "main-sidemenu-category";
                 $scope.countryListSideMenuClass = "countryListStyle-hide";
                 $scope.translateSideMenuClass = "";
-                $scope.backCountryIconClass = "";
+                $scope.backCountryIconClass = "";1
                 $scope.showMainCategorySideMenuClass = "";
             } else if($scope.isLangListOpen){
                 $scope.isLangListOpen = false;
@@ -179,7 +179,19 @@
                 $scope.isOpenCategoryFilter = false;
                 $scope.toggleFilterBackDrop = "close-filter-backdrop";
                 $scope.bodyOpenModalClass = "";
+
+                //returns page to scrolled position
+                $('body').css('position','').css('left','auto').css('right','auto').css('top','auto');
+                $(window).scrollTop($('#colorbox').data('ycoord'));
+
             } else {
+
+                //stop background on ios and all devices to scroll
+                var ycoord = $(window).scrollTop();
+                $('#colorbox').data('ycoord',ycoord);
+                ycoord = ycoord * -1;
+                $('body').css('position','fixed').css('left','0px').css('right','0px').css('top',ycoord + 'px');
+
                 $scope.openFilter = "open-category-filter";
                 $scope.isOpenCategoryFilter = true;
                 $scope.toggleFilterBackDrop = "open-filter-backdrop";
