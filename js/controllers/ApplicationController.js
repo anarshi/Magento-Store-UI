@@ -10,9 +10,9 @@
             , $window ,basket ,deviceDetector ,cartProducts,openCartService , $state , $mdSidenav, $log, $mdComponentRegistry) {
 
 
-            // document.addEventListener("ontouchmove" , function(event){
-            //     event.stopPropagation();
-            // });
+            document.addEventListener('touchmove', function(event){
+                event.stopPropagation();
+            });
 
             $scope.isOpenCategoryFilter = false;
             $scope.toggleLeft = buildDelayedToggler('left');
@@ -317,16 +317,16 @@
                     if(newValue === true){
 
                         //openCart on item added to cart
-                        document.ontouchmove = function(e){
-                            e.preventDefault();
-                        };
+                        // document.ontouchmove = function(e){
+                        //     e.preventDefault();
+                        // };
                         $scope.closeFooter = "close-footer";
                     } else {
 
                         //close cart and set to false
-                        document.ontouchmove = function(){
-                            return true;
-                        }
+                        // document.ontouchmove = function(){
+                        //     return true;
+                        // }
                     }
                 }
                 ,true);
@@ -340,10 +340,10 @@
                     $scope.contentClass = "close-main-container";
                     $scope.modalClass="close-modal";
                     $scope.closeFooter = "";
-                    document.ontouchmove = function (e) {
-                        return true;
-
-                    }
+                    // document.ontouchmove = function (e) {
+                    //     return true;
+                    //
+                    // }
 
                 } else if($scope.isCartOpen){
                     $scope.contentClass = "";
@@ -351,10 +351,10 @@
                     $scope.bodyOpenModalClass = "";
                     $scope.isCartOpen = false;
                     $scope.closeFooter = "close-footer";
-                    document.ontouchmove = function (e) {
-                        return true;
-
-                    }
+                    // document.ontouchmove = function (e) {
+                    //     return true;
+                    //
+                    // }
 
                 }else {
                     // document.ontouchmove = function (e) {
