@@ -578,6 +578,18 @@ md-backdrop ~ md-content {
     font-weight: 100;
 }
 
+.md-sidenav-right{
+    height: 100% !important;
+    bottom: 0px !important;
+    top: 0px !important;
+}
+
+.md-sidenav-left{
+    height: 100% !important;
+    bottom: 0px !important;
+    top: 0px !important;
+}
+
 
 
 
