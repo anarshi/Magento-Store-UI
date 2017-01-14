@@ -183,13 +183,13 @@
                     $scope.isOpenCategoryFilter = false;
                     $scope.toggleFilterBackDrop = "close-filter-backdrop";
                     $scope.bodyOpenModalClass = "";
-                    // document.ontouchmove = function(e){
-                    //     return true;
-                    // };
+                    document.ontouchmove = function(e){
+                        return true;
+                    };
                 } else {
-                    // document.ontouchmove = function(e){
-                    //     e.preventDefault();
-                    // };
+                    document.ontouchmove = function(e){
+                        e.preventDefault();
+                    };
                     $scope.openFilter = "open-category-filter";
                     $scope.isOpenCategoryFilter = true;
                     $scope.toggleFilterBackDrop = "open-filter-backdrop";
