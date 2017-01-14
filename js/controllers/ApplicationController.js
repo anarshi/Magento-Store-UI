@@ -101,15 +101,15 @@
             $scope.$watch('sideNavIsOpen()', function() {
                 if(!$scope.sideNavIsOpen()) {
                     $('body').removeClass('lock-scroll');
-                    // document.ontouchmove = function(e){
-                    //     return true;
-                    // };
+                    document.ontouchmove = function(e){
+                        return true;
+                    };
                     console.log('closed');
                 }
                 else {
-                    // document.ontouchmove = function(e){
-                    //     e.preventDefault();
-                    // };
+                    document.ontouchmove = function(e){
+                        e.preventDefault();
+                    };
                     $('body').addClass('lock-scroll');
                     console.log('open');
                 }
@@ -118,15 +118,15 @@
             $scope.$watch('sideNavIsOpenLeft()', function() {
                 if(!$scope.sideNavIsOpenLeft()) {
                     $('body').removeClass('lock-scroll');
-                    // document.ontouchmove = function(e){
-                    //     return true;
-                    // };
+                    document.ontouchmove = function(e){
+                        return true;
+                    };
                     console.log('closed');
                 }
                 else {
-                    // document.ontouchmove = function(e){
-                    //     e.preventDefault();
-                    // };
+                    document.ontouchmove = function(e){
+                        e.preventDefault();
+                    };
                     $('body').addClass('lock-scroll');
                     console.log('open');
                 }
