@@ -212,7 +212,7 @@
                 $scope.openFilterClass = "show";
             }
             
-        }
+        };
 
         $scope.topNavabarStyle = {};
         $scope.currentState = "";
@@ -227,6 +227,7 @@
                 $scope.filterMenuButtonClass = "hide-filter-menu";
                 $scope.menuLabelClass = "product-menu-label";
                 $scope.bagLabelClass = "product-bag-label";
+                $scope.introTempStyleClass = "";
 
             } else if(toState.templateUrl === "views/about.html"){
                  console.log( $(".transform-container-index"));
@@ -240,6 +241,7 @@
                 $scope.filterMenuButtonClass = "hide-filter-menu";
                 $scope.menuLabelClass = "product-menu-label";
                 $scope.bagLabelClass = "product-bag-label";
+                $scope.introTempStyleClass = "";
 
             } else if(toState.templateUrl === "views/product.html"){
 
@@ -250,6 +252,7 @@
                 $scope.filterMenuButtonClass = "hide-filter-menu";
                 $scope.menuLabelClass = "product-menu-label";
                 $scope.bagLabelClass = "product-bag-label";
+                $scope.introTempStyleClass = "";
 
             } else if (toState.templateUrl === "views/home_page.html"){
                 $scope.topNavbarStyle = "";
@@ -258,6 +261,7 @@
                 $scope.filterMenuButtonClass = "";
                 $scope.menuLabelClass = "";
                 $scope.bagLabelClass = "";
+                $scope.introTempStyleClass = "";
 
             }else if(toState.templateUrl === "views/serviceDesk.html"){
                 $scope.topNavbarStyle = "product-page-navabar ";
@@ -267,6 +271,7 @@
                 $scope.filterMenuButtonClass = "hide-filter-menu";
                 $scope.menuLabelClass = "product-menu-label";
                 $scope.bagLabelClass = "product-bag-label";
+                $scope.introTempStyleClass = "";
             } else if(toState.templateUrl === "views/checkout.html"){
                 $scope.topNavbarStyle = "product-page-navabar ";
                 $scope.topNavbarLogoStyle = "product-page-navbar-span-logo-icon product-page-small-logo" ;
@@ -275,7 +280,9 @@
                 $scope.filterMenuButtonClass = "hide-filter-menu";
                 $scope.menuLabelClass = "product-menu-label";
                 $scope.bagLabelClass = "product-bag-label";
+                $scope.introTempStyleClass = "";
             } else {
+                $scope.introTempStyleClass = "introPageStyle";
                 $scope.topNavbarStyle = "hide-top-navbar";
                 $scope.topNavbarLogoStyle = "";
                 $scope.topNavbarCartcountStyle = "";
