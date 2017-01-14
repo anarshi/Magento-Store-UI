@@ -10,18 +10,18 @@
             , $window ,basket ,deviceDetector ,cartProducts,openCartService , $state , $mdSidenav, $log, $mdComponentRegistry) {
 
 
-            document.addEventListener("ontouchmove" , function(event){
-                event.stopPropagation();
-            });
+            // document.addEventListener("ontouchmove" , function(event){
+            //     event.stopPropagation();
+            // });
 
             $scope.isOpenCategoryFilter = false;
             $scope.toggleLeft = buildDelayedToggler('left');
             $scope.toggleRight = buildToggler('right');
 
-            document.ontouchmove = function (e) {
-                return true;
-
-            };
+            // document.ontouchmove = function (e) {
+            //     return true;
+            //
+            // };
 
 
             $scope.isOpenRight = function(){
@@ -101,15 +101,15 @@
             $scope.$watch('sideNavIsOpen()', function() {
                 if(!$scope.sideNavIsOpen()) {
                     $('body').removeClass('lock-scroll');
-                    document.ontouchmove = function(e){
-                        return true;
-                    };
+                    // document.ontouchmove = function(e){
+                    //     return true;
+                    // };
                     console.log('closed');
                 }
                 else {
-                    document.ontouchmove = function(e){
-                        e.preventDefault();
-                    };
+                    // document.ontouchmove = function(e){
+                    //     e.preventDefault();
+                    // };
                     $('body').addClass('lock-scroll');
                     console.log('open');
                 }
@@ -118,15 +118,15 @@
             $scope.$watch('sideNavIsOpenLeft()', function() {
                 if(!$scope.sideNavIsOpenLeft()) {
                     $('body').removeClass('lock-scroll');
-                    document.ontouchmove = function(e){
-                        return true;
-                    };
+                    // document.ontouchmove = function(e){
+                    //     return true;
+                    // };
                     console.log('closed');
                 }
                 else {
-                    document.ontouchmove = function(e){
-                        e.preventDefault();
-                    };
+                    // document.ontouchmove = function(e){
+                    //     e.preventDefault();
+                    // };
                     $('body').addClass('lock-scroll');
                     console.log('open');
                 }
@@ -183,13 +183,13 @@
                     $scope.isOpenCategoryFilter = false;
                     $scope.toggleFilterBackDrop = "close-filter-backdrop";
                     $scope.bodyOpenModalClass = "";
-                    document.ontouchmove = function(e){
-                        return true;
-                    };
+                    // document.ontouchmove = function(e){
+                    //     return true;
+                    // };
                 } else {
-                    document.ontouchmove = function(e){
-                        e.preventDefault();
-                    };
+                    // document.ontouchmove = function(e){
+                    //     e.preventDefault();
+                    // };
                     $scope.openFilter = "open-category-filter";
                     $scope.isOpenCategoryFilter = true;
                     $scope.toggleFilterBackDrop = "open-filter-backdrop";
@@ -200,9 +200,9 @@
 
             $scope.closeCategoryFilter = function(){
 
-                document.ontouchmove = function(e){
-                    return true;
-                };
+                // document.ontouchmove = function(e){
+                //     return true;
+                // };
 
                 $scope.isOpenCategoryFilter = false;
                 $scope.openFilter = "";
