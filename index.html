@@ -299,7 +299,7 @@
         <md-content flex ng-class="introTempStyleClass">
 
             <div layout="column" layout-align="top" class="anim-in-out anim-fade" ng-class="introTempStyleClass">
-                <div ui-view class="anim-in-out anim-fade" ng-class="introTempStyleClass"></div>
+                <div ui-view class="anim-in-out anim-fade" style="height: inherit"></div>
             </div>
 
             <div flex></div>
@@ -307,7 +307,7 @@
         </md-content>
 
         <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
-            <aside id="shoppingcart" class="shoppingcart" ng-class="cartOpenClass" data-quantity="0">
+            <aside id="shoppingcart" class="shoppingcart" data-quantity="0">
 
                 <aside class="cartcount show active">{{cartProducts.cartCount}}<span class="label">CLOSE</span></aside>
                 <div id="cart-scroll">
