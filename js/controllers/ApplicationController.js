@@ -305,6 +305,11 @@
                 }
             });
 
+            $scope.goToState = function(stateName){
+                $state.go(stateName);
+                $scope.toggleLeft();
+            };
+
 
             $scope.isLoaded = true;
 

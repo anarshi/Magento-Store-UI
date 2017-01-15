@@ -2515,11 +2515,11 @@ div.error {
 
     }
 
-    .product-page-navabar{
-        height: 52px !important;
-        background: #f3f3f5 !important;
-        border-color: #f3f3f5 !important;
-    }
+    /*.product-page-navabar{*/
+        /*height: 52px !important;*/
+        /*background: #f3f3f5 !important;*/
+        /*border-color: #f3f3f5 !important;*/
+    /*}*/
 
     .product-page-navbar-span-logo-icon {
         left: 50% !important;

@@ -462,7 +462,7 @@ md-backdrop ~ md-content {
     font-family: 'AvenirNext LT Pro Regular';
     padding-right: 15px;
     font-size: 13px;
-    padding-top:6px;
+    padding-top:5px;
     color: rgb(0, 53, 148);
 }
 
@@ -602,6 +602,10 @@ md-backdrop ~ md-content {
 
 
 @media screen and (max-width: 990px){
+
+    .collection-filter-label{
+        padding-top:5px !important;
+    }
 
     .md-sidenav-right{
         width: 320px !important;

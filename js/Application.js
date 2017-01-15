@@ -46,8 +46,8 @@
                 url: '/about',
                 templateUrl : "views/about.html"
             })
-            .state('service' , {
-                url:'/service',
+            .state('customerCare' , {
+                url:'/customerCare',
                 templateUrl : "views/serviceDesk.html"
             })
             .state("thankyou" , {
