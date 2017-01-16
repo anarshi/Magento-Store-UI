@@ -343,6 +343,7 @@ md-backdrop ~ md-content {
 .main-toolbar .md-toolbar-tools{
     height: 72px;
     max-height: 72px;
+    background: #003594;
 }
 
 
@@ -575,7 +576,7 @@ md-backdrop ~ md-content {
     margin-bottom: 14px;
     font-family: 'AvenirNext LT Pro Regular';
     color: #999999;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 100;
 }
 
@@ -594,17 +595,45 @@ md-backdrop ~ md-content {
 
 
 
-.left-sidemnu-item div p{
+.left-sidemnu-item div p {
     color: white !important;
     font-size: 13px !important;
     font-family: 'AvenirNext LT Pro Regular';
+
+}
+
+.product-name-catalog{
+    font-size:13px;
+}
+
+.product-in-stock-info{
+    font-family: "AvenirNext LT Pro Regular";
+    color: #979797;
+    font-size: 13px !important;
+    margin-top: 7px;
 }
 
 
 @media screen and (max-width: 990px){
 
+    .product-in-stock-info{
+        font-family: "AvenirNext LT Pro Regular";
+        color: #979797;
+        font-size: 13px;
+        margin-top: 7px;
+    }
+
     .collection-filter-label{
         padding-top:5px !important;
+    }
+
+    .price-text-product-catalog{
+        margin-top:27px;
+        margin-bottom: 14px;
+        font-family: 'AvenirNext LT Pro Regular';
+        color: #999999;
+        font-size: 11px;
+        font-weight: 100;
     }
 
     .md-sidenav-right{
@@ -680,6 +709,7 @@ md-backdrop ~ md-content {
     .main-toolbar .md-toolbar-tools{
         height: 106px;
         max-height: 106px;
+        background: #003594;
     }
 
 
@@ -757,7 +787,8 @@ md-backdrop ~ md-content {
     }
 
     .chose-collection-dropdown{
-        font-size: 10px;
+        font-size: 12px;
+        vertical-align: middle;
     }
 }
 
