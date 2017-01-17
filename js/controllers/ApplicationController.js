@@ -10,9 +10,12 @@
             , $window ,basket ,deviceDetector ,cartProducts,openCartService , $state , $mdSidenav, $log, $mdComponentRegistry) {
 
 
+
             document.addEventListener('touchmove', function(event){
                 event.stopPropagation();
             });
+
+            $scope.isNavbarLight = false;
 
             $scope.isOpenCategoryFilter = false;
             $scope.toggleLeft = buildDelayedToggler('left');
@@ -229,27 +232,38 @@
 
             };
 
-            $scope.topNavabarStyle = {};
+            $scope.topNavbarStyle = {};
             $scope.currentState = "";
+            $scope.currentNavbarClass = "";
             $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
                 $scope.currentState = toState.templateUrl;
                 console.log(toState.templateUrl);
                 if(toState.templateUrl === "views/lookbook.html"){
-                    $scope.topNavbarStyle = "product-page-navabar ";
+                    $scope.currentState = toState.templateUrl;
+                    $scope.topNavbarStyle = "product-page-navabar";
+                    $scope.currentNavbarClass = "product-page-navabar";
+
                     $scope.topNavbarLogoStyle = "product-page-navbar-span-logo-icon product-page-small-logo" ;
                     $scope.topNavbarCartcountStyle = "product-page-cartcount";
-                    $scope.topNavbarMenuStyle = "product-page-navbar-menu"
+                    $scope.topNavbarMenuStyle = "product-page-navbar-menu";
                     $scope.filterMenuButtonClass = "hide-filter-menu";
                     $scope.menuLabelClass = "product-menu-label";
                     $scope.bagLabelClass = "product-bag-label";
                     $scope.introTempStyleClass = "";
+                    $scope.isNavbarLight = true;
+                    $scope.logoTypeClass = "blueLogo";
+                    $(".main-toolbar").removeClass("transparent-navbar");
 
                 } else if(toState.templateUrl === "views/about.html"){
                     console.log( $(".transform-container-index"));
                     $(".transform-container-index").css({
                         "height":"100%"
                     });
-                    $scope.topNavbarStyle = "product-page-navabar ";
+                    $(".main-toolbar").removeClass("transparent-navbar");
+                    $scope.isNavbarLight = true;
+                    $scope.logoTypeClass = "whiteLogo";
+                    $scope.topNavbarStyle = "light-toolbar";
+                    $scope.currentNavbarClass = "light-toolbar";
                     $scope.topNavbarLogoStyle = "product-page-navbar-span-logo-icon product-page-small-logo" ;
                     $scope.topNavbarCartcountStyle = "product-page-cartcount";
                     $scope.topNavbarMenuStyle = "product-page-navbar-menu"
@@ -257,10 +271,14 @@
                     $scope.menuLabelClass = "product-menu-label";
                     $scope.bagLabelClass = "product-bag-label";
                     $scope.introTempStyleClass = "";
+                    $scope.currentState = toState.templateUrl;
 
                 } else if(toState.templateUrl === "views/product.html"){
-
-                    $scope.topNavbarStyle = "product-page-navabar ";
+                    $(".main-toolbar").removeClass("transparent-navbar");
+                    $scope.isNavbarLight = true;
+                    $scope.logoTypeClass = "whiteLogo";
+                    $scope.topNavbarStyle = "light-toolbar";
+                    $scope.currentNavbarClass = "light-toolbar";
                     $scope.topNavbarLogoStyle = "product-page-navbar-span-logo-icon product-page-small-logo" ;
                     $scope.topNavbarCartcountStyle = "product-page-cartcount";
                     $scope.topNavbarMenuStyle = "product-page-navbar-menu"
@@ -268,8 +286,15 @@
                     $scope.menuLabelClass = "product-menu-label";
                     $scope.bagLabelClass = "product-bag-label";
                     $scope.introTempStyleClass = "";
+                    $scope.currentState = toState.templateUrl;
+                    $(".main-toolbar").removeClass("transparent-navbar");
 
                 } else if (toState.templateUrl === "views/home_page.html"){
+
+                    $(".main-toolbar").removeClass("transparent-navbar");
+                    $scope.isNavbarLight = false;
+                    $scope.logoTypeClass = "blueLogo";
+                    $scope.currentNavbarClass = "";
                     $scope.topNavbarStyle = "";
                     $scope.topNavbarLogoStyle = "";
                     $scope.topNavbarCartcountStyle = "";
@@ -277,9 +302,14 @@
                     $scope.menuLabelClass = "";
                     $scope.bagLabelClass = "";
                     $scope.introTempStyleClass = "";
+                    $scope.currentState = toState.templateUrl;
 
                 }else if(toState.templateUrl === "views/serviceDesk.html"){
-                    $scope.topNavbarStyle = "product-page-navabar ";
+                    $(".main-toolbar").removeClass("transparent-navbar");
+                    $scope.isNavbarLight = false;
+                    $scope.logoTypeClass = "blueLogo";
+                    $scope.topNavbarStyle = "product-page-navabar";
+                    $scope.currentNavbarClass = "product-page-navabar";
                     $scope.topNavbarLogoStyle = "product-page-navbar-span-logo-icon product-page-small-logo" ;
                     $scope.topNavbarCartcountStyle = "product-page-cartcount";
                     $scope.topNavbarMenuStyle = "product-page-navbar-menu"
@@ -287,8 +317,13 @@
                     $scope.menuLabelClass = "product-menu-label";
                     $scope.bagLabelClass = "product-bag-label";
                     $scope.introTempStyleClass = "";
+                    $scope.currentState = toState.templateUrl;
                 } else if(toState.templateUrl === "views/checkout.html"){
-                    $scope.topNavbarStyle = "product-page-navabar ";
+                    $(".main-toolbar").removeClass("transparent-navbar");
+                    $scope.isNavbarLight = false;
+                    $scope.logoTypeClass = "blueLogo";
+                    $scope.topNavbarStyle = "product-page-navabar";
+                    $scope.currentNavbarClass = "product-page-navabar";
                     $scope.topNavbarLogoStyle = "product-page-navbar-span-logo-icon product-page-small-logo" ;
                     $scope.topNavbarCartcountStyle = "product-page-cartcount";
                     $scope.topNavbarMenuStyle = "product-page-navbar-menu"
@@ -296,12 +331,18 @@
                     $scope.menuLabelClass = "product-menu-label";
                     $scope.bagLabelClass = "product-bag-label";
                     $scope.introTempStyleClass = "";
+                    $scope.currentState = toState.templateUrl;
                 } else {
+                    $(".main-toolbar").removeClass("transparent-navbar");
+                    $scope.isNavbarLight = false;
+                    $scope.logoTypeClass = "blueLogo";
                     $scope.introTempStyleClass = "introPageStyle";
                     $scope.topNavbarStyle = "hide-top-navbar";
+                    $scope.currentNavbarClass = "hide-top-navbar";
                     $scope.topNavbarLogoStyle = "";
                     $scope.topNavbarCartcountStyle = "";
                     $scope.filterMenuButtonClass = "";
+                    $scope.currentState = toState.templateUrl;
                 }
             });
 
@@ -309,6 +350,48 @@
                 $state.go(stateName);
                 $scope.toggleLeft();
             };
+
+            $scope.lightNavbar = "";
+
+            $(window).resize(function(){
+                if($(this).innerWidth() > 990){
+                    $(".main-toolbar").removeClass("transparent-navbar");
+                    $(".main-toolbar").addClass("light-toolbar");
+                }
+            });
+
+
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 50 && $(window).innerWidth() <= 990) {
+                    console.log("usos");
+                    if($scope.currentState === "views/product.html"){
+                        $(".light-toolbar").addClass("transparent-navbar");
+                        $(".transparent-navbar").removeClass("light-toolbar");
+                    }
+
+                } else {
+                    if($scope.currentState === "views/product.html" && $(window).innerWidth() <= 990){
+                        $(".transparent-navbar").addClass($scope.currentNavbarClass);
+                        $($scope.currentNavbarClass).removeClass("transparent-navbar");
+                    }
+                }
+            });
+
+            // angular.element($window).bind("scroll", function() {
+            //
+            //
+            //
+            //     if ($(body).scrollTop() >= 100) {
+            //         if($scope.currentState === "views/product.html"){
+            //
+            //         }
+            //
+            //         console.log('Scrolled below header.');
+            //     } else if($(body).scrollTop() < 100){
+            //
+            //     }
+            //
+            // });
 
 
             $scope.isLoaded = true;

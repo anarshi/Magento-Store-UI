@@ -27,9 +27,11 @@
             var info = document.getElementById("info");
             $scope.relatedProducts = [];
 
+
+            $scope.scroll = 0;
             if ($window.innerWidth <= 1020 ) {
                 $timeout(function() {
-                    $('.image-container').slick({
+                    $('#image-container').slick({
                         dots: true,
                         rtl:false,
                         vertical:false,
@@ -39,9 +41,9 @@
                 }, 1000);
             }else {
 
-                if($(".image-container").hasClass("slick-initialized")){
+                if($("#image-container").hasClass("slick-initialized")){
                      $timeout(function() {
-                        $('.image-container').slick("unslick");
+                        $('#image-container').slick("unslick");
                     }, 0);
                 }
                 
@@ -69,7 +71,7 @@
 
             $scope.goToRelatedProduct = function(id,currencyCode){
                 $state.go("product", {product_id: id , currencyCode: currencyCode});
-            }
+            };
             
 
             $http.post('http://104.236.246.190:8888/product/' + searchCriteria,{currencyCode: $stateParams.currencyCode , storeId: localStorage.storeId}).then(function successCallback(response) {
@@ -354,10 +356,10 @@
 
                 if($window.innerWidth < 1020){
                      for(var j = 0 ; j < $scope.slides.length ; j++){
-                         $('.image-container').slick('slickRemove',0);
+                         $('#image-container').slick('slickRemove',0);
                     }
 
-                    $('.image-container').slick('unslick');
+                    $('#image-container').slick('unslick');
                 }
                
 
@@ -425,7 +427,7 @@
                                     });
                                },0)
 
-                            } else if($('.image-container').hasClass("slick-initialized")) {
+                            } else if($('#image-container').hasClass("slick-initialized")) {
                                 setTimeout(function(){
                                     
                                     $('#image-container').slick('unslick');
@@ -503,12 +505,12 @@
                 var slider = $("#slider");
                 if ($window.innerWidth < 1020 ) {
                     $timeout(function() {
-                        $('.image-container').slick("unslick");
+                        $('#image-container').slick("unslick");
                     }, 0);
 
 
                     $timeout(function() {
-                        $('.image-container').slick({
+                        $('#image-container').slick({
                             dots: true,
                             rtl:false,
                             vertical:false, 
@@ -519,9 +521,9 @@
                     }, 0);
 
                 } else {
-                    if($(".image-container").hasClass("slick-initialized")){
+                    if($("#image-container").hasClass("slick-initialized")){
                         $timeout(function() {
-                            $('.image-container').slick("unslick");
+                            $('#image-container').slick("unslick");
                         }, 0);
                     }
                     

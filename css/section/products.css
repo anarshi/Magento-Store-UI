@@ -1233,7 +1233,7 @@ filterList ul li.key, .filterList ul li.key:hover {
 .product-page .upsells {
     display: block;
     
-        background: #f3f3f5;
+        /*background: #f3f3f5;*/
    /*  position: relative; */
 }
 
@@ -1689,13 +1689,11 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
 
 
 .product-page .product-container ul.slick-dots {
-    position: absolute;
     list-style-type: none;
     left: 50%;
     bottom: -5%;
-    -webkit-transform: translate(-50%,0) ;
-    transform: translate(-50%,0);
-    margin: 0;
+    position: relative;
+    margin-top: 20px;
 }
 
 .product-page .product-container ul.slick-dots li.slick-active {

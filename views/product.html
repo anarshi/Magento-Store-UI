@@ -1,32 +1,26 @@
- <!--<header class="navbar-fixed-top" ng-class="topNavbarStyle">-->
-        <!--<nav id="navBar" class="navBar fixed ready top-hide top" ng-class="topNavbarStyle">-->
-            <!--<button role="button" class="menu" ng-class="topNavbarMenuStyle" ng-click="openModal()">-->
-                <!--Menu<span class="label" ng-class="menuLabelClass">MENU</span>-->
-            <!--</button>-->
-            <!--<span class="logo" ng-class="topNavbarLogoStyle" ng-click="goHome('/')"></span>-->
-            <!--<aside class="cartcount show " ng-class="topNavbarCartcountStyle" ng-click="openCart()">{{cartProducts.cartCount}}<span class="label" ng-class="bagLabelClass">BAG</span></aside>-->
-        <!--</nav>-->
-        <!--<div class="col-md-12 col-xs-12 filter-menu" ng-class="filterMenuButtonClass">-->
-            <!--<div class="col-md-2 col-xs-2"></div>-->
-            <!--<div class="col-md-2 col-xs-2"></div>-->
-            <!--<div class="col-md-10 col-xs-10"></div>-->
-        <!--</div>-->
-       <!---->
-    <!--</header>-->
 
-<div class="page product-page main-container" ng-init="productsControllerInit" id="mainId" ng-click="closeModal" style="opacity: 1;" ng-controller="ProductController" ng-init="init()">
+
+<div class="page product-page main-container"  ng-init="productsControllerInit" id="mainId" ng-click="closeModal" style="opacity: 1;" ng-controller="ProductController" ng-init="init()">
    <div class="page product-page" style="opacity: 1;">
       <section class="product-container">
          <div class="content text-center">
             <div class="transform-container">
-               <div class="image-container"  ng-class="imageContainerZoomClass"  data-images="{{imageNumber}}"; style="
-                  transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1); -webkit-transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1);" id="image-container">
-                  <figure class="ready onscreen slides" ng-repeat="slide in slides" ng-click = "zoomIn($event)" id="figure{{$index}}" preload-bg-image="{{ slide.image }}"  ng-style="{ background: 'url({{ slide.image }})' }">
-                     <img src="{{slide.image}}" data-small="{{slide.image}}">
-                     <div class="hover " id={{$index}}></div>
-                  </figure>
+               <div class="col-md-6 col-xs-12 text-center" data-images="{{imageNumber}}" id="image-container">
+                  <div class="col-md-12 col-xs-12" ng-repeat="slide in slides" id="figure{{$index}}" >
+                     <img src="{{ slide.image }}">
+                  </div>
+               </div>
+               <div class="col-md-6 col-xs-6">
+
+               </div>
+               <!--<div class="image-container"  ng-class="imageContainerZoomClass"  data-images="{{imageNumber}}"; style="-->
+                  <!--transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1); -webkit-transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1);" id="image-container">-->
+                  <!--<figure class="ready onscreen slides" ng-repeat="slide in slides" ng-click = "zoomIn($event)" id="figure{{$index}}" preload-bg-image="{{ slide.image }}"  ng-style="{ background: 'url({{ slide.image }})' }">-->
+                     <!--<img src="{{slide.image}}" data-small="{{slide.image}}">-->
+                     <!--<div class="hover " id={{$index}}></div>-->
+                  <!--</figure>-->
                  <!--  <div class="col-md-6 col-xs-12  "  ng-repeat="slide in slides">
-                    
+
                     <img src="{{ slide.image }}" />
                     <div class="hover " id={{$index}}></div>
                   </div> -->
@@ -123,41 +117,41 @@
             <div class="filterList">
                <ul>
                   <li class="key">Width x Height</li>
-                  <li data-id="2709" ng-click = "chooseSize('{{assProduct.size}} | {{assProduct.currencySymbol}}{{assProduct.price.toFixed(2)}}' , {{assProduct.id}})" ng-repeat="assProduct in associatedProducts">
-                     {{assProduct.size}} | {{assProduct.currencySymbol}}{{assProduct.price.toFixed(2)}}
-                  </li>
+                  <!--<li data-id="2709" ng-click = "chooseSize('{{assProduct.size}} | {{assProduct.currencySymbol}}{{assProduct.price.toFixed(2)}}' , {{assProduct.id}})" ng-repeat="assProduct in associatedProducts">-->
+                     <!--{{assProduct.size}} | {{assProduct.currencySymbol}}{{assProduct.price.toFixed(2)}}-->
+                  <!--</li>-->
                  
                </ul>
             </div>
          </div>
       </aside>
-      <footer class="footer-bar single-footer"  ng-class="closeFooter">
-         <ul class="hide-for-small">
-            <li class="product-li">
-               <button role="button" data-href="https://www.etq-amsterdam.com" class="items back" ng-click = "goHome('/')"><span>x</span><span class="hover">x</span></button>
-            </li>
-            <li class="hide-for-medium-portrait product-li" id="prev">
-               <button role="button" class="items prev" ng-click="scrollToPreviousImage()" ><span>+</span><span class="hover">-</span></button>
-            </li>
-            <li class="hide-for-medium-portrait product-li" id="next">
-               <button role="button" class="items next"  ng-click="scrollToNextImage()" ><span>+</span><span class="hover">-</span></button>
-            </li>
-            <li class="hide-for-medium-portrait product-li" id="zoom-container">
-               <button role="button" class="items zoom" ng-class="zoomClass" ng-click="zoomInIcon()" id="zoomBtn"><span>+</span><span class="hover">-</span></button>
-            </li>
-         </ul>
-         <nav class="footerbuttons col-md-12 col-xs-12 col-lg-12 no-padding" id="footer-bar" ng-class="footerClass">
-            <button class="sizeBtn hide-when-small" ng-click="showSizes()" ng-show="isConfigurableFirst">Select Size</button>
-            <button class="sizeBtn hide-when-small" ng-hide="isConfigurableFirst">Select Size</button>
-            <button class="addBtn btnAdd hide-when-small" id="addBtn" ng-click="addToCart()" ng-shown="isSizeChoosen"><span><strong>{{addToBagText}}</strong></span></button>
-            <div class="col-md-12 col-xs-12 col-lg-12 no-padding show-when-small  sizeBtn-container">
-               <button class="sizeBtn " ng-click="showSizes()" ng-class="sizeBtnClass"><strong>Select Size</strong></button>
-            </div>
-            <div class="col-md-12 col-lg-12 col-lg-12 no-padding show-when-small">
-               <button class="addBtn btnAdd " id="addBtn" ng-click="addToCart()" ng-show="isSizeChoosen"><span><strong>{{addToBagText}}</strong></span></button>
-            </div>
-         </nav>
-      </footer>
+      <!--<footer class="footer-bar single-footer"  ng-class="closeFooter">-->
+         <!--<ul class="hide-for-small">-->
+            <!--<li class="product-li">-->
+               <!--<button role="button" data-href="https://www.etq-amsterdam.com" class="items back" ng-click = "goHome('/')"><span>x</span><span class="hover">x</span></button>-->
+            <!--</li>-->
+            <!--<li class="hide-for-medium-portrait product-li" id="prev">-->
+               <!--<button role="button" class="items prev" ng-click="scrollToPreviousImage()" ><span>+</span><span class="hover">-</span></button>-->
+            <!--</li>-->
+            <!--<li class="hide-for-medium-portrait product-li" id="next">-->
+               <!--<button role="button" class="items next"  ng-click="scrollToNextImage()" ><span>+</span><span class="hover">-</span></button>-->
+            <!--</li>-->
+            <!--<li class="hide-for-medium-portrait product-li" id="zoom-container">-->
+               <!--<button role="button" class="items zoom" ng-class="zoomClass" ng-click="zoomInIcon()" id="zoomBtn"><span>+</span><span class="hover">-</span></button>-->
+            <!--</li>-->
+         <!--</ul>-->
+         <!--<nav class="footerbuttons col-md-12 col-xs-12 col-lg-12 no-padding" id="footer-bar" ng-class="footerClass">-->
+            <!--<button class="sizeBtn hide-when-small" ng-click="showSizes()" ng-show="isConfigurableFirst">Select Size</button>-->
+            <!--<button class="sizeBtn hide-when-small" ng-hide="isConfigurableFirst">Select Size</button>-->
+            <!--<button class="addBtn btnAdd hide-when-small" id="addBtn" ng-click="addToCart()" ng-shown="isSizeChoosen"><span><strong>{{addToBagText}}</strong></span></button>-->
+            <!--<div class="col-md-12 col-xs-12 col-lg-12 no-padding show-when-small  sizeBtn-container">-->
+               <!--<button class="sizeBtn " ng-click="showSizes()" ng-class="sizeBtnClass"><strong>Select Size</strong></button>-->
+            <!--</div>-->
+            <!--<div class="col-md-12 col-lg-12 col-lg-12 no-padding show-when-small">-->
+               <!--<button class="addBtn btnAdd " id="addBtn" ng-click="addToCart()" ng-show="isSizeChoosen"><span><strong>{{addToBagText}}</strong></span></button>-->
+            <!--</div>-->
+         <!--</nav>-->
+      <!--</footer>-->
       <div class="exp-panel__bg " ng-class="productInfoClass"></div>
       <div class="exp-panel  " ng-class="productInfoClass" js-hook="panel">
        <button class="btn btn-default back-btn-product-info" ng-click="closeProductInfo()">

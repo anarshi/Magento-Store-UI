@@ -320,6 +320,12 @@ md-backdrop ~ md-content {
     min-height:100% !important;
 }
 
+.master-container{
+    background: #e7e7e7;
+}
+
+
+
 
 .countryDropdownButton {
     height: 60px;
@@ -344,6 +350,30 @@ md-backdrop ~ md-content {
     height: 72px;
     max-height: 72px;
     background: #003594;
+    -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s;
+}
+
+.main-toolbar .md-toolbar-tools.ng-hide {
+    opacity:0;
+    /* transform: scale(0.8); */
+}
+
+.fade.ng-hide {
+    opacity: 0;
+}
+
+.fade.ng-hide-remove,
+.fade.ng-hide-add {
+    display: block !important;
+}
+
+.fade.ng-hide-remove {
+    transition: all linear 1000ms;
+}
+
+.fade.ng-hide-add {
+    transition: all linear 500ms;
 }
 
 
@@ -613,8 +643,51 @@ md-backdrop ~ md-content {
     margin-top: 7px;
 }
 
+.light-toolbar{
+    background: rgb(231, 231, 231) !important; ;
+}
+
+
+
+.blue-text{
+    color: #003594;
+}
+
+
+
+.light-toolbar > div{
+    background: white !important;
+}
+
+.blue-menu-indicator{
+    color: #003594;
+}
+
+.product-page{
+    background: #e7e7e7;
+}
+
+
 
 @media screen and (max-width: 990px){
+
+
+    .transparent-navbar{
+        background: rgba(255,255,255,0.2) !important;
+    }
+
+
+    .transparent-navbar > div{
+        background: rgba(255,255,255,0.2) !important;
+    }
+
+    .light-toolbar > div{
+        background: #e7e7e7 !important;
+    }
+
+    #image-container{
+        margin-top:75px;
+    }
 
     .product-in-stock-info{
         font-family: "AvenirNext LT Pro Regular";
@@ -709,7 +782,7 @@ md-backdrop ~ md-content {
     .main-toolbar .md-toolbar-tools{
         height: 106px;
         max-height: 106px;
-        background: #003594;
+
     }
 
 

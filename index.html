@@ -95,19 +95,25 @@
     <script src="js/ioBounce.js"></script>
     <script src="js/services/openCartService.js"></script>
     <script src="js/directives/clickoutside.directive.js"></script>
+    <script src="js/directives/scrollPosition   .js"></script>
 
 
 </head>
 <body id="body" ng-keyup="keyUp($event)" layout="column" ng-cloak  ng-class="bodyOpenModalClass">
-    <md-toolbar  class="md-hue-2 main-toolbar" ng-class="topNavbarStyle" style="position: fixed;" >
+    <md-toolbar  class="md-hue-2 main-toolbar" ng-class="topNavbarStyle" style="position: fixed;" ng-hide="isNavbarLight" >
         <div class="md-toolbar-tools">
 
-            <md-button class="md-icon-button" aria-label="Settings"  ng-click="toggleLeft()">
-                <md-icon md-svg-icon="images/svg/list-menu-white.svg" ></md-icon>
+            <md-button class="md-icon-button" aria-label="Settings"  ng-click="toggleLeft()" >
+                <md-icon md-svg-icon="images/svg/list-menu-white.svg"></md-icon>
             </md-button>
-            <span class="hide-xs menu-indicator-text"> Menu </span>
+
+
+
+            <span class="hide-xs menu-indicator-text" > Menu </span>
+
             <span flex></span>
-                <span class="logo" ng-click="goHome('/')"></span>
+                <span class="logo blueLogo"  ng-click="goHome('/')"></span>
+
                 <span flex></span>
 
                 <div layout="row" class="right-toolbar-buttons-container">
@@ -154,6 +160,73 @@
 
         </div>
     </md-toolbar>
+
+    <md-toolbar  class="md-hue-2 main-toolbar" ng-class="topNavbarStyle" style="position: fixed;" ng-show="isNavbarLight" >
+        <div class="md-toolbar-tools">
+
+            <!--<md-button class="md-icon-button" aria-label="Settings"  ng-click="toggleLeft()" ng-hide="isNavbarLight">-->
+                <!--<md-icon md-svg-icon="images/svg/list-menu-white.svg"></md-icon>-->
+            <!--</md-button>-->
+
+            <md-button class="md-icon-button" aria-label="Settings"  ng-click="toggleLeft()" >
+                <md-icon md-svg-icon="images/svg/menu-blue.svg" ></md-icon>
+            </md-button>
+
+
+            <!--<span class="hide-xs menu-indicator-text" ng-hide="isNavbarLight"> Menu </span>-->
+            <span class="hide-xs menu-indicator-text blue-menu-indicator"> Menu </span>
+            <span flex></span>
+            <span class="logo whiteLogo"  ng-click="goHome('/')"></span>
+
+            <span flex></span>
+
+            <div layout="row" class="right-toolbar-buttons-container">
+                <md-divider class="vertical-divider hide-sm hide-xs"></md-divider>
+                <md-menu class="hide-sm hide-xs">
+                        <span aria-label="Open demo menu" class="chose-country hide-xs hide-sm blue-text" ng-click="$mdOpenMenu($event)">
+                            Ship to:Sweeden
+                        </span>
+                    <!--<md-select ng-model="someModel">-->
+                    <!--<md-option ng-value="opt" >Option 1</md-option>-->
+                    <!--<md-option ng-value="opt" >Option 1</md-option>-->
+                    <!--<md-option ng-value="opt" >Option 1</md-option>-->
+                    <!--</md-select>-->
+                    <md-menu-content width="6">
+                        <md-menu-item ng-repeat="item in [1, 2, 3]">
+                            <md-button ng-click="ctrl.announceClick($index)">
+                                <md-icon md-menu-align-target md-svg-icon="call:no-sim"></md-icon>
+                                Option {{item}}
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <md-divider class="vertical-divider hide-sm hide-xs"></md-divider>
+                <md-menu class="hide-sm hide-xs">
+                        <span aria-label="Open demo menu" class="chose-lang blue-text" ng-click="$mdOpenMenu($event)">
+                            English
+                        </span>
+                    <md-menu-content width="6">
+                        <md-menu-item ng-repeat="item in [1, 2, 3]">
+                            <md-button ng-click="ctrl.announceClick($index)">
+                                <md-icon md-menu-align-target md-svg-icon="call:no-sim"></md-icon>
+                                Option {{item}}
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <md-divider class="vertical-divider hide-sm hide-xs"></md-divider>
+                <md-button class="md-icon-button margin-md-button shopping-bag-icon" aria-label="Eat cake" ng-click="toggleRight()">
+                    <md-icon md-svg-src="images/svg/shopping-bag.svg" ng-hide="isNavbarLight"></md-icon>
+                    <md-icon md-svg-src="images/svg/shopping-bag-blue.svg" ng-show="isNavbarLight"></md-icon>
+                </md-button>
+
+            </div>
+
+
+        </div>
+    </md-toolbar>
+
+
     <!--<section data-sidebar class="filters" ng-class="modalClass" >-->
         <!--<div class="view left-sidebar-menu-container" ng-include="'views/sidebarMenu.html'"></div>-->
     <!--</section>-->
@@ -296,7 +369,7 @@
 
         </md-sidenav>
 
-        <md-content flex ng-class="introTempStyleClass">
+        <md-content class="master-container" flex ng-class="introTempStyleClass">
 
             <div layout="column" layout-align="top" class="anim-in-out anim-fade" ng-class="introTempStyleClass">
                 <div ui-view class="anim-in-out anim-fade" style="height: inherit"></div>
