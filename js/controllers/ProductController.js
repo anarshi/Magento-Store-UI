@@ -79,6 +79,8 @@
                 $scope.product.price = $scope.product.price.toFixed(2);
                 $scope.slides = [];
 
+                console.log($scope.product);
+
                 
 
                 $scope.productInformation = response.data.product_information;

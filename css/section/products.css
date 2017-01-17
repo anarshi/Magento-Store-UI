@@ -30,7 +30,7 @@ section.products {
 
 .product-info-text{
     margin-top: 50px;
-    font-family: "AvenirNext LT Pro Regular";
+    font-family: "AvenirNext LT Pro Ultra Light";
 }
 
 .out-of-stock-label{
@@ -670,14 +670,14 @@ section.products div.right {
 }
 
 .product-page .info h2 {
-    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    font-family: "AvenirNext LT Pro Ultra Light";
     font-weight: bold;
     color: #000;
     letter-spacing: .38rem;
     font-size: 16px;
     line-height: 2rem;
     text-transform: uppercase;
-    margin: 0 0 20px;
+    margin: 0 0 40px;
 }
 
 .product-page .info p {
@@ -1571,14 +1571,33 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
 }
 
 
+.horizontal-product-divider{
+    height: 1px;
+    background: #d2d2d2;
+    width: 100%;
+}
+
+.select-size-btn{
+    margin-top: 32px;
+    margin-bottom: 32px !important;
+    height:45px;
+    border-radius: 0px !important;
+    border:none !important;
+    background: #003594 !important;
+    text-transform: uppercase;
+    font-family: 'AvenirNext LT Pro Regular';
+    width: 100%;
+}
+
+
 .product-page .info h2 {
-    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    font-family: 'AvenirNext LT Pro Ultra Light';
     font-weight: 400;
     color: #000;
     letter-spacing: .38rem;
-    font-size: 1.1rem;
+    font-size: 2rem !important;
     line-height: 2rem;
-    text-transform: uppercase;
+    text-transform: none;
     margin: 0 0 20px;
 }
 
@@ -1690,11 +1709,24 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
 
 .product-page .product-container ul.slick-dots {
     list-style-type: none;
-    left: 50%;
-    bottom: -5%;
+    left: 39%;
+    /* bottom: -5%; */
     position: relative;
-    margin-top: 20px;
+    margin: 25px auto;
 }
+
+.product-title{
+    font-size: 13px;
+    font-family:"Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+
+}
+
+
+.product-info-small{
+    margin-top:35px;
+    padding-left:20px !important;
+    padding-right:20px !important;
+ }
 
 .product-page .product-container ul.slick-dots li.slick-active {
     background: #1458b9;
@@ -1716,10 +1748,12 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
 
 .product-desc{
     text-align: left !important;
-    font-size: 16px;
-    margin-bottom: 25px;
-    margin-top: 10px;
+    font-family: "AvenirNext LT Pro Regular";
+    font-size: 13px;
+    margin-bottom: 45px;
+    margin-top: 30px;
     line-height: 26px;
+    padding: 0px !important;
 }
 
 

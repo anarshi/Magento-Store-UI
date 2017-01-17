@@ -1,175 +1,99 @@
-
-
 <div class="page product-page main-container"  ng-init="productsControllerInit" id="mainId" ng-click="closeModal" style="opacity: 1;" ng-controller="ProductController" ng-init="init()">
    <div class="page product-page" style="opacity: 1;">
       <section class="product-container">
          <div class="content text-center">
             <div class="transform-container">
-               <div class="col-md-6 col-xs-12 text-center" data-images="{{imageNumber}}" id="image-container">
+               <div class="col-md-6 no-padding col-xs-12 text-center" data-images="{{imageNumber}}" id="image-container">
                   <div class="col-md-12 col-xs-12" ng-repeat="slide in slides" id="figure{{$index}}" >
                      <img src="{{ slide.image }}">
                   </div>
                </div>
-               <div class="col-md-6 col-xs-6">
-
+               <div class="col-md-6 col-xs-6 hide-when-small">
                </div>
                <!--<div class="image-container"  ng-class="imageContainerZoomClass"  data-images="{{imageNumber}}"; style="-->
-                  <!--transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1); -webkit-transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1);" id="image-container">-->
-                  <!--<figure class="ready onscreen slides" ng-repeat="slide in slides" ng-click = "zoomIn($event)" id="figure{{$index}}" preload-bg-image="{{ slide.image }}"  ng-style="{ background: 'url({{ slide.image }})' }">-->
-                     <!--<img src="{{slide.image}}" data-small="{{slide.image}}">-->
-                     <!--<div class="hover " id={{$index}}></div>-->
-                  <!--</figure>-->
-                 <!--  <div class="col-md-6 col-xs-12  "  ng-repeat="slide in slides">
-
-                    <img src="{{ slide.image }}" />
-                    <div class="hover " id={{$index}}></div>
+               <!--transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1); -webkit-transform: matrix3d(0.65,0,0.00,0,0.00,0.65,0.00,0,0,0,1,0,0,0,0,1);" id="image-container">-->
+               <!--<figure class="ready onscreen slides" ng-repeat="slide in slides" ng-click = "zoomIn($event)" id="figure{{$index}}" preload-bg-image="{{ slide.image }}"  ng-style="{ background: 'url({{ slide.image }})' }">-->
+               <!--<img src="{{slide.image}}" data-small="{{slide.image}}">-->
+               <!--<div class="hover " id={{$index}}></div>-->
+               <!--</figure>-->
+               <!--  <div class="col-md-6 col-xs-12  "  ng-repeat="slide in slides">
+                  <img src="{{ slide.image }}" />
+                  <div class="hover " id={{$index}}></div>
                   </div> -->
-
-
-               </div>
-            </div>
-            <aside class="info fixed ready hide-when-small" id="info">
-               <footer class="info columns  col-md-12 ready">
-
-                  <div class="col-md-12 col-xs-12 no-padding">
-                     <h2 class="">{{product.name}}
-                     </h2>
-                    <!--  <span class="price">
-                     {{product.currencySymbol + " " + product.price}}
-                     </span> -->
-                     <h4 class="free-delivery-title"  ng-show="showProductData"> Free worldwide delivery </h4>
-                  </div>
-                  
-                  <p class="delivery-desc" ng-show="showProductData">Read out <a href="#">Delivery & Returns</a> for more info.</p>
-                  <div class="product-desc col-md-12 col-xs-12 no-padding"  ng-show="showProductData">
-                    {{product.longDescription}}
-                  </div>
-                  
-                  <h4 class="free-delivery-title"  ng-show="showProductData"> Designer </h4>
-                  <p  ng-show="showProductData">{{product.designer}}</p>
-                  <h4 class="free-delivery-title"  ng-show="showProductData"> Material </h4>
-                  <p  ng-show="showProductData">{{product.material}}</p>
-                  <h4 class="free-delivery-title"  ng-show="showProductData"> Technique </h4>
-                  <p  ng-show="showProductData">{{product.mTechnique}}</p>
-                  <h4 class="free-delivery-title"  ng-show="showProductData"> Handmade in </h4>
-                  <p  ng-show="showProductData">{{product.mCountry}}</p>
-
-                 
-               </footer>
-               <div class="col-md-12 col-xs-12 product-info no-padding"  ng-show="showProductData">
-                  <button class="btn btn-default product-info-btn" ng-click="showProductInfo()">Product information <span class="glyphicon glyphicon-chevron-right pull-right"></span></button>
-               </div>
-            </aside>
-            <div class="transform-container ">
-               <div class="js-margin" style="z-index: 0; transform: matrix(1, 0, 0, 1, 0, 0);">
-                  <div id="fitImages">
-                  </div>
-               </div>
-            </div>
-            <div class="transform-container info-outer show-when-small">
-               <footer class="info columns  col-md-12 ready">
-
-                  <div class="col-md-12 col-xs-12 no-padding">
-                     <h2 class="">{{product.name}}
-                     </h2>
-                    <!--  <span class="price">
-                     {{product.currencySymbol + " " + product.price}}
-                     </span> -->
-                     <h4 class="free-delivery-title"  ng-show="showProductData"> Free worldwide delivery </h4>
-                  </div>
-                  
-                  <p class="delivery-desc" ng-show="showProductData">Read out <a href="#">Delivery & Returns</a> for more info.</p>
-                  <div class="product-desc col-md-12 col-xs-12"  ng-show="showProductData">
-                    {{product.longDescription}}
-                  </div>
-                  
-                  <h4 class="free-delivery-title"  ng-show="showProductData"> Designer </h4>
-                  <p  ng-show="showProductData">{{product.designer}}</p>
-                  <h4 class="free-delivery-title"  ng-show="showProductData"> Material </h4>
-                  <p  ng-show="showProductData">{{product.material}}</p>
-                  <h4 class="free-delivery-title"  ng-show="showProductData"> Technique </h4>
-                  <p  ng-show="showProductData">{{product.mTechnique}}</p>
-                  <h4 class="free-delivery-title"  ng-show="showProductData"> Handmade in </h4>
-                  <p  ng-show="showProductData">{{product.mCountry}}</p>
-
-                 
-               </footer>
-               <div class="col-md-12 col-xs-12 product-info no-padding"  ng-show="showProductData">
-                  <button class="btn btn-default product-info-btn" ng-click="showProductInfo()">Product information <span class="glyphicon glyphicon-chevron-right pull-right"></span></button>
-               </div>
-            </div>
-            <div class="transform-container">
-
-               <footer class="upsells col-md-12 no-padding js-margin show"  style="transform: matrix(1, 0, 0, 1, 0, 0);">
-                  <div class="bar show col-md-12 no-padding" id="related-products"><span>You may also like</span></div>
-                  <div class="scroll-container-products" id="scroll-container">
-                     <ul>
-                        <li ng-click="goToRelatedProduct(relatedProduct.id,relatedProduct.currencyCode)" ui-sref="product({product_id: relatedProduct.id , currencyCode: relatedProduct.currencyCode })" class="onscreen" style="background-image: url({{relatedProduct.allImages[0]}});" ng-repeat="relatedProduct in relatedProducts"><a ng-href="/product/{{product.id}}/{{product.currencyCode}}" data-id = "{{product.id}}" data-currency="{{product.currencyCode}}" class="relatedProductLink" ></a></li>
-                     </ul>
-                  </div>
-               </footer>
             </div>
          </div>
-      </section>
-      <div class="single-overlay" ng-click="closeSizes()"></div>
-      <aside id="product-sizes" class="product-page-sizes hide">
-         <div class="scrollpane">
-            <div class="filterList">
-               <ul>
-                  <li class="key">Width x Height</li>
-                  <!--<li data-id="2709" ng-click = "chooseSize('{{assProduct.size}} | {{assProduct.currencySymbol}}{{assProduct.price.toFixed(2)}}' , {{assProduct.id}})" ng-repeat="assProduct in associatedProducts">-->
-                     <!--{{assProduct.size}} | {{assProduct.currencySymbol}}{{assProduct.price.toFixed(2)}}-->
-                  <!--</li>-->
-                 
-               </ul>
+         <aside class="info fixed ready hide-when-small" id="info">
+            <div class="info columns  col-md-12 ready">
+               <div class="col-md-12 col-xs-12 no-padding">
+                  <h2 class="">{{product.name}}
+                  </h2>
+                  <!--  <span class="price">
+                     {{product.currencySymbol + " " + product.price}}
+                     </span> -->
+                  <h4 class="free-delivery-title"  > Free worldwide delivery </h4>
+               </div>
+               <p class="delivery-desc">Read out <a href="#">Delivery & Returns</a> for more info.</p>
+               <div class="product-desc col-md-12 col-xs-12 no-padding" >
+                  {{product.longDescription}}
+               </div>
+               <h4 class="free-delivery-title"  > Designer </h4>
+               <p  >{{product.designer}}</p>
+               <h4 class="free-delivery-title"  > Material </h4>
+               <p  >{{product.material}}</p>
+               <h4 class="free-delivery-title"  > Technique </h4>
+               <p  >{{product.mTechnique}}</p>
+               <h4 class="free-delivery-title"  > Handmade in </h4>
+               <p  >{{product.mCountry}}</p>
+            </div>
+            <div class="col-md-12 col-xs-12 product-info no-padding" >
+               <button class="btn btn-default product-info-btn" ng-click="showProductInfo()">Product information <span class="glyphicon glyphicon-chevron-right pull-right"></span></button>
+            </div>
+         </aside>
+         <div class="transform-container ">
+            <div class="js-margin" style="z-index: 0; transform: matrix(1, 0, 0, 1, 0, 0);">
+               <div id="fitImages">
+               </div>
             </div>
          </div>
-      </aside>
-      <!--<footer class="footer-bar single-footer"  ng-class="closeFooter">-->
-         <!--<ul class="hide-for-small">-->
-            <!--<li class="product-li">-->
-               <!--<button role="button" data-href="https://www.etq-amsterdam.com" class="items back" ng-click = "goHome('/')"><span>x</span><span class="hover">x</span></button>-->
-            <!--</li>-->
-            <!--<li class="hide-for-medium-portrait product-li" id="prev">-->
-               <!--<button role="button" class="items prev" ng-click="scrollToPreviousImage()" ><span>+</span><span class="hover">-</span></button>-->
-            <!--</li>-->
-            <!--<li class="hide-for-medium-portrait product-li" id="next">-->
-               <!--<button role="button" class="items next"  ng-click="scrollToNextImage()" ><span>+</span><span class="hover">-</span></button>-->
-            <!--</li>-->
-            <!--<li class="hide-for-medium-portrait product-li" id="zoom-container">-->
-               <!--<button role="button" class="items zoom" ng-class="zoomClass" ng-click="zoomInIcon()" id="zoomBtn"><span>+</span><span class="hover">-</span></button>-->
-            <!--</li>-->
-         <!--</ul>-->
-         <!--<nav class="footerbuttons col-md-12 col-xs-12 col-lg-12 no-padding" id="footer-bar" ng-class="footerClass">-->
-            <!--<button class="sizeBtn hide-when-small" ng-click="showSizes()" ng-show="isConfigurableFirst">Select Size</button>-->
-            <!--<button class="sizeBtn hide-when-small" ng-hide="isConfigurableFirst">Select Size</button>-->
-            <!--<button class="addBtn btnAdd hide-when-small" id="addBtn" ng-click="addToCart()" ng-shown="isSizeChoosen"><span><strong>{{addToBagText}}</strong></span></button>-->
-            <!--<div class="col-md-12 col-xs-12 col-lg-12 no-padding show-when-small  sizeBtn-container">-->
-               <!--<button class="sizeBtn " ng-click="showSizes()" ng-class="sizeBtnClass"><strong>Select Size</strong></button>-->
-            <!--</div>-->
-            <!--<div class="col-md-12 col-lg-12 col-lg-12 no-padding show-when-small">-->
-               <!--<button class="addBtn btnAdd " id="addBtn" ng-click="addToCart()" ng-show="isSizeChoosen"><span><strong>{{addToBagText}}</strong></span></button>-->
-            <!--</div>-->
-         <!--</nav>-->
-      <!--</footer>-->
-      <div class="exp-panel__bg " ng-class="productInfoClass"></div>
-      <div class="exp-panel  " ng-class="productInfoClass" js-hook="panel">
-       <button class="btn btn-default back-btn-product-info" ng-click="closeProductInfo()">
-       <span class="glyphicon glyphicon-chevron-left pull-left"></span>
-       PRODUCT INFORMATION
-   </button>
-       <div class="exp-panel__body" id="expContentPanelBody_default">
+         <div class="transform-container col-md-12 col-xs-12 product-info-small show-when-small">
+            <div class="info columns  col-md-12 ready">
+               <div class="col-md-12 text-center col-xs-12 no-padding">
+                  <h2 class="product-title">{{product.name}}
+                  </h2>
+                  <!--  <span class="price">
+                     {{product.currencySymbol + " " + product.price}}
+                     </span> -->
+                  <div class="col-md-12 col-xs-12 no-padding horizontal-product-divider"></div>
+                  <button class="btn btn-primary select-size-btn">Select size</button>
+                  <div class="col-md-12 col-xs-12 no-padding horizontal-product-divider"></div>
+               </div>
+               <div class="product-desc col-md-12 col-xs-12"  >
+                  {{product.longDescription}}
+               </div>
+               <!-- TODO: add product details and delivery and returns for all projects-->
+            </div>
+            <div class="col-md-12 col-xs-12 product-info no-padding"  >
+               <button class="btn btn-default product-info-btn" ng-click="showProductInfo()">Product information <span class="glyphicon glyphicon-chevron-right pull-right"></span></button>
+            </div>
+         </div>
+   </div>
+   </section>
+   <div class="exp-panel__bg " ng-class="productInfoClass"></div>
+   <div class="exp-panel  " ng-class="productInfoClass" js-hook="panel">
+      <button class="btn btn-default back-btn-product-info" ng-click="closeProductInfo()">
+         <span class="glyphicon glyphicon-chevron-left pull-left"></span>
+         PRODUCT INFORMATION
+      </button>
+      <div class="exp-panel__body" id="expContentPanelBody_default">
          <div class="exp-panel__body-content" js-hook="panelBody" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
             <div class="container">
-              <div class="col-md-12 col-xs-12 product-info-text">
-                {{productInformation}}
-              </div>
-           </div>
-         
-       </div>
-     </div>
+               <div class="col-md-12 col-xs-12 product-info-text">
+                  {{productInformation}}
+               </div>
+            </div>
+         </div>
+      </div>
    </div>
 </div>
 <style>
-
 </style>

@@ -354,7 +354,8 @@
             $scope.lightNavbar = "";
 
             $(window).resize(function(){
-                if($(this).innerWidth() > 990){
+                if($(this).innerWidth() > 990 && $scope.currentState === "views/product.html"){
+
                     $(".main-toolbar").removeClass("transparent-navbar");
                     $(".main-toolbar").addClass("light-toolbar");
                 }
