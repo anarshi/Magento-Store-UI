@@ -49,6 +49,25 @@
                 
             }
 
+            $scope.toggleProductAccordion = function($event,id){
+                if($("#" + id).hasClass("product-accordion-content-open")){
+                    $("#" + id).removeClass("product-accordion-content-open");
+                    $($event.currentTarget).find("span").removeClass("product-accordion-open");
+                } else {
+                    $("#" + id).addClass("product-accordion-content-open");
+                    $($event.currentTarget).find("span").addClass("product-accordion-open");
+                }
+            };
+
+            $scope.isMoving = false;
+            $scope.pos = {};
+
+
+
+
+
+
+
              $http.post("http://104.236.246.190:8888/getRelatedProducts/" + $stateParams.product_id ,
                     {
                         storeId: localStorage.storeId,
@@ -72,8 +91,8 @@
             $scope.goToRelatedProduct = function(id,currencyCode){
                 $state.go("product", {product_id: id , currencyCode: currencyCode});
             };
-            
 
+            $scope.scrollContainerWidth = 0;
             $http.post('http://104.236.246.190:8888/product/' + searchCriteria,{currencyCode: $stateParams.currencyCode , storeId: localStorage.storeId}).then(function successCallback(response) {
                 $scope.product = response.data;
                 $scope.product.price = $scope.product.price.toFixed(2);
@@ -117,16 +136,66 @@
                         image: $scope.product.allImages[i],
                         description: "pulled image"
                     });
+                    $scope.scrollContainerWidth += 408;
+
+
 
                 }
+
+
+                var timestamp = null;
+                var lastMouseX = null;
+                var lastMouseY = null;
+
+                if($scope.windowsInnerWidth < $scope.scrollContainerWidth){
+                    $(".scroll-container > ul").on("mousemove", function(e){
+
+                        if (timestamp === null) {
+                            timestamp = Date.now();
+                            lastMouseX = e.screenX;
+                            lastMouseY = e.screenY;
+                            return;
+                        }
+
+                        var now = Date.now();
+                        var dt =  now - timestamp;
+                        var dx = e.screenX - lastMouseX;
+                        var dy = e.screenY - lastMouseY;
+                        var speedX = Math.round(dx / dt * 100);
+                        var speedY = Math.round(dy / dt * 100);
+
+                        timestamp = now;
+                        lastMouseX = e.screenX;
+                        lastMouseY = e.screenY;
+
+                        var minusRate = ($scope.scrollContainerWidth *($scope.windowsInnerWidth*0.05)) / parseFloat(100);
+                        var scale =  $scope.scrollContainerWidth / parseFloat($scope.windowsInnerWidth);
+
+                        console.log($scope.scrollContainerWidth);
+                        console.log($scope.windowsInnerWidth);
+                        console.log(scale);
+
+                        console.log(minusRate);
+
+                        if(e.pageX * (scale/2) <= ($scope.scrollContainerWidth-minusRate)){
+                            $(".scroll-container > ul").css({
+                                "transform": "translate( -" +  e.pageX*(scale/2) + "px, 0px)"
+                            });
+                        }
+
+
+                    });
+                }
+
+
 
                 console.log($scope.slides);
 
-                if ($scope.slides.length > 1) {
-                    $(".image-container").css({
-                        "margin-bottom": "-90%"
-                    });
-                }
+                // if ($scope.slides.length > 1) {
+                //     // $(".image-container").css({
+                //     //     "margin-bottom": "-90%"
+                //     // });
+                // }
 
 
             if($scope.zoomArray.length > 0 ){
@@ -259,7 +328,9 @@
                         });
                     }
                 };
-            }    
+            };
+
+
                 
 
 
@@ -500,11 +571,12 @@
                
 
 
-            }
+            };
 
-
+            $scope.windowsInnerWidth = $(window).innerWidth();
             angular.element($window).bind("resize", function() {
                 var slider = $("#slider");
+                $scope.windowsInnerWidth = $(window).innerWidth();
                 if ($window.innerWidth < 1020 ) {
                     $timeout(function() {
                         $('#image-container').slick("unslick");
@@ -535,6 +607,56 @@
                 //      'left' : "0px !important"
 
                 // });
+
+
+                var timestamp = null;
+                var lastMouseX = null;
+                var lastMouseY = null;
+
+                if($scope.windowsInnerWidth < $scope.scrollContainerWidth){
+                    $(".scroll-container > ul").on("mousemove", function(e){
+
+                        if (timestamp === null) {
+                            timestamp = Date.now();
+                            lastMouseX = e.screenX;
+                            lastMouseY = e.screenY;
+                            return;
+                        }
+
+                        var now = Date.now();
+                        var dt =  now - timestamp;
+                        var dx = e.screenX - lastMouseX;
+                        var dy = e.screenY - lastMouseY;
+                        var speedX = Math.round(dx / dt * 100);
+                        var speedY = Math.round(dy / dt * 100);
+
+                        timestamp = now;
+                        lastMouseX = e.screenX;
+                        lastMouseY = e.screenY;
+
+                        var minusRate = ($scope.scrollContainerWidth *($scope.windowsInnerWidth*0.05)) / parseFloat(100);
+                        var scale =  $scope.scrollContainerWidth / parseFloat($scope.windowsInnerWidth);
+
+                        console.log($scope.scrollContainerWidth);
+                        console.log($scope.windowsInnerWidth);
+                        console.log(scale);
+
+                        console.log(minusRate);
+
+                        if(e.pageX * (scale/2) <= ($scope.scrollContainerWidth-minusRate)){
+                            $(".scroll-container > ul").css({
+                                "transform": "translate( -" +  e.pageX*(scale/2) + "px, 0px)"
+                            });
+                        }
+
+
+                    });
+                } else {
+                    $(".scroll-container > ul").unbind("mousemove");
+                    $(".scroll-container > ul").css({
+                        "transform": "translate( 0px, 0px)"
+                    });
+                }
             });
 
             $scope.scrollValueGlobal = 0;

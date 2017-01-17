@@ -670,14 +670,14 @@ section.products div.right {
 }
 
 .product-page .info h2 {
-    font-family: "AvenirNext LT Pro Ultra Light";
-    font-weight: bold;
+    font-family: 'AvenirNext LT Pro Ultra Light';
+    font-weight: 400;
     color: #000;
     letter-spacing: .38rem;
-    font-size: 16px;
+    font-size: 1.5rem !important;
     line-height: 2rem;
-    text-transform: uppercase;
-    margin: 0 0 40px;
+    text-transform: none;
+    margin: 0 0 20px;
 }
 
 .product-page .info p {
@@ -1003,13 +1003,13 @@ NAV
 }
 
 .product-page .info h2 {
-    font-family: 'AvenirNext LT Pro Demi',Arial,Helvetica;
+    font-family: 'AvenirNext LT Pro Ultra Light';
     font-weight: 400;
     color: #000;
     letter-spacing: .38rem;
-    font-size: 20px;
+    font-size: 1.5rem !important;
     line-height: 2rem;
-    text-transform: uppercase;
+    text-transform: none;
     margin: 0 0 20px;
 }
 
@@ -1115,6 +1115,66 @@ nav.footerbuttons {
     -moz-transition: opacity .4s ease-out;
     -ms-transition: opacity .4s ease-out;
     -webkit-transition: opacity .4s ease-out;
+}
+
+.related-products-title{
+    font-family: "AvenirNext LT Pro Regular";
+    margin-bottom:38px;
+}
+
+.scroll-container {
+    transition-property: -webkit-transform;
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(.645,.045,.355,1);
+    display: block;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100vw;
+    height: 50vh;
+    padding-bottom: 74px;
+    min-height: 260px;
+    margin-bottom: -20px;
+    left: 0;
+    transition: top .35s cubic-bezier(.455,.03,.515,.955);
+    background: #e7e7e7;
+}
+
+.scroll-container ul li {
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(.645,.045,.355,1);
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 50vh;
+    height: 40vh;
+    min-height: 260px;
+    min-width: 260px;
+    white-space: nowrap;
+    opacity: 1;
+    background-size: contain;
+    transition: opacity .45s cubic-bezier(.455,.03,.515,.955) 0,-webkit-transform .45s cubic-bezier(.25,.46,.45,.94);
+    transition: opacity .45s cubic-bezier(.455,.03,.515,.955) 0,transform .45s cubic-bezier(.25,.46,.45,.94);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+scroll-container ul {
+    transition-property: -webkit-transform;
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(.645,.045,.355,1);
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: 50vh;
+    white-space: nowrap;
 }
 
 .product-page-sizes .scrollpane {
@@ -1573,7 +1633,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
 
 .horizontal-product-divider{
     height: 1px;
-    background: #d2d2d2;
+    background: #d8d8d8;
     width: 100%;
 }
 
@@ -1595,10 +1655,82 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     font-weight: 400;
     color: #000;
     letter-spacing: .38rem;
-    font-size: 2rem !important;
+    font-size: 1.5rem !important;
     line-height: 2rem;
     text-transform: none;
     margin: 0 0 20px;
+}
+
+.accordion-button-products{
+    width: 100%;
+    border-radius: 0px !important;
+    height: 45px;
+    background: white !important;
+    color: #676767 !important;
+    border:none !important;
+    font-family: "AvenirNext LT Pro Regular";
+    text-transform: uppercase;
+    padding-left: 32px !important;
+    text-align: left !important;
+    padding-right:32px !important;
+    border-bottom:1px solid #e7e7e7 !important;
+}
+
+.accordion-button-products:focus{
+    border:none !important;
+    outline:none !important;
+}
+
+.product-accordion-open{
+    color: #003594 !important;
+}
+
+.product-accordion-content-open{
+    padding-top:15px !important;
+    padding-bottom:15px !important;
+    height: auto !important;
+}
+
+.product-accordion-open{
+    background: url("../../images/svg/minus-gray.svg") !important;
+    background: contain !important;
+}
+
+.product-accordion-content{
+    padding-top:0px ;
+    padding-bottom:0px ;
+    padding-right:30px !important;
+    padding-left: 30px !important;
+    background: white;
+    font-family: "AvenirNext LT Pro Regular";
+    font-size: 13px;
+    font-weight: bold;
+    color: #676767 !important;
+    height: 0px;
+    overflow:auto;
+    transition: height 0.2s ease-out !important;
+    -o-transition: height 0.6s ease-out !important;
+    -moz-transition: height 0.6s ease-out !important;
+    -wekit-transition: height 0.6s ease-out !important;
+    -ms-transition: height 0.6s ease-out !important;
+    min-height: auto !important;
+}
+
+.product-details-btn:focus{
+    outline:none !important;
+    border:none !important;
+}
+
+.accordion-product-icon{
+    height: 16px;
+    width: 16px;
+    background: url("../../images/svg/plus-gray.svg");
+    background-size: contain !important;
+    background-repeat: no-repeat;
+}
+
+.product-accordion-container{
+    margin-bottom:40px !important;
 }
 
 @media only screen and (min-width: 64.063em){
@@ -1709,10 +1841,10 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
 
 .product-page .product-container ul.slick-dots {
     list-style-type: none;
-    left: 39%;
     /* bottom: -5%; */
     position: relative;
-    margin: 25px auto;
+    margin: 0px auto;
+    display: inline-block;
 }
 
 .product-title{
@@ -1723,7 +1855,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
 
 
 .product-info-small{
-    margin-top:35px;
+    margin-top:20px;
     padding-left:20px !important;
     padding-right:20px !important;
  }
@@ -1742,7 +1874,6 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     border-radius: 50%;
     margin: 0 4px;
     text-indent: -9999px;
-    border: 1px solid #ffffff;
     cursor: pointer;
 }
 
@@ -1753,6 +1884,7 @@ html.no-touchevents .product-page .upsells .scroll-container-products ul li:nth-
     margin-bottom: 45px;
     margin-top: 30px;
     line-height: 26px;
+    font-weight: bold;
     padding: 0px !important;
 }
 

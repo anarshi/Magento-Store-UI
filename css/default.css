@@ -684,36 +684,40 @@ label.css-label {
     /* border-bottom: 1px solid #003594 !important; */
 }
 
-.panel-title > a {
-    color: inherit;
-    color: #003594 !important;
-    font-weight: 900;
-    font-size: 12px;
-    text-transform: uppercase;
-    font-family: 'AvenirNext LT Pro Demi';
-}
+/*.panel-title > a {*/
+    /*color: inherit;*/
+    /*color: #003594 !important;*/
+    /*font-weight: 900;*/
+    /*font-size: 12px;*/
+    /*text-transform: uppercase;*/
+    /*font-family: 'AvenirNext LT Pro Demi';*/
+/*}*/
 
-.panel-group .panel {
-    margin-bottom: 0;
-    overflow: hidden;
-    border-radius: 0 !important;
-    border-top: 1px solid #003593 !important;
-    border-left: 1px solid #fff !important;
-}
+/*.panel-group .panel {*/
+    /*margin-bottom: 0;*/
+    /*overflow: hidden;*/
+    /*border-radius: 0 !important;*/
+    /*border-top: 1px solid #003593 !important;*/
+    /*border-left: 1px solid #fff !important;*/
+/*}*/
 
 
-.panel-heading {
-    padding: 0px !important;
-    border-bottom: 1px solid transparent;
-    border-top-right-radius: 0px !important;
-    border-top-left-radius: 0px !important;
-    border-bottom-right-radius: 0px !important;
-    border-bottom-left-radius: 0px !important;
-}
+/*.panel-heading {*/
+    /*border-bottom: 1px solid transparent;*/
+    /*border-top-right-radius: 0px !important;*/
+    /*border-top-left-radius: 0px !important;*/
+    /*border-bottom-right-radius: 0px !important;*/
+    /*border-bottom-left-radius: 0px !important;*/
+    /*padding: 14px 32px !important;*/
+/*}*/
 
-.panel-default {
-    border: none !important;
-}
+/*.panel-group .panel{*/
+    /*border-radius:0px !important;*/
+/*}*/
+
+/*.panel-default {*/
+    /*border: none !important;*/
+/*}*/
 
 .info-text-filter {
     background: #f3f3f5;
@@ -727,30 +731,29 @@ label.css-label {
     border-left: 1px solid white;
 }
 
-.panel-group .panel + .panel {
-    margin-top: 0px !important;
+/*.panel-group .panel + .panel {*/
+    /*margin-top: 0px !important;*/
 
-}
+/*}*/
 
 .panel-default > .panel-heading {
     color: #333333;
     background-color: white;
-    border-color: #dddddd;
-    border-top: 1px solid black;
+    border-color: white;
 }
 
-.collapsable {
-    display: inline-block;
-    overflow: hidden;
-    height: 0;
-    transition: height 1s;
-    -webkit-transition: height 1s;
-    -moz-transition: height 1s;
-    -o-transition: height 1s;
-}
-.collapsable.showMe {
-    height: 100px;
-}
+/*.collapsable {*/
+    /*display: inline-block;*/
+    /*overflow: hidden;*/
+    /*height: 0;*/
+    /*transition: height 1s;*/
+    /*-webkit-transition: height 1s;*/
+    /*-moz-transition: height 1s;*/
+    /*-o-transition: height 1s;*/
+/*}*/
+/*.collapsable.showMe {*/
+    /*height: 100px;*/
+/*}*/
 
 .home-page-filter .scrollpane {
     display: block;

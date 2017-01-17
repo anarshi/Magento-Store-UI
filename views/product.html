@@ -72,9 +72,32 @@
                </div>
                <!-- TODO: add product details and delivery and returns for all projects-->
             </div>
-            <div class="col-md-12 col-xs-12 product-info no-padding"  >
-               <button class="btn btn-default product-info-btn" ng-click="showProductInfo()">Product information <span class="glyphicon glyphicon-chevron-right pull-right"></span></button>
+         </div>
+         <div class="col-md-12 col-xs-12 no-padding product-accordion-container">
+            <button class="accordion-button-products" ng-click="toggleProductAccordion($event,'productDetails')">Product details <span class="pull-right accordion-product-icon"></span></button>
+            <div class="col-md-12 col-xs-12 product-accordion-content" id="productDetails">
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fermentum mattis mi, sed finibus purus semper sed.
+               Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent placerat
+               vulputate tellus. Morbi rhoncus ac urna id luctus. Phasellus at augue molestie, facilisis risus et, posuere quam.
+               Nulla vulputate felis ac est laoreet, id pellentesque odio luctus. Quisque nec lectus id ex finibus faucibus. Sed sodales vulputate turpis,
+               ac aliquam nibh malesuada vitae. Sed vitae posuere elit. Pellentesque ultricies ligula nec nisi dictum, at egestas erat faucibus.
             </div>
+            <button class="accordion-button-products" ng-click="toggleProductAccordion($event,'deliveryAndReturn')">Delivery & returns <span class="pull-right accordion-product-icon"></span></button>
+            <div class="col-md-12 col-xs-12 product-accordion-content" id="deliveryAndReturn">
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fermentum mattis mi, sed finibus purus semper sed.
+               Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent placerat
+               vulputate tellus. Morbi rhoncus ac urna id luctus. Phasellus at augue molestie, facilisis risus et, posuere quam.
+               Nulla vulputate felis ac est laoreet, id pellentesque odio luctus. Quisque nec lectus id ex finibus faucibus. Sed sodales vulputate turpis,
+               ac aliquam nibh malesuada vitae. Sed vitae posuere elit. Pellentesque ultricies ligula nec nisi dictum, at egestas erat faucibus.
+            </div>
+         </div>
+         <div class="col-md-12 col-xs-12 text-center">
+            <h2 class="related-products-title">Yout may also like</h2>
+         </div>
+         <div class="scroll-container col-md-12 col-xs-12 no-padding">
+            <ul>
+               <li class="onscreen" ng-repeat="sl in slides" style="background-image: url({{sl.image}});"><a href="#"></a></li>
+            </ul>
          </div>
    </div>
    </section>
@@ -94,6 +117,11 @@
          </div>
       </div>
    </div>
+   <footer class="col-md-12 col-xs-12 no-padding" id="legalfooter" >
+      <div class="inner">
+         <div class="footer-logo"></div>
+         <div class="col-md-12 col-xs-12 text-center pale-blue-footer-text">&copy 2016 Camicamina AB. - All rights reserved.</div>
+         <div class="col-md-12 col-xs-12 text-center pale-blue-footer-text">VAT nr SE559015737501. Company nr. 559015-7375</div>
+      </div>
+   </footer>
 </div>
-<style>
-</style>
