@@ -1,6 +1,6 @@
-<div class="page product-page main-container"  ng-init="productsControllerInit" id="mainId" ng-click="closeModal" style="opacity: 1;" ng-controller="ProductController" ng-init="init()">
-   <div class="page product-page" style="opacity: 1;">
-      <section class="product-container">
+<div class="page product-page col-md-12 col-xs-12 no-padding main-container"  ng-init="productsControllerInit" id="mainId" ng-click="closeModal" style="opacity: 1;" ng-controller="ProductController" ng-init="init()">
+   <div class="page product-page col-md-12 col-xs-12 no-padding" style="opacity: 1;">
+      <section class="product-container col-md-12 col-xs-12 no-padding">
          <div class="content text-center">
             <div class="transform-container">
                <div class="col-md-6 no-padding col-xs-12 text-center" data-images="{{imageNumber}}" id="image-container">
@@ -92,31 +92,38 @@
             </div>
          </div>
          <div class="col-md-12 col-xs-12 text-center">
-            <h2 class="related-products-title">Yout may also like</h2>
+            <h2 class="related-products-title">You may also like</h2>
          </div>
-         <div class="scroll-container col-md-12 col-xs-12 no-padding">
+         <div class="scroll-container hide-when-small col-md-12 col-xs-12 no-padding">
             <ul>
                <li class="onscreen" ng-repeat="sl in slides" style="background-image: url({{sl.image}});"><a href="#"></a></li>
             </ul>
          </div>
-   </div>
-   </section>
-   <div class="exp-panel__bg " ng-class="productInfoClass"></div>
-   <div class="exp-panel  " ng-class="productInfoClass" js-hook="panel">
-      <button class="btn btn-default back-btn-product-info" ng-click="closeProductInfo()">
-         <span class="glyphicon glyphicon-chevron-left pull-left"></span>
-         PRODUCT INFORMATION
-      </button>
-      <div class="exp-panel__body" id="expContentPanelBody_default">
-         <div class="exp-panel__body-content" js-hook="panelBody" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
-            <div class="container">
-               <div class="col-md-12 col-xs-12 product-info-text">
-                  {{productInformation}}
-               </div>
+         <div class="show-when-small col-md-12 col-xs-12 text-center rp_image_container" id="rp_image_container">
+            <div class="col-md-12 col-xs-12" ng-repeat="slide in slides" id="figureRElated{{$index}}" >
+
+               <div class="text-center"><img src="{{ slide.image }}"></div>
+                <div>Chiaro di luna</div>
             </div>
          </div>
-      </div>
    </div>
+   </section>
+   <!--<div class="exp-panel__bg " ng-class="productInfoClass"></div>-->
+   <!--<div class="exp-panel  " ng-class="productInfoClass" js-hook="panel">-->
+      <!--<button class="btn btn-default back-btn-product-info" ng-click="closeProductInfo()">-->
+         <!--<span class="glyphicon glyphicon-chevron-left pull-left"></span>-->
+         <!--PRODUCT INFORMATION-->
+      <!--</button>-->
+      <!--<div class="exp-panel__body" id="expContentPanelBody_default">-->
+         <!--<div class="exp-panel__body-content" js-hook="panelBody" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">-->
+            <!--<div class="container">-->
+               <!--<div class="col-md-12 col-xs-12 product-info-text">-->
+                  <!--{{productInformation}}-->
+               <!--</div>-->
+            <!--</div>-->
+         <!--</div>-->
+      <!--</div>-->
+   <!--</div>-->
    <footer class="col-md-12 col-xs-12 no-padding" id="legalfooter" >
       <div class="inner">
          <div class="footer-logo"></div>

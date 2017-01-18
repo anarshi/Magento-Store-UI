@@ -30,20 +30,41 @@
 
             $scope.scroll = 0;
             if ($window.innerWidth <= 1020 ) {
+
+                //TODO: check this behaviour timeout time from 1000 to 0 changed
+
                 $timeout(function() {
                     $('#image-container').slick({
                         dots: true,
                         rtl:false,
                         vertical:false,
-                        arrows: false
+                        arrows: false,
+                        mobileFirst: true,
+                        swipeToSlide: true,
+                        touchMove: true,
+                        useTransform: true
 
                     });
+
+
+                    $("#rp_image_container").slick({
+                        dots: true,
+                        rtl:false,
+                        vertical:false,
+                        arrows: false,
+                        mobileFirst: true,
+                        swipeToSlide: true,
+                        touchMove: true,
+                        useTransform: true
+                    });
+
                 }, 1000);
             }else {
 
                 if($("#image-container").hasClass("slick-initialized")){
                      $timeout(function() {
                         $('#image-container').slick("unslick");
+                        $("#rp_image_container").slick("unslick");
                     }, 0);
                 }
                 
@@ -429,10 +450,15 @@
 
                 if($window.innerWidth < 1020){
                      for(var j = 0 ; j < $scope.slides.length ; j++){
-                         $('#image-container').slick('slickRemove',0);
+                         $('#image-container').slick('slickRemove',0)
+
+                    //     TODO: add for rp_image_container approproet contiditon now is slides but change when logic is adjusted
+                    //     and put it out of this foor loop
+                         $("#rp_image_container").slick('slickRemove',0);
                     }
 
                     $('#image-container').slick('unslick');
+                    $("#rp_image_container").slick('unslick');
                 }
                
 
@@ -495,15 +521,33 @@
                                         dots: true,
                                         rtl:false,
                                         vertical:false,
-                                        arrows: false
+                                        arrows: false,
+                                        mobileFirst: true,
+                                        swipeToSlide: true,
+                                        touchMove: true,
+                                        useTransform: true
 
                                     });
+
+                                    $('#rp_image_container').slick({
+                                        dots: true,
+                                        rtl:false,
+                                        vertical:false,
+                                        arrows: false,
+                                        mobileFirst: true,
+                                        swipeToSlide: true,
+                                        touchMove: true,
+                                        useTransform: true
+                                    })
                                },0)
 
                             } else if($('#image-container').hasClass("slick-initialized")) {
                                 setTimeout(function(){
                                     
                                     $('#image-container').slick('unslick');
+
+                                    //TODO: Check this condition it is not for rp_image_container
+                                    $("#rp_image_container").slick("unslick");
                                },0)
                             } else {
                                  
@@ -580,6 +624,7 @@
                 if ($window.innerWidth < 1020 ) {
                     $timeout(function() {
                         $('#image-container').slick("unslick");
+                        $("#rp_image_container").slick("unslick");
                     }, 0);
 
 
@@ -587,9 +632,24 @@
                         $('#image-container').slick({
                             dots: true,
                             rtl:false,
-                            vertical:false, 
-                            arrows: false
+                            vertical:false,
+                            arrows: false,
+                            mobileFirst: true,
+                            swipeToSlide: true,
+                            touchMove: true,
+                            useTransform: true
 
+                        });
+
+                        $("#rp_image_container").slick({
+                            dots: true,
+                            rtl:false,
+                            vertical:false,
+                            arrows: false,
+                            mobileFirst: true,
+                            swipeToSlide: true,
+                            touchMove: true,
+                            useTransform: true
                         });
 
                     }, 0);
@@ -598,6 +658,9 @@
                     if($("#image-container").hasClass("slick-initialized")){
                         $timeout(function() {
                             $('#image-container').slick("unslick");
+
+                            //TODO: check this condition it is not for rp_image_container
+                            $('#rp_image_container').slick("unslick");
                         }, 0);
                     }
                     

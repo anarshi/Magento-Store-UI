@@ -1118,8 +1118,9 @@ nav.footerbuttons {
 }
 
 .related-products-title{
-    font-family: "AvenirNext LT Pro Regular";
-    margin-bottom:38px;
+    font-family: "AvenirNext LT Pro Ultra Light";
+    margin-bottom: 38px;
+    font-size: 20px !important
 }
 
 .scroll-container {
@@ -1139,6 +1140,16 @@ nav.footerbuttons {
     left: 0;
     transition: top .35s cubic-bezier(.455,.03,.515,.955);
     background: #e7e7e7;
+}
+
+#rp_image_container > ul{
+    margin-top: 25px !important;
+    margin-bottom:45px !important;
+}
+
+.rp_image_container div.text-center img {
+    width: 50%;
+    display: inline-block !important;
 }
 
 .scroll-container ul li {
