@@ -27,6 +27,10 @@
             var info = document.getElementById("info");
             $scope.relatedProducts = [];
 
+            $scope.scrollToTop = function(){
+                $('html,body').animate({ scrollTop: 0 }, 'slow');
+            };
+
 
             $scope.scroll = 0;
             if ($window.innerWidth <= 1020 ) {

@@ -1123,6 +1123,20 @@ nav.footerbuttons {
     font-size: 20px !important
 }
 
+.back-top-btn{
+    height:45px;
+    text-align: center;
+    color: rgb(0, 53, 148);
+    font-family: "AvenirNext LT Pro Regular";
+    background: white;
+    width: 100%;
+}
+
+.back-top-btn:focus{
+    outline:none !important;
+    border: none !important;
+}
+
 .scroll-container {
     transition-property: -webkit-transform;
     transition-property: all;
