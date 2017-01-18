@@ -64,7 +64,26 @@
                      {{product.currencySymbol + " " + product.price}}
                      </span> -->
                   <div class="col-md-12 col-xs-12 no-padding horizontal-product-divider"></div>
-                  <button class="btn btn-primary select-size-btn">Select size</button>
+                   <div class="col-md-12 col-xs-12 no-padding sizes-container">
+                       <select class="btn btn-primary select-size-btn" >
+                           <option selected>asdasd</option>
+                           <option ng-repeat="childProdct in product.childProducts" value="{{childProdct.size}}">
+                           {{childProdct.size}}
+                           </option>
+
+                       </select>
+
+                       <!--<div class="col-md-12 col-xs-12 sizes-dropdown no-padding">-->
+                           <!--<md-list class="category-filter-list">-->
+                               <!--<md-list-item class="md-3-line category-filter-list-item" ng-repeat="childProdct in product.childProducts" ng-click="null">-->
+                                   <!--<div class="md-list-item-text category-filter-text" >-->
+                                       <!--<p>{{childProdct.size}}</p>-->
+                                   <!--</div>-->
+                                   <!--<md-divider ng-if="!$last"></md-divider>-->
+                               <!--</md-list-item>-->
+                           <!--</md-list>-->
+                       <!--</div>-->
+                   </div>
                   <div class="col-md-12 col-xs-12 no-padding horizontal-product-divider"></div>
                </div>
                <div class="product-desc col-md-12 col-xs-12"  >

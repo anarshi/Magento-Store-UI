@@ -1131,6 +1131,30 @@ nav.footerbuttons {
     background: white;
     width: 100%;
 }
+/*.sizes-container > div > md-list  md-list-item div{*/
+    /*height:45px !important;*/
+    /*min-height:45px !important;*/
+/*}*/
+
+.sizes-container .md-list-item-inner{
+    height: 45px !important;
+    min-height: 45px !important;
+}
+
+.sizes-container .md-button{
+    height: 45px !important;
+    min-height: 45px !important;
+}
+
+.sizes-container .md-button .md-ink-ripple{
+    height: 45px !important;
+    min-height: 45px !important;
+}
+
+/*.sizes-container > div > md-list md-list-item > div{*/
+    /*height:45px;*/
+    /*min-height:45px;*/
+/*}*/
 
 .back-top-btn:focus{
     outline:none !important;
