@@ -412,18 +412,18 @@
                     productSizes.removeClass('hide');
                     singleOverlay.addClass('show');
 
-                    document.ontouchmove = function(e) {
-                        e.preventDefault();
-                    }
+                    // document.ontouchmove = function(e) {
+                    //     e.preventDefault();
+                    // }
 
                 } else {
                     $('body').removeClass('no-scroll lock-scroll');
                     productSizes.addClass('hide');
                     singleOverlay.removeClass('show');
 
-                    document.ontouchmove = function(e) {
-                        return true;
-                    }
+                    // document.ontouchmove = function(e) {
+                    //     return true;
+                    // }
 
                 }
 
@@ -1283,17 +1283,17 @@
             $scope.showProductInfo = function(){
                 $scope.productInfoClass = "exp-panel--show-panel stock-Android exp-panel--show-panel";
                $("body").addClass("no-scroll lock-scroll");
-               document.ontouchmove = function (e) {
-                    e.preventDefault();
-               }
+               // document.ontouchmove = function (e) {
+               //      e.preventDefault();
+               // }
             }
 
             $scope.closeProductInfo = function(){
                 $scope.productInfoClass = "";
                 $("body").removeClass("no-scroll lock-scroll");
-                document.ontouchmove = function () {
-                    return true
-               }
+               //  document.ontouchmove = function () {
+               //      return true
+               // }
             
             }
 

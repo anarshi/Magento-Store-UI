@@ -20,7 +20,7 @@
             $timeout(function(){
                 $scope.chooseLangagueClass="blink-soft-select";
                 $scope.chooseCountryClass="blink-soft-select";
-            },300); 
+            },300);
 
           } else {
 
@@ -50,7 +50,7 @@
         }
 
         $scope.saveEmail = function(){
-                
+
             if($scope.emailInput !== '' && $scope.emailInput && $scope.emailInput.indexOf("@") != -1 && $scope.emailInput.indexOf(".") != -1){
                 $scope.toShowBlue = false;
                 $scope.toShowNew = true;
@@ -73,20 +73,20 @@
             } else {
                 console.log("suo u else");
                 $scope.blink="blink";
-                
+
 
                 $timeout(function(){
                     $scope.somePlaceholder = "Please enter email";
                     $scope.blink="blink-soft";
                 },300);
-                
+
                 $scope.showAlert = true;
             }
 
-             
 
-               
-           
+
+
+
 
            //  $.ajax({
            //      url:"/saveEmail",
@@ -103,7 +103,7 @@
            //  });
 
 
-          
+
         }
 
     }]);
