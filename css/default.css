@@ -660,12 +660,7 @@ label.css-label {
   user-select: none;
 }
 
-.choose_language{
-    background: white;
-    height: 59px;
-    text-align: left;
-    color: #003593;
-}
+
 
 .panel-default > .panel-heading {
     color: #333333;
