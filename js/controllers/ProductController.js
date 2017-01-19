@@ -2,10 +2,37 @@
 
     "use strict";
 
-    $moa.controller('ProductController', ['$scope', '$http', '$state' ,'$stateParams', '$location', '$window', '$timeout', 'basket', 'cartProducts', 'openCartService',
+    $moa.controller('ProductController', ['$scope', '$http', '$state' ,'$stateParams', '$location', '$window', '$timeout', 'basket', 'cartProducts', 'openCartService','$mdDialog' , 'deviceDetector' ,
 
-        function ProductController($scope, $http, $state , $stateParams, $location, $window, $timeout, basket, cartProducts, openCartService) {
+        function ProductController($scope, $http, $state , $stateParams, $location, $window, $timeout, basket, cartProducts, openCartService ,$mdDialog , deviceDetector) {
 
+
+            var vm = this;
+            vm.data = deviceDetector;
+            vm.allData = JSON.stringify(vm.data, null, 2);
+            console.log(vm.data.isMobile());
+
+            $scope.isAndroid = false;
+
+            if(vm.data.os.toLowerCase() === 'android'){
+                $scope.isAndroid = true;
+            }
+
+            console.log("IsAndroid");
+            console.log($scope.isAndroid);
+
+            // $scope.showModal = function(){
+            //   $(".bd-example-modal-sm").modal("show");
+            // }
+
+            $scope.isMobile = false;
+            if(vm.data.isMobile()){
+                $scope.isMobile = true;
+            }
+
+            console.log($scope.isMobile);
+
+            console.log(vm.data.os);
 
             var inViewpoerEl = $('#related-products');
             var productSizes = $('#product-sizes');
@@ -29,6 +56,22 @@
 
             $scope.scrollToTop = function(){
                 $('html,body').animate({ scrollTop: 0 }, 'slow');
+            };
+
+            $scope.showAdvanced = function(ev) {
+                $mdDialog.show({
+                    controller: ProductController,
+                    templateUrl: 'views/dialog1.tmpl.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose:true,
+                    fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+                })
+                    .then(function(answer) {
+                        $scope.status = 'You said the information was "' + answer + '".';
+                    }, function() {
+                        $scope.status = 'You cancelled the dialog.';
+                    });
             };
 
 
@@ -112,8 +155,11 @@
             var searchCriteria = $stateParams.product_id;
 
 
+            $scope.openModal = function(){
+                $("#myModal").modal("show");
+            }
 
-            $scope.goToRelatedProduct = function(id,currencyCode){
+            $scope.gooToRelatedProduct = function(id,currencyCode){
                 $state.go("product", {product_id: id , currencyCode: currencyCode});
             };
 
@@ -124,16 +170,15 @@
                 $scope.slides = [];
 
                 console.log($scope.product);
-
-                setTimeout(function(){
-                    $("select").selectric();
-                    for(var j = 0 ; j < $scope.product.childProducts.length ; j++){
-                        $('select').append('<option ng-click="someFunction()">' + ($scope.product.childProducts[j].size ? $scope.product.childProducts[j].size : 'Empty') + '</option>');
-
-                    }
-
-                    $('select').selectric('refresh');
-                },1500);
+                // setTimeout(function(){
+                //     $("select").selectric();
+                //     for(var j = 0 ; j < $scope.product.childProducts.length ; j++){
+                //         $('select').append('<option ng-click="someFunction()">' + ($scope.product.childProducts[j].size ? $scope.product.childProducts[j].size : 'Empty') + '</option>');
+                //
+                //     }
+                //
+                //     $('select').selectric('refresh');
+                // },1500);
 
 
                 $scope.productInformation = response.data.product_information;

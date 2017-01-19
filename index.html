@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
     <link rel="stylesheet" href="css/default.css" />
      <!--<link rel="stylesheet" type="text/css" href="css/logo.css">-->
-     <!--<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">-->
+     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/angular-ui-router-anim-in-out/css/anim-in-out.css">
 
     <!--<link href='http://fonts.googleapis.com/-->
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
         
     <!--<link rel="stylesheet" href="css/fonts.css" />-->
-    <!--<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" />-->
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" />
     <!--<link rel="stylesheet"  href="css/checkbox.scss">-->
 
     <!-- Angular imports -->
@@ -101,9 +101,9 @@
 
 
 </head>
-<body id="body" ng-keyup="keyUp($event)" layout="column" ng-cloak  ng-class="bodyOpenModalClass">
-    <md-toolbar  class="md-hue-2 main-toolbar" ng-class="topNavbarStyle" style="position: fixed;" ng-hide="isNavbarLight" >
-        <div class="md-toolbar-tools">
+<body id="body" ng-keyup="keyUp($event)" layout="column" ng-cloak  ng-class="bodyOpenModalClass" >
+    <md-toolbar  class="md-hue-2 main-toolbar" layout="column" ng-class="topNavbarStyle" style="position: fixed;" ng-hide="isNavbarLight" >
+        <div class="md-toolbar-tools" >
 
             <md-button class="md-icon-button" aria-label="Settings"  ng-click="toggleLeft()" >
                 <md-icon md-svg-icon="images/svg/list-menu-white.svg"></md-icon>
@@ -163,7 +163,7 @@
         </div>
     </md-toolbar>
 
-    <md-toolbar  class="md-hue-2 main-toolbar" ng-class="topNavbarStyle" style="position: fixed;" ng-show="isNavbarLight" >
+    <md-toolbar  class="md-hue-2 main-toolbar" layout="column" ng-class="topNavbarStyle" style="position: fixed;" ng-show="isNavbarLight" >
         <div class="md-toolbar-tools">
 
             <!--<md-button class="md-icon-button" aria-label="Settings"  ng-click="toggleLeft()" ng-hide="isNavbarLight">-->
@@ -244,7 +244,7 @@
                 md-component-id="left"
                 md-whiteframe="4"
                 class="category-sidemenu">
-            <md-content class="sidemenu-content">
+            <md-content class="sidemenu-content" layout="column">
                 <md-button class="md-icon-button close-category-button" ng-class="showMainCategorySideMenuClass" aria-label="More" ng-click="toggleLeft()">
                     <md-icon md-svg-icon="images/svg/cross-out.svg" ></md-icon>
                 </md-button>
@@ -371,13 +371,11 @@
 
         </md-sidenav>
 
-        <md-content class="master-container" flex ng-class="introTempStyleClass">
+        <md-content class="master-container" flex ng-class="introTempStyleClass" layout="column">
 
-            <div layout="column" layout-align="top" class="anim-in-out anim-fade" ng-class="introTempStyleClass">
+            <div layout="column" class="anim-in-out anim-fade" ng-class="introTempStyleClass">
                 <div ui-view class="anim-in-out anim-fade" style="height: inherit"></div>
             </div>
-
-            <div flex></div>
 
         </md-content>
 

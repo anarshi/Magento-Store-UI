@@ -1,6 +1,6 @@
-<div class="page product-page col-md-12 col-xs-12 no-padding main-container"  ng-init="productsControllerInit" id="mainId" ng-click="closeModal" style="opacity: 1;" ng-controller="ProductController" ng-init="init()">
-   <div class="page product-page col-md-12 col-xs-12 no-padding" style="opacity: 1;">
-      <section class="product-container col-md-12 col-xs-12 no-padding">
+<div class="page product-page col-md-12 col-xs-12 no-padding main-container"  layout="column"  ng-init="productsControllerInit" id="mainId" ng-click="closeModal" style="opacity: 1;" ng-controller="ProductController" ng-init="init()">
+   <div class="page product-page col-md-12 col-xs-12 no-padding" style="opacity: 1;"  layout="column">
+      <section class="product-container col-md-12 col-xs-12 no-padding"  layout="column">
          <div class="content text-center">
             <div class="transform-container">
                <div class="col-md-6 no-padding col-xs-12 text-center" data-images="{{imageNumber}}" id="image-container">
@@ -65,25 +65,22 @@
                      </span> -->
                   <div class="col-md-12 col-xs-12 no-padding horizontal-product-divider"></div>
                    <div class="col-md-12 col-xs-12 no-padding sizes-container">
-                       <button class="btn btn-primary select-size-btn" >
-                           <!--<option selected>asdasd</option>-->
-                           <!--<option ng-repeat="childProdct in product.childProducts" value="{{childProdct.size}}">-->
-                           <!--{{childProdct.size}}-->
-                           <!--</option>-->
-
-                           Select size
-
-                       </button>
+                       <button class="btn btn-primary select-size-btn" ng-show="isAndroid"  ng-click="openModal()" data-toggle="modal" data-target="#exampleModal">Select size</button>
+                       <button class="btn btn-primary select-size-btn" ng-hide="isAndroid" >Select size</button>
+                       <!--<md-button class="md-primary md-raised" ng-click="showAdvanced($event)" >-->
+                           <!--Confirm Dialog-->
+                       <!--</md-button>-->
 
                        <!--<div class="col-md-12 col-xs-12 sizes-dropdown no-padding">-->
-                           <!--<md-list class="category-filter-list">-->
-                               <!--<md-list-item class="md-3-line category-filter-list-item" ng-repeat="childProdct in product.childProducts" ng-click="null">-->
-                                   <!--<div class="md-list-item-text category-filter-text" >-->
-                                       <!--<p>{{childProdct.size}}</p>-->
-                                   <!--</div>-->
-                                   <!--<md-divider ng-if="!$last"></md-divider>-->
-                               <!--</md-list-item>-->
-                           <!--</md-list>-->
+                           <!--&lt;!&ndash;<md-list class="category-filter-list">&ndash;&gt;-->
+                               <!--&lt;!&ndash;<md-list-item class="md-3-line category-filter-list-item" ng-repeat="childProdct in product.childProducts" ng-click="null">&ndash;&gt;-->
+                                   <!--&lt;!&ndash;<div class="md-list-item-text category-filter-text" >&ndash;&gt;-->
+                                       <!--&lt;!&ndash;<p>{{childProdct.size}}</p>&ndash;&gt;-->
+                                   <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                   <!--&lt;!&ndash;<md-divider ng-if="!$last"></md-divider>&ndash;&gt;-->
+                               <!--&lt;!&ndash;</md-list-item>&ndash;&gt;-->
+                           <!--&lt;!&ndash;</md-list>&ndash;&gt;-->
+
                        <!--</div>-->
                    </div>
                   <div class="col-md-12 col-xs-12 no-padding horizontal-product-divider"></div>
@@ -127,9 +124,9 @@
                 <div>Chiaro di luna</div>
             </div>
          </div>
-          <div class="col-md-12 col-xs-12 no-padding">
-              <button class="back-top-btn" ng-click="scrollToTop()">Back to top</button>
-          </div>
+          <!--<div class="col-md-12 col-xs-12 no-padding">-->
+              <!--<button class="back-top-btn" ng-click="scrollToTop()">Back to top</button>-->
+          <!--</div>-->
    </div>
    </section>
    <!--<div class="exp-panel__bg " ng-class="productInfoClass"></div>-->
@@ -155,4 +152,42 @@
          <div class="col-md-12 col-xs-12 text-center pale-blue-footer-text">VAT nr SE559015737501. Company nr. 559015-7375</div>
       </div>
    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<style>
+
+    .modal {
+        text-align: center;
+    }
+
+    @media screen and (min-width: 768px) {
+
+    }
+
+    .modal-dialog {
+        top: 25%;
+
+    }
+
+</style>
