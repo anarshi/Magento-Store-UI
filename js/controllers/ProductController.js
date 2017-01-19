@@ -125,6 +125,15 @@
 
                 console.log($scope.product);
 
+                setTimeout(function(){
+                    $("select").selectric();
+                    for(var j = 0 ; j < $scope.product.childProducts.length ; j++){
+                        $('select').append('<option ng-click="someFunction()">' + ($scope.product.childProducts[j].size ? $scope.product.childProducts[j].size : 'Empty') + '</option>');
+
+                    }
+
+                    $('select').selectric('refresh');
+                },1500);
 
 
                 $scope.productInformation = response.data.product_information;
@@ -166,6 +175,8 @@
 
 
                 }
+
+
 
 
                 var timestamp = null;
@@ -211,13 +222,7 @@
 
                     });
 
-                    $(".select-size-btn").selectric();
-                    for(var j = 0 ; j < $scope.product.childProducts.length ; j++){
-                        $('.select-size-btn').append('<option ng-clicl="someFunction()">' + ($scope.product.childProducts[j].size ? $scope.product.childProducts[j].size : 'Empty') + '</option>');
 
-                    }
-
-                    $('.select-size-btn').selectric('refresh');
 
                 }
 
